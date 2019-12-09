@@ -1,4 +1,4 @@
-import Type from '../types';
+import Type from '../../../constants/types';
 
 const initialState = {
   tasks: {
