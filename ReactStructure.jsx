@@ -5,10 +5,12 @@ import React, { Component } from 'react';
 
 class ReactStructure extends Component {
   state = {};
+
   render() {
     return (
       <>
-        <Header>
+        srtucture
+        {/* <Header>
           <Weather />
           <CourseRate />
           <ButtonInOut />
@@ -20,7 +22,7 @@ class ReactStructure extends Component {
         <Footer>
           <Timer />
           <ToglleTheme />
-        </Footer>
+        </Footer> */}
       </>
     );
   }
