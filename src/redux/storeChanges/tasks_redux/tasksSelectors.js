@@ -1,0 +1,6 @@
+export default {
+  GET_TASKS: 'GET_TASKS',
+  ADD_TASK: 'SET_TASK',
+  DELETE_TASK: 'DELETE_TASK',
+  UPDATE_TASK: 'UPDATE_TASK',
+};
