@@ -3,6 +3,7 @@ import Task from './Task/Task';
 
 class Tasks extends Component {
   state = {
+    // eslint-disable-next-line react/no-unused-state
     tasks: {},
   };
 
