@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header/Header';
 import Main from './Main/Main';
-// import Footer from './Footer/';
+import Footer from './Footer/Footer';
 
 import css from './App.module.css';
 
@@ -12,7 +12,7 @@ const App = () => {
       <hr />
       <Main className={css.main} />
       <hr />
-      {/* <Footer className={css.footer}/> */}
+      <Footer className={css.footer} />
     </>
   );
 };
