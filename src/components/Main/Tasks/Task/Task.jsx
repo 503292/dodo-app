@@ -1,12 +1,14 @@
 import React from 'react';
 
+import css from './Task.module.css';
+
 const Task = () => (
   // сюди прилітає у this.props одна {task}
-  <li className={CSS.wrapTask}>
-    <p className={CSS.textTask}>text task</p>
-    <p className={CSS.timeTask}>time when task END</p>
-    <p className={CSS.categoryTask}>Color for task: red, green, yellow</p>
-    <img className={CSS.imageTask} src="" alt="коли є фото" />
+  <li className={css.wrapTask}>
+    <p className={css.textTask}>text task</p>
+    <p className={css.timeTask}>time when task END</p>
+    <p className={css.categoryTask}>Color for task: red, green, yellow</p>
+    <img className={css.imageTask} src="" alt="коли є фото" />
   </li>
 );
 

@@ -11,7 +11,10 @@ class Tasks extends Component {
     return (
       <>
         {/* тут треба поставити tasks.map(task => console.log(task)) || inTask  task={task} */}
-        <Task />
+        <ul>
+          <Task />
+        </ul>
+
         {/* 
         TO-DO 
         зі стора redux сюди падають tasks: [] 

@@ -1,10 +1,13 @@
 import React from 'react';
 
+import css from './Contact.module.css';
+
 const Contact = () => (
   <>
-    <p>Contacts</p>
-    <p>DoDo helper</p>
-    {/* <p className={CSS.textTask}>text task</p> */}
+    <button className={css.wrapContact} type="button">
+      <p className={css.nameContact}>Ivan</p>
+      <p className={css.statusContact}>status</p>
+    </button>
   </>
 );
 
