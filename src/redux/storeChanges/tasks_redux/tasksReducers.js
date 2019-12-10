@@ -1,21 +1,14 @@
 import Type from '../../../constants/types';
 
-const initialState = {
-  tasks: {
-    task: [null],
-  },
-};
-
-const taskReducer = (state = initialState, { type, payload }) => {
+// eslint-disable-next-line no-unused-vars
+const taskReducer = (state = { task: 'End Task store' }, { type, payload }) => {
   switch (type) {
-    case Type.ON_LOADER: {
+    case Type.READ_ALL_TASKS: {
       return {
+        payload,
         ...state,
-        // Redux Store
-        tasks: payload,
       };
     }
-    // Default
     default: {
       return state;
     }

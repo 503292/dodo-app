@@ -15,6 +15,7 @@ import { persistStore } from 'redux-persist'; //  {persistReducer}
 // import goalReducer from './goal/goalReducers';
 // import controlsReducer from './controls/controlsReducers';
 // import trainingReducer from './training/trainingReducers';
+import taskReducer from './storeChanges/tasks_redux/tasksReducers';
 
 // Persist only token
 // const sessionPersistConfig = {
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   //   bookIdInSummaryModal: bookIdReducer,
   //   goal: goalReducer,
   //   componentController: controlsReducer,
+  tasks: taskReducer,
 });
 
 const enhancer = applyMiddleware(ReduxThunk);
