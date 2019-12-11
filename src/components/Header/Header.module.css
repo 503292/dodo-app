@@ -1,0 +1,26 @@
+/* Тут глобальні настройки компонентів
+* flex, центрування, padding, margin
+* position ...
+*/
+
+.wrapHeader {
+}
+
+/* .wrapLogo {
+}
+.wrapWeather {
+}
+.wrapDollarRate {
+}
+.wrapBtnIn {
+}
+.wrapBtnOut {
+} */
+
+ {
+  /* <Logo className={css.logo} />
+          <Weather className={css.weather} />
+          <DollarRate className={css.dollarRate} />
+          <BtnIn className={css.btnIn} />
+          <BtnOut className={css.btnOut} /> */
+}
