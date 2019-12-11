@@ -4,14 +4,10 @@ import css from './DoDoHelper.module.css';
 
 const DoDoHelper = () => (
   <>
-    <button className={css.wrapDoDoHelper} type="button">
-      <p>DoDoHelper</p>
-      <p>status on/of color</p>
-      <p>counter messages</p>
-
-      {/* <p className={css.nameContact}>Ivan</p>
-      <p className={css.statusContact}>status</p> */}
-    </button>
+    <div className={css.wrapDoDoHelper} type="button">
+      <p className={css.nameDoDoHelper}>DoDoHelper</p>
+      <p className={css.messageDot}>_3</p>
+    </div>
   </>
 );
 

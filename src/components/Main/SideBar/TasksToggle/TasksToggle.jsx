@@ -6,6 +6,9 @@ const TasksToggle = () => (
   <>
     <div className={css.wrapTasksToggle}>
       <div className={css.titleTasksToggle}>Завдання</div>
+      {/* <button className={css.titleTasksToggle} type="button">
+        Завдання
+      </button> */}
       <div className={css.groupBtnTasks}>
         <button className={css.lowTasks} type="button">
           LOW

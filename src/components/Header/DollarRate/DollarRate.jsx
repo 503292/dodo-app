@@ -7,7 +7,7 @@ import css from './DollarRate.module.css';
 const DollarRate = () => (
   <>
     <div className={css.wrapDollarRate}>
-      <h2>1</h2>
+      <span>1</span>
       <img src={dollar} alt="dollar" />
       <p>24.5грн</p>
     </div>

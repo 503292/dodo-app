@@ -15,8 +15,9 @@ class Contacts extends Component {
     return (
       <>
         <div className={css.wrapContacts}>
-          <p>Контакти</p>
+          <div className={css.titleContacts}>Контакти</div>
           <DoDoHelper />
+          <hr />
           <Contact />
         </div>
       </>
