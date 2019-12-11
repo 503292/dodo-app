@@ -1,3 +1,4 @@
+// import React from 'react';
 import React from 'react';
 import Header from './Header/Header';
 import Main from './Main/Main';
@@ -8,11 +9,17 @@ import css from './App.module.css';
 const App = () => {
   return (
     <>
-      <Header className={css.header} />
+      <header className={css.header}>
+        <Header />
+      </header>
       <hr />
-      <Main className={css.main} />
+      <main className={css.main}>
+        <Main />
+      </main>
       <hr />
-      <Footer className={css.footer} />
+      <footer className={css.footer}>
+        <Footer />
+      </footer>
     </>
   );
 };

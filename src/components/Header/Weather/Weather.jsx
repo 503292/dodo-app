@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from './Weather.module.css';
 
 class Weather extends Component {
   // eslint-disable-next-line react/no-unused-state
@@ -7,7 +8,7 @@ class Weather extends Component {
   render() {
     return (
       <>
-        <div>
+        <div className={css.wrapWeather}>
           <img src="" alt="foto-wheather" />
           <p>temperature 16℃ </p>
         </div>

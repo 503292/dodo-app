@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Logo from './Logo/Logo';
 import Weather from './Weather/Weather';
 import DollarRate from './DollarRate/DollarRate';
-import BtnIn from './BtnIn/BtnIn';
-import BtnOut from './BtnOut/BtnOut';
+import BtnLogin from './BtnLogin/BtnLogin';
+// import BtnOut from './BtnOut/BtnOut';
 
 import css from './Header.module.css';
 
@@ -13,11 +13,12 @@ class Header extends Component {
   render() {
     return (
       <>
-        <Logo className={css.logo} />
-        <Weather className={css.weather} />
-        <DollarRate className={css.dollarRate} />
-        <BtnIn className={css.btnIn} />
-        <BtnOut className={css.btnOut} />
+        <div className={css.wrapHeader}>
+          <Logo />
+          <Weather />
+          <DollarRate />
+          <BtnLogin />
+        </div>
       </>
     );
   }

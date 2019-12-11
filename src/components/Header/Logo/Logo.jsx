@@ -1,9 +1,11 @@
 import React from 'react';
+import css from './Logo.module.css';
 
 const Logo = () => (
   <>
-    <img src="" alt="logo" />
-    LOGO
+    <div className={css.wrapLogo}>
+      <img className={css.logoImg} src="" alt="logo" />
+    </div>
   </>
 );
 

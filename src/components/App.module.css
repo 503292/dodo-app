@@ -1,6 +1,9 @@
 .header {
+  background-color: tomato;
 }
 .main {
+  background-color: rgb(194, 192, 192);
 }
 .footer {
+  background-color: rgb(95, 92, 91);
 }

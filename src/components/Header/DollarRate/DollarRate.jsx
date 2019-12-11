@@ -1,8 +1,11 @@
 import React from 'react';
+import css from './DollarRate.module.css';
 
 const DollarRate = () => (
   <>
-    <p>$=24.5грн</p>
+    <div className={css.wrapDollarRate}>
+      <p>$=24.5грн</p>
+    </div>
   </>
 );
 

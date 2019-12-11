@@ -3,13 +3,24 @@
 * position ...
 */
 
-.logo {
+.wrapHeader {
 }
-.weather {
+
+/* .wrapLogo {
 }
-.dollarRate {
+.wrapWeather {
 }
-.btnIn {
+.wrapDollarRate {
 }
-.btnOut {
+.wrapBtnIn {
+}
+.wrapBtnOut {
+} */
+
+ {
+  /* <Logo className={css.logo} />
+          <Weather className={css.weather} />
+          <DollarRate className={css.dollarRate} />
+          <BtnIn className={css.btnIn} />
+          <BtnOut className={css.btnOut} /> */
 }
