@@ -14,8 +14,12 @@ class Contacts extends Component {
   render() {
     return (
       <>
-        <DoDoHelper className={css.doDoHelper} />
-        <Contact className={css.contact} />
+        <div className={css.wrapContacts}>
+          <div className={css.titleContacts}>Контакти</div>
+          <DoDoHelper />
+          <hr />
+          <Contact />
+        </div>
       </>
     );
   }

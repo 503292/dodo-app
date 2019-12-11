@@ -1,0 +1,30 @@
+.wrapTasksToggle {
+  background-color: #bdc3c7;
+}
+.titleTasksToggle {
+  width: 100%;
+  padding: 10px 5px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  background-color: #bdc3c7;
+}
+.groupBtnTasks {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.lowTasks {
+  background-color: #fdcb6e;
+}
+.middleTasks {
+  background-color: #55efc4;
+}
+.hardTasks {
+  background-color: #ff7675;
+}
+
+.groupBtnTasks button {
+  padding: 10px 28px;
+}

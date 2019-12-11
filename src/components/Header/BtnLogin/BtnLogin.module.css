@@ -1,2 +1,8 @@
 .wrapBtn {
+  display: flex;
+  flex-direction: column;
+}
+.login {
+}
+.logout {
 }

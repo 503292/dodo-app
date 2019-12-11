@@ -1,12 +1,15 @@
 import React from 'react';
-import Tasks from './Tasks/Tasks';
+import SideBar from './SideBar/SideBar';
+import Content from './Content/Content';
 
 import css from './Main.module.css';
 
 const Main = () => (
   <>
-    {/* <Contacts className={css.contacts}/> */}
-    <Tasks className={css.tasks} />
+    <div className={css.wrapMain}>
+      <SideBar />
+      <Content />
+    </div>
   </>
 );
 

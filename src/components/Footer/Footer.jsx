@@ -1,13 +1,13 @@
 import React from 'react';
 import Timer from './Timer/Timer';
-import ToglleTheme from './ToglleTheme/ToglleTheme';
+import ToggleTheme from './ToggleTheme/ToggleTheme';
 
 import css from './Footer.module.css';
 
 const Footer = () => (
   <>
     <Timer className={css.timer} />
-    <ToglleTheme className={css.toglleTheme} />
+    <ToggleTheme className={css.toglleTheme} />
   </>
 );
 

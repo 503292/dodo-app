@@ -1,4 +1,14 @@
 .wrapLogo {
+  display: flex;
+  flex-direction: column;
 }
 .logoImg {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid rgb(92, 91, 92);
+}
+.siteName {
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
 }
