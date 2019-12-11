@@ -7,7 +7,7 @@ import { store } from './redux/store'; //  {persistor}
 // import './stylesheet/main.css';
 import App from './components/App';
 
-import './style.css';
+import './assets/cssBasic/style.css';
 
 ReactDOM.render(
   <Provider store={store}>

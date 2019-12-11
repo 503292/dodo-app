@@ -4,23 +4,8 @@
 */
 
 .wrapHeader {
-}
-
-/* .wrapLogo {
-}
-.wrapWeather {
-}
-.wrapDollarRate {
-}
-.wrapBtnIn {
-}
-.wrapBtnOut {
-} */
-
- {
-  /* <Logo className={css.logo} />
-          <Weather className={css.weather} />
-          <DollarRate className={css.dollarRate} />
-          <BtnIn className={css.btnIn} />
-          <BtnOut className={css.btnOut} /> */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
 }
