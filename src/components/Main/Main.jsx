@@ -1,14 +1,14 @@
 import React from 'react';
-import Contacts from './Contacts/Contacts';
-import Tasks from './Tasks/Tasks';
+import SideBar from './SideBar/SideBar';
+import Content from './Content/Content';
 
 import css from './Main.module.css';
 
 const Main = () => (
   <>
     <div className={css.wrapMain}>
-      <Contacts />
-      <Tasks />
+      <SideBar />
+      <Content />
     </div>
   </>
 );
