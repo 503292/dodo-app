@@ -1,2 +1,9 @@
-.wrapDollarRate {
+.wrapRate {
+  font-weight: 700;
+}
+.dollar {
+  margin: 0;
+}
+.gryvnya {
+  margin: 0;
 }
