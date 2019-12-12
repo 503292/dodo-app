@@ -1,8 +1,19 @@
 .wrapWeather {
+  position: relative;
+  display: flex;
+  height: 35px;
+  align-items: flex-end;
 }
-.wheatherIcon {
-}
+
 .degree {
   font-weight: 700;
   margin: 0;
+}
+
+.sun {
+  position: absolute;
+  left: -8px;
+  top: -4px;
+}
+.cloud {
 }

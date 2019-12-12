@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import wheatherIcon from '../../../assets/image/weather-icon.png';
 import css from './Weather.module.css';
 
 class Weather extends Component {
@@ -12,11 +11,15 @@ class Weather extends Component {
       <>
         <div className={css.wrapWeather}>
           <img
-            className={css.wheatherIcon}
-            src={wheatherIcon}
-            alt="foto-wheather"
+            src="https://www.freepik.com/free-icon/summer_877022.htm"
+            alt="ff"
           />
-          <p className={css.degree}> 16℃ </p>
+          {/* <div> */}
+          {/* <Icon>alarm</Icon>
+          <WbSunnyIcon className={css.sun} />
+          <CloudIcon className={css.cloud} /> */}
+          {/* </div> */}
+          <p className={css.degree}>16&deg;</p>
         </div>
       </>
     );
