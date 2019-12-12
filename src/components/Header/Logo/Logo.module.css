@@ -1,14 +1,17 @@
 .wrapLogo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .logoImg {
-  display: block;
+  background-color: rgb(228, 231, 216);
   border-radius: 50%;
-  border: 2px solid rgb(92, 91, 92);
+  border: 1px solid rgb(17, 15, 17);
+  padding: 0 0 0 3px;
 }
-.siteName {
-  text-align: center;
-  margin: 0;
+.titleSite {
+  display: flex;
+  align-items: flex-end;
+
   font-weight: 700;
+  margin: 0;
 }
