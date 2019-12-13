@@ -13,7 +13,7 @@ class Weather extends Component {
     return (
       <>
         <div className={css.wrapWeather}>
-          <FontAwesomeIcon icon={faCloudSun} />
+          <FontAwesomeIcon className={css.cloudSun} icon={faCloudSun} />
           <p className={css.degree}>16&deg;</p>
         </div>
       </>
