@@ -5,7 +5,9 @@ import css from './BtnLogin.module.css';
 const BtnIn = () => (
   <>
     <div className={css.wrapBtn}>
-      <button type="button">Login</button>
+      <button className={css.login} type="button">
+        Login
+      </button>
     </div>
   </>
 );
