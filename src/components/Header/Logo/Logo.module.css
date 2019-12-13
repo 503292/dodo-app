@@ -1,11 +1,13 @@
 .wrapLogo {
   display: flex;
   flex-direction: row;
+  padding: 5px;
 }
 .logoImg {
   background-color: rgb(228, 231, 216);
   border-radius: 50%;
-  border: 1px solid rgb(17, 15, 17);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+
   padding: 0 0 0 3px;
 }
 .titleSite {
