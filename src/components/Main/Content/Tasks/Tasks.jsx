@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Task from './Task/Task';
 import tasks from '../../../../tasks.json';
+import css from './Tasks.module.css';
 
 class Tasks extends Component {
   state = {
@@ -11,9 +12,8 @@ class Tasks extends Component {
   render() {
     return (
       <>
-        {/* тут треба поставити tasks.map(task => console.log(task)) || inTask  task={task} */}
-        <ul>
-          <Task tasks={tasks} />;
+        <ul className={css.wrapTasks}>
+          <Task tasks={tasks} />
         </ul>
 
         {/* 

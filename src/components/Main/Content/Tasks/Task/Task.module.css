@@ -1,4 +1,10 @@
 .wrapTask {
+  list-style: none;
+}
+.wrapTask p {
+  margin: 0;
+}
+.imgOverlay {
 }
 .textTask {
 }
@@ -6,5 +12,7 @@
 }
 .categoryTask {
 }
+
 .imageTask {
+  width: 100%;
 }

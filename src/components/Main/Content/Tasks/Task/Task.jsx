@@ -9,10 +9,13 @@ const Task = ({ tasks }) => {
     <>
       {tasks.map(task => (
         <li key={task.id} className={css.wrapTask}>
-          <p className={css.textTask}>{task.text}</p>
+          <p className={css.textTask}>- {task.text}</p>
           <p className={css.timeTask}>{task.time} </p>
           <p className={css.categoryTask}>{task.color}</p>
-          <img className={css.imageTask} src={task.fotoUrl} alt="коли є фото" />
+
+          {task.imgUrl && (
+            <img className={css.imageTask} src={task.imgUrl} alt="task" />
+          )}
         </li>
       ))}
     </>
@@ -22,5 +25,5 @@ const Task = ({ tasks }) => {
 export default Task;
 
 Task.propTypes = {
-  tasks: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
