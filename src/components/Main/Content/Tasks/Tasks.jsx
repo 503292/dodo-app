@@ -13,10 +13,7 @@ class Tasks extends Component {
       <>
         {/* тут треба поставити tasks.map(task => console.log(task)) || inTask  task={task} */}
         <ul>
-          {tasks.map(task => {
-            console.log(task);
-            return <Task key={task.id} task={task} />;
-          })}
+          <Task tasks={tasks} />;
         </ul>
 
         {/* 
