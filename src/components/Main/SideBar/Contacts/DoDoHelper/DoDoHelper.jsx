@@ -6,7 +6,7 @@ const DoDoHelper = () => (
   <>
     <div className={css.wrapDoDoHelper} type="button">
       <p className={css.nameDoDoHelper}>DoDoHelper</p>
-      <p className={css.messageDot}>_3</p>
+      <p className={css.messageEnterCount}>3</p>
     </div>
   </>
 );

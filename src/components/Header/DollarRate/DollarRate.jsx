@@ -6,7 +6,9 @@ const DollarRate = () => (
   <>
     <div className={css.wrapRate}>
       <p className={css.dollar}>${/* € */}</p>
-      <p className={css.gryvnya}>24.5 грн</p>
+      <p className={css.gryvnya}>
+        =24.5<span> грн</span>
+      </p>
     </div>
   </>
 );

@@ -9,12 +9,13 @@
 .nameDoDoHelper {
 }
 
-.messageDot {
-  width: 25px;
-  height: 25px;
+.messageEnterCount {
+  width: 20px;
+  height: 20px;
   background-color: salmon;
   border: 1px solid rgb(189, 176, 176);
   border-radius: 50%;
   color: white;
   font-weight: 700;
+  text-align: center;
 }

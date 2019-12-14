@@ -8,7 +8,7 @@ const Footer = () => (
   <>
     <Timer className={css.timer} />
     <ToggleTheme className={css.toglleTheme} />
-    ☀◷✔►☯
+    ◷►☯▶ᐂ◣◺┄ ┅ ● ◦ ★ ☆ ⚪ ⚫ ✆ ✓ ✔ ✕ ✖ ✗ ✘ ➜ • ‣ ⊲ ⊳ ☀ ☁ ☰ ❤
   </>
 );
 

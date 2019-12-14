@@ -5,10 +5,20 @@ import css from './TasksToggle.module.css';
 const TasksToggle = () => (
   <>
     <div className={css.wrapTasksToggle}>
-      <div className={css.titleTasksToggle}>Завдання</div>
-      {/* <button className={css.titleTasksToggle} type="button">
-        Завдання
-      </button> */}
+      <div className={css.titleTasksToggle}>◷ Завдання</div>
+      <div>
+        <span className={css.green} role="img" aria-label="dot">
+          ⚫
+        </span>
+        <span className={css.yellow} role="img" aria-label="dot">
+          ⚫
+        </span>
+
+        <span className={css.red} role="img" aria-label="dot">
+          ⚫
+        </span>
+      </div>
+
       <div className={css.groupBtnTasks}>
         <button className={css.lowTasks} type="button">
           LOW

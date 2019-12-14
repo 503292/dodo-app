@@ -9,6 +9,17 @@
   text-align: left;
   background-color: #bdc3c7;
 }
+
+.green {
+  color: #55efc4;
+}
+.yellow {
+  color: #ffeb3b;
+}
+.red {
+  color: #ff7675;
+}
+
 .groupBtnTasks {
   display: flex;
   justify-content: space-between;
@@ -16,10 +27,10 @@
 }
 
 .lowTasks {
-  background-color: #fdcb6e;
+  background-color: #55efc4;
 }
 .middleTasks {
-  background-color: #55efc4;
+  background-color: #ffeb3b;
 }
 .hardTasks {
   background-color: #ff7675;

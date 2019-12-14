@@ -6,17 +6,23 @@ const Contact = () => (
   <>
     <div className={css.wrapContact}>
       <p className={css.nameContact}>Ivan Zabolotnyi</p>
-      <p className={css.statusContact}>in</p>
+      <span className={css.statusContact} role="img" aria-label="dot">
+        ⚫
+      </span>
     </div>
     <hr />
     <div className={css.wrapContact}>
       <p className={css.nameContact}>Stepan Pidcova</p>
-      <p className={css.statusContact}>in</p>
+      <span className={css.statusContact} role="img" aria-label="dot">
+        ⚫
+      </span>
     </div>
     <hr />
     <div className={css.wrapContact}>
       <p className={css.nameContact}>Taras Bugai</p>
-      <p className={css.statusContact}>in</p>
+      <span className={css.statusContact} role="img" aria-label="dot">
+        ⚫
+      </span>
     </div>
     <hr />
   </>
