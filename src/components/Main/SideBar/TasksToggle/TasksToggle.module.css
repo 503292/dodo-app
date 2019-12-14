@@ -1,6 +1,7 @@
 .wrapTasksToggle {
   background-color: #bdc3c7;
   display: flex;
+  border-bottom: 1px dashed rgb(245, 243, 243);
 }
 .titleTasksToggle {
   width: 100%;
@@ -36,7 +37,7 @@
   margin-right: 5px;
 }
 .green {
-  color: #55efc4;
+  color: #a9f374;
 }
 
 /* .red .yellow .green {
@@ -62,7 +63,7 @@
   flex: 1;
 }
 .lowTasks {
-  background-color: #55efc4;
+  background-color: #a9f374;
   flex: 1;
 }
 

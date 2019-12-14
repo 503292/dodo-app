@@ -5,7 +5,6 @@ import Contacts from './Contacts/Contacts';
 const SideBar = () => (
   <div>
     <TasksToggle />
-    <hr />
     <Contacts />
   </div>
 );
