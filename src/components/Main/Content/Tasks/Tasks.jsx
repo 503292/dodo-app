@@ -7,11 +7,21 @@ class Tasks extends Component {
   state = {
     // eslint-disable-next-line react/no-unused-state
     tasks: {},
+    // day: 0,
   };
+
+  // getDay = () => {
+  //   const { day } = this.state;
+  //   const date = new Date();
+
+  //   const day1 = date.getTime();
+  //   this.setState({ day: day1 });
+  // };
 
   render() {
     return (
       <>
+        <h3 className={css.titleTasks}>Today </h3>
         <ul className={css.wrapTasks}>
           <Task tasks={tasks} />
         </ul>

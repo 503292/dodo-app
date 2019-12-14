@@ -10,7 +10,6 @@
   font-size: 16px;
   text-align: left;
   background-color: #bdc3c7;
-  /* position: relative; */
 }
 .wrapTasksLevels {
   justify-content: center;
@@ -19,13 +18,6 @@
   font-size: 25px;
   display: flex;
 }
-
-/* .titleTasksToggle div {
-  position: absolute;
-  right: 10px;
-  top: 0px;
-  font-size: 35px;
-} */
 
 .red {
   color: #ff7675;
@@ -40,11 +32,6 @@
   color: #a9f374;
 }
 
-/* .red .yellow .green {
-  width: 35px;
-  height: 35px;
-  background-color: rgb(27, 51, 51);
-} */
 /* 
 .groupBtnTasks {
   display: flex;
@@ -69,4 +56,5 @@
 
 .groupBtnTasks button {
   padding: 10px 0;
-} */
+} 
+*/
