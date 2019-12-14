@@ -1,5 +1,6 @@
 .wrapTasksToggle {
   background-color: #bdc3c7;
+  display: flex;
 }
 .titleTasksToggle {
   width: 100%;
@@ -8,26 +9,42 @@
   font-size: 16px;
   text-align: left;
   background-color: #bdc3c7;
-  position: relative;
+  /* position: relative; */
 }
-.titleTasksToggle div {
+.wrapTasksLevels {
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  font-size: 25px;
+  display: flex;
+}
+
+/* .titleTasksToggle div {
   position: absolute;
   right: 10px;
   top: 0px;
   font-size: 35px;
-}
+} */
 
 .red {
   color: #ff7675;
+  margin-right: 5px;
 }
 
 .yellow {
   color: #ffeb3b;
+  margin-right: 5px;
 }
 .green {
   color: #55efc4;
 }
 
+/* .red .yellow .green {
+  width: 35px;
+  height: 35px;
+  background-color: rgb(27, 51, 51);
+} */
+/* 
 .groupBtnTasks {
   display: flex;
   justify-content: space-between;
@@ -51,4 +68,4 @@
 
 .groupBtnTasks button {
   padding: 10px 0;
-}
+} */
