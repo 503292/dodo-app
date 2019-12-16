@@ -17,13 +17,19 @@ class Tasks extends Component {
   //   const day1 = date.getTime();
   //   this.setState({ day: day1 });
   // };
+  handlerOpenModal = e => {
+    console.dir(e.currentTarget.style.bacgroundColor, 'dodo');
+    return 0;
+  };
 
   render() {
     return (
       <>
         <h3 className={css.titleTasks}>Today </h3>
         <ul className={css.wrapTasks}>
-          <Task tasks={tasks} />
+          <button type="button" onClick={this.handlerOpenModal}>
+            <Task tasks={tasks} />
+          </button>
         </ul>
 
         {/* 
