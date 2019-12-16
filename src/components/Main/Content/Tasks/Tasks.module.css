@@ -3,6 +3,9 @@
   margin: 0 auto;
   border: 2px solid #bdc3c7;
 }
+.btnTask {
+  width: 100%;
+}
 .titleTasks {
   margin: 0;
 }
