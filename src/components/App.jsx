@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './Header/Header';
 import Main from './Main/Main';
-import Footer from './Footer/Footer';
+// import Footer from './Footer/Footer';
 
 import css from './App.module.css';
 
@@ -17,9 +17,9 @@ const App = () => {
         <Main />
       </main>
       <hr />
-      <footer className={css.footer}>
+      {/* <footer className={css.footer}>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 };

@@ -9,4 +9,26 @@
   align-items: center;
   padding: 5px 5px;
   background-color: #ffeb3b;
+  list-style: none;
+}
+.routeHeader {
+}
+.logoLink {
+  text-decoration: none;
+  color: #000;
+}
+.contactsLink {
+  text-decoration: none;
+  color: #000;
+}
+.weaterLink {
+  text-decoration: none;
+  color: #000;
+}
+.rateLink {
+  text-decoration: none;
+  color: #000;
+}
+.loginLink {
+  text-decoration: none;
 }
