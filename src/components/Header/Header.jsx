@@ -21,12 +21,7 @@ class Header extends Component {
     return (
       <ul className={css.wrapHeader}>
         <li className={css.routeHeader}>
-          <NavLink
-            className={css.logoLink}
-            to="/"
-            exact
-            activeStyle={ativeStyle}
-          >
+          <NavLink className={css.logoLink} to="/" exact>
             <Logo />
           </NavLink>
         </li>

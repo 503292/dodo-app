@@ -11,6 +11,7 @@
   box-shadow: inset 2px 2px 5px rgba(39, 39, 38, 0.5),
     1px 1px 5px rgb(168, 165, 165);
 }
+
 .titleSite {
   display: flex;
   align-items: center;
