@@ -8,7 +8,7 @@ class AddTaskForm extends Component {
     return (
       <>
         <form className={css.addForm} type="submit">
-          <input className={css.addInput} placeholder="enter task ..." />
+          <input className={css.addInput} placeholder=" enter task ..." />
           <button className={css.addBtn} type="button">
             +
           </button>

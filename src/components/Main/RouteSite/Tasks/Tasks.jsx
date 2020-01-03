@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Task from './Task/Task';
 import AddTaskForm from './AddTaskForm/AddTaskForm';
+import EnterDay from './EnterDay/EnterDay';
 
 import tasks from '../../../../tasks.json';
 import css from './Tasks.module.css';
@@ -27,7 +28,7 @@ class Tasks extends Component {
   render() {
     return (
       <>
-        <h3 className={css.titleTasks}>Today </h3>
+        <EnterDay />
         <ul className={css.wrapTasks}>
           <Task tasks={tasks} />
           <AddTaskForm />

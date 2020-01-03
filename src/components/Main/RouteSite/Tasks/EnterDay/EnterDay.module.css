@@ -1,0 +1,21 @@
+.wrapEnterDay {
+  display: flex;
+  /* position: relative; */
+}
+.wrapIcon {
+  width: 30px;
+  height: 30px;
+  padding: 5px 5px 5px 10px;
+}
+.calendar {
+  color: grey;
+}
+.dataPicker {
+  height: 4vh;
+  padding: 5px 5px 5px 5px;
+  color: grey;
+  border: none;
+  font-weight: 700;
+  width: 100%;
+  outline: none;
+}
