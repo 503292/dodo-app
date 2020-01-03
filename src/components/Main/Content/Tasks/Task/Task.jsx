@@ -18,9 +18,9 @@ const Task = ({ tasks }) => {
             <p className={css.timeTask}>{task.time} </p>
             <p className={css.categoryTask}>{task.color}</p>
 
-            {task.imgUrl && (
+            {/* {task.imgUrl && (
               <img className={css.imageTask} src={task.imgUrl} alt="task" />
-            )}
+            )} */}
           </div>
         </li>
       ))}

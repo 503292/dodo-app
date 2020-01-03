@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Task from './Task/Task';
+import AddTaskForm from './AddTaskForm/AddTaskForm';
+
 import tasks from '../../../../tasks.json';
 import css from './Tasks.module.css';
 
@@ -17,23 +19,18 @@ class Tasks extends Component {
   //   const day1 = date.getTime();
   //   this.setState({ day: day1 });
   // };
-  handleClick = e => {
-    console.dir(e.currentTarget.style.bacgroundColor, 'dodo');
-    return 0;
-  };
+  // handleClick = e => {
+  //   console.dir(e.currentTarget.style.bacgroundColor, 'dodo');
+  //   return 0;
+  // };
 
   render() {
     return (
       <>
         <h3 className={css.titleTasks}>Today </h3>
         <ul className={css.wrapTasks}>
-          <button
-            className={css.btnTask}
-            type="button"
-            onClick={this.handleClick}
-          >
-            <Task tasks={tasks} />
-          </button>
+          <Task tasks={tasks} />
+          <AddTaskForm />
         </ul>
 
         {/* 

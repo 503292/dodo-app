@@ -1,0 +1,19 @@
+.addForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+.addInput {
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 90%;
+}
+.addBtn {
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 10%;
+}
