@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import css from './EnterDay.module.css';
 
 class EnterDay extends Component {
@@ -23,15 +24,22 @@ class EnterDay extends Component {
     return (
       <>
         <div className={css.wrapEnterDay}>
-          <div className={css.wrapIcon}>
-            <FontAwesomeIcon className={css.calendar} icon={faCalendarAlt} />
+          <div className={css.wrapDataPicker}>
+            <div className={css.wrapIcon}>
+              <FontAwesomeIcon className={css.calendar} icon={faCalendarAlt} />
+            </div>
+            <DatePicker
+              className={css.dataPicker}
+              selected={startDate}
+              onChange={this.handleChange}
+            />
           </div>
 
-          <DatePicker
-            className={css.dataPicker}
-            selected={startDate}
-            onChange={this.handleChange}
-          />
+          <div className={css.wrapTasksLevels}>
+            <FontAwesomeIcon className={css.red} icon={faCircle} />
+            <FontAwesomeIcon className={css.yellow} icon={faCircle} />
+            <FontAwesomeIcon className={css.green} icon={faCircle} />
+          </div>
         </div>
       </>
     );
