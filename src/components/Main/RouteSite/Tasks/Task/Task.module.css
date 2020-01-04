@@ -1,0 +1,32 @@
+.wrapTask {
+  position: relative;
+  list-style: none;
+  border: 1px solid rgb(212, 206, 206);
+  margin-bottom: 5px;
+}
+.wrapTask p {
+  margin: 0;
+}
+.checkBox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 20px;
+  color: rgb(212, 206, 206);
+  
+}
+.wrapInsert {
+  padding: 0 30px 5px 30px;
+}
+.textTask {
+}
+.timeTask {
+  font-size: 10px;
+}
+.categoryTask {
+}
+
+/* 
+.imageTask {
+  width: 100%;
+} */

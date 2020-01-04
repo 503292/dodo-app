@@ -9,7 +9,7 @@ class ReactStructure extends Component {
   render() {
     return (
       <>
-        srtucture
+        srtucture srtucture srtucture
         {/* <Header>
           <Weather />
           <CourseRate />

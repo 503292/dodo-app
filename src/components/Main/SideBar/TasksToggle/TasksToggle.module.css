@@ -1,0 +1,60 @@
+.wrapTasksToggle {
+  background-color: #bdc3c7;
+  display: flex;
+  border-bottom: 1px dashed rgb(245, 243, 243);
+}
+.titleTasksToggle {
+  width: 100%;
+  padding: 10px 5px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  background-color: #bdc3c7;
+}
+.wrapTasksLevels {
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  font-size: 25px;
+  display: flex;
+}
+
+.red {
+  color: #ff7675;
+  margin-right: 5px;
+}
+
+.yellow {
+  color: #ffeb3b;
+  margin-right: 5px;
+}
+.green {
+  color: #a9f374;
+}
+
+/* 
+.groupBtnTasks {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  display: flex;
+}
+
+.hardTasks {
+  background-color: #ff7675;
+  flex: 1;
+}
+.middleTasks {
+  background-color: #ffeb3b;
+  flex: 1;
+}
+.lowTasks {
+  background-color: #a9f374;
+  flex: 1;
+}
+
+.groupBtnTasks button {
+  padding: 10px 0;
+} 
+*/

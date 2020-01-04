@@ -1,0 +1,11 @@
+/* set background-color,  */
+
+.header {
+  background-color: rgb(194, 192, 192);
+}
+.main {
+  background-color: #fff;
+}
+.footer {
+  background-color: rgb(95, 92, 91);
+}
