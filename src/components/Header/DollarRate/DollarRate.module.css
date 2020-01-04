@@ -1,9 +1,16 @@
 .wrapRate {
   font-weight: 700;
+  text-align: center;
+  display: flex;
 }
 .dollar {
   margin: 0;
 }
 .gryvnya {
   margin: 0;
+}
+.gryvnya span {
+  color: grey;
+  font-weight: 400;
+  font-size: 10px;
 }

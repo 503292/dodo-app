@@ -2,19 +2,32 @@
   padding: 5px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  /* width: 100%; */
+  border-bottom: 5px solid rgb(245, 243, 243);
 }
 .wrapDoDoHelper p {
   margin: 0;
 }
 .nameDoDoHelper {
+  font-weight: 700;
 }
-
-.messageDot {
-  width: 25px;
-  height: 25px;
-  background-color: salmon;
-  border: 1px solid rgb(189, 176, 176);
+.wrapStatusIcon {
+}
+.statusIcon {
+  font-size: 18px;
+  color: rgb(181, 183, 192);
+  border: 2px solid rgb(189, 176, 176);
   border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.messageEnterCount {
+  align-items: center;
   color: white;
   font-weight: 700;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 12px;
+  clear: both;
 }

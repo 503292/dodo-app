@@ -1,8 +1,8 @@
 .wrapContact {
   padding: 5px;
-
   display: flex;
   justify-content: space-between;
+  border-bottom: 5px solid rgb(245, 243, 243);
 }
 .wrapContact p {
   margin: 0;
@@ -10,4 +10,5 @@
 .nameContact {
 }
 .statusContact {
+  color: #a9f374;
 }

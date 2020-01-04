@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+
 import css from './Weather.module.css';
 
 class Weather extends Component {
@@ -10,15 +13,7 @@ class Weather extends Component {
     return (
       <>
         <div className={css.wrapWeather}>
-          <img
-            src="https://www.freepik.com/free-icon/summer_877022.htm"
-            alt="ff"
-          />
-          {/* <div> */}
-          {/* <Icon>alarm</Icon>
-          <WbSunnyIcon className={css.sun} />
-          <CloudIcon className={css.cloud} /> */}
-          {/* </div> */}
+          <FontAwesomeIcon className={css.cloudSun} icon={faCloudSun} />
           <p className={css.degree}>16&deg;</p>
         </div>
       </>
