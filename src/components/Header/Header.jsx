@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// material-ui
 
 import Logo from './Logo/Logo';
 import Contacts from './Contacts/Contacts';

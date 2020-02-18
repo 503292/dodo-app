@@ -1,0 +1,17 @@
+.wrapTasks {
+  margin: 5px auto;
+  border: 2px solid black;
+  border-radius: 2px;
+  width: 300px;
+  height: 78vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  padding: 8px;
+}
+.tasks{
+    padding: 8px;
+    flex-grow: 1;
+}
