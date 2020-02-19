@@ -13,18 +13,17 @@
   left: 5px;
   font-size: 20px;
   color: rgb(212, 206, 206);
-  
 }
 .wrapInsert {
   padding: 0 30px 5px 30px;
 }
-.textTask {
-}
+/* .textTask {
+} */
 .timeTask {
   font-size: 10px;
 }
-.categoryTask {
-}
+/* .categoryTask {
+} */
 
 /* 
 .imageTask {
