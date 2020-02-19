@@ -116,9 +116,9 @@ class Tasks extends Component {
   render() {
     const { columnOrder, columns, tasks } = this.state;
     return (
-      <>
+      <div className={css.wrapTasks}>
         <EnterDay />
-        <hr />
+
         <DragDropContext
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
@@ -136,7 +136,7 @@ class Tasks extends Component {
             })}
           </div>
         </DragDropContext>
-        <hr />
+
         <AddTaskForm />
         {/* 
         TO-DO 
@@ -146,7 +146,7 @@ class Tasks extends Component {
         <TaskDay /> всі таски конкретно вибраного дня
         <TaskFuture /> всі таски заплановані без дати 
         */}
-      </>
+      </div>
     );
   }
 }

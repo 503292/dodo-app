@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
+// import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
+import css from './Task.module.css';
 
 const Container = styled.div`
   padding: 8px;
@@ -11,7 +14,7 @@ const Container = styled.div`
   margin-bottom: 8px;
   background-color: ${props => (props.isDragging ? 'lightgrey' : 'white')};
   // color: ${props => (props.isDragging ? 'white' : 'black')};
-  font-weight: ${props => (props.isDragging ? '700' : '400')};
+  // font-weight: ${props => (props.isDragging ? '700' : '400')};
 `;
 
 class Task extends Component {
@@ -31,7 +34,10 @@ class Task extends Component {
               isDragging={snapshot.isDragging}
               onClick={this.onClick}
             >
-              <div>{task.content}</div>
+              <div className={css.wrapContent}>
+                <div className={css.check} />
+                {task.content}
+              </div>
             </Container>
           )}
         </Draggable>
