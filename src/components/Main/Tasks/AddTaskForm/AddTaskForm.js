@@ -29,23 +29,42 @@ class AddTaskForm extends Component {
     console.log(moment.locale(), 'local');
 
     return (
-      <>
-        {/* <div className={css.wrapAddForm}> */}
+      <div className={css.wrapAllForm}>
+      
+        <button
+          type="button"
+          className={css.backBtn}
+          // onClick={modalAddTransactionClose}
+        >
+          <span>◀</span>
+
+          <p>До перегляду завдань</p>
+        </button>
 
         <form
           onSubmit={this.handleSubmit}
           className={css.addForm}
           type="submit"
         >
-          <h2>Нове завдання</h2>
+          <h2 className={css.title}>Нове завдання</h2>
 
-          {/* <input className={css.addInput} placeholder="enter task ..." /> */}
+          <input className={css.inputTask} autoFocus placeholder=" ..." />
+          <div>
+            <div className={css.wrapTimeEnd}>
+              <span>час виконання</span>
+              <input className={css.inputTime} placeholder=" ..." />
+            </div>
+            <div className={css.wrapTimeEnd}>
+              <span>колір завдання</span>
+              <input className={css.inputTime} placeholder=" ..." />
+            </div>
+          </div>
+
           <button className={css.addBtn} type="button">
             Добавити
           </button>
         </form>
-        {/* </div> */}
-      </>
+      </div>
     );
   }
 }
