@@ -1,15 +1,20 @@
+/* .wrapAddForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 320px;
+} */
+
 .addForm {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center;
+  align-items: center; */
   padding: 10px;
-  background-color: rgb(224, 221, 221);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 3px #575555 inset;
+  background-color: rgb(182, 62, 62);
+  /* box-shadow: 0 2px 3px #575555 inset; */
 }
-.addInput {
+/* .addInput {
   border: 1px solid grey;
   border-radius: 25px;
   width: 88%;
@@ -28,7 +33,7 @@
 }
 
 .addBtn:hover {
-  background-color: grey;
+  background-color: rgb(175, 55, 55);
   color: white;
 }
 
@@ -36,3 +41,6 @@
   width: 30px;
   height: 30px;
 }
+.addForm {
+  background-color: lawngreen;
+} */

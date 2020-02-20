@@ -1,4 +1,4 @@
-import Type from '../../../constants/types';
+import { Type } from './tasksActions';
 
 // eslint-disable-next-line no-unused-vars
 const taskReducer = (state = { task: 'End Task store' }, { type, payload }) => {

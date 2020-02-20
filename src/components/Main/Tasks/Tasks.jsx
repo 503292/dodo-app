@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
+import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
 
 // import AddTaskForm from './AddTaskForm/AddTaskForm';
 import EnterDay from './EnterDay/EnterDay';
@@ -158,11 +159,12 @@ class Tasks extends Component {
 
         <button
           type="button"
-          className={css.homeTabButton}
+          className={css.addButton}
           onClick={modalAddTasksOpen}
         >
           +
         </button>
+        <ModalAddTask />
       </div>
     );
   }

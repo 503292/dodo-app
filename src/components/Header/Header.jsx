@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
-import Contacts from './Contacts/Contacts';
+// import Contacts from './Contacts/Contacts';
 import Weather from './Weather/Weather';
 import DollarRate from './DollarRate/DollarRate';
 import BtnLogin from './BtnLogin/BtnLogin';
@@ -25,7 +25,7 @@ class Header extends Component {
           </NavLink>
         </li>
 
-        <li className={css.routeHeader}>
+        {/* <li className={css.routeHeader}>
           <NavLink
             className={css.contactsLink}
             to="/contacts"
@@ -34,7 +34,7 @@ class Header extends Component {
           >
             <Contacts />
           </NavLink>
-        </li>
+        </li> */}
 
         <li className={css.routeHeader}>
           <NavLink

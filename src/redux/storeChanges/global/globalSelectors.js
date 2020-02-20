@@ -1,3 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export const getIsModalAddTasksOpen = state =>
-  state.global.isModalAddTransactionOpen;
+export const getIsModalAddTasksOpen = state => state.global.isModalAddTasksOpen;
