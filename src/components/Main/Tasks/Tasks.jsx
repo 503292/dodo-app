@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import { DragDropContext } from 'react-beautiful-dnd';
+import PropTypes from 'prop-types';
 import Column from './Column/Column';
-// import '@atlaskit/css-reset';
-import AddTaskForm from './AddTaskForm/AddTaskForm';
+
+// import AddTaskForm from './AddTaskForm/AddTaskForm';
 import EnterDay from './EnterDay/EnterDay';
 
-// import tasks from '../../tasks.json';
 import css from './Tasks.module.css';
 
 class Tasks extends Component {
@@ -29,6 +29,13 @@ class Tasks extends Component {
     columnOrder: ['column-1'],
   };
 
+  /*
+   *   crud methods
+   */
+
+  /*
+   *   beautiful dnd
+   */
   onDragStart = () => {
     document.body.style.color = '#F34D4D';
   };
@@ -114,6 +121,8 @@ class Tasks extends Component {
   };
 
   render() {
+    const { modalAddTasksOpen } = this.props;
+
     const { columnOrder, columns, tasks } = this.state;
     return (
       <div className={css.wrapTasks}>
@@ -137,7 +146,7 @@ class Tasks extends Component {
           </div>
         </DragDropContext>
 
-        <AddTaskForm />
+        {/* <AddTaskForm /> */}
         {/* 
         TO-DO 
         зі стора redux сюди падають tasks: [] 
@@ -146,9 +155,21 @@ class Tasks extends Component {
         <TaskDay /> всі таски конкретно вибраного дня
         <TaskFuture /> всі таски заплановані без дати 
         */}
+
+        <button
+          type="button"
+          className={css.homeTabButton}
+          onClick={modalAddTasksOpen}
+        >
+          +
+        </button>
       </div>
     );
   }
 }
+
+Tasks.propTypes = {
+  modalAddTasksOpen: PropTypes.func.isRequired,
+};
 
 export default Tasks;
