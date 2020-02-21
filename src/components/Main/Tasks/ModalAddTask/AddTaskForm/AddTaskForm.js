@@ -22,10 +22,11 @@ class AddTaskForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const { modalAddTasksClose } = this.props;
+    modalAddTasksClose();
   };
 
   render() {
-    // moment.locale('uk');
     console.log(moment.locale(), 'local');
     // eslint-disable-next-line react/prop-types
     const { modalAddTasksClose } = this.props;
@@ -47,7 +48,12 @@ class AddTaskForm extends Component {
         >
           <h2 className={css.title}>Нове завдання</h2>
 
-          <input className={css.inputTask} autoFocus placeholder=" ..." />
+          <input
+            className={css.inputTask}
+            required
+            autoFocus
+            placeholder=" ..."
+          />
           <div>
             <div className={css.wrapTimeEnd}>
               <span>час виконання</span>
@@ -59,7 +65,7 @@ class AddTaskForm extends Component {
             </div>
           </div>
 
-          <button className={css.addBtn} type="button">
+          <button className={css.addBtn} type="submit">
             Добавити
           </button>
         </form>

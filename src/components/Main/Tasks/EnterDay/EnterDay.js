@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-
-// import '../ModalAddTask/AddTaskForm/node_modules/react-datepicker/dist/react-datepicker.css';
+import ru from 'date-fns/locale/uk';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+// import uk from 'date-fns/locale/uk';
 import css from './EnterDay.module.css';
 
 class EnterDay extends Component {
@@ -29,8 +29,8 @@ class EnterDay extends Component {
               <FontAwesomeIcon className={css.calendar} icon={faCalendarAlt} />
             </div>
             <DatePicker
-              //   locale="uk"
-              todayButton="Today"
+              locale={ru}
+              todayButton="Сьогодні"
               className={css.dataPicker}
               selected={startDate}
               onChange={this.handleChange}
