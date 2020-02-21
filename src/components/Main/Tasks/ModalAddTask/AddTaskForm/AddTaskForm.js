@@ -27,17 +27,16 @@ class AddTaskForm extends Component {
   render() {
     // moment.locale('uk');
     console.log(moment.locale(), 'local');
-
+    // eslint-disable-next-line react/prop-types
+    const { modalAddTasksClose } = this.props;
     return (
       <div className={css.wrapAllForm}>
-      
         <button
           type="button"
           className={css.backBtn}
-          // onClick={modalAddTransactionClose}
+          onClick={modalAddTasksClose}
         >
           <span>◀</span>
-
           <p>До перегляду завдань</p>
         </button>
 
@@ -69,29 +68,9 @@ class AddTaskForm extends Component {
   }
 }
 
+AddTaskForm.propTypes = {
+  // addTransactionOperation: PropTypes.func.isRequired,
+  modalAddTasksClose: PropTypes.func.isRequired,
+};
+
 export default AddTaskForm;
-
-// import React, { Component } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
-// import css from './AddTaskForm.module.css';
-
-// class AddTaskForm extends Component {
-//   state = {};
-
-//   render() {
-//     return (
-//       <>
-//         <form className={css.addForm} type="submit">
-//           <input className={css.addInput} placeholder="enter task ..." />
-//           <button className={css.addBtn} type="button">
-//             <FontAwesomeIcon className={css.plusIcon} icon={faPlus} />
-//           </button>
-//         </form>
-//       </>
-//     );
-//   }
-// }
-
-// export default AddTaskForm;
