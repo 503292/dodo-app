@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
-  z-index: 999;
+  z-index: 1;
   width: 100%;
   min-width: 320px;
   height: 100vh;
@@ -16,7 +16,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
   background-color: #fff;
   height: 100%;
