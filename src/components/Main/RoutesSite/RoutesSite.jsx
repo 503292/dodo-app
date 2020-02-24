@@ -8,7 +8,7 @@ import RatePage from '../../../pages/RatePage';
 import ErrorPage from '../../../pages/ErrorPage';
 import LoginPage from '../../../pages/LoginPage';
 
-const RouteSite = () => (
+const RoutesSite = () => (
   <div>
     <Switch>
       <Route path="/" exact component={TasksPage} />
@@ -22,4 +22,4 @@ const RouteSite = () => (
   </div>
 );
 
-export default RouteSite;
+export default RoutesSite;

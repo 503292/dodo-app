@@ -7,7 +7,7 @@ import Weather from './Weather/Weather';
 import DollarRate from './DollarRate/DollarRate';
 import BtnLogin from './BtnLogin/BtnLogin';
 
-import css from './Header.module.css';
+import css from './HeaderNav.module.css';
 
 const ativeStyle = {
   color: 'tomato',

@@ -13,12 +13,12 @@ import css from './Tasks.module.css';
 class Tasks extends Component {
   state = {
     tasks: [
-      { id: 'id-1', content: '1take out the car1' },
-      { id: 'id-2', content: '2take out the car2' },
-      { id: 'id-3', content: '3take out the car3' },
-      { id: 'id-4', content: '4take out the car4' },
-      { id: 'id-5', content: '4take out the car4' },
-      { id: 'id-6', content: '4take out the car4' },
+      { id: 'id-1', text: '1take out the car1' },
+      { id: 'id-2', text: '2take out the car2' },
+      { id: 'id-3', text: '3take out the car3' },
+      { id: 'id-4', text: '4take out the car4' },
+      { id: 'id-5', text: '4take out the car4' },
+      { id: 'id-6', text: '4take out the car4' },
     ],
     columns: {
       'column-1': {

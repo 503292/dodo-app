@@ -34,9 +34,9 @@ class Task extends Component {
               isDragging={snapshot.isDragging}
               onClick={this.onClick}
             >
-              <div className={css.wrapContent}>
+              <div className={css.wrapText}>
                 <div className={css.check} />
-                {task.content}
+                {task.text}
               </div>
             </Container>
           )}

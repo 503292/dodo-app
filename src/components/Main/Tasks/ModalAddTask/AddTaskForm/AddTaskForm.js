@@ -6,17 +6,21 @@ import 'moment/locale/uk';
 // import { validateAll } from 'indicative/validator';
 import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
+import shortid from 'shortid';
+import PrioritySelector from '../PrioritySelector/PrioritySelector';
+import Priority from '../../../../../utils/Priority';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import css from './AddTaskForm.module.css';
+
+const options = Object.values(Priority);
 
 class AddTaskForm extends Component {
   state = {
     endTime: new Date(),
     text: '',
-    // colorLevel: 'LOW',
-    // errors: null,
-    // id: 0,
+    priority: Priority.NORMAL,
+    id: '',
   };
 
   handleChangeTime = time => {
@@ -34,14 +38,33 @@ class AddTaskForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    // eslint-disable-next-line no-unused-vars
+    const { endTime, text, priority, id } = this.state;
     const { modalAddTasksClose } = this.props;
+    const idTmp = shortid.generate();
+
+    const data = {
+      endTime: endTime.getTime(),
+      text,
+      priority,
+      id: shortid.generate(),
+    };
+    console.log(data, 'dataTask');
+
+    this.setState({
+      id: idTmp,
+      endTime: endTime.getTime(),
+      text,
+      priority,
+    });
     modalAddTasksClose();
   };
 
   render() {
     // eslint-disable-next-line react/prop-types
     const { modalAddTasksClose } = this.props;
-    const { endTime, text } = this.state;
+    const { endTime, text, priority } = this.state;
     return (
       <div className={css.wrapAllForm}>
         <button
@@ -73,10 +96,9 @@ class AddTaskForm extends Component {
           </div>
 
           {/* <input className={css.inputTask} required placeholder=" ..." /> */}
-          <div>
-            <div className={css.wrapTimeEnd}>
-              {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
-              <span role="img">час виконання 🕘</span>
+          <div className={css.twoInputs}>
+            <div className={css.wrapInput}>
+              <span>час виконання 🕘</span>
               <DatePicker
                 locale={uk}
                 // todayButton="Сьогодні"
@@ -92,9 +114,14 @@ class AddTaskForm extends Component {
                 value={endTime}
               />
             </div>
-            <div className={css.wrapTimeEnd}>
+            <div className={css.wrapInput}>
               <span>колір завдання</span>
-              <input className={css.inputLevel} placeholder=" . . ." />
+              <PrioritySelector
+                className={css.priorityInput}
+                options={options}
+                value={priority}
+                onChange={this.handleChange}
+              />
             </div>
           </div>
 
