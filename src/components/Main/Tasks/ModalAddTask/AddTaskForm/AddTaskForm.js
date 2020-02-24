@@ -10,7 +10,6 @@ import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import Priority from '../../../../../utils/Priority';
 import 'react-datepicker/dist/react-datepicker.css';
-
 import css from './AddTaskForm.module.css';
 
 const options = Object.values(Priority);
@@ -39,32 +38,36 @@ class AddTaskForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    // eslint-disable-next-line no-unused-vars
-    const { endTime, text, priority, id } = this.state;
+    const { endTime, text, priority } = this.state;
     const { modalAddTasksClose } = this.props;
     const idTmp = shortid.generate();
+
+    // const timeTmp = `${endTime.getHours()} : ${endTime.getMinutes()}`;
+    // console.log(timeTmp, 'timeTmp');
 
     const data = {
       endTime: endTime.getTime(),
       text,
       priority,
-      id: shortid.generate(),
+      id: idTmp,
     };
-    console.log(data, 'dataTask');
+
+    console.log(endTime.getTime(), 'endTime');
 
     this.setState({
-      id: idTmp,
       endTime: endTime.getTime(),
       text,
       priority,
+      id: idTmp,
     });
+
     modalAddTasksClose();
   };
 
   render() {
-    // eslint-disable-next-line react/prop-types
     const { modalAddTasksClose } = this.props;
     const { endTime, text, priority } = this.state;
+    console.log(this.state, 'this.state');
     return (
       <div className={css.wrapAllForm}>
         <button
@@ -98,7 +101,9 @@ class AddTaskForm extends Component {
           {/* <input className={css.inputTask} required placeholder=" ..." /> */}
           <div className={css.twoInputs}>
             <div className={css.wrapInput}>
-              <span>час виконання 🕘</span>
+              <span role="img" aria-label="Clock">
+                час виконання 🕘
+              </span>
               <DatePicker
                 locale={uk}
                 // todayButton="Сьогодні"
