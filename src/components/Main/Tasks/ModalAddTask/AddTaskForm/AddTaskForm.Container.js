@@ -5,7 +5,7 @@ import AddTaskForm from './AddTaskForm';
 //   getTotalBalance,
 //   getTypeTotalBalance,
 // } from '../../redux/finance/financeSelectors';
-import { modalAddTasksClose } from '../../../../../redux/storeChanges/global/globalActions';
+import { modalAddTasksClose } from '../../../../../redux/global/globalActions';
 
 // const mapStateToProps = state => ({
 //   totalBalanceState: getTotalBalance(state),

@@ -19,6 +19,7 @@ class AddTaskForm extends Component {
     endTime: new Date(),
     text: '',
     priority: Priority.NORMAL,
+    // eslint-disable-next-line react/no-unused-state
     id: '',
   };
 
@@ -52,12 +53,15 @@ class AddTaskForm extends Component {
       id: idTmp,
     };
 
+    console.log(data, 'data');
+
     console.log(endTime.getTime(), 'endTime');
 
     this.setState({
       endTime: endTime.getTime(),
       text,
       priority,
+      // eslint-disable-next-line react/no-unused-state
       id: idTmp,
     });
 
@@ -67,7 +71,6 @@ class AddTaskForm extends Component {
   render() {
     const { modalAddTasksClose } = this.props;
     const { endTime, text, priority } = this.state;
-    console.log(this.state, 'this.state');
     return (
       <div className={css.wrapAllForm}>
         <button

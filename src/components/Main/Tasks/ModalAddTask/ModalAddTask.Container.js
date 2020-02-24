@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ModalAddTask from './ModalAddTask';
-import { modalAddTasksClose } from '../../../../redux/storeChanges/global/globalActions';
-import { getIsModalAddTasksOpen } from '../../../../redux/storeChanges/global/globalSelectors';
+import { modalAddTasksClose } from '../../../../redux/global/globalActions';
+import { getIsModalAddTasksOpen } from '../../../../redux/global/globalSelectors';
 
 const mapStateToProps = state => ({
   isModalAddTasksOpen: getIsModalAddTasksOpen(state),
