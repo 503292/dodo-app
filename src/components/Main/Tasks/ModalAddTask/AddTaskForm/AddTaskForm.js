@@ -54,9 +54,9 @@ class AddTaskForm extends Component {
       id: idTmp,
     };
 
-    console.log(data, 'data');
+    // console.log(data, 'data');
 
-    console.log(endTime.getTime(), 'endTime');
+    // console.log(endTime.getTime(), 'endTime');
 
     this.setState({
       endTime: endTime.getTime(),

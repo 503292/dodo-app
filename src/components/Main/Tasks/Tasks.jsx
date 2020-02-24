@@ -12,25 +12,38 @@ import css from './Tasks.module.css';
 
 class Tasks extends Component {
   state = {
-    tasks: [
-      { id: 'id-1', text: '1take out the car1' },
-      { id: 'id-2', text: '2take out the car2' },
-      { id: 'id-3', text: '3take out the car3' },
-      { id: 'id-4', text: '4take out the car4' },
-      { id: 'id-5', text: '4take out the car4' },
-      { id: 'id-6', text: '4take out the car4' },
-    ],
+    tasks: [],
     columns: {
       'column-1': {
         id: 'column-1',
         title: 'today',
-        tasksIds: ['id-1', 'id-2', 'id-3', 'id-4', 'id-5', 'id-6'],
+        tasksIds: [],
       },
     },
     columnOrder: ['column-1'],
   };
 
   componentDidMount() {}
+
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+    const arrIds = data.map(el => el.id);
+    // console.log(arrIds, 'arrIds');
+
+    if (prevProps.data !== data) {
+      this.setState({
+        tasks: data,
+        columns: {
+          'column-1': {
+            id: 'column-1',
+            title: 'today',
+            tasksIds: arrIds,
+          },
+        },
+        columnOrder: ['column-1'],
+      });
+    }
+  }
   /*
    *   crud methods
    */
@@ -123,8 +136,7 @@ class Tasks extends Component {
   };
 
   render() {
-    const { data, modalAddTasksOpen } = this.props;
-    console.log(data, 'datadata');
+    const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks } = this.state;
     return (
       <div className={css.wrapTasks}>
