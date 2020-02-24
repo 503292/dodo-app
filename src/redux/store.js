@@ -3,8 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
 import { persistStore } from 'redux-persist';
 
-import taskReducer from './storeChanges/tasks/tasksReducers';
-import globalReducer from './storeChanges/global/globalReducers';
+import taskReducer from './tasks/tasksReducers';
+import globalReducer from './global/globalReducers';
 
 const rootReducer = combineReducers({
   global: globalReducer,

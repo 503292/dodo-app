@@ -30,6 +30,7 @@ class Tasks extends Component {
     columnOrder: ['column-1'],
   };
 
+  componentDidMount() {}
   /*
    *   crud methods
    */
@@ -122,8 +123,8 @@ class Tasks extends Component {
   };
 
   render() {
-    const { modalAddTasksOpen } = this.props;
-
+    const { data, modalAddTasksOpen } = this.props;
+    console.log(data, 'datadata');
     const { columnOrder, columns, tasks } = this.state;
     return (
       <div className={css.wrapTasks}>
@@ -171,6 +172,7 @@ class Tasks extends Component {
 }
 
 Tasks.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
 };
 

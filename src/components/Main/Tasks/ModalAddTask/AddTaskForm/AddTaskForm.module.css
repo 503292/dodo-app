@@ -55,6 +55,7 @@
 .wrapInput span {
   font-size: 12px;
   color: lightgrey;
+  padding-bottom: 5px;
 }
 .dataInput {
   padding: 5px;

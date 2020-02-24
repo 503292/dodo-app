@@ -1,18 +1,19 @@
 import { Type } from './tasksActions';
 
-// eslint-disable-next-line no-unused-vars
-const taskReducer = (state = { task: 'End Task store' }, { type, payload }) => {
+const taskReducer = (state = [], { type, payload }) => {
   switch (type) {
-    case Type.READ_ALL_TASKS: {
-      return {
-        payload,
-        ...state,
-      };
-    }
-    default: {
+    case Type.ADD_TASK_TO_REDUX:
+      return [payload, ...state];
+
+    // case Type.ADD_TASK_SUCCESS:
+    //   return payload.data;
+
+    // case Type.GET_TASKS_SUCCESS:
+    //   return [payload, ...state];
+
+    default:
       return state;
-    }
   }
 };
-// Exports
+
 export default taskReducer;

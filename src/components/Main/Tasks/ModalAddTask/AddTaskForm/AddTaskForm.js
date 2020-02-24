@@ -9,6 +9,7 @@ import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import Priority from '../../../../../utils/Priority';
+// import * as tasksActions from '../../../../../redux/tasks/tasksActions';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
 
@@ -40,7 +41,7 @@ class AddTaskForm extends Component {
     e.preventDefault();
 
     const { endTime, text, priority } = this.state;
-    const { modalAddTasksClose } = this.props;
+    const { modalAddTasksClose, addTaskToRedux } = this.props;
     const idTmp = shortid.generate();
 
     // const timeTmp = `${endTime.getHours()} : ${endTime.getMinutes()}`;
@@ -64,6 +65,8 @@ class AddTaskForm extends Component {
       // eslint-disable-next-line react/no-unused-state
       id: idTmp,
     });
+
+    addTaskToRedux(data);
 
     modalAddTasksClose();
   };
@@ -105,7 +108,7 @@ class AddTaskForm extends Component {
           <div className={css.twoInputs}>
             <div className={css.wrapInput}>
               <span role="img" aria-label="Clock">
-                час виконання 🕘
+                час виконання: 🕘
               </span>
               <DatePicker
                 locale={uk}
@@ -123,7 +126,7 @@ class AddTaskForm extends Component {
               />
             </div>
             <div className={css.wrapInput}>
-              <span>колір завдання</span>
+              <span> важливість: ▅ ▆ ▉ </span>
               <PrioritySelector
                 className={css.priorityInput}
                 options={options}
@@ -145,6 +148,7 @@ class AddTaskForm extends Component {
 AddTaskForm.propTypes = {
   // addTransactionOperation: PropTypes.func.isRequired,
   modalAddTasksClose: PropTypes.func.isRequired,
+  addTaskToRedux: PropTypes.func.isRequired,
 };
 
 export default AddTaskForm;

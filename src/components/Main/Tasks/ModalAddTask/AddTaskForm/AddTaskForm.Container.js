@@ -6,6 +6,7 @@ import AddTaskForm from './AddTaskForm';
 //   getTypeTotalBalance,
 // } from '../../redux/finance/financeSelectors';
 import { modalAddTasksClose } from '../../../../../redux/global/globalActions';
+import { addTaskToRedux } from '../../../../../redux/tasks/tasksActions';
 
 // const mapStateToProps = state => ({
 //   totalBalanceState: getTotalBalance(state),
@@ -15,6 +16,7 @@ import { modalAddTasksClose } from '../../../../../redux/global/globalActions';
 const mapDispatchToProps = {
   //   addTransactionOperation,
   modalAddTasksClose,
+  addTaskToRedux,
 };
 
 export default connect(

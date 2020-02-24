@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import Tasks from './Tasks';
 // import { getData } from '../../redux/finance/financeSelectors';
-import { modalAddTasksOpen } from '../../../redux/storeChanges/global/globalActions';
+import { modalAddTasksOpen } from '../../../redux/global/globalActions';
+import { getTasks } from '../../../redux/tasks/tasksSelectors';
 
-// const mapStateToProps = state => ({
-//   data: getData(state),
-// });
+const mapStateToProps = state => ({
+  data: getTasks(state),
+});
 
 const mapDispatchToProps = {
   modalAddTasksOpen,
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(Tasks);
