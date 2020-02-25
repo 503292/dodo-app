@@ -82,10 +82,6 @@ class Task extends Component {
                   )}
                 </div>
               </div>
-              {/* <div className={css.wrapText}>
-                <div className={css.check} />
-                {task.text}
-              </div> */}
             </Container>
           )}
         </Draggable>

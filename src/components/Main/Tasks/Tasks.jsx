@@ -23,41 +23,33 @@ class Tasks extends Component {
 
   componentDidMount() {
     const { data } = this.props;
+    this.viewTasks(data);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+    if (prevProps.data !== data) {
+      this.viewTasks(data);
+    }
+  }
+
+  viewTasks = data => {
     const arrIds = data.map(el => el.id);
-    // console.log(arrIds, 'arrIds');
 
     this.setState({
       tasks: data,
       columns: {
         'column-1': {
           id: 'column-1',
-          title: 'today',
+          title: 'Сьогодні',
           tasksIds: arrIds,
         },
       },
       columnOrder: ['column-1'],
     });
-  }
 
-  componentDidUpdate(prevProps) {
-    const { data } = this.props;
-    const arrIds = data.map(el => el.id);
     // console.log(arrIds, 'arrIds');
-
-    if (prevProps.data !== data) {
-      this.setState({
-        tasks: data,
-        columns: {
-          'column-1': {
-            id: 'column-1',
-            title: 'today',
-            tasksIds: arrIds,
-          },
-        },
-        columnOrder: ['column-1'],
-      });
-    }
-  }
+  };
   /*
    *   crud methods
    */
