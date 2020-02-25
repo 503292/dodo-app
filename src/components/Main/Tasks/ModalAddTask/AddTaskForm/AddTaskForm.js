@@ -56,18 +56,10 @@ class AddTaskForm extends Component {
       completed,
     };
 
-    // console.log(data, 'data');
-
-    // console.log(endTime.getTime(), 'endTime');
-
-    this.setState({
-      endTime: endTime.getTime(),
-      text,
-      priority,
-      // eslint-disable-next-line react/no-unused-state
-      id: idTmp,
-      completed,
-    });
+    this.setState(state => ({
+      ...state,
+      data,
+    }));
 
     addTaskToRedux(data);
 
