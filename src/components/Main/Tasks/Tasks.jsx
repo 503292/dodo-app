@@ -162,10 +162,6 @@ class Tasks extends Component {
 
         {/* <AddTaskForm /> */}
         {/* 
-        TO-DO 
-        зі стора redux сюди падають tasks: [] 
-        */}
-        {/* 
         <TaskDay /> всі таски конкретно вибраного дня
         <TaskFuture /> всі таски заплановані без дати 
         */}

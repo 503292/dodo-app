@@ -7,7 +7,7 @@
 }
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .addButton {
   width: 50px;
@@ -18,14 +18,12 @@
   color: #ffffff;
   font-size: 35px;
   position: fixed;
-  /* bottom: 10px;
-  right: 42%; */
   bottom: 10px;
   right: 10px;
   outline: none;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   padding-bottom: 8px;
   font-weight: 700;
+  margin: 0 auto;
 }

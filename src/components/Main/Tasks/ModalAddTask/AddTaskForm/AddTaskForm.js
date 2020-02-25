@@ -22,6 +22,7 @@ class AddTaskForm extends Component {
     priority: Priority.NORMAL,
     // eslint-disable-next-line react/no-unused-state
     id: '',
+    completed: false,
   };
 
   handleChangeTime = time => {
@@ -40,7 +41,7 @@ class AddTaskForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { endTime, text, priority } = this.state;
+    const { endTime, text, priority, completed } = this.state;
     const { modalAddTasksClose, addTaskToRedux } = this.props;
     const idTmp = shortid.generate();
 
@@ -52,6 +53,7 @@ class AddTaskForm extends Component {
       text,
       priority,
       id: idTmp,
+      completed,
     };
 
     // console.log(data, 'data');
@@ -64,6 +66,7 @@ class AddTaskForm extends Component {
       priority,
       // eslint-disable-next-line react/no-unused-state
       id: idTmp,
+      completed,
     });
 
     addTaskToRedux(data);

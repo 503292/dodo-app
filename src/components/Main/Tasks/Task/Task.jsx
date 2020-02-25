@@ -4,13 +4,18 @@ import { Draggable } from 'react-beautiful-dnd';
 
 // import PropTypes from 'prop-types';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import styled from 'styled-components';
+import PrioritySelector from '../ModalAddTask/PrioritySelector/PrioritySelector';
+
+import Priority from '../../../../utils/Priority';
+
 import css from './Task.module.css';
 
+const options = Object.values(Priority);
+
 const Container = styled.div`
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid black;
   margin-bottom: 8px;
   background-color: ${props => (props.isDragging ? 'lightgrey' : 'white')};
   // color: ${props => (props.isDragging ? 'white' : 'black')};
@@ -34,10 +39,46 @@ class Task extends Component {
               isDragging={snapshot.isDragging}
               onClick={this.onClick}
             >
-              <div className={css.wrapText}>
+              <div className={`${css.task} ${css[`${task.priority}Priority`]}`}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label className={css.wrapText}>
+                  <input
+                    className={css.completedCheckbox}
+                    type="checkbox"
+                    checked={task.completed}
+                    // onChange={onUpateCompleted}
+                  />
+                  <p
+                    className={
+                      task.completed === true
+                        ? `${css.lineThrough} ${css.text}`
+                        : css.text
+                    }
+                  >
+                    {task.text}
+                  </p>
+                </label>
+
+                <div className={css.actions}>
+                  {!task.completed ? (
+                    <PrioritySelector
+                      options={options}
+                      value={task.priority}
+                      // onChange={e => onUpdatePriority(id, e.target.value)}
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                      className={css.deleteBtn}
+                      // onClick={onDeleteTask}
+                      icon={faTrashAlt}
+                    />
+                  )}
+                </div>
+              </div>
+              {/* <div className={css.wrapText}>
                 <div className={css.check} />
                 {task.text}
-              </div>
+              </div> */}
             </Container>
           )}
         </Draggable>
