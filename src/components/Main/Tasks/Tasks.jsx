@@ -48,6 +48,14 @@ class Tasks extends Component {
    *   crud methods
    */
 
+  updateCompleted = id => {
+    this.setState(state => ({
+      tasks: state.tasks.map(task =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    }));
+  };
+
   /*
    *   beautiful dnd
    */
@@ -138,6 +146,7 @@ class Tasks extends Component {
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks } = this.state;
+
     return (
       <div className={css.wrapTasks}>
         <EnterDay />
@@ -154,7 +163,12 @@ class Tasks extends Component {
                 tasks.find(el => el.id === taskId),
               );
               return (
-                <Column key={column.id} tasksDraw={tasksDraw} column={column} />
+                <Column
+                  key={column.id}
+                  tasksDraw={tasksDraw}
+                  column={column}
+                  updateCompleted={this.updateCompleted}
+                />
               );
             })}
           </div>

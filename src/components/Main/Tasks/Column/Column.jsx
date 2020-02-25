@@ -10,7 +10,7 @@ class Column extends Component {
   state = {};
 
   render() {
-    const { tasksDraw, column } = this.props;
+    const { tasksDraw, column, updateCompleted } = this.props;
     // console.log(tasksDraw, 'tasksDraw');
     // console.log(column, 'column');
     return (
@@ -27,7 +27,12 @@ class Column extends Component {
                 {...provided.droppableProps}
               >
                 {tasksDraw.map((task, index) => (
-                  <Task key={task.id} task={task} index={index} />
+                  <Task
+                    key={task.id}
+                    task={task}
+                    index={index}
+                    updateCompleted={updateCompleted}
+                  />
                 ))}
                 {provided.placeholder}
               </div>

@@ -48,10 +48,14 @@
 .highPriority {
   border-color: #f3a987;
 }
-/* .check {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid rgb(184, 178, 178);
-  margin: 0 5px 0 0;
-} */
+.completedCheckbox {
+  display: none;
+}
+.lineThrough {
+  text-decoration: line-through;
+  color: grey;
+}
+.text {
+  /* margin: 0; */
+  /* width: 215px; */
+}

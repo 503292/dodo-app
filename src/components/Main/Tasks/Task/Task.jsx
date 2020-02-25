@@ -26,7 +26,7 @@ class Task extends Component {
   state = {};
 
   render() {
-    const { task, index } = this.props;
+    const { task, index, updateCompleted } = this.props;
 
     return (
       <>
@@ -46,7 +46,7 @@ class Task extends Component {
                     className={css.completedCheckbox}
                     type="checkbox"
                     checked={task.completed}
-                    // onChange={onUpateCompleted}
+                    onChange={() => updateCompleted(task.id)}
                   />
                   <p
                     className={
