@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as LogoMap } from '../../../assets/image/mapUa.svg';
+import { ReactComponent as LogoMap } from '../../../assets/image/logo/mapUa.svg';
 
 import css from './Logo.module.css';
 

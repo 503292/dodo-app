@@ -6,14 +6,15 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
-import PrioritySelector from '../ModalAddTask/PrioritySelector/PrioritySelector';
+// import PrioritySelector from '../ModalAddTask/PrioritySelector/PrioritySelector';
 
-import Priority from '../../../../utils/Priority';
+// import Priority from '../../../../utils/Priority';
 
 import css from './Task.module.css';
 
-const options = Object.values(Priority);
+// const options = Object.values(Priority);
 
 const Container = styled.div`
   margin-bottom: 8px;
@@ -26,7 +27,7 @@ class Task extends Component {
   state = {};
 
   render() {
-    const { task, index, updateCompleted } = this.props;
+    const { task, index, updateCompleted } = this.props; // , updateTask
 
     return (
       <>
@@ -47,6 +48,7 @@ class Task extends Component {
                     type="checkbox"
                     checked={task.completed}
                     onChange={() => updateCompleted(task.id)}
+                    // onChange={() => updateTask(task.id)}
                   />
                   <p
                     className={
@@ -61,15 +63,20 @@ class Task extends Component {
 
                 <div className={css.actions}>
                   {!task.completed ? (
-                    <PrioritySelector
-                      options={options}
-                      value={task.priority}
-                      // onChange={e => onUpdatePriority(id, e.target.value)}
-                    />
-                  ) : (
                     <FontAwesomeIcon
                       className={css.deleteBtn}
-                      // onClick={onDeleteTask}
+                      // onClick={updateTask()}
+                      icon={faPen}
+                    />
+                  ) : (
+                    // <PrioritySelector
+                    //   options={options}
+                    //   value={task.priority}
+                    //   onChange={e => onUpdatePriority(id, e.target.value)}
+                    // />
+                    <FontAwesomeIcon
+                      className={css.deleteBtn}
+                      // onClick={() => updateTask(task.id)}
                       icon={faTrashAlt}
                     />
                   )}

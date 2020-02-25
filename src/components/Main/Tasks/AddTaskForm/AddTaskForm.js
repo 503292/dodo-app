@@ -8,7 +8,7 @@ import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
-import Priority from '../../../../../utils/Priority';
+import Priority from '../../../../utils/Priority';
 // import * as tasksActions from '../../../../../redux/tasks/tasksActions';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';

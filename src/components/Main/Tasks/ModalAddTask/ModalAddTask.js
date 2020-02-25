@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import AddTaskForm from './AddTaskForm/AddTaskForm.Container';
+import AddTaskForm from '../AddTaskForm/AddTaskForm.Container';
 
 import css from './ModalAddTask.module.css';
 

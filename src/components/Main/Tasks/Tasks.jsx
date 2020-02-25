@@ -4,8 +4,6 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
-
-// import AddTaskForm from './AddTaskForm/AddTaskForm';
 import EnterDay from './EnterDay/EnterDay';
 
 import css from './Tasks.module.css';
@@ -23,7 +21,23 @@ class Tasks extends Component {
     columnOrder: ['column-1'],
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    const { data } = this.props;
+    const arrIds = data.map(el => el.id);
+    // console.log(arrIds, 'arrIds');
+
+    this.setState({
+      tasks: data,
+      columns: {
+        'column-1': {
+          id: 'column-1',
+          title: 'today',
+          tasksIds: arrIds,
+        },
+      },
+      columnOrder: ['column-1'],
+    });
+  }
 
   componentDidUpdate(prevProps) {
     const { data } = this.props;
@@ -54,6 +68,10 @@ class Tasks extends Component {
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     }));
+  };
+
+  updateTask = id => {
+    console.log(id, 'id');
   };
 
   /*
@@ -168,17 +186,12 @@ class Tasks extends Component {
                   tasksDraw={tasksDraw}
                   column={column}
                   updateCompleted={this.updateCompleted}
+                  updateTask={this.updateTask}
                 />
               );
             })}
           </div>
         </DragDropContext>
-
-        {/* <AddTaskForm /> */}
-        {/* 
-        <TaskDay /> всі таски конкретно вибраного дня
-        <TaskFuture /> всі таски заплановані без дати 
-        */}
 
         <button
           type="button"
