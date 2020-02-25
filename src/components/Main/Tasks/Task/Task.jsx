@@ -26,6 +26,10 @@ const Container = styled.div`
 class Task extends Component {
   state = {};
 
+  saveCompleted = e => {
+    console.log(e.target, 'e.target');
+  };
+
   render() {
     const { task, index, updateCompleted } = this.props; // , updateTask
 
@@ -63,22 +67,37 @@ class Task extends Component {
 
                 <div className={css.actions}>
                   {!task.completed ? (
-                    <FontAwesomeIcon
-                      className={css.deleteBtn}
-                      // onClick={updateTask()}
-                      icon={faPen}
-                    />
+                    <button
+                      type="button"
+                      // onClick={() => {
+                      //   setSummaryModalOn(true);
+                      //   setIdInSummaryModal(el._id);
+                      // }}
+                      value={task.id}
+                      className={`${css.wrapIcon} `}
+                    >
+                      <FontAwesomeIcon
+                        className={css.penIcon}
+                        // onClick={updateTask()}
+                        icon={faPen}
+                      />
+                    </button>
                   ) : (
-                    // <PrioritySelector
-                    //   options={options}
-                    //   value={task.priority}
-                    //   onChange={e => onUpdatePriority(id, e.target.value)}
-                    // />
-                    <FontAwesomeIcon
-                      className={css.deleteBtn}
-                      // onClick={() => updateTask(task.id)}
-                      icon={faTrashAlt}
-                    />
+                    <button
+                      type="button"
+                      // onClick={() => {
+                      //   setSummaryModalOn(true);
+                      //   setIdInSummaryModal(el._id);
+                      // }}
+                      value={task.id}
+                      className={`${css.wrapIcon} `}
+                    >
+                      <FontAwesomeIcon
+                        className={css.trashIcon}
+                        // onClick={() => updateTask(task.id)}
+                        icon={faTrashAlt}
+                      />
+                    </button>
                   )}
                 </div>
               </div>

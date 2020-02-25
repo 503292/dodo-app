@@ -1,7 +1,7 @@
 .wrapTask {
   position: relative;
   list-style: none;
-  border: 1px solid rgb(212, 206, 206);
+  border: 8px solid rgb(212, 206, 206);
   margin-bottom: 5px;
 }
 .wrapTask p {
@@ -12,7 +12,7 @@
   top: 5px;
   left: 5px;
   font-size: 20px;
-  color: rgb(212, 206, 206);
+  /* color: rgb(212, 206, 206); */
 }
 .wrapInsert {
   padding: 0 30px 5px 30px;
@@ -39,6 +39,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  position: relative;
 }
 .lowPriority {
   border-color: #fcf952;
@@ -58,7 +59,37 @@
   text-decoration: line-through;
   color: grey;
 }
-.text {
-  /* margin: 0; */
-  /* width: 215px; */
+.actions {
+  display: none;
+}
+.task:hover .actions {
+  display: flex;
+}
+
+/* .descr {
+  visibility: hidden;
+}
+.b:hover + .descr {
+  visibility: visible;
+} */
+
+.wrapIcon {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 50%;
+  top: 50%;
+  right: -5%;
+  transform: translate(-50%, -50%);
+}
+.penIcon,
+.trashIcon {
+  color: grey;
+}
+.wrapIcon:hover,
+.wrapIcon:active {
+  background-color: rgb(236, 241, 241);
 }
