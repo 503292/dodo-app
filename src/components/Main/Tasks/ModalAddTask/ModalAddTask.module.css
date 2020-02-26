@@ -2,11 +2,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   z-index: 1;
   width: 100%;
   min-width: 320px;
@@ -17,8 +17,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #fff;
-  height: 100%;
-  width: 100%;
+  background-color: transparent;
   flex-direction: column;
 }

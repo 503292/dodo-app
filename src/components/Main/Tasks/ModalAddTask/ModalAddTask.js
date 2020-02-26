@@ -40,7 +40,7 @@ class ModalAddTask extends Component {
             onKeyUp={this.handleKeyPress}
           >
             <div className={css.modal}>
-              <AddTaskForm />
+              <AddTaskForm onClick={this.onCl} />
             </div>
           </div>
         )}

@@ -41,8 +41,11 @@
   margin: 0 auto;
   position: relative;
 }
+.task:hover {
+  background-color: rgb(228, 250, 252);
+}
 .lowPriority {
-  border-color: #fcf952;
+  border-color: #d4fab0;
 }
 
 .normalPriority {
@@ -84,5 +87,8 @@
 }
 .wrapIcon:hover,
 .wrapIcon:active {
-  background-color: rgb(236, 241, 241);
+  /* background-color: rgb(236, 241, 241); */
+  background-color: #fff;
+
+  box-shadow: inset 0px 0px 5px -1px rgba(133, 128, 133, 1);
 }
