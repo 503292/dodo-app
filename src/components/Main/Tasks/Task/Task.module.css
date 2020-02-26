@@ -66,13 +66,6 @@
   display: flex;
 }
 
-/* .descr {
-  visibility: hidden;
-}
-.b:hover + .descr {
-  visibility: visible;
-} */
-
 .wrapIcon {
   position: absolute;
   width: 2rem;

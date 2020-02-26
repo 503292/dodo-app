@@ -201,7 +201,7 @@ class Tasks extends Component {
 Tasks.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
-  addTaskToRedux: PropTypes.func.isRequired,
+  // addTaskToRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;
