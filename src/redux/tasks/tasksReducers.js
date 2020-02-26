@@ -3,7 +3,7 @@ import { Type } from './tasksActions';
 const taskReducer = (state = [], { type, payload }) => {
   switch (type) {
     case Type.ADD_TASK_TO_REDUX:
-      return [payload, ...state];
+      return [...state, payload];
 
     // case Type.ADD_TASK_SUCCESS:
     //   return payload.data;
