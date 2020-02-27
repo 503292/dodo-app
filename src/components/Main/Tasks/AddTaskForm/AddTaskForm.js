@@ -72,16 +72,26 @@ class AddTaskForm extends Component {
       completed,
     };
 
-    this.setState(state => ({
-      ...state,
-      data,
-    }));
+    // this.setState(state => ({
+    //   ...state,
+    //   data,
+    // }));
 
     let getTasks = allTasks.find(el => el.id === id);
     if (getTasks) {
-      getTasks = { ...getTasks, text, priority, id };
+      getTasks = { ...getTasks, text, priority, endTime };
+      this.setState(state => ({
+        ...state,
+        getTasks,
+      }));
+
       updateTaskToRedux(getTasks);
     } else {
+      this.setState(state => ({
+        ...state,
+        data,
+      }));
+
       addTaskToRedux(data);
     }
 

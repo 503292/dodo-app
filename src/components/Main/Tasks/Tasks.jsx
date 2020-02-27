@@ -46,6 +46,7 @@ class Tasks extends Component {
           tasksIds: arrIds,
         },
       },
+      editTask: null,
     });
   };
   /*
