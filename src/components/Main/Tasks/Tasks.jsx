@@ -29,15 +29,10 @@ class Tasks extends Component {
 
   componentDidUpdate(prevProps) {
     const { data } = this.props;
-    // const { updateIsCompletedTaskToRedux } = this.props;
+
     if (prevProps.data !== data) {
       this.viewTasks(data);
     }
-
-    // console.log(prevState, 'prevState');
-    // if (prevState.tasks.completed !== this.state.tasks.completed) {
-    //   console.log(this.state.tasks.completed, 'this.state.tasks.completedd');
-    // }
   }
 
   viewTasks = data => {
@@ -59,12 +54,19 @@ class Tasks extends Component {
    *   crud methods
    */
 
-  updateCompleted = id => {
-    this.setState(state => ({
+  updateCompleted = async id => {
+    const { updateIsCompletedTaskToRedux } = this.props;
+
+    await this.setState(state => ({
       tasks: state.tasks.map(task =>
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     }));
+
+    const { tasks } = this.state;
+    const taskTmp = tasks.find(el => el.id === id);
+
+    updateIsCompletedTaskToRedux(taskTmp);
   };
 
   updateTask = task => {
@@ -210,8 +212,7 @@ class Tasks extends Component {
 Tasks.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
-  // updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
-  // addTaskToRedux: PropTypes.func.isRequired,
+  updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;
