@@ -51,7 +51,7 @@ class Tasks extends Component {
     });
   };
   /*
-   *   crud methods
+   *   crud methods for REDUX
    */
 
   updateCompleted = async id => {
@@ -73,6 +73,11 @@ class Tasks extends Component {
     this.setState({
       editTask: task,
     });
+  };
+
+  deleteTask = id => {
+    const { deleteTaskFromRedux } = this.props;
+    deleteTaskFromRedux(id);
   };
 
   /*
@@ -187,9 +192,10 @@ class Tasks extends Component {
                   key={column.id}
                   tasksDraw={tasksDraw}
                   column={column}
-                  updateCompleted={this.updateCompleted}
                   modalAddTasksOpen={modalAddTasksOpen}
+                  updateCompleted={this.updateCompleted}
                   updateTask={this.updateTask}
+                  deleteTask={this.deleteTask}
                 />
               );
             })}
@@ -213,6 +219,7 @@ Tasks.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
   updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
+  deleteTaskFromRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;

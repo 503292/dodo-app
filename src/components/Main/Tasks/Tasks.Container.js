@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import Tasks from './Tasks';
-// import { getData } from '../../redux/finance/financeSelectors';
 import { modalAddTasksOpen } from '../../../redux/global/globalActions';
 import { getTasks } from '../../../redux/tasks/tasksSelectors';
 import {
   addTaskToRedux,
   updateIsCompletedTaskToRedux,
+  deleteTaskFromRedux,
 } from '../../../redux/tasks/tasksActions';
 
 const mapStateToProps = state => ({
@@ -16,6 +16,7 @@ const mapDispatchToProps = {
   modalAddTasksOpen,
   addTaskToRedux,
   updateIsCompletedTaskToRedux,
+  deleteTaskFromRedux,
 };
 
 export default connect(

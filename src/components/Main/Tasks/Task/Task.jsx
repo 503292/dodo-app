@@ -19,6 +19,7 @@ import css from './Task.module.css';
 const Container = styled.div`
   margin-bottom: 8px;
   background-color: ${props => (props.isDragging ? 'lightgrey' : 'white')};
+  color: grey;
   // color: ${props => (props.isDragging ? 'white' : 'black')};
   // font-weight: ${props => (props.isDragging ? '700' : '400')};
 `;
@@ -26,18 +27,26 @@ const Container = styled.div`
 class Task extends Component {
   state = {};
 
-  saveCompleted = e => {
-    console.log(e.target, 'e.target');
+  formatEndTime = endTime => {
+    console.log(endTime, 'endTime');
+    let hour = endTime.getHours();
+    if (hour < 10) hour = '0'.concat(hour);
+    let minutes = endTime.getMinutes();
+    if (minutes < 10) minutes = '0'.concat(minutes);
+
+    const newEndTime = `${hour}:${minutes}`;
+    return newEndTime;
   };
 
   render() {
     const {
       task,
       index,
-      updateCompleted,
       modalAddTasksOpen,
+      updateCompleted,
       updateTask,
-    } = this.props; // , updateTask
+      deleteTask,
+    } = this.props;
 
     return (
       <>
@@ -58,19 +67,26 @@ class Task extends Component {
                     type="checkbox"
                     checked={task.completed}
                     onChange={() => updateCompleted(task.id)}
-                    // onChange={() => updateTask(task.id)}
                   />
                   <p
                     className={
                       task.completed === true
-                        ? `${css.lineThrough} ${css.text}`
+                        ? `${css.text} ${css.lineThrough}`
                         : css.text
                     }
                   >
                     {task.text}
                   </p>
+                  <p
+                    className={
+                      task.completed === true
+                        ? `${css.completedCheckbox} ${css.endTime}`
+                        : css.endTime
+                    }
+                  >
+                    {this.formatEndTime(task.endTime)}
+                  </p>
                 </label>
-
                 <div className={css.actions}>
                   {!task.completed ? (
                     <button
@@ -80,27 +96,21 @@ class Task extends Component {
                         updateTask(task);
                       }}
                       value={task.id}
-                      className={`${css.wrapIcon} `}
+                      className={css.wrapIcon}
                     >
-                      <FontAwesomeIcon
-                        className={css.penIcon}
-                        // onClick={updateTask()}
-                        icon={faPen}
-                      />
+                      <FontAwesomeIcon className={css.penIcon} icon={faPen} />
                     </button>
                   ) : (
                     <button
                       type="button"
-                      // onClick={() => {
-                      //   setSummaryModalOn(true);
-                      //   setIdInSummaryModal(el._id);
-                      // }}
+                      onClick={() => {
+                        deleteTask(task.id);
+                      }}
                       value={task.id}
-                      className={`${css.wrapIcon} `}
+                      className={css.wrapIcon}
                     >
                       <FontAwesomeIcon
                         className={css.trashIcon}
-                        // onClick={() => updateTask(task.id)}
                         icon={faTrashAlt}
                       />
                     </button>
@@ -117,38 +127,3 @@ class Task extends Component {
 
 export default Task;
 
-// import React from 'react';
-// import PropTypes from 'prop-types';
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCircle } from '@fortawesome/free-regular-svg-icons';
-
-// import css from './Task.module.css';
-
-// // eslint-disable-next-line react/prop-types
-// const Task = ({ tasks }) => {
-//   return (
-//     <>
-//       {tasks.map(task => (
-//         <li key={task.id} className={css.wrapTask}>
-//           <FontAwesomeIcon className={css.checkBox} icon={faCircle} />
-//           <div className={css.wrapInsert}>
-//             <p className={css.textTask}>{task.text}</p>
-//             <p className={css.timeTask}>{task.time} </p>
-//             <p className={css.categoryTask}>{task.color}</p>
-
-//             {/* {task.imgUrl && (
-//               <img className={css.imageTask} src={task.imgUrl} alt="task" />
-//             )} */}
-//           </div>
-//         </li>
-//       ))}
-//     </>
-//   );
-// };
-
-// export default Task;
-
-// Task.propTypes = {
-//   tasks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-// };

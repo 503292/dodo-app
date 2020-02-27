@@ -13,9 +13,10 @@ class Column extends Component {
     const {
       tasksDraw,
       column,
-      updateCompleted,
       modalAddTasksOpen,
+      updateCompleted,
       updateTask,
+      deleteTask,
     } = this.props;
     // console.log(tasksDraw, 'tasksDraw');
     // console.log(column, 'column');
@@ -40,6 +41,7 @@ class Column extends Component {
                     updateCompleted={updateCompleted}
                     modalAddTasksOpen={modalAddTasksOpen}
                     updateTask={updateTask}
+                    deleteTask={deleteTask}
                   />
                 ))}
                 {provided.placeholder}

@@ -1,7 +1,9 @@
 export const Type = {
+  // Crud to REDUX
   ADD_TASK_TO_REDUX: 'ADD_TASK_TO_REDUX',
   UPDATE_TASK_TO_REDUX: 'UPDATE_TASK_TO_REDUX',
   UPDATE_IS_COMPLETED_TASK_TO_REDUX: 'UPDATE_IS_COMPLETED_TASK_TO_REDUX',
+  DELETE_TASK_FROM_REDUX: 'DELETE_TASK_FROM_REDUX',
 
   ADD_TASK_START: 'ADD_TASK_START',
   ADD_TASK_SUCCESS: 'ADD_TASK_SUCCESS',
@@ -29,6 +31,10 @@ export const updateTaskToRedux = data => ({
 });
 export const updateIsCompletedTaskToRedux = data => ({
   type: Type.UPDATE_IS_COMPLETED_TASK_TO_REDUX,
+  payload: data,
+});
+export const deleteTaskFromRedux = data => ({
+  type: Type.DELETE_TASK_FROM_REDUX,
   payload: data,
 });
 
