@@ -6,20 +6,24 @@ import AddTaskForm from './AddTaskForm';
 //   getTypeTotalBalance,
 // } from '../../redux/finance/financeSelectors';
 import { modalAddTasksClose } from '../../../../redux/global/globalActions';
-import { addTaskToRedux } from '../../../../redux/tasks/tasksActions';
+import {
+  addTaskToRedux,
+  updateTaskToRedux,
+} from '../../../../redux/tasks/tasksActions';
+import { getTasks } from '../../../../redux/tasks/tasksSelectors';
 
-// const mapStateToProps = state => ({
-//   totalBalanceState: getTotalBalance(state),
-//   typeTotalBalanceState: getTypeTotalBalance(state),
-// });
+const mapStateToProps = state => ({
+  allTasks: getTasks(state),
+});
 
 const mapDispatchToProps = {
   //   addTransactionOperation,
   modalAddTasksClose,
   addTaskToRedux,
+  updateTaskToRedux,
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(AddTaskForm);

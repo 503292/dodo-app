@@ -36,7 +36,6 @@ class Tasks extends Component {
 
   viewTasks = data => {
     const arrIds = data.map(el => el.id);
-    const { editTask } = this.state;
 
     this.setState({
       tasks: data,
@@ -47,11 +46,7 @@ class Tasks extends Component {
           tasksIds: arrIds,
         },
       },
-      columnOrder: ['column-1'],
-      editTask,
     });
-
-    // console.log(arrIds, 'arrIds');
   };
   /*
    *   crud methods

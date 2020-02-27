@@ -8,7 +8,6 @@ import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import Priority from '../../../../utils/Priority';
-// import * as tasksActions from '../../../../../redux/tasks/tasksActions';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
 
@@ -32,9 +31,12 @@ class AddTaskForm extends Component {
         endTime: editTask.endTime,
         text: editTask.text,
         priority: editTask.priority,
+        id: editTask.id,
       });
     }
   }
+
+  // componentDidUpdate(prevProps, prevState) {}
 
   handleChangeTime = time => {
     this.setState({
@@ -52,12 +54,15 @@ class AddTaskForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { endTime, text, priority, completed } = this.state;
-    const { modalAddTasksClose, addTaskToRedux } = this.props;
+    const { endTime, text, priority, completed, id } = this.state;
+    const {
+      modalAddTasksClose,
+      addTaskToRedux,
+      allTasks,
+      updateTaskToRedux,
+    } = this.props;
+    // let { allTasks } = this.props;
     const idTmp = shortid.generate();
-
-    // const timeTmp = `${endTime.getHours()} : ${endTime.getMinutes()}`;
-    // console.log(timeTmp, 'timeTmp');
 
     const data = {
       endTime,
@@ -72,7 +77,13 @@ class AddTaskForm extends Component {
       data,
     }));
 
-    addTaskToRedux(data);
+    let getTasks = allTasks.find(el => el.id === id);
+    if (getTasks) {
+      getTasks = { ...getTasks, text, priority, id };
+      updateTaskToRedux(getTasks);
+    } else {
+      addTaskToRedux(data);
+    }
 
     modalAddTasksClose();
   };
@@ -160,7 +171,9 @@ AddTaskForm.propTypes = {
   // addTransactionOperation: PropTypes.func.isRequired,
   modalAddTasksClose: PropTypes.func.isRequired,
   addTaskToRedux: PropTypes.func.isRequired,
+  updateTaskToRedux: PropTypes.func.isRequired,
   editTask: PropTypes.shape(PropTypes.string.isRequired),
+  allTasks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default AddTaskForm;

@@ -1,5 +1,6 @@
 export const Type = {
   ADD_TASK_TO_REDUX: 'ADD_TASK_TO_REDUX',
+  UPDATE_TASK_TO_REDUX: 'UPDATE_TASK_TO_REDUX',
 
   ADD_TASK_START: 'ADD_TASK_START',
   ADD_TASK_SUCCESS: 'ADD_TASK_SUCCESS',
@@ -18,6 +19,11 @@ export const Type = {
 
 export const addTaskToRedux = data => ({
   type: Type.ADD_TASK_TO_REDUX,
+  payload: data,
+});
+
+export const updateTaskToRedux = data => ({
+  type: Type.UPDATE_TASK_TO_REDUX,
   payload: data,
 });
 
