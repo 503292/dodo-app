@@ -24,6 +24,18 @@ class AddTaskForm extends Component {
     completed: false,
   };
 
+  componentDidMount() {
+    const { editTask } = this.props;
+    // console.log(editTask, 'editTask');
+    if (editTask !== null) {
+      this.setState({
+        endTime: editTask.endTime,
+        text: editTask.text,
+        priority: editTask.priority,
+      });
+    }
+  }
+
   handleChangeTime = time => {
     this.setState({
       endTime: time,
@@ -48,7 +60,7 @@ class AddTaskForm extends Component {
     // console.log(timeTmp, 'timeTmp');
 
     const data = {
-      endTime: endTime.getTime(),
+      endTime,
       text,
       priority,
       id: idTmp,
@@ -66,13 +78,9 @@ class AddTaskForm extends Component {
   };
 
   render() {
-    const {
-      modalAddTasksClose,
-      // , editTask
-    } = this.props;
+    const { modalAddTasksClose } = this.props;
     const { endTime, text, priority } = this.state;
-    const { editTask } = this.props;
-    console.log(editTask, 'editTask ADD');
+
     return (
       <div className={css.wrapAllForm}>
         <button
@@ -98,7 +106,7 @@ class AddTaskForm extends Component {
               required
               placeholder=" . . ."
               name="text"
-              value={editTask ? editTask.text : text} //
+              value={text} // editTask ? editTask.text :
               onChange={this.handleChange}
             />
           </div>
@@ -144,10 +152,15 @@ class AddTaskForm extends Component {
   }
 }
 
+AddTaskForm.defaultProps = {
+  editTask: null,
+};
+
 AddTaskForm.propTypes = {
   // addTransactionOperation: PropTypes.func.isRequired,
   modalAddTasksClose: PropTypes.func.isRequired,
   addTaskToRedux: PropTypes.func.isRequired,
+  editTask: PropTypes.shape(PropTypes.string.isRequired),
 };
 
 export default AddTaskForm;

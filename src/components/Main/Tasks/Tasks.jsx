@@ -66,8 +66,6 @@ class Tasks extends Component {
   };
 
   updateTask = task => {
-    // const { editTask } = this.state;
-
     this.setState({
       editTask: task,
     });
@@ -161,8 +159,8 @@ class Tasks extends Component {
   };
 
   render() {
-    const { modalAddTasksOpen, editTask } = this.props;
-    const { columnOrder, columns, tasks } = this.state;
+    const { modalAddTasksOpen } = this.props;
+    const { columnOrder, columns, tasks, editTask } = this.state;
 
     // console.log(editTask, 'editTask');
     return (
@@ -207,14 +205,9 @@ class Tasks extends Component {
   }
 }
 
-Tasks.defaultProps = {
-  editTask: null,
-};
-
 Tasks.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
-  editTask: PropTypes.arrayOf(PropTypes.object),
   // addTaskToRedux: PropTypes.func.isRequired,
 };
 
