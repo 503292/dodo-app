@@ -10,7 +10,13 @@ class Column extends Component {
   state = {};
 
   render() {
-    const { tasksDraw, column, updateCompleted, updateTask } = this.props;
+    const {
+      tasksDraw,
+      column,
+      updateCompleted,
+      modalAddTasksOpen,
+      updateTask,
+    } = this.props;
     // console.log(tasksDraw, 'tasksDraw');
     // console.log(column, 'column');
     return (
@@ -32,6 +38,7 @@ class Column extends Component {
                     task={task}
                     index={index}
                     updateCompleted={updateCompleted}
+                    modalAddTasksOpen={modalAddTasksOpen}
                     updateTask={updateTask}
                   />
                 ))}

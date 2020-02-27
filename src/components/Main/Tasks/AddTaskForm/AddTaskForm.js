@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 // import moment from 'moment';
 import 'moment/locale/uk';
@@ -67,8 +66,13 @@ class AddTaskForm extends Component {
   };
 
   render() {
-    const { modalAddTasksClose } = this.props;
+    const {
+      modalAddTasksClose,
+      // , editTask
+    } = this.props;
     const { endTime, text, priority } = this.state;
+    const { editTask } = this.props;
+    console.log(editTask, 'editTask ADD');
     return (
       <div className={css.wrapAllForm}>
         <button
@@ -94,7 +98,7 @@ class AddTaskForm extends Component {
               required
               placeholder=" . . ."
               name="text"
-              value={text}
+              value={editTask ? editTask.text : text} //
               onChange={this.handleChange}
             />
           </div>

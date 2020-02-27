@@ -31,7 +31,13 @@ class Task extends Component {
   };
 
   render() {
-    const { task, index, updateCompleted } = this.props; // , updateTask
+    const {
+      task,
+      index,
+      updateCompleted,
+      modalAddTasksOpen,
+      updateTask,
+    } = this.props; // , updateTask
 
     return (
       <>
@@ -69,10 +75,10 @@ class Task extends Component {
                   {!task.completed ? (
                     <button
                       type="button"
-                      // onClick={() => {
-                      //   setSummaryModalOn(true);
-                      //   setIdInSummaryModal(el._id);
-                      // }}
+                      onClick={() => {
+                        modalAddTasksOpen();
+                        updateTask(task);
+                      }}
                       value={task.id}
                       className={`${css.wrapIcon} `}
                     >

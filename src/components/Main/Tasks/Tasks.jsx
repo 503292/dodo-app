@@ -19,6 +19,7 @@ class Tasks extends Component {
       },
     },
     columnOrder: ['column-1'],
+    editTask: null,
   };
 
   componentDidMount() {
@@ -35,6 +36,7 @@ class Tasks extends Component {
 
   viewTasks = data => {
     const arrIds = data.map(el => el.id);
+    const { editTask } = this.state;
 
     this.setState({
       tasks: data,
@@ -46,6 +48,7 @@ class Tasks extends Component {
         },
       },
       columnOrder: ['column-1'],
+      editTask,
     });
 
     // console.log(arrIds, 'arrIds');
@@ -62,8 +65,12 @@ class Tasks extends Component {
     }));
   };
 
-  updateTask = id => {
-    console.log(id, 'id');
+  updateTask = task => {
+    // const { editTask } = this.state;
+
+    this.setState({
+      editTask: task,
+    });
   };
 
   /*
@@ -154,9 +161,10 @@ class Tasks extends Component {
   };
 
   render() {
-    const { modalAddTasksOpen } = this.props;
+    const { modalAddTasksOpen, editTask } = this.props;
     const { columnOrder, columns, tasks } = this.state;
 
+    // console.log(editTask, 'editTask');
     return (
       <div className={css.wrapTasks}>
         <EnterDay />
@@ -178,6 +186,7 @@ class Tasks extends Component {
                   tasksDraw={tasksDraw}
                   column={column}
                   updateCompleted={this.updateCompleted}
+                  modalAddTasksOpen={modalAddTasksOpen}
                   updateTask={this.updateTask}
                 />
               );
@@ -192,15 +201,20 @@ class Tasks extends Component {
         >
           +
         </button>
-        <ModalAddTask />
+        <ModalAddTask editTask={editTask} />
       </div>
     );
   }
 }
 
+Tasks.defaultProps = {
+  editTask: null,
+};
+
 Tasks.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
+  editTask: PropTypes.arrayOf(PropTypes.object),
   // addTaskToRedux: PropTypes.func.isRequired,
 };
 
