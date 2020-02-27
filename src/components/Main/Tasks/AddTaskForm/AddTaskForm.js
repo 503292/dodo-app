@@ -36,8 +36,6 @@ class AddTaskForm extends Component {
     }
   }
 
-  // componentDidUpdate(prevProps, prevState) {}
-
   handleChangeTime = time => {
     this.setState({
       endTime: time,
@@ -61,7 +59,7 @@ class AddTaskForm extends Component {
       allTasks,
       updateTaskToRedux,
     } = this.props;
-    // let { allTasks } = this.props;
+
     const idTmp = shortid.generate();
 
     const data = {
@@ -71,11 +69,6 @@ class AddTaskForm extends Component {
       id: idTmp,
       completed,
     };
-
-    // this.setState(state => ({
-    //   ...state,
-    //   data,
-    // }));
 
     let getTasks = allTasks.find(el => el.id === id);
     if (getTasks) {
@@ -127,12 +120,11 @@ class AddTaskForm extends Component {
               required
               placeholder=" . . ."
               name="text"
-              value={text} // editTask ? editTask.text :
+              value={text}
               onChange={this.handleChange}
             />
           </div>
 
-          {/* <input className={css.inputTask} required placeholder=" ..." /> */}
           <div className={css.twoInputs}>
             <div className={css.wrapInput}>
               <span role="img" aria-label="Clock">

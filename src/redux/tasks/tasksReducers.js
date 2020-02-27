@@ -7,6 +7,8 @@ const taskReducer = (state = [], { type, payload }) => {
       return [...state, payload];
     case Type.UPDATE_TASK_TO_REDUX:
       return state.map(el => (el.id === payload.id ? { ...payload } : el));
+    case Type.UPDATE_IS_COMPLETED_TASK_TO_REDUX:
+      return state.map(el => (el.id === payload.id ? { ...payload } : el));
 
     // case Type.ADD_TASK_SUCCESS:
     //   return payload.data;
