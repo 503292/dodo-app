@@ -1,0 +1,11 @@
+.wrapTasks {
+  /* width: 308px; */
+}
+.title {
+  padding: 8px;
+  margin: 0;
+}
+.tasks {
+  /* padding: 8px; */
+  flex-grow: 1;
+}

@@ -1,0 +1,38 @@
+/* Тут глобальні настройки компонентів
+* flex, центрування, padding, margin
+* position ...
+*/
+
+.wrapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  background-color: #ffeb3b;
+  list-style: none;
+  margin: 0 auto;
+  width: 318px;
+  height: 40px;
+}
+.routeHeader {
+}
+.logoLink {
+  text-decoration: none;
+  color: #000;
+}
+.contactsLink {
+  text-decoration: none;
+  color: #000;
+}
+.weaterLink {
+  text-decoration: none;
+  color: #000;
+}
+.rateLink {
+  text-decoration: none;
+  color: #000;
+}
+.loginLink {
+  text-decoration: none;
+  color: #000;
+}

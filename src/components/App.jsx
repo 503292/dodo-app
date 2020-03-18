@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './Header/Header';
+import HeaderNav from './HeaderNav/HeaderNav';
 import Main from './Main/Main';
 // import Footer from './Footer/Footer';
 
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <header className={css.header}>
-        <Header />
+        <HeaderNav />
       </header>
 
       <main className={css.main}>

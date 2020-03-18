@@ -1,0 +1,81 @@
+.wrapText {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.wrapText p {
+  margin: 0;
+}
+.text {
+}
+.endTime {
+  font-size: 10px;
+}
+
+.task {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 8px;
+  border-top: 3px solid transparent;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+.task:hover {
+  background-color: rgb(228, 250, 252);
+}
+.lowPriority {
+  border-color: #fcf952;
+}
+
+.normalPriority {
+  border-color: #91ff95;
+}
+
+.highPriority {
+  border-color: #f3a987;
+}
+.completedCheckbox {
+  display: none;
+}
+.lineThrough {
+  text-decoration: line-through;
+  color: rgb(190, 189, 189);
+}
+.actions {
+  display: none;
+}
+.task:hover .actions {
+  display: flex;
+}
+
+.task:hover .endTime {
+  opacity: 0;
+}
+
+.wrapIcon {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 50%;
+  top: 50%;
+  right: -5%;
+  transform: translate(-50%, -50%);
+}
+.penIcon,
+.trashIcon {
+  color: grey;
+}
+.wrapIcon:hover,
+.wrapIcon:active {
+  /* background-color: rgb(236, 241, 241); */
+  background-color: #fff;
+
+  box-shadow: inset 0px 0px 5px -1px rgba(133, 128, 133, 1);
+}
