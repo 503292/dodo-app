@@ -4,7 +4,8 @@ import uk from 'date-fns/locale/uk';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import Clock from '../Clock/Clock';
+// import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 import css from './EnterDay.module.css';
 
@@ -34,7 +35,9 @@ class EnterDay extends Component {
               className={css.dataPicker}
               selected={startDate}
               onChange={this.handleChange}
+              dateFormat="d MMMM , yyyy"
             />
+            <Clock />
           </div>
 
           <div className={css.wrapTasksLevels}>
@@ -44,13 +47,13 @@ class EnterDay extends Component {
                 icon={faCaretRight}
               />
             </div> */}
-            <button type="button" className={css.allTaskBtn}>
+            {/* <button type="button" className={css.allTaskBtn}>
               # all task
             </button>
 
             <FontAwesomeIcon className={css.red} icon={faCircle} />
             <FontAwesomeIcon className={css.yellow} icon={faCircle} />
-            <FontAwesomeIcon className={css.green} icon={faCircle} />
+            <FontAwesomeIcon className={css.green} icon={faCircle} /> */}
           </div>
         </div>
       </>

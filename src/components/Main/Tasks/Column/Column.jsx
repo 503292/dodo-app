@@ -18,7 +18,7 @@ class Column extends Component {
       updateTask,
       deleteTask,
     } = this.props;
-    console.log(tasksDraw, 'tasksDraw');
+    // console.log(tasksDraw, 'tasksDraw');
     // console.log(column, 'column');
     return (
       <div>
