@@ -36,13 +36,18 @@
   border: none;
   color: #ffffff;
   font-size: 35px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+  position: absolute;
+  bottom: -40px;
+  right: 5px;
   outline: none;
   display: flex;
   justify-content: center;
   padding-bottom: 8px;
   font-weight: 700;
   margin: 0 auto;
+  color: grey;
+  box-shadow: inset 0px 0px 2px 0.1px rgba(0, 0, 0, 0.75);
+  text-shadow: 2px 2px 0 grey, 2px -2px 0 grey, -2px 2px 0 grey,
+    -2px -2px 0 grey, 2px 0px 0 grey, 0px 2px 0 grey, -2px 0px 0 grey,
+    0px -2px 0 grey;
 }
