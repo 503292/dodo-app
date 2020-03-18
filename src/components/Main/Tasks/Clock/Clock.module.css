@@ -2,12 +2,9 @@
   color: grey;
   font-weight: bold;
   width: 40%;
-  /* border: 1px solid rgb(175, 172, 172);
-  border-radius: 20px 0 0 20px; */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin: 2px;
 }
 .time {
   display: flex;
@@ -22,6 +19,4 @@
   display: flex;
   align-items: flex-end;
   font-weight: normal;
-  /* border-radius: 50px; */
-  /* border: 1px solid grey; */
 }

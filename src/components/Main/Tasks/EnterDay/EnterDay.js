@@ -40,21 +40,21 @@ class EnterDay extends Component {
             <Clock />
           </div>
 
-          <div className={css.wrapTasksLevels}>
-            {/* <div className={css.wrapAllTaskIcon}>
+          {/* <div className={css.wrapTasksLevels}>
+            <div className={css.wrapAllTaskIcon}>
               <FontAwesomeIcon
                 className={css.allTaskIcon}
                 icon={faCaretRight}
               />
-            </div> */}
-            {/* <button type="button" className={css.allTaskBtn}>
+            </div>
+            <button type="button" className={css.allTaskBtn}>
               # all task
             </button>
 
             <FontAwesomeIcon className={css.red} icon={faCircle} />
             <FontAwesomeIcon className={css.yellow} icon={faCircle} />
-            <FontAwesomeIcon className={css.green} icon={faCircle} /> */}
-          </div>
+            <FontAwesomeIcon className={css.green} icon={faCircle} />
+          </div> */}
         </div>
       </>
     );
