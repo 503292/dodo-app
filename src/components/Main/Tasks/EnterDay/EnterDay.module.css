@@ -1,17 +1,14 @@
 .wrapEnterDay {
-  /* display: flex; */
-  justify-content: space-between;
   padding: 0;
-  /* width: 318px; */
+  width: 319px;
   margin: 0 auto 2px;
-  /* height: 30px; */
+
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.35);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 .wrapDataPicker {
   display: flex;
-  /* width: 60%; */
 }
 .wrapIcon {
   width: 30px;
@@ -29,6 +26,7 @@
   font-weight: 700;
   /* width: 60%; */
   outline: none;
+  background-color: inherit;
 }
 
 .wrapTasksLevels {
