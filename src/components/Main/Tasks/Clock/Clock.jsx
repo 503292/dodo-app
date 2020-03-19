@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import css from './Clock.module.css';
 
-class Time extends Component {
+class Clock extends Component {
   state = {
     time: new Date().toLocaleTimeString(),
     // isDots: true,
@@ -39,4 +39,4 @@ class Time extends Component {
   }
 }
 
-export default Time;
+export default Clock;

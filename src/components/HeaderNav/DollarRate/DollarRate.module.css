@@ -19,9 +19,8 @@
   padding: 0 3px;
 }
 .gryvnyaSale span {
-  color: green;
+  color: red;
 }
 .gryvnyaBuy span {
-  
-  color: red;
+  color: green;
 }

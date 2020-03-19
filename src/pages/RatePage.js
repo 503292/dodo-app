@@ -1,5 +1,10 @@
 import React from 'react';
+import Rate from '../components/Main/Rate/Rate';
 
-const RatePage = () => <h2>Rate $</h2>;
+const RatePage = () => (
+  <>
+    <Rate />
+  </>
+);
 
 export default RatePage;

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
 import { getRatePrivatBank } from '../../../services/api';
-import css from './DollarRate.module.css';
 
-class DollarRate extends Component {
-  state = {
-    rate: [],
-  };
+import css from './Rate.module.css';
+
+class Rate extends Component {
+  state = { rate: [] };
 
   componentDidMount() {
     getRatePrivatBank()
@@ -15,15 +13,17 @@ class DollarRate extends Component {
         const dataUSD = data.find(elem => elem.ccy === 'USD');
         dataUSD.buy = Number(dataUSD.buy).toFixed(2);
         dataUSD.sale = Number(dataUSD.sale).toFixed(2);
+        dataUSD.ccy = 'Доллар';
 
         const dataEUR = data.find(elem => elem.ccy === 'EUR');
         dataEUR.buy = Number(dataEUR.buy).toFixed(2);
         dataEUR.sale = Number(dataEUR.sale).toFixed(2);
+        dataEUR.ccy = 'Євро';
 
         const dataRUR = data.find(elem => elem.ccy === 'RUR');
         dataRUR.buy = Number(dataRUR.buy).toFixed(3);
         dataRUR.sale = Number(dataRUR.sale).toFixed(3);
-
+        dataRUR.ccy = 'Рубль';
         const rate = [dataUSD, dataEUR, dataRUR];
 
         this.setState({
@@ -39,30 +39,35 @@ class DollarRate extends Component {
 
   render() {
     const { rate } = this.state;
-    // console.log(rate);
-    const gryvnyaToDollar = rate.find(el => el.ccy === 'USD');
-    // console.log(gryvnyaToDollar, 'dollar');
+    console.log(rate);
 
     return (
-      <div className={css.wrapRate}>
-        <p className={css.dollarMark}>$</p>
-        <div>
-          {gryvnyaToDollar && (
-            <p title="продати" className={css.gryvnyaBuy}>
-              <span>▶</span>
-              {gryvnyaToDollar.buy}
-            </p>
-          )}
-          {gryvnyaToDollar && (
-            <p title="купити" className={css.gryvnyaSale}>
-              <span>◀</span>
-              {gryvnyaToDollar.sale}
-            </p>
+      <>
+        <div className={css.rateContainer}>
+          {rate.length > 0 && (
+            <table className={css.rateTable}>
+              <thead>
+                <tr>
+                  <th>Валюта</th>
+                  <th>Купівля</th>
+                  <th>Продаж</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rate.map(elem => (
+                  <tr key={elem.ccy}>
+                    <td>{elem.ccy}</td>
+                    <td>{elem.buy}</td>
+                    <td>{elem.sale}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
         </div>
-      </div>
+      </>
     );
   }
 }
 
-export default DollarRate;
+export default Rate;
