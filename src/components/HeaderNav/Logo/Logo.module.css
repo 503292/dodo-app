@@ -38,7 +38,7 @@
 
 .logoMap:hover,
 .logoMap:focus,
- .logoMap:active {
+.logoMap:active {
   fill: black;
 }
 /* .logoImg {
