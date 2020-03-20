@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { getRatePrivatBank } from '../../../services/api';
+import { getCurrencyPrivatBank } from '../../../services/api';
 
-import css from './Rate.module.css';
+import css from './Currency.module.css';
 
-class Rate extends Component {
-  state = { rate: [] };
+class Currency extends Component {
+  state = { currency: [] };
 
   componentDidMount() {
-    getRatePrivatBank()
+    getCurrencyPrivatBank()
       .then(data => {
         // console.log(data);
         const dataUSD = data.find(elem => elem.ccy === 'USD');
@@ -24,28 +24,28 @@ class Rate extends Component {
         dataRUR.buy = Number(dataRUR.buy).toFixed(3);
         dataRUR.sale = Number(dataRUR.sale).toFixed(3);
         dataRUR.ccy = 'Рубль';
-        const rate = [dataUSD, dataEUR, dataRUR];
+        const currency = [dataUSD, dataEUR, dataRUR];
 
         this.setState({
-          rate,
+          currency,
         });
       })
       .catch(error => {
         this.setState({
-          rate: error,
+          currency: error,
         });
       });
   }
 
   render() {
-    const { rate } = this.state;
-    console.log(rate);
+    const { currency } = this.state;
+    // console.log(rate);
 
     return (
       <>
-        <div className={css.rateContainer}>
-          {rate.length > 0 && (
-            <table className={css.rateTable}>
+        <div className={css.currencyContainer}>
+          {currency.length > 0 && (
+            <table className={css.currencyTable}>
               <thead>
                 <tr>
                   <th>Валюта</th>
@@ -54,7 +54,7 @@ class Rate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {rate.map(elem => (
+                {currency.map(elem => (
                   <tr key={elem.ccy}>
                     <td>{elem.ccy}</td>
                     <td>{elem.buy}</td>
@@ -70,4 +70,4 @@ class Rate extends Component {
   }
 }
 
-export default Rate;
+export default Currency;

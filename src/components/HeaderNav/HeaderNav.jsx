@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Logo from './Logo/Logo';
 // import Contacts from './Contacts/Contacts';
 import Weather from './Weather/Weather';
-import DollarRate from './DollarRate/DollarRate';
+import CurrencyNav from './CurrencyNav/CurrencyNav';
 import BtnLogin from './BtnLogin/BtnLogin';
 
 import css from './HeaderNav.module.css';
@@ -55,11 +55,11 @@ class Header extends Component {
         <li className={css.routeHeader}>
           <NavLink
             className={css.rateLink}
-            to="/rate"
+            to="/currency"
             exact
             activeStyle={ativeStyle}
           >
-            <DollarRate />
+            <CurrencyNav />
           </NavLink>
         </li>
 

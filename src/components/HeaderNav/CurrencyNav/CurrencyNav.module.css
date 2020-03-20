@@ -1,9 +1,9 @@
-.wrapRate {
+.wrapCurrency {
   font-weight: 700;
   text-align: center;
   display: flex;
 }
-.dollarMark {
+.currencyMark {
   margin: auto 0;
   font-size: 23px;
 }

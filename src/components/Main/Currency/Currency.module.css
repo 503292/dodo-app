@@ -1,19 +1,18 @@
-.rateContainer {
+.currencyContainer {
   padding-top: 5px;
   height: 400px;
   width: 320px;
   margin: 0 auto;
   border-radius: 3px;
-  /* box-shadow: 10px 17.321px 40px 0px rgba(1, 1, 0, 0.15); */
 }
 
-.rateTable {
+.currencyTable {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
 }
 
-.rateTable th {
+.currencyTable th {
   background-color: #f3f6f6;
   padding: 20px;
   font-size: 14px;
@@ -22,7 +21,7 @@
   color: #282828;
 }
 
-.rateTable td {
+.currencyTable td {
   padding: 12px;
   font-size: 14px;
   font-family: 'Helvetica Roman';

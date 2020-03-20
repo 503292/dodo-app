@@ -16,7 +16,7 @@ class Clock extends Component {
     }, 1000);
     // setInterval(() => {
     //   this.setState(state => ({ isDots: !state.isDots }));
-    // }, 800);
+    // }, 1000);
   }
 
   render() {

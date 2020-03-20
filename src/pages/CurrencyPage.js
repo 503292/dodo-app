@@ -1,9 +1,9 @@
 import React from 'react';
-import Rate from '../components/Main/Rate/Rate';
+import Currency from '../components/Main/Currency/Currency';
 
 const RatePage = () => (
   <>
-    <Rate />
+    <Currency />
   </>
 );
 
