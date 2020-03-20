@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { getCurrencyPrivatBank } from '../../../services/api';
 import css from './CurrencyNav.module.css';
@@ -33,6 +34,8 @@ class CurrencyNav extends Component {
 
         const currency = [dataUSD, dataEUR, dataRUR];
 
+        localStorage.setItem('currency', JSON.stringify(currency));
+
         this.setState({
           currency,
         });
@@ -44,14 +47,18 @@ class CurrencyNav extends Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { markFromStore } = this.props;
+
+    if (markFromStore !== prevState.currencyMark) {
+      this.setState({ currencyMark: markFromStore });
+    }
+  }
+
   render() {
     const { currency, currencyMark } = this.state;
-    // console.log(rate);
+
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
-    // if (gryvnyaToCurrency) {
-    //   console.log(gryvnyaToCurrency.ccy, 'currency');
-    //   console.log(mark[gryvnyaToCurrency.ccy], 'currencyMark');
-    // }
 
     return (
       <>
@@ -76,5 +83,9 @@ class CurrencyNav extends Component {
     );
   }
 }
+
+CurrencyNav.propTypes = {
+  markFromStore: PropTypes.string.isRequired,
+};
 
 export default CurrencyNav;
