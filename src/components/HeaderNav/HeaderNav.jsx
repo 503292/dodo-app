@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
 // import Contacts from './Contacts/Contacts';
-import Weather from './Weather/Weather';
+import Weather from './WeatherNav/WeatherNav';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
 import BtnLogin from './BtnLogin/BtnLogin';
 

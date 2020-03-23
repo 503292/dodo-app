@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
 
-import css from './Weather.module.css';
+import css from './WeatherNav.module.css';
 
-class Weather extends Component {
+class WeatherNav extends Component {
   // eslint-disable-next-line react/no-unused-state
   state = { weather: [] };
 
@@ -21,4 +21,4 @@ class Weather extends Component {
   }
 }
 
-export default Weather;
+export default WeatherNav;
