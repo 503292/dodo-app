@@ -16,26 +16,15 @@ class Weather extends Component {
     // forecast: {},
   };
 
-  componentDidMount() {
-    // const v = fetchCurrentWeather('50.45,30.51');
-    // console.log(v, 'v');
-  }
+  componentDidMount() {}
 
   render() {
-    // const v = fetchWeather('50.45,30.51');
-
-    // console.log(v, 'v');
-    // if (v) {
-    //   console.log(v.current, 'v');
-    // }
-
     // const { weather, lastSearch } = this.state;
     // console.log(weather, 'weather');
     // console.log(lastSearch, 'lastSearch');
 
     return (
       <>
-        {/* {v.lenght > 0 && <img src={v.current.weather_icons}></img>} */}
         <div className={css.wrapFind}>
           <input
             className={css.input}

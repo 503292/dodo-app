@@ -19,5 +19,4 @@ export const fetchCurrentWeather = query => {
   return fetch(`${proxy}${baseDarkSky}${accessKey}/${query}${settings}`)
     .then(response => response.json())
     .catch(error => console.log(error));
-
 };

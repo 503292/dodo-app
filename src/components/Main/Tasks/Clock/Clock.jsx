@@ -21,6 +21,7 @@ class Clock extends Component {
 
   render() {
     const { time } = this.state; // isDots
+    // console.log(time, 'time');
 
     const timeArr = time.split(':');
     return (
