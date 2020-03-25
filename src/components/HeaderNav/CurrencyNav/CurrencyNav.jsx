@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { getCurrencyPrivatBank } from '../../../services/api';
+import { fetchCurrencyPrivatBank } from '../../../services/api';
 import css from './CurrencyNav.module.css';
 
 const mark = {
@@ -17,7 +17,7 @@ class CurrencyNav extends Component {
   };
 
   componentDidMount() {
-    getCurrencyPrivatBank()
+    fetchCurrencyPrivatBank()
       .then(data => {
         // console.log(data);
         const dataUSD = data.find(elem => elem.ccy === 'USD');

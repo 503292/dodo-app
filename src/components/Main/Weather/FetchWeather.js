@@ -5,25 +5,25 @@ function fetchWeather(query) {
   const queryLocale = `/${query}`;
   const settings = '?lang=uk&exclude=flags&units=si';
 
-  return new Promise(() => {
-    fetch(proxy + baseUrl + accessKey + queryLocale + settings)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error(response.statusText);
-      })
-      .then(data => {
-        // console.log(data);
-        if (data.error) {
-          console.log('немає такого населеного пункту');
+  const getFetch = fetch(proxy + baseUrl + accessKey + queryLocale + settings)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(data => {
+      // console.log(data);
+      if (data.error) {
+        console.log('немає такого населеного пункту');
 
-          return;
-        }
-        console.log(data, 'data');
-      })
-      .catch(error => console.log(error, 'err'));
-  });
+        return;
+      }
+      console.log(data, 'data');
+    })
+    .catch(error => console.log(error, 'err'));
+
+  return getFetch;
 }
 
 export default fetchWeather;

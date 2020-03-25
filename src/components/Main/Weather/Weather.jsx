@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import fetchWeather from './FetchWeather';
+// import { fetchCurrentWeather } from '../../../services/api';
+// import fetchWeather from './FetchWeather';
 // import axios from 'axios';
 
 import css from './Weather.module.css';
@@ -16,12 +17,12 @@ class Weather extends Component {
   };
 
   componentDidMount() {
-    const v = fetchWeather('50.45,30.51');
-    console.log(v, 'v');
+    // const v = fetchCurrentWeather('50.45,30.51');
+    // console.log(v, 'v');
   }
 
   render() {
-    // const v = this.fetchWeather('Lviv');
+    // const v = fetchWeather('50.45,30.51');
 
     // console.log(v, 'v');
     // if (v) {
