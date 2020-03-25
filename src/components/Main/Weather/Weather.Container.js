@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import Weather from './Weather';
 
-const mapStateToProps = state => ({
-  state,
-});
+// eslint-disable-next-line no-unused-vars
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {};
 
