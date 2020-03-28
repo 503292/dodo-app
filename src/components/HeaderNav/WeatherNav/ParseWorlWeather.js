@@ -38,7 +38,7 @@ export default function parseWeatherData(data) {
   const currentWeather = {};
   const currentWheatherData = data.data.current_condition[0];
   currentWeather.tempC = Number(currentWheatherData.temp_C);
-  currentWeather.desrEn = currentWheatherData.weatherDesc[0].value;
+  currentWeather.descrEn = currentWheatherData.weatherDesc[0].value;
   currentWeather.desrUk = currentWheatherData.lang_uk[0].value;
   currentWeather.windSpeed = windSpeedRound(currentWheatherData.windspeedKmph);
   currentWeather.windFrom = currentWheatherData.winddir16Point;
@@ -75,7 +75,7 @@ export default function parseWeatherData(data) {
 
           hourlyTmp.windFrom = h.winddir16Point;
 
-          hourlyTmp.desrEn = h.weatherDesc[0].value;
+          hourlyTmp.descrEn = h.weatherDesc[0].value;
 
           hourlyTmp.desrUk = h.lang_uk[0].value;
 

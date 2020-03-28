@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import icons from './weatherIcons';
+// import icons from './weatherIcons';
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
+import switchIcon from './weatherIcons';
 
 import css from './WeatherNav.module.css';
 
@@ -13,65 +14,8 @@ class WeatherNav extends Component {
     weather: '',
   };
 
-  // getIcon = (descUk) => {
-  //   switch(descUk) {
-  //     case 'Ясно':
-  //     case 'Сонячно':
-  //       ...
-  //       break;
-
-  //     case 'Невелика хмарність':
-
-  //       ...
-  //       break;
-  //     case 'Суцільна хмарність':
-  //     case 'Хмарно':
-  //       ...
-  //       break;
-  //     case 'Невеликий сніг':
-  //     case 'Місцями невеликий сніг':
-  //     case 'Помірний або сильний снігопад':
-  //     case 'Низова хуртовина':
-  //     case 'Помірний сніг':
-  //     case 'Заметіль':
-  //     case 'Сильний сніг':
-  //       ...
-  //       break;
-  //     case 'Мряка':
-  //     case 'Туман':
-  //     case 'Туман з памороззю':
-
-  //       ...
-  //       break;
-  //     case 'Місцями дощ':
-  //     case 'Час від часу помірний дощ':
-  //     case 'Невелика злива':
-  //     case 'Невеликий дощ':
-  //     case 'Місцями невеликий дощ':
-  //     case 'Помірна або сильна злива':
-  //     case 'Помірний дощ':
-  //     case 'Сильний дощ':
-  //     case 'Дуже сильна злива':
-
-  //       ...
-  //       break;
-  //     case 'Місцями невеликий дощ інколи з грозою':
-  //     case 'Невеликий дощ зі снігом':
-  //       ...
-  //       break;
-  //     case 'Місцями грози':
-  //       ...
-  //       break;
-
-  //     default:
-  //       ...
-  //       break;
-  //   }
-
-  // };
-
   componentDidMount() {
-    fetchWorldWeather('Kiev')
+    fetchWorldWeather('kiev')
       .then(data => {
         console.log(data, 'data');
         const parseData = parseWeatherData(data);
@@ -88,7 +32,12 @@ class WeatherNav extends Component {
 
   render() {
     const { weather } = this.state;
-    // weather.currentWeather.descUk
+    // weather.currentWeather.descEn
+    let icon = '';
+    if (weather) {
+      icon = switchIcon(weather.currentWeather.descrEn, true);
+    }
+
     console.log(weather, 'weather');
     // console.log(icons.cloud_moon, 'cloud-moon-rain.svg');
 
@@ -98,7 +47,7 @@ class WeatherNav extends Component {
           <>
             <div className={css.wrapWeather}>
               <div className={css.wrapIcon}>
-                <img className={css.icon} src={icons.thermometer} alt="img" />
+                <img className={css.icon} src={icon} alt="img" />
               </div>
 
               <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>
