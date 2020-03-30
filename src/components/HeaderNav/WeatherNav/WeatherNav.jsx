@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // import icons from './weatherIcons';
 import parseWeatherData from './ParseWorlWeather';
@@ -12,26 +13,30 @@ import css from './WeatherNav.module.css';
 class WeatherNav extends Component {
   state = {
     weather: '',
+    location: '',
   };
 
   componentDidMount() {
-    fetchWorldWeather('kiev')
+    const { locationFromRedux } = this.props;
+    fetchWorldWeather(locationFromRedux)
       .then(data => {
         // console.log(data, 'data');
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
+        localStorage.setItem('location', parseData.timezone);
         console.log(parseData, 'parseData');
         this.setState({
           weather: parseData,
+          location: parseData.timezone,
         });
       })
       .catch(error => {
-        console.log(error, 'err wheather darkSky');
+        console.log(error, 'err wheather worldWeather');
       });
   }
 
   render() {
-    const { weather } = this.state;
+    const { weather, location } = this.state;
     let icon = '';
     if (weather) {
       icon = switchIcon(
@@ -54,12 +59,15 @@ class WeatherNav extends Component {
 
               <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>
             </div>
-            <div className={css.timezone}>{weather.timezone}</div>
+            <div className={css.timezone}>{location}</div>
           </>
         )}
       </>
     );
   }
 }
+WeatherNav.propTypes = {
+  locationFromRedux: PropTypes.string.isRequired,
+};
 
 export default WeatherNav;
