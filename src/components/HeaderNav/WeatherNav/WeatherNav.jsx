@@ -17,7 +17,7 @@ class WeatherNav extends Component {
   componentDidMount() {
     fetchWorldWeather('kiev')
       .then(data => {
-        console.log(data, 'data');
+        // console.log(data, 'data');
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         console.log(parseData, 'parseData');
@@ -32,13 +32,15 @@ class WeatherNav extends Component {
 
   render() {
     const { weather } = this.state;
-    // weather.currentWeather.descEn
     let icon = '';
     if (weather) {
-      icon = switchIcon(weather.currentWeather.descrEn, true);
+      icon = switchIcon(
+        weather.currentWeather.descrEn,
+        weather.currentWeather.isdaytime,
+      );
     }
 
-    console.log(weather, 'weather');
+    // console.log(weather, 'weather');
     // console.log(icons.cloud_moon, 'cloud-moon-rain.svg');
 
     return (

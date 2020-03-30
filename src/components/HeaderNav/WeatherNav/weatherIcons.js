@@ -34,80 +34,80 @@ import thermometer from '../../../assets/image/weather/thermometer.svg';
 
 export default function switchIcon(descrEn, isDay) {
   switch (descrEn) {
-    case 'Moderate or heavy rain in area with thunder':
-    case 'Patchy light rain in area with thunder':
-    case 'Thundery outbreaks in nearby':
+    case 'moderate or heavy rain in area with thunder':
+    case 'patchy light rain in area with thunder':
+    case 'thundery outbreaks in nearby':
       return bolt;
 
-    case 'Fog':
-    case 'Mist':
-    case 'Freezing drizzle':
-    case 'Freezing fog':
+    case 'fog':
+    case 'mist':
+    case 'freezing drizzle':
+    case 'freezing fog':
       return smog;
 
-    case 'Cloudy':
-    case 'Overcast':
-      if (!isDay) {
+    case 'cloudy':
+    case 'overcast':
+      if (isDay === 'no') {
         return cloudMoon;
       }
       return cloud;
 
-    case 'Clear':
-    case 'Sunny':
-      if (!isDay) {
+    case 'clear':
+    case 'sunny':
+      if (isDay === 'no') {
         return moon;
       }
       return sun;
 
-    case 'Light rain shower':
-    case 'Light freezing rain':
-    case 'Moderate rain':
-    case 'Moderate rain at times':
-    case 'Light rain':
-    case 'Light drizzle':
-    case 'Patchy light drizzle':
-    case 'Patchy light rain':
-      if (!isDay) {
+    case 'light rain shower':
+    case 'light freezing rain':
+    case 'moderate rain':
+    case 'moderate rain at times':
+    case 'light rain':
+    case 'light drizzle':
+    case 'patchy light drizzle':
+    case 'patchy light rain':
+      if (isDay === 'no') {
         return cloudMoonRain;
       }
       return cloudSunRain;
 
-    case 'Partly cloudy':
+    case 'partly cloudy':
       return cloudSun;
 
-    case 'Torrential rain shower':
-    case 'Moderate or heavy rain shower':
-    case 'Moderate or Heavy freezing rain':
-    case 'Heavy rain':
-    case 'Heavy rain at times':
-    case 'Heavy freezing drizzle':
-    case 'Patchy rain nearby':
+    case 'torrential rain shower':
+    case 'moderate or heavy rain shower':
+    case 'moderate or heavy freezing rain':
+    case 'heavy rain':
+    case 'heavy rain at times':
+    case 'heavy freezing drizzle':
+    case 'patchy rain nearby':
       return cloudShowersHeavy;
 
-    case 'Moderate or heavy snow in area with thunder':
-    case 'Patchy light snow in area with thunder':
-    case 'Light snow showers':
-    case 'Moderate or heavy sleet showers':
-    case 'Light sleet showers':
-    case 'Moderate or heavy snow showers':
-    case 'Heavy snow':
-    case 'Patchy heavy snow':
-    case 'Moderate snow':
-    case 'Patchy moderate snow':
-    case 'Light snow':
-    case 'Patchy light snow':
-    case 'Moderate or heavy sleet':
-    case 'Light sleet':
-    case 'Blowing snow':
-    case 'Patchy freezing drizzle nearby':
-    case 'Patchy sleet nearby':
-    case 'Patchy snow nearby':
-    case 'Blizzard':
+    case 'moderate or heavy snow in area with thunder':
+    case 'patchy light snow in area with thunder':
+    case 'light snow showers':
+    case 'moderate or heavy sleet showers':
+    case 'light sleet showers':
+    case 'moderate or heavy snow showers':
+    case 'heavy snow':
+    case 'patchy heavy snow':
+    case 'moderate snow':
+    case 'patchy moderate snow':
+    case 'light snow':
+    case 'patchy light snow':
+    case 'moderate or heavy sleet':
+    case 'light sleet':
+    case 'blowing snow':
+    case 'patchy freezing drizzle nearby':
+    case 'patchy sleet nearby':
+    case 'patchy snow nearby':
+    case 'blizzard':
       return snow;
 
-    case 'Moderate or heavy showers of ice pellets':
-    case 'Light showers of ice pellets':
-    case 'Ice pellets':
+    case 'moderate or heavy showers of ice pellets':
+    case 'light showers of ice pellets':
+    case 'ice pellets':
       return cloudMeatball;
 
     default:
