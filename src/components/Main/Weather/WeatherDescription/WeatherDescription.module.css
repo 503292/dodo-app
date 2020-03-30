@@ -1,7 +1,6 @@
 .wrapDescription {
   font-size: 8px;
   text-align: center;
- 
 }
 .wrapDays {
   /* display: flex; */
@@ -11,7 +10,7 @@
   padding: 2px;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
   margin-right: 1px;
 }
 .dayWeek {
@@ -24,7 +23,7 @@
   text-align: center;
   margin-bottom: 5px;
 }
-.wrapIcon{
+.wrapIcon {
   width: 25px;
   height: 25px;
   margin: 0 auto;
@@ -45,5 +44,4 @@
 .descrTemp p,
 .valueTemp p {
   margin: 0;
-
 }

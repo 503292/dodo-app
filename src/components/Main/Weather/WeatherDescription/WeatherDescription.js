@@ -42,7 +42,14 @@ class WeatherDescription extends Component {
               <p>{el.maxTemp}°</p>
             </div>
             {el.hourly.map(h => (
-              <div key={h.time}>{h.time}:00</div>
+              <div key={h.time}>
+                <div>{h.time}:00</div>
+                <div>С {h.tempС}°</div>
+                <div>{h.tempFeelsLikeС}°</div>
+                <div>{h.humidity}%</div>
+                <div>{h.pressure}мм</div>
+                <div>{h.windSpeed}м/с</div>
+              </div>
             ))}
           </div>
         ))}
