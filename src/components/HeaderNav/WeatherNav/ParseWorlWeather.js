@@ -21,6 +21,45 @@ function addPlus(temp) {
   }
   return temp;
 }
+// get day of week
+function getDayOfWeek(data) {
+  const days = [
+    'Понеділок',
+    'Вівторок',
+    'Середа',
+    'Четвер',
+    "П'ятниця",
+    'Субота',
+    'Неділя',
+  ];
+  const day = days[data.getDay() - 1];
+  return day;
+}
+
+// get day of month
+function getDayOfMonth(data) {
+  return data.getDate();
+}
+
+// get month
+function getNameMonth(data) {
+  const months = [
+    'Січня',
+    'Лютого',
+    'Березня',
+    'Квітня',
+    'Травня',
+    'Червня',
+    'Липня',
+    'Серпня',
+    'Вересня',
+    'Жовтня',
+    'Листопада',
+    'Грудня',
+  ];
+  const month = months[data.getMonth()];
+  return month;
+}
 
 export default function parseWeatherData(data) {
   const weatherData = data.data.weather;
@@ -60,7 +99,10 @@ export default function parseWeatherData(data) {
   weatherData.map(el => {
     const hourly = [];
     const daysTmp = {};
-    daysTmp.timeDate = el.date;
+    const timeDate = new Date(el.date);
+    daysTmp.dayOfWeek = getDayOfWeek(timeDate);
+    daysTmp.dayOfMonth = getDayOfMonth(timeDate);
+    daysTmp.month = getNameMonth(timeDate);
     daysTmp.sunRise = el.astronomy[0].sunrise;
     daysTmp.sunSet = el.astronomy[0].sunset;
     daysTmp.maxTemp = addPlus(el.maxtempC);
