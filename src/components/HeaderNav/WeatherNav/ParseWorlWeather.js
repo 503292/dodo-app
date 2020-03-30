@@ -24,15 +24,15 @@ function addPlus(temp) {
 // get day of week
 function getDayOfWeek(data) {
   const days = [
+    'Неділя',
     'Понеділок',
     'Вівторок',
     'Середа',
     'Четвер',
     "П'ятниця",
     'Субота',
-    'Неділя',
   ];
-  const day = days[data.getDay() - 1];
+  const day = days[data.getDay()];
   return day;
 }
 
