@@ -1,43 +1,50 @@
 import React, { Component } from 'react';
 
+import WeatherSearch from './WeatherSearch/WeatherSearch';
+import WeatherDescription from './WeatherDescription/WeatherDescription';
+
 // import { fetchCurrentWeather } from '../../../services/api';
-// import fetchWeather from './FetchWeather';
-// import axios from 'axios';
 
-import css from './Weather.module.css';
-
-// const apiKey = '18ebe79dbda269ab1e2698add6fbf9b1';
+// import css from './Weather.module.css';
 
 class Weather extends Component {
   state = {
-    // weather: [],
-    // lastSearch: ['/'],
-    // location: 'Київ',
-    // forecast: {},
+    weather: '',
+    location: '',
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    const localWeather = JSON.parse(localStorage.getItem('localWeather'));
+    const location = localStorage.getItem('location');
+    this.setState({
+      weather: localWeather,
+      location,
+    });
+  }
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+  };
 
   render() {
-    // const { weather, lastSearch } = this.state;
-    // console.log(weather, 'weather');
-    // console.log(lastSearch, 'lastSearch');
+    const { weather, location } = this.state;
+
+    // if (weather) {
+    //   // console.log(weather, 'weather');
+    //   console.log(location, 'location');
+    // }
 
     return (
       <>
-        <div className={css.wrapFind}>
-          <input
-            className={css.input}
-            autoFocus
-            placeholder="Назва населеного пункту . . ."
-          />
-          <button className={css.btn} type="button">
-            Знайти
-          </button>
-        </div>
-        {/* {lastSearch.length > 0 && (
-          <div className={css.wrapLastSearch}>Kiev, Lviv</div>
-        )} */}
+        <WeatherSearch handleChange={this.handleChange} location={location} />
+        {weather && <WeatherDescription weather={weather} />}
       </>
     );
   }

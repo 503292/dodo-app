@@ -14,6 +14,13 @@ function cutTimeZone(timezone) {
   const cutString = timezone.slice(0, index);
   return cutString;
 }
+// add plus for temperature
+function addPlus(temp) {
+  if (temp > 0) {
+    return `+${temp}`;
+  }
+  return temp;
+}
 
 export default function parseWeatherData(data) {
   const weatherData = data.data.weather;
@@ -38,7 +45,7 @@ export default function parseWeatherData(data) {
   const currentWeather = {};
   const currentWheatherData = data.data.current_condition[0];
   currentWeather.isDayTime = currentWheatherData.isdaytime;
-  currentWeather.tempC = Number(currentWheatherData.temp_C);
+  currentWeather.tempC = addPlus(Number(currentWheatherData.temp_C));
   currentWeather.descrEn = currentWheatherData.weatherDesc[0].value.toLowerCase();
   currentWeather.desrUk = currentWheatherData.lang_uk[0].value;
   currentWeather.windSpeed = windSpeedRound(currentWheatherData.windspeedKmph);
@@ -56,8 +63,8 @@ export default function parseWeatherData(data) {
     daysTmp.timeDate = el.date;
     daysTmp.sunRise = el.astronomy[0].sunrise;
     daysTmp.sunSet = el.astronomy[0].sunset;
-    daysTmp.maxTemp = el.maxtempC;
-    daysTmp.minTemp = el.mintempC;
+    daysTmp.maxTemp = addPlus(el.maxtempC);
+    daysTmp.minTemp = addPlus(el.mintempC);
     daysTmp.sunTotalHours = el.sunHour;
 
     // фільтруєм тільки потрібні години 2, 5, 8, 11, 14, 17, 20, 23
@@ -70,9 +77,9 @@ export default function parseWeatherData(data) {
 
           hourlyTmp.isDayTime = h.isdaytime;
 
-          hourlyTmp.tempС = Number(h.tempC);
+          hourlyTmp.tempС = addPlus(Number(h.tempC));
 
-          hourlyTmp.tempFeelsLikeС = Number(h.FeelsLikeC);
+          hourlyTmp.tempFeelsLikeС = addPlus(Number(h.FeelsLikeC));
 
           hourlyTmp.windSpeed = windSpeedRound(h.windspeedKmph);
 

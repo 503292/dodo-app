@@ -1,0 +1,39 @@
+.wrapDescription {
+  font-size: 8px;
+}
+.wrapDays {
+  display: flex;
+  padding: 5px;
+}
+.currentDay {
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.dayWeek {
+}
+.numDay {
+  font-size: 24px;
+  text-align: center;
+}
+.nameMonth {
+  text-align: center;
+}
+.icon {
+}
+.descrTemp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valueTemp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.descrTemp p,
+.valueTemp p {
+  margin: 0;
+}
+.nextDays {
+}
