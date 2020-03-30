@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import switchIcon from '../../../HeaderNav/WeatherNav/weatherIcons';
+
 import css from './WeatherDescription.module.css';
 
 class WeatherDescription extends Component {
@@ -11,29 +13,49 @@ class WeatherDescription extends Component {
   render() {
     const { weather } = this.props;
     // const currentWeather = weather.currentWeather;
-    // const daysWeather = weather.days;
+    const daysWeather = weather.days;
 
     console.log(weather, 'weather');
     return (
       <div className={css.wrapDescription}>
-        <div className={css.wrapDays}>
-          <div className={css.currentDay}>
-            <div className={css.dayWeek}>понеділок</div>
-            <div className={css.numDay}>30</div>
-            <div className={css.nameMonth}>березня</div>
-            <div className={css.icon}>іконка</div>
+        {daysWeather.map(el => (
+          <div key={el.dayOfWeek} className={css.wrapDays}>
+            <div className={css.dayWeek}>{el.dayOfWeek}</div>
+            <div className={css.numDay}>{el.dayOfMonth}</div>
+            <div className={css.nameMonth}>{el.month}</div>
+            <div className={css.wrapIcon}>
+              <img
+                className={css.icon}
+                src={switchIcon(
+                  el.hourly[5].descrEn,
+                  weather.currentWeather.isdaytime,
+                )}
+                alt="img"
+              />
+            </div>
             <div className={css.descrTemp}>
               <p>мін.</p>
               <p>макс.</p>
             </div>
             <div className={css.valueTemp}>
-              <p>+2°</p>
-              <p>+9°</p>
+              <p>{el.minTemp}°</p>
+              <p>{el.maxTemp}°</p>
             </div>
+            {el.hourly.map(h => (
+              <div key={h.time}>{h.time}:00</div>
+            ))}
           </div>
-          {/* <div className={css.nextDays}>map() 2.3.4.5.6.7</div> */}
-        </div>
-        {/* <div className={css.wrapHourly}>2.5.8.11.14.17.20</div> */}
+        ))}
+
+        {/* <div className={css.wrapHourly}>
+          {daysWeather.map(el => (
+            <div key={el.dayOfWeek}>
+              {el.hourly.map(h => (
+                <div key={h.time}>{h.time}:00</div>
+              ))}
+            </div>
+          ))}
+        </div> */}
       </div>
     );
   }

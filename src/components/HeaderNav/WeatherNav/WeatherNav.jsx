@@ -45,9 +45,6 @@ class WeatherNav extends Component {
       );
     }
 
-    // console.log(weather, 'weather');
-    // console.log(icons.cloud_moon, 'cloud-moon-rain.svg');
-
     return (
       <>
         {weather && (

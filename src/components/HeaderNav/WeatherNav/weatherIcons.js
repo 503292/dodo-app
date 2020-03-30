@@ -14,24 +14,6 @@ import cloudMoonRain from '../../../assets/image/weather/cloud-moon-rain.svg';
 
 import thermometer from '../../../assets/image/weather/thermometer.svg';
 
-// const icons = {
-//   bolt,
-//   smog,
-//   cloud,
-//   sun,
-//   cloud_sun_rain: cloudSunRain,
-//   cloud_sun: cloudSun,
-//   cloud_showers_heavy: cloudShowersHeavy,
-//   snow,
-//   cloud_meatball: cloudMeatball,
-
-//   cloud_moon_rain: cloudMoonRain,
-//   cloud_moon: cloudMoon,
-//   moon,
-
-//   thermometer,
-// };
-
 export default function switchIcon(descrEn, isDay) {
   switch (descrEn) {
     case 'moderate or heavy rain in area with thunder':
