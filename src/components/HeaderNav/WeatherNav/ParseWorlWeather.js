@@ -61,6 +61,20 @@ function getNameMonth(data) {
   return month;
 }
 
+// cut and conver sunrise/sunset
+function cutSunTime(data) {
+  const tmp = data.substr(-2);
+
+  if (tmp === 'PM') {
+    const cutHours = +data.substr(0, 2) + 12;
+    const cutMinutes = data.substr(2, 3);
+    const cutPm = cutHours + cutMinutes;
+    return cutPm;
+  }
+  const cutAm = data.substr(0, 5);
+  return cutAm;
+}
+
 export default function parseWeatherData(data) {
   const weatherData = data.data.weather;
   const weather = {};
@@ -103,8 +117,10 @@ export default function parseWeatherData(data) {
     daysTmp.dayOfWeek = getDayOfWeek(timeDate);
     daysTmp.dayOfMonth = getDayOfMonth(timeDate);
     daysTmp.month = getNameMonth(timeDate);
-    daysTmp.sunRise = el.astronomy[0].sunrise;
-    daysTmp.sunSet = el.astronomy[0].sunset;
+
+    daysTmp.sunRise = cutSunTime(el.astronomy[0].sunrise);
+    daysTmp.sunSet = cutSunTime(el.astronomy[0].sunset);
+
     daysTmp.maxTemp = addPlus(el.maxtempC);
     daysTmp.minTemp = addPlus(el.mintempC);
     daysTmp.sunTotalHours = el.sunHour;
