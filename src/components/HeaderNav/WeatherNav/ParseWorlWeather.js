@@ -113,6 +113,7 @@ export default function parseWeatherData(data) {
   weatherData.map(el => {
     const hourly = [];
     const daysTmp = {};
+    daysTmp.index = weatherData.indexOf(el);
     const timeDate = new Date(el.date);
     daysTmp.dayOfWeek = getDayOfWeek(timeDate);
     daysTmp.dayOfMonth = getDayOfMonth(timeDate);

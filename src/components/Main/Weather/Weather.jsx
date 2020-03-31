@@ -5,7 +5,7 @@ import WeatherDescription from './WeatherDescription/WeatherDescription';
 
 // import { fetchCurrentWeather } from '../../../services/api';
 
-// import css from './Weather.module.css';
+import css from './Weather.module.css';
 
 class Weather extends Component {
   state = {
@@ -42,10 +42,10 @@ class Weather extends Component {
     // }
 
     return (
-      <>
+      <div className={css.weather}>
         <WeatherSearch handleChange={this.handleChange} location={location} />
         {weather && <WeatherDescription weather={weather} />}
-      </>
+      </div>
     );
   }
 }

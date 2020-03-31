@@ -7,13 +7,15 @@ import css from './WeatherDescription.module.css';
 
 class WeatherDescription extends Component {
   state = {
-    // checkedDay: '',
+    indexDay: 0,
   };
 
   render() {
     const { weather } = this.props;
+    const { indexDay } = this.state;
     // const currentWeather = weather.currentWeather;
     const daysWeather = weather.days;
+    // const oneH = daysWeather[0].hourly[0];
 
     console.log(weather, 'weather');
     return (
@@ -25,7 +27,6 @@ class WeatherDescription extends Component {
             <div className={css.nameMonth}>{el.month}</div>
             <div className={css.wrapIcon}>
               <img
-                className={css.icon}
                 src={switchIcon(
                   el.hourly[5].descrEn,
                   weather.currentWeather.isdaytime,
@@ -41,28 +42,93 @@ class WeatherDescription extends Component {
               <p>{el.minTemp}°</p>
               <p>{el.maxTemp}°</p>
             </div>
-            {el.hourly.map(h => (
-              <div key={h.time}>
-                <div>{h.time}:00</div>
-                <div>С {h.tempС}°</div>
-                <div>{h.tempFeelsLikeС}°</div>
-                <div>{h.humidity}%</div>
-                <div>{h.pressure}мм</div>
-                <div>{h.windSpeed}м/с</div>
-              </div>
-            ))}
           </div>
         ))}
 
-        {/* <div className={css.wrapHourly}>
-          {daysWeather.map(el => (
-            <div key={el.dayOfWeek}>
-              {el.hourly.map(h => (
-                <div key={h.time}>{h.time}:00</div>
-              ))}
+        <div className={css.wrapCheckedDay}>
+          <div className={css.wrapDescrDay}>
+            <div className={css.infoDay}>
+              <div className={css.numCheckedDay}>
+                {daysWeather[indexDay].dayOfMonth}
+              </div>
+              <div>{daysWeather[indexDay].month}</div>
             </div>
-          ))}
-        </div> */}
+            <div className={css.infoDescr}>
+              <div>Температура, C°</div>
+              <div>Відчувається, C°</div>
+              <div>Вологість, %</div>
+              <div>Тиск, мм</div>
+              <div>Вітрер, м/с</div>
+              <div>Дощ, %</div>
+            </div>
+          </div>
+
+          <table className={css.table}>
+            <thead>
+              <tr>
+                <th colSpan="2">ніч</th>
+                <th colSpan="2">ранок</th>
+                <th colSpan="2">день</th>
+                <th colSpan="2">вечір</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.time}:00</td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time} className={css.wrapIcon}>
+                    <img
+                      className={css.icon}
+                      src={switchIcon(
+                        h.descrEn,
+                        weather.currentWeather.isdaytime,
+                      )}
+                      alt="weatherIcon"
+                    />
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.tempС}°</td>
+                ))}
+              </tr>
+
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.tempFeelsLikeС}°</td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.humidity}</td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.pressure}</td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}>{h.windSpeed}</td>
+                ))}
+              </tr>
+              <tr>
+                {daysWeather[indexDay].hourly.map(h => (
+                  <td key={h.time}> - </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+          {/* <div>Схід: {daysWeather[indexDay].sunRise}</div>
+          <div>Захід: {daysWeather[indexDay].sunSet}</div> */}
+        </div>
       </div>
     );
   }

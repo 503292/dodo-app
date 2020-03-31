@@ -49,6 +49,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'light drizzle':
     case 'patchy light drizzle':
     case 'patchy light rain':
+    case 'patchy rain possible':
       if (isDay === 'no') {
         return cloudMoonRain;
       }
@@ -69,6 +70,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'moderate or heavy snow in area with thunder':
     case 'patchy light snow in area with thunder':
     case 'light snow showers':
+    case 'light snow shower':
     case 'moderate or heavy sleet showers':
     case 'light sleet showers':
     case 'moderate or heavy snow showers':
