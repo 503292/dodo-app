@@ -1,0 +1,61 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3px;
+}
+.dayOfWeek {
+  display: flex;
+  flex-direction: column;
+}
+.arrowSelect {
+  font-size: 20px;
+  color: gainsboro;
+}
+
+.wrapDays {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 44px;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-right: 1px;
+}
+
+.dayWeek {
+}
+.numDay {
+  color: dimgray;
+  font-size: 24px;
+  text-align: center;
+}
+.nameMonth {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.wrapIcon {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+}
+
+.descrTemp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valueTemp {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.descrTemp p,
+.valueTemp p {
+  margin: 0;
+}
+.valueTemp p {
+  font-size: 10px;
+}

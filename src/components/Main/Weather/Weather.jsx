@@ -36,11 +36,6 @@ class Weather extends Component {
   render() {
     const { weather, location } = this.state;
 
-    // if (weather) {
-    //   // console.log(weather, 'weather');
-    //   console.log(location, 'location');
-    // }
-
     return (
       <div className={css.weather}>
         <WeatherSearch handleChange={this.handleChange} location={location} />
