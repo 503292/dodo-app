@@ -7,7 +7,7 @@ import css from './WeatherDescription.module.css';
 
 class WeatherDescription extends Component {
   state = {
-    indexDay: 0,
+    indexDay: 2,
   };
 
   render() {
@@ -54,8 +54,8 @@ class WeatherDescription extends Component {
               <div>{daysWeather[indexDay].month}</div>
             </div>
             <div className={css.infoDescr}>
-              <div>Температура, C°</div>
-              <div>Відчувається, C°</div>
+              <div>Температура</div>
+              <div>відчуття як</div>
               <div>Вологість, %</div>
               <div>Тиск, мм</div>
               <div>Вітрер, м/с</div>
@@ -64,7 +64,7 @@ class WeatherDescription extends Component {
           </div>
 
           <table className={css.table}>
-            <thead>
+            <thead className={css.thead}>
               <tr>
                 <th colSpan="2">ніч</th>
                 <th colSpan="2">ранок</th>
@@ -73,8 +73,8 @@ class WeatherDescription extends Component {
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
+            <tbody className={css.tbody}>
+              <tr className={css.tableTime}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.time}:00</td>
                 ))}
@@ -93,41 +93,49 @@ class WeatherDescription extends Component {
                   </td>
                 ))}
               </tr>
-              <tr>
+              <tr className={css.tableTemp}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.tempС}°</td>
                 ))}
               </tr>
 
-              <tr>
+              <tr className={css.tableFeelsTemp}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.tempFeelsLikeС}°</td>
                 ))}
               </tr>
-              <tr>
+              <tr className={css.tableHumidity}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.humidity}</td>
                 ))}
               </tr>
-              <tr>
+              <tr className={css.tablePressure}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.pressure}</td>
                 ))}
               </tr>
-              <tr>
+              <tr className={css.tableWind}>
                 {daysWeather[indexDay].hourly.map(h => (
                   <td key={h.time}>{h.windSpeed}</td>
                 ))}
               </tr>
               <tr>
                 {daysWeather[indexDay].hourly.map(h => (
-                  <td key={h.time}> - </td>
+                  <td key={h.time}>
+                    {+h.chanceOfRain > 0 ? `${h.chanceOfRain}` : ' - '}
+                  </td>
                 ))}
               </tr>
             </tbody>
           </table>
-          {/* <div>Схід: {daysWeather[indexDay].sunRise}</div>
-          <div>Захід: {daysWeather[indexDay].sunSet}</div> */}
+        </div>
+        <div className={css.sunTime}>
+          <p>
+            Схід: <span>{daysWeather[indexDay].sunRise}</span>{' '}
+          </p>
+          <p>
+            Захід: <span>{daysWeather[indexDay].sunSet}</span>
+          </p>
         </div>
       </div>
     );
