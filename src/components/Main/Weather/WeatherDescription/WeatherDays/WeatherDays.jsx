@@ -3,20 +3,42 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './WeatherDays.module.css';
 
+const weekend = {
+  saturday: 'Субота',
+  sunday: 'Неділя',
+};
+
 class WeatherDays extends Component {
   state = {};
 
   render() {
-    const { weather, switchIcon } = this.props;
+    const { weather, switchIcon, handleIndexDay, indexDay } = this.props;
     const daysWeather = weather.days;
 
     return (
       <div className={css.wrap}>
         {daysWeather.map(el => (
           <div className={css.dayOfWeek} key={el.dayOfWeek}>
-            <div className={css.wrapDays}>
+            <button
+              onClick={() => handleIndexDay(el.index)}
+              type="button"
+              className={
+                indexDay === el.index
+                  ? `${css.active} ${css.btnDays}`
+                  : `${css.btnDays}`
+              }
+            >
               <div className={css.dayWeek}>{el.dayOfWeek}</div>
-              <div className={css.numDay}>{el.dayOfMonth}</div>
+              <div
+                className={
+                  el.dayOfWeek === weekend.saturday ||
+                  el.dayOfWeek === weekend.sunday
+                    ? `${css.weekend} ${css.numDay}`
+                    : `${css.numDay}`
+                }
+              >
+                {el.dayOfMonth}
+              </div>
               <div className={css.nameMonth}>{el.month}</div>
               <div className={css.wrapIcon}>
                 <img
@@ -35,8 +57,8 @@ class WeatherDays extends Component {
                 <p>{el.minTemp}°</p>
                 <p>{el.maxTemp}°</p>
               </div>
-            </div>
-            <div className={css.arrowSelect}>▼</div>
+            </button>
+            {indexDay === el.index && <div className={css.arrowSelect}>▼</div>}
           </div>
         ))}
       </div>
@@ -46,6 +68,8 @@ class WeatherDays extends Component {
 WeatherDays.propTypes = {
   weather: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
   switchIcon: PropTypes.func.isRequired,
+  handleIndexDay: PropTypes.func.isRequired,
+  indexDay: PropTypes.number.isRequired,
 };
 
 export default WeatherDays;

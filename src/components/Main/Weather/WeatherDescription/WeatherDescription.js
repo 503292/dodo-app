@@ -10,17 +10,28 @@ import css from './WeatherDescription.module.css';
 
 class WeatherDescription extends Component {
   state = {
-    indexDay: 2,
+    indexDay: 0,
+  };
+
+  handleIndexDay = index => {
+    this.setState({
+      indexDay: index,
+    });
   };
 
   render() {
     const { weather } = this.props;
     const { indexDay } = this.state;
 
-    // console.log(weather, 'weather');
+    console.log(weather, 'weather');
     return (
       <div className={css.wrapDescription}>
-        <WeatherDays weather={weather} switchIcon={switchIcon} />
+        <WeatherDays
+          weather={weather}
+          handleIndexDay={this.handleIndexDay}
+          switchIcon={switchIcon}
+          indexDay={indexDay}
+        />
 
         <WeatherHours
           weather={weather}
