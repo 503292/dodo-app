@@ -99,6 +99,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
           Захід: <span>{daysWeather[indexDay].sunSet}</span>
         </p>
       </div>
+      <div>{weather.timezone} Прогноз погоди</div>
     </div>
   );
 };

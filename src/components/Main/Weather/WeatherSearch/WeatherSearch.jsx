@@ -9,20 +9,22 @@ class WeatherSearch extends Component {
   };
 
   render() {
-    const { handleChange } = this.props;
+    const { handleChange, handleSubmit, search } = this.props;
     return (
       <>
-        <div className={css.wrapFind}>
+        <form className={css.wrapFind} onSubmit={handleSubmit}>
           <input
             className={css.input}
             autoFocus
             placeholder="Назва населеного пункту . . ."
             onChange={handleChange}
+            name="search"
+            value={search}
           />
-          <button className={css.btn} type="button">
+          <button className={css.btn} type="submit">
             Знайти
           </button>
-        </div>
+        </form>
         {/* {lastSearch.length > 0 && (
           <div className={css.wrapLastSearch}>Kiev, Lviv</div>
         )} */}
@@ -33,6 +35,8 @@ class WeatherSearch extends Component {
 
 WeatherSearch.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
 };
 
 export default WeatherSearch;

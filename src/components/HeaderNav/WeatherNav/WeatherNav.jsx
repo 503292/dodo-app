@@ -35,6 +35,31 @@ class WeatherNav extends Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { locationFromRedux } = this.props;
+
+    console.log(prevState.location, 'prevState.location');
+    console.log(locationFromRedux, 'locationFromRedux');
+
+    if (locationFromRedux !== prevState.location) {
+      fetchWorldWeather(locationFromRedux)
+        .then(data => {
+          // console.log(data, 'data');
+          const parseData = parseWeatherData(data);
+          localStorage.setItem('localWeather', JSON.stringify(parseData));
+          localStorage.setItem('location', parseData.timezone);
+          // console.log(parseData, 'parseData');
+          this.setState({
+            weather: parseData,
+            location: locationFromRedux,
+          });
+        })
+        .catch(error => {
+          console.log(error, 'err wheather worldWeather');
+        });
+    }
+  }
+
   render() {
     const { weather, location } = this.state;
     let icon = '';
@@ -42,10 +67,6 @@ class WeatherNav extends Component {
       icon = switchIcon(
         weather.currentWeather.descrEn,
         weather.currentWeather.isdaytime,
-      );
-      console.log(
-        weather.currentWeather.descrEn,
-        'weather.currentWeather.descrEn',
       );
     }
 

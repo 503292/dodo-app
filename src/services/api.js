@@ -1,6 +1,6 @@
-// import axios from 'axios';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
 
-// Приват банк API
+// Приват банк API валюта
 export const fetchCurrencyPrivatBank = () => {
   return fetch(
     'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11',
@@ -9,8 +9,16 @@ export const fetchCurrencyPrivatBank = () => {
     .catch(error => console.log(error));
 };
 
+// Приват банк API переклад назви міста з української на англійську
+export const fetchFindCityTranslate = query => {
+  return fetch(
+    `${proxy}https://api.privatbank.ua/p24api/infrastructure?json&tso&city=${query}`,
+  )
+    .then(response => response.json())
+    .catch(error => console.log(error, 'err'));
+};
+
 // DarkSky API
-const proxy = 'https://cors-anywhere.herokuapp.com/';
 const baseDarkSky = 'https://api.darksky.net/forecast/';
 const apiKey1 = 'def124adcfa450fb204abe6f0e4e0c62';
 const settings1 = '?lang=uk&exclude=flags&units=si';
@@ -22,7 +30,6 @@ export const fetchDarkSkyWeather = query => {
 };
 
 // worldweatheronline.com API 26.03.2020 -> 26.05.2020
-const proxy2 = 'https://cors-anywhere.herokuapp.com/';
 const baseWorldWeather =
   'http://api.worldweatheronline.com/premium/v1/weather.ashx';
 const apiKey2 = '04ed5da5f92b43529f2110352202603';
@@ -31,7 +38,7 @@ const settings2 =
 
 export const fetchWorldWeather = query => {
   return fetch(
-    `${proxy2}${baseWorldWeather}?key=${apiKey2}&q=${query}${settings2}`,
+    `${proxy}${baseWorldWeather}?key=${apiKey2}&q=${query}${settings2}`,
   )
     .then(response => response.json())
     .catch(error => console.log(error));
