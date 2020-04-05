@@ -1,34 +1,88 @@
 import React, { Component } from 'react';
 
 import { DragDropContext } from 'react-beautiful-dnd';
+import PropTypes from 'prop-types';
 import Column from './Column/Column';
-// import '@atlaskit/css-reset';
-import AddTaskForm from './AddTaskForm/AddTaskForm';
+import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
 import EnterDay from './EnterDay/EnterDay';
 
-// import tasks from '../../tasks.json';
 import css from './Tasks.module.css';
 
 class Tasks extends Component {
   state = {
-    tasks: [
-      { id: 'id-1', content: '1take out the car1' },
-      { id: 'id-2', content: '2take out the car2' },
-      { id: 'id-3', content: '3take out the car3' },
-      { id: 'id-4', content: '4take out the car4' },
-      { id: 'id-5', content: '4take out the car4' },
-      { id: 'id-6', content: '4take out the car4' },
-    ],
+    tasks: [],
     columns: {
       'column-1': {
         id: 'column-1',
         title: 'today',
-        tasksIds: ['id-1', 'id-2', 'id-3', 'id-4', 'id-5', 'id-6'],
+        tasksIds: [],
       },
     },
     columnOrder: ['column-1'],
+    editTask: null,
   };
 
+  componentDidMount() {
+    const { data } = this.props;
+    this.viewTasks(data);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+
+    if (prevProps.data !== data) {
+      this.viewTasks(data);
+    }
+  }
+
+  viewTasks = data => {
+    const arrIds = data.map(el => el.id);
+
+    this.setState({
+      tasks: data,
+      columns: {
+        'column-1': {
+          id: 'column-1',
+          title: 'Сьогодні',
+          tasksIds: arrIds,
+        },
+      },
+      editTask: null,
+    });
+  };
+  /*
+   *   crud methods for REDUX
+   */
+
+  updateCompleted = async id => {
+    const { updateIsCompletedTaskToRedux } = this.props;
+
+    await this.setState(state => ({
+      tasks: state.tasks.map(task =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    }));
+
+    const { tasks } = this.state;
+    const taskTmp = tasks.find(el => el.id === id);
+
+    updateIsCompletedTaskToRedux(taskTmp);
+  };
+
+  updateTask = task => {
+    this.setState({
+      editTask: task,
+    });
+  };
+
+  deleteTask = id => {
+    const { deleteTaskFromRedux } = this.props;
+    deleteTaskFromRedux(id);
+  };
+
+  /*
+   *   beautiful dnd
+   */
   onDragStart = () => {
     document.body.style.color = '#F34D4D';
   };
@@ -114,11 +168,14 @@ class Tasks extends Component {
   };
 
   render() {
-    const { columnOrder, columns, tasks } = this.state;
+    const { modalAddTasksOpen } = this.props;
+    const { columnOrder, columns, tasks, editTask } = this.state;
+
+    // console.log(editTask, 'editTask');
     return (
-      <>
+      <div className={css.wrapTasks}>
         <EnterDay />
-        <hr />
+
         <DragDropContext
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
@@ -131,24 +188,38 @@ class Tasks extends Component {
                 tasks.find(el => el.id === taskId),
               );
               return (
-                <Column key={column.id} tasksDraw={tasksDraw} column={column} />
+                <Column
+                  key={column.id}
+                  tasksDraw={tasksDraw}
+                  column={column}
+                  modalAddTasksOpen={modalAddTasksOpen}
+                  updateCompleted={this.updateCompleted}
+                  updateTask={this.updateTask}
+                  deleteTask={this.deleteTask}
+                />
               );
             })}
           </div>
         </DragDropContext>
-        <hr />
-        <AddTaskForm />
-        {/* 
-        TO-DO 
-        зі стора redux сюди падають tasks: [] 
-        */}
-        {/* 
-        <TaskDay /> всі таски конкретно вибраного дня
-        <TaskFuture /> всі таски заплановані без дати 
-        */}
-      </>
+
+        <button
+          type="button"
+          className={css.addButton}
+          onClick={modalAddTasksOpen}
+        >
+          +
+        </button>
+        <ModalAddTask editTask={editTask} />
+      </div>
     );
   }
 }
+
+Tasks.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  modalAddTasksOpen: PropTypes.func.isRequired,
+  updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
+  deleteTaskFromRedux: PropTypes.func.isRequired,
+};
 
 export default Tasks;

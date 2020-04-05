@@ -10,32 +10,56 @@ class Column extends Component {
   state = {};
 
   render() {
-    const { tasksDraw, column } = this.props;
-    // console.log(tasksDraw, "tasksDraw");
-    // console.log(column, "column");
+    const {
+      tasksDraw,
+      column,
+      modalAddTasksOpen,
+      updateCompleted,
+      updateTask,
+      deleteTask,
+    } = this.props;
+    // console.log(tasksDraw, 'tasksDraw');
+    // console.log(column, 'column');
     return (
-      <>
-        <div className={css.wrapTasks}>
-          <h3 className={css.title}>{column.title}</h3>
-          <Droppable droppableId={column.id}>
-            {provided => {
-              //   console.log("provided", provided);
-              return (
-                <div
-                  className={css.tasks}
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  {tasksDraw.map((task, index) => (
-                    <Task key={task.id} task={task} index={index} />
-                  ))}
-                  {provided.placeholder}
-                </div>
-              );
-            }}
-          </Droppable>
-        </div>
-      </>
+      <div>
+        {/* <div className={css.wrapTasks}> */}
+        <h3 className={css.title}>{column.title}</h3>
+
+        {tasksDraw.length <= 0 && (
+          <div>
+            <p>Вітаємо Вас в Borsch).</p>
+            {/* <p> Я думаю що ви швидко розберетесь з нашим інтерфейсом</p> */}
+
+            <p>Для початку роботи натисніть &quot;+&quot;</p>
+          </div>
+        )}
+        <Droppable droppableId={column.id}>
+          {provided => {
+            //   console.log("provided", provided);
+            return (
+              <div
+                className={css.tasks}
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                {tasksDraw.map((task, index) => (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    index={index}
+                    updateCompleted={updateCompleted}
+                    modalAddTasksOpen={modalAddTasksOpen}
+                    updateTask={updateTask}
+                    deleteTask={deleteTask}
+                  />
+                ))}
+                {provided.placeholder}
+              </div>
+            );
+          }}
+        </Droppable>
+        {/* </div> */}
+      </div>
     );
   }
 }

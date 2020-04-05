@@ -1,0 +1,14 @@
+.wrapWeather {
+  font-weight: 700;
+  display: flex;
+}
+.wrapIcon {
+  width: 20px;
+  height: 20px;
+}
+.degree {
+  margin: 0;
+}
+.timezone {
+  font-size: 10px;
+}
