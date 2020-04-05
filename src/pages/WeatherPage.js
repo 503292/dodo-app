@@ -1,5 +1,10 @@
 import React from 'react';
+import Weather from '../components/Main/Weather/Weather.Container';
 
-const WeatherPage = () => <h2>Weather</h2>;
+const WeatherPage = () => (
+  <>
+    <Weather />
+  </>
+);
 
 export default WeatherPage;

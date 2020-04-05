@@ -1,0 +1,33 @@
+.wrapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  background-color: #ffeb3b;
+  list-style: none;
+  margin: 0 auto;
+  width: 320px;
+  height: 40px;
+}
+.routeHeader {
+}
+.logoLink {
+  text-decoration: none;
+  color: grey;
+}
+.contactsLink {
+  text-decoration: none;
+  color: grey;
+}
+.weaterLink {
+  text-decoration: none;
+  color: grey;
+}
+.rateLink {
+  text-decoration: none;
+  color: grey;
+}
+.loginLink {
+  text-decoration: none;
+  color: grey;
+}

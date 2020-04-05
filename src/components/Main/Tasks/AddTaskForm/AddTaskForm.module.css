@@ -1,0 +1,106 @@
+.wrapAllForm {
+  color: rgb(173, 175, 173);
+  margin: 0 auto;
+  width: 310px;
+}
+.backBtn {
+  width: 100%;
+  border: none;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  outline: none;
+  border-radius: 7px 7px 0 0;
+}
+.backBtn span {
+  margin-right: 20px;
+  color: rgb(173, 175, 173);
+  font-size: 20px;
+  padding-left: 90%;
+}
+
+.backBtn:hover,
+.backBtn:focus {
+  background-color: #a9f374;
+}
+.backBtn:active {
+  background-color: #94d466;
+}
+.addForm {
+  padding: 10px;
+  background-color: rgb(248, 245, 245);
+  width: 100%;
+  font-size: 20px;
+  border-radius: 0 0 7px 7px;
+}
+.title {
+  font-size: 20px;
+}
+
+.inputTask {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid grey;
+  outline: none;
+  color: grey;
+}
+.twoInputs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.wrapInput {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.wrapInput span {
+  font-size: 12px;
+  color: lightgrey;
+  padding-bottom: 5px;
+}
+.dataInput {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid grey;
+  outline: none;
+  color: grey;
+  width: 40%;
+}
+.priorityInput {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid grey;
+  outline: none;
+  color: grey;
+  width: 40%;
+}
+/* .inputLevel {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid grey;
+  outline: none;
+} */
+.addBtn {
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  color: rgb(173, 175, 173);
+  background-color: #bafa8c;
+  padding: 10px;
+  font-weight: 700;
+  outline: none;
+}
+.addBtn:hover,
+.addBtn:focus {
+  background-color: #a9f374;
+}
+.addBtn:active {
+  background-color: #94d466;
+}
