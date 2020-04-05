@@ -9,25 +9,25 @@ export const fetchCurrencyPrivatBank = () => {
     .catch(error => console.log(error));
 };
 
-// Приват банк API переклад назви міста з української на англійську
-export const fetchFindCityTranslate = query => {
-  return fetch(
-    `${proxy}https://api.privatbank.ua/p24api/infrastructure?json&tso&city=${query}`,
-  )
-    .then(response => response.json())
-    .catch(error => console.log(error, 'err'));
-};
+// Приват банк API переклад назви міста з української на англійську // api не працює
+// export const fetchFindCityTranslate = query => {
+//   return fetch(
+//     `${proxy}https://api.privatbank.ua/p24api/infrastructure?json&tso&city=${query}`,
+//   )
+//     .then(response => response.json())
+//     .catch(error => console.log(error, 'err'));
+// };
 
-// DarkSky API
-const baseDarkSky = 'https://api.darksky.net/forecast/';
-const apiKey1 = 'def124adcfa450fb204abe6f0e4e0c62';
-const settings1 = '?lang=uk&exclude=flags&units=si';
+// DarkSky API // api не використовується
+// const baseDarkSky = 'https://api.darksky.net/forecast/';
+// const apiKey1 = 'def124adcfa450fb204abe6f0e4e0c62';
+// const settings1 = '?lang=uk&exclude=flags&units=si';
 
-export const fetchDarkSkyWeather = query => {
-  return fetch(`${proxy}${baseDarkSky}${apiKey1}/${query}${settings1}`)
-    .then(response => response.json())
-    .catch(error => console.log(error));
-};
+// export const fetchDarkSkyWeather = query => {
+//   return fetch(`${proxy}${baseDarkSky}${apiKey1}/${query}${settings1}`)
+//     .then(response => response.json())
+//     .catch(error => console.log(error));
+// };
 
 // worldweatheronline.com API 26.03.2020 -> 26.05.2020
 const baseWorldWeather =
