@@ -81,7 +81,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
                 <td key={h.time}>{h.windSpeed}</td>
               ))}
             </tr>
-            <tr>
+            <tr className={css.tableChanceOfRain}>
               {daysWeather[indexDay].hourly.map(h => (
                 <td key={h.time}>
                   {+h.chanceOfRain > 0 ? `${h.chanceOfRain}` : ' - '}
@@ -92,10 +92,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
         </table>
       </div>
       <div className={css.wrapSun}>
-        <div className={css.timezone}>
-          <p>Прогноз погоди:</p>
-          <p>{weather.timezone}</p>
-        </div>
+        <div className={css.timezone}>{weather.timezone}</div>
         <div className={css.sunTime}>
           <p>
             Схід: <span>{daysWeather[indexDay].sunRise}</span>
