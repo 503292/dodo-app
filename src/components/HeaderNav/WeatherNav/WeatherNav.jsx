@@ -20,7 +20,6 @@ class WeatherNav extends Component {
     const { locationFromRedux } = this.props;
     fetchWorldWeather(locationFromRedux)
       .then(data => {
-        console.log(data, 'data'); // 1
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);

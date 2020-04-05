@@ -91,15 +91,20 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
           </tbody>
         </table>
       </div>
-      <div className={css.sunTime}>
-        <p>
-          Схід: <span>{daysWeather[indexDay].sunRise}</span>
-        </p>
-        <p>
-          Захід: <span>{daysWeather[indexDay].sunSet}</span>
-        </p>
+      <div className={css.wrapSun}>
+        <div className={css.timezone}>
+          <p>Прогноз погоди:</p>
+          <p>{weather.timezone}</p>
+        </div>
+        <div className={css.sunTime}>
+          <p>
+            Схід: <span>{daysWeather[indexDay].sunRise}</span>
+          </p>
+          <p>
+            Захід: <span>{daysWeather[indexDay].sunSet}</span>
+          </p>
+        </div>
       </div>
-      <div>{weather.timezone} Прогноз погоди</div>
     </div>
   );
 };

@@ -93,17 +93,35 @@
 }
 
 /* sunTime */
+.wrapSun {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  margin: 7px 0 0 0;
+}
+.timezone {
+  font-size: 14px;
+}
+.timezone p {
+  display: flex;
+  margin: 0;
+}
 
+.timezone p:last-child {
+  font-size: 20px;
+  color: tomato;
+}
 .sunTime {
   padding: 5px 10px;
   text-align: left;
-  width: 110px;
+  width: 150px;
+  height: 15px;
   display: flex;
   justify-content: space-between;
-  margin: 10px 0 0 2px;
-
+  align-items: center;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 15px 0 20px 15px;
+  border-radius: 20px;
+  font-size: 11px;
 }
 .sunTime p {
   margin: 0;
