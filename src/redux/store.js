@@ -1,18 +1,39 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
-import { persistStore } from 'redux-persist';
+import { persistStore } from 'redux-persist'; //  {persistReducer}
 
-import taskReducer from './tasks/tasksReducers';
-import globalReducer from './global/globalReducers';
-import currencyReducer from './currency/currencyReducers';
-import locationReducer from './location/locationReducers';
+// import sessionReducer from './session/sessionReducers';
+// import storage from 'redux-persist/lib/storage';
+
+//------------------------------------------------------
+
+// import { booksReducer } from './books/booksReducers';
+// import resultsReducer from './results/resultsReducers';
+// import loaderReducer from './loader/loaderReducers';
+// import bookIdReducer from './bookId/bookIdReducer';
+// import goalReducer from './goal/goalReducers';
+// import controlsReducer from './controls/controlsReducers';
+// import trainingReducer from './training/trainingReducers';
+import taskReducer from './storeChanges/tasks_redux/tasksReducers';
+
+// Persist only token
+// const sessionPersistConfig = {
+//   key: 'session',
+//   storage,
+//   whitelist: ['token'],
+// };
 
 const rootReducer = combineReducers({
-  global: globalReducer,
+  //   session: persistReducer(sessionPersistConfig, sessionReducer),
+  //   books: booksReducer,
+  //   training: trainingReducer,
+  //   results: resultsReducer,
+  //   isLoading: loaderReducer,
+  //   bookIdInSummaryModal: bookIdReducer,
+  //   goal: goalReducer,
+  //   componentController: controlsReducer,
   tasks: taskReducer,
-  currencyMark: currencyReducer,
-  location: locationReducer,
 });
 
 const enhancer = applyMiddleware(ReduxThunk);

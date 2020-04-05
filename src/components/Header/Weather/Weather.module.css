@@ -1,0 +1,10 @@
+.wrapWeather {
+  font-weight: 700;
+  display: flex;
+}
+.cloudSun {
+}
+
+.degree {
+  margin: 0;
+}

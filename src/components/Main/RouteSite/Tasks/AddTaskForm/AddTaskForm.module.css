@@ -1,0 +1,38 @@
+.addForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(224, 221, 221);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 3px #575555 inset;
+}
+.addInput {
+  border: 1px solid grey;
+  border-radius: 25px;
+  width: 88%;
+  outline: none;
+  padding: 0 0 0 10px;
+}
+.addBtn {
+  border: 1px solid grey;
+  border-radius: 3px;
+  color: grey;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 2px 3px #575555 inset;
+}
+
+.addBtn:hover {
+  background-color: grey;
+  color: white;
+}
+
+.plusIcon {
+  width: 30px;
+  height: 30px;
+}
