@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import Weather from './Weather';
 import { updateLocation } from '../../../redux/location/locationActions';
+import { getLocation } from '../../../redux/location/locationSelectors';
 
-// eslint-disable-next-line no-unused-vars
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  locationFromRedux: getLocation(state),
+});
 
 const mapDispatchToProps = { updateLocation };
 

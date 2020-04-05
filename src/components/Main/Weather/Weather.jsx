@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import WeatherSearch from './WeatherSearch/WeatherSearch';
 import WeatherDescription from './WeatherDescription/WeatherDescription';
 
-// import { fetchFindCityTranslate } from '../../../services/api';
-
 import css from './Weather.module.css';
 
 class Weather extends Component {
@@ -14,7 +12,6 @@ class Weather extends Component {
     weather: '',
     location: '',
     search: '',
-    // error: '',
   };
 
   componentDidMount() {
@@ -27,12 +24,13 @@ class Weather extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { locationFromRedux } = this.props;
     const localWeather = JSON.parse(localStorage.getItem('localWeather'));
-    const location = localStorage.getItem('location');
-    if (prevState.location !== location) {
+
+    if (prevState.location !== locationFromRedux) {
       this.setState({
         weather: localWeather,
-        location,
+        location: locationFromRedux,
       });
     }
   }
@@ -51,18 +49,7 @@ class Weather extends Component {
     const { updateLocation } = this.props;
 
     const lowerCaseSearch = search.toLowerCase().trim();
-    // console.log(lowerCaseSearch, 'search');
-
-    // fetchFindCityTranslate(lowerCaseSearch)
-    //   .then(data => {
-    //     console.log(data.devices[0].cityUA, 'data');
-    //     console.log(data.devices[0].cityRU, 'data');
-    //     console.log(data.devices[0].cityEN, 'data');
-    //     updateLocation(data.devices[0].cityEN);
-    //   })
-    //   .catch(error => {
-    //     console.log(error, 'error');
-    //   });
+    console.log(lowerCaseSearch, 'search');
 
     updateLocation(lowerCaseSearch);
 
@@ -75,7 +62,6 @@ class Weather extends Component {
   render() {
     const { weather, location, search } = this.state;
 
-    // console.log(weather, 'weather');
     return (
       <div className={css.weather}>
         <WeatherSearch
@@ -89,9 +75,13 @@ class Weather extends Component {
     );
   }
 }
+Weather.defaultProps = {
+  locationFromRedux: '',
+};
 
 Weather.propTypes = {
   updateLocation: PropTypes.func.isRequired,
+  locationFromRedux: PropTypes.string,
 };
 
 export default Weather;

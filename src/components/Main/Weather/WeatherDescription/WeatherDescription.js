@@ -23,7 +23,6 @@ class WeatherDescription extends Component {
     const { weather } = this.props;
     const { indexDay } = this.state;
 
-    console.log(weather, 'weather');
     return (
       <div className={css.wrapDescription}>
         <WeatherDays
