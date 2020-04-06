@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import moment from 'moment';
-import 'moment/locale/uk';
-// import { validateAll } from 'indicative/validator';
 import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
@@ -19,14 +16,12 @@ class AddTaskForm extends Component {
     endTime: new Date(),
     text: '',
     priority: Priority.NORMAL,
-    // eslint-disable-next-line react/no-unused-state
     id: '',
     completed: false,
   };
 
   componentDidMount() {
     const { editTask } = this.props;
-    // console.log(editTask, 'editTask');
     if (editTask !== null) {
       this.setState({
         endTime: editTask.endTime,
