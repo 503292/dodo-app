@@ -1,20 +1,16 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
-// import PrioritySelector from '../ModalAddTask/PrioritySelector/PrioritySelector';
 
-// import Priority from '../../../../utils/Priority';
+import { getColor } from '../../../../utils/Priority';
 
 import css from './Task.module.css';
-
-// const options = Object.values(Priority);
 
 const Container = styled.div`
   margin-bottom: 8px;
@@ -28,7 +24,6 @@ class Task extends Component {
   state = {};
 
   formatEndTime = endTime => {
-    // console.log(endTime, 'endTime');
     let hour = endTime.getHours();
     if (hour < 10) hour = '0'.concat(hour);
     let minutes = endTime.getMinutes();
@@ -50,7 +45,11 @@ class Task extends Component {
 
     return (
       <>
-        <Draggable draggableId={task.id} index={index}>
+        <Draggable
+          className={css.dragContainer}
+          draggableId={task.id}
+          index={index}
+        >
           {(provided, snapshot) => (
             <Container
               {...provided.draggableProps}
@@ -58,8 +57,11 @@ class Task extends Component {
               ref={provided.innerRef}
               isDragging={snapshot.isDragging}
               onClick={this.onClick}
+              className={css.dragContainer}
             >
-              <div className={`${css.task} ${css[`${task.priority}Priority`]}`}>
+              <div
+                className={`${css.task} ${css[`${getColor(task.priority)}`]}`}
+              >
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label className={css.wrapText}>
                   <input
@@ -70,9 +72,7 @@ class Task extends Component {
                   />
                   <p
                     className={
-                      task.completed === true
-                        ? `${css.text} ${css.lineThrough}`
-                        : css.text
+                      task.completed === true ? `${css.lineThrough}` : css.text
                     }
                   >
                     {task.text}
@@ -124,5 +124,14 @@ class Task extends Component {
     );
   }
 }
+
+Task.propTypes = {
+  task: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
+  index: PropTypes.number.isRequired,
+  modalAddTasksOpen: PropTypes.func.isRequired,
+  updateCompleted: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+};
 
 export default Task;

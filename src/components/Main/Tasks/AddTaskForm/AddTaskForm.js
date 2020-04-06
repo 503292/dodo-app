@@ -7,7 +7,8 @@ import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
-import Priority from '../../../../utils/Priority';
+import { Priority, getColor } from '../../../../utils/Priority';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
 
@@ -92,14 +93,14 @@ class AddTaskForm extends Component {
   };
 
   render() {
-    const { modalAddTasksClose } = this.props;
+    const { modalAddTasksClose, editTask } = this.props;
     const { endTime, text, priority } = this.state;
 
     return (
       <div className={css.wrapAllForm}>
         <button
           type="button"
-          className={css.backBtn}
+          className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
           onClick={modalAddTasksClose}
         >
           <span>⤫</span>
@@ -156,8 +157,11 @@ class AddTaskForm extends Component {
             </div>
           </div>
 
-          <button className={css.addBtn} type="submit">
-            Добавити
+          <button
+            className={`${css.addBtn} ${css[`${getColor(priority)}`]}`}
+            type="submit"
+          >
+            {editTask === null ? 'Зберегти' : 'Редагувати'}
           </button>
         </form>
       </div>

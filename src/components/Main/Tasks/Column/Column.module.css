@@ -7,6 +7,5 @@
   color: gray;
 }
 .tasks {
-  /* padding: 8px; */
   flex-grow: 1;
 }

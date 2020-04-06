@@ -1,12 +1,12 @@
-select option[value='low'] {
+select option[value='низька'] {
   background: #fcf952;
 }
 
-select option[value='normal'] {
+select option[value='середня'] {
   background: #91ff95;
 }
 
-select option[value='high'] {
+select option[value='висока'] {
   background: #f3a987;
 }
 

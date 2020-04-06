@@ -18,24 +18,20 @@ class Column extends Component {
       updateTask,
       deleteTask,
     } = this.props;
-    // console.log(tasksDraw, 'tasksDraw');
-    // console.log(column, 'column');
+
     return (
       <div>
-        {/* <div className={css.wrapTasks}> */}
         <h3 className={css.title}>{column.title}</h3>
 
         {tasksDraw.length <= 0 && (
           <div>
             <p>Вітаємо Вас в Borsch).</p>
-            {/* <p> Я думаю що ви швидко розберетесь з нашим інтерфейсом</p> */}
 
             <p>Для початку роботи натисніть &quot;+&quot;</p>
           </div>
         )}
         <Droppable droppableId={column.id}>
           {provided => {
-            //   console.log("provided", provided);
             return (
               <div
                 className={css.tasks}
@@ -58,7 +54,6 @@ class Column extends Component {
             );
           }}
         </Droppable>
-        {/* </div> */}
       </div>
     );
   }

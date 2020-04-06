@@ -1,8 +1,19 @@
-export default Object.freeze({
-  LOW: 'low',
-  NORMAL: 'normal',
-  HIGH: 'high',
+export const Priority = Object.freeze({
+  LOW: 'низька',
+  NORMAL: 'середня',
+  HIGH: 'висока',
 });
+
+export const getColor = el => {
+  switch (el) {
+    case 'низька':
+      return 'lowPriority';
+    case 'висока':
+      return 'highPriority';
+    default:
+      return 'normalPriority';
+  }
+};
 
 // LOW - every-day
 // NORMAL - 2-day
