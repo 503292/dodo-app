@@ -1,19 +1,19 @@
 .wrapTasks {
   margin: 0 auto;
-  /* border: 1px solid #f7f9fa; */
+
   position: relative;
   height: 87vh;
-  width: 320px;
+  min-width: 320px;
 
   background-color: rgba(20, 185, 255, 0.03);
-  /* background-color: rgb(251, 254, 255); */
 }
 .container {
   display: flex;
   justify-content: center;
   overflow: auto;
   height: 80vh;
-  /* height: 10vh; */
+  max-width: 425px;
+  margin: 0 auto;
 }
 .container::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);

@@ -1,14 +1,14 @@
 .clock {
   color: grey;
   font-weight: bold;
-  width: 40%;
+  /* width: 40%; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .time {
   display: flex;
-  padding: 3px;
+  padding: 3px 10px;
 }
 .time div {
   width: 55px;

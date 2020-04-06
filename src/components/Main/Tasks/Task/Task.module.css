@@ -21,6 +21,7 @@
 .wrapText {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 .wrapText p {
@@ -31,7 +32,7 @@
 }
 .endTime {
   font-size: 10px;
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .lowPriority {
