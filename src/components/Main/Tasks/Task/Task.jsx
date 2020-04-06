@@ -72,7 +72,9 @@ class Task extends Component {
                   />
                   <p
                     className={
-                      task.completed === true ? `${css.lineThrough}` : css.text
+                      task.completed === true
+                        ? `${css.text} ${css.lineThrough}`
+                        : css.text
                     }
                   >
                     {task.text}
