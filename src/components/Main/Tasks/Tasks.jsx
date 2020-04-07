@@ -181,6 +181,7 @@ class Tasks extends Component {
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
           onDragUpdate={this.onDragUpdate}
+          className={css.dragDropContext}
         >
           <div className={css.container}>
             {columnOrder.map(columnId => {
@@ -201,15 +202,16 @@ class Tasks extends Component {
               );
             })}
           </div>
+
+          <button
+            type="button"
+            className={css.addButton}
+            onClick={modalAddTasksOpen}
+          >
+            +
+          </button>
         </DragDropContext>
 
-        <button
-          type="button"
-          className={css.addButton}
-          onClick={modalAddTasksOpen}
-        >
-          +
-        </button>
         <ModalAddTask editTask={editTask} />
       </div>
     );

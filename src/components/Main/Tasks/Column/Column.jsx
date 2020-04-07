@@ -20,7 +20,7 @@ class Column extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className={css.wrapColumn}>
         <h3 className={css.title}>{column.title}</h3>
 
         {tasksDraw.length <= 0 && (

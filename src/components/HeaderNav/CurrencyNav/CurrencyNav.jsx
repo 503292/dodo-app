@@ -7,7 +7,7 @@ import css from './CurrencyNav.module.css';
 const mark = {
   USD: '$',
   EUR: '€',
-  RUR: '₽',
+  RUB: '₽',
 };
 
 class CurrencyNav extends Component {
@@ -31,6 +31,7 @@ class CurrencyNav extends Component {
         const dataRUR = data.find(elem => elem.ccy === 'RUR');
         dataRUR.buy = Number(dataRUR.buy).toFixed(3);
         dataRUR.sale = Number(dataRUR.sale).toFixed(3);
+        dataRUR.ccy = 'RUB';
 
         const currency = [dataUSD, dataEUR, dataRUR];
 
