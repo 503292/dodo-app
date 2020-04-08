@@ -13,7 +13,7 @@ const mark = {
 class CurrencyNav extends Component {
   state = {
     currency: [],
-    currencyMark: 'USD',
+    currencyMark: '',
   };
 
   componentDidMount() {
@@ -65,7 +65,7 @@ class CurrencyNav extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
-    console.log(currencyMark, 'currencyMark');
+    // console.log(currencyMark, 'currencyMark');
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
     return (
