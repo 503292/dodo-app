@@ -6,7 +6,7 @@
 
   background-color: rgba(20, 185, 255, 0.03);
 }
-.dragDropContext{
+.dragDropContext {
   position: relative;
 }
 .container {

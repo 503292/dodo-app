@@ -22,7 +22,7 @@ class Currency extends Component {
   checkMarkCurrency = e => {
     const { updateCurrency } = this.props;
     const currencyMark = e.currentTarget.nextSibling.firstChild.textContent;
-
+    localStorage.setItem('currencyMark', JSON.stringify(currencyMark));
     updateCurrency(currencyMark);
   };
 

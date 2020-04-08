@@ -17,6 +17,13 @@ class CurrencyNav extends Component {
   };
 
   componentDidMount() {
+    // const currencyMark = localStorage.getItem('currencyMark');
+
+    // console.log(currencyMark, 'currencyMark');
+    // if (currencyMark) {
+    //   this.setState({ currencyMark });
+    // }
+
     fetchCurrencyPrivatBank()
       .then(data => {
         // console.log(data);
@@ -58,7 +65,7 @@ class CurrencyNav extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
-
+    console.log(currencyMark, 'currencyMark');
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
     return (
