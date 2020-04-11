@@ -13,7 +13,10 @@ class Currency extends Component {
     const localCurrency = JSON.parse(localStorage.getItem('currency'));
     const localCurrencyMark = JSON.parse(localStorage.getItem('currencyMark'));
 
-    this.setState({ currency: localCurrency, currencyMark: localCurrencyMark });
+    await this.setState({
+      currency: localCurrency,
+      currencyMark: localCurrencyMark,
+    });
   }
 
   checkMarkCurrency = e => {
@@ -28,12 +31,14 @@ class Currency extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
+    console.log(currency, 'currency');
 
     return (
       <>
-        <div className={css.currencyContainer}>
-          <div className={css.wrapPB}>
-            {currency.length > 0 && (
+        {currency && (
+          <div className={css.currencyContainer}>
+            <div className={css.wrapPB}>
+              {/* {currency.length && ( */}
               <div className={css.cash}>
                 <div className={css.headCurrency}>
                   <h3>Валюта</h3>
@@ -61,10 +66,11 @@ class Currency extends Component {
                   ))}
                 </div>
               </div>
-            )}
+              {/* )} */}
+            </div>
+            <div className={css.card}>fff</div>
           </div>
-          <div className={css.card}>fff</div>
-        </div>
+        )}
       </>
     );
   }
