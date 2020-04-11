@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import parseCurrency from './ParseCurrency';
 
 import { fetchCurrencyPrivatBank } from '../../../services/api';
+
 import css from './CurrencyNav.module.css';
 
 const mark = {
@@ -10,42 +12,31 @@ const mark = {
   RUB: '₽',
 };
 
+const getMark = () => {
+  const localMark = JSON.parse(localStorage.getItem('currencyMark'));
+  if (localMark) {
+    return localMark;
+  }
+  return 'USD';
+};
+
 class CurrencyNav extends Component {
   state = {
     currency: [],
     currencyMark: '',
   };
 
-  componentDidMount() {
-    // const currencyMark = localStorage.getItem('currencyMark');
-
-    // console.log(currencyMark, 'currencyMark');
-    // if (currencyMark) {
-    //   this.setState({ currencyMark });
-    // }
-
-    fetchCurrencyPrivatBank()
+  async componentDidMount() {
+    await fetchCurrencyPrivatBank()
       .then(data => {
-        // console.log(data);
-        const dataUSD = data.find(elem => elem.ccy === 'USD');
-        dataUSD.buy = Number(dataUSD.buy).toFixed(2);
-        dataUSD.sale = Number(dataUSD.sale).toFixed(2);
+        const currencyParse = parseCurrency(data);
+        console.log(currencyParse, 'currencyParse');
 
-        const dataEUR = data.find(elem => elem.ccy === 'EUR');
-        dataEUR.buy = Number(dataEUR.buy).toFixed(2);
-        dataEUR.sale = Number(dataEUR.sale).toFixed(2);
-
-        const dataRUR = data.find(elem => elem.ccy === 'RUR');
-        dataRUR.buy = Number(dataRUR.buy).toFixed(3);
-        dataRUR.sale = Number(dataRUR.sale).toFixed(3);
-        dataRUR.ccy = 'RUB';
-
-        const currency = [dataUSD, dataEUR, dataRUR];
-
-        localStorage.setItem('currency', JSON.stringify(currency));
-
+        localStorage.setItem('currency', JSON.stringify(currencyParse));
+        localStorage.setItem('currencyMark', JSON.stringify(getMark()));
         this.setState({
-          currency,
+          currency: currencyParse,
+          currencyMark: getMark(),
         });
       })
       .catch(error => {
@@ -65,7 +56,6 @@ class CurrencyNav extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
-    // console.log(currencyMark, 'currencyMark');
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
     return (

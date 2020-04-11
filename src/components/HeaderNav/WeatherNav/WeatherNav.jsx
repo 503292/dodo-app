@@ -64,6 +64,7 @@ class WeatherNav extends Component {
         weather.currentWeather.descrEn,
         weather.currentWeather.isdaytime,
       );
+      // console.log(weather, 'weather');
     }
 
     return (
