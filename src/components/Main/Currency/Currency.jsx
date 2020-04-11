@@ -1,34 +1,47 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// import { fetchCurrencyPrivatBank } from '../../../services/api';
+
+// import parseCurrency from './ParseCurrency';
+
 import css from './Currency.module.css';
 
+// const getMark = () => {
+//   const localMark = JSON.parse(localStorage.getItem('currencyMark'));
+//   if (localMark) {
+//     return localMark;
+//   }
+//   return 'USD';
+// };
+
 class Currency extends Component {
-  state = { currency: [], currencyMark: this.props.currencyMark };
+  state = {
+    currency: [],
+    currencyMark: '',
+  };
 
-  componentDidMount() {
-    const getLocalCurrency = localStorage.getItem('currency');
+  async componentDidMount() {
+    const localCurrency = JSON.parse(localStorage.getItem('currency'));
+    const localCurrencyMark = JSON.parse(localStorage.getItem('currencyMark'));
 
-    const parseCurrency = JSON.parse(getLocalCurrency);
-
-    this.setState({ currency: parseCurrency });
-  }
-
-  componentDidUpdate() {
-    const { currencyMark } = this.state;
-    document.getElementById(currencyMark).setAttribute('checked', 'checked');
+    this.setState({ currency: localCurrency, currencyMark: localCurrencyMark });
   }
 
   checkMarkCurrency = e => {
     const { updateCurrency } = this.props;
+    // const { currencyMark } = this.state;
+
     const currencyMark = e.currentTarget.nextSibling.firstChild.textContent;
-    // localStorage.setItem('currencyMark', JSON.stringify(currencyMark));
-    // console.log(currencyMark, 'object');
+
+    console.log('currencyMark', currencyMark);
+    localStorage.setItem('currencyMark', JSON.stringify(currencyMark));
+    this.setState({ currencyMark });
     updateCurrency(currencyMark);
   };
 
   render() {
-    const { currency } = this.state;
+    const { currency, currencyMark } = this.state;
 
     return (
       <>
@@ -45,11 +58,12 @@ class Currency extends Component {
                   {currency.map(el => (
                     <label className={css.lable} htmlFor={el.ccy} key={el.ccy}>
                       <input
-                        className={css.checkInput}
+                        className={`${css.checkInput} ${el.ccy}`}
                         name="checkMarkCurrency"
                         type="radio"
-                        id={el.ccy}
-                        onClick={this.checkMarkCurrency}
+                        id={`${el.ccy}`}
+                        onChange={this.checkMarkCurrency}
+                        checked={el.ccy === currencyMark ? 'checked' : false}
                       />
 
                       <div className={css.checkRow}>
@@ -72,7 +86,6 @@ class Currency extends Component {
 
 Currency.propTypes = {
   updateCurrency: PropTypes.func.isRequired,
-  currencyMark: PropTypes.string.isRequired,
 };
 
 export default Currency;

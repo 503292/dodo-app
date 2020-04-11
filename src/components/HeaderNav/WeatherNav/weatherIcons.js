@@ -19,6 +19,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'moderate or heavy rain in area with thunder':
     case 'patchy light rain in area with thunder':
     case 'thundery outbreaks in nearby':
+    case 'thundery outbreaks possible':
       return bolt;
 
     case 'fog':
@@ -65,6 +66,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'heavy rain at times':
     case 'heavy freezing drizzle':
     case 'patchy rain nearby':
+    case 'light sleet showers':
       return cloudShowersHeavy;
 
     case 'moderate or heavy snow in area with thunder':
@@ -72,7 +74,6 @@ export default function switchIcon(descrEn, isDay) {
     case 'light snow showers':
     case 'light snow shower':
     case 'moderate or heavy sleet showers':
-    case 'light sleet showers':
     case 'moderate or heavy snow showers':
     case 'heavy snow':
     case 'patchy heavy snow':
@@ -85,7 +86,9 @@ export default function switchIcon(descrEn, isDay) {
     case 'blowing snow':
     case 'patchy freezing drizzle nearby':
     case 'patchy sleet nearby':
+    case 'patchy sleet possible':
     case 'patchy snow nearby':
+    case 'patchy snow possible':
     case 'blizzard':
       return snow;
 
