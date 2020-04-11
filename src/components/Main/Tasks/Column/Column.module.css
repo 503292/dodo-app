@@ -1,3 +1,6 @@
+.wrapColumn {
+  width: 100%;
+}
 .wrapTasks {
   /* width: 308px; */
 }
@@ -7,6 +10,6 @@
   color: gray;
 }
 .tasks {
-  /* padding: 8px; */
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  /* width: 100%; */
 }

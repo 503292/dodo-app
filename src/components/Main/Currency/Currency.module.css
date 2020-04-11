@@ -1,31 +1,53 @@
 .currencyContainer {
-  padding-top: 5px;
+  padding: 10px 5px;
   height: 95vh;
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
-  border-radius: 3px;
+}
+.wrapPB {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
 }
 
-.currencyTable {
-  width: 100%;
-  border-collapse: collapse;
+.headCurrency {
+  display: flex;
+  background-color: lightgray;
+  border-radius: 7px 7px 0 0;
+}
+.headCurrency h3 {
+  width: 33.3%;
+  padding: 10px;
+  margin: 0;
   text-align: center;
 }
-
-.currencyTable th {
-  background-color: #f3f6f6;
-  padding: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: 'Helvetica Bold';
-  color: #282828;
+.headCurrency p {
+  margin: 0;
+}
+.bodyCurrency {
+  background-color: #fff;
+  border-radius: 0 0 7px 7px;
+}
+.lable {
+  position: relative;
+}
+.lable p {
+  margin: 0;
+}
+.checkInput {
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: 15px;
 }
 
-.currencyTable td {
-  padding: 12px;
-  font-size: 14px;
-  font-family: 'Helvetica Roman';
-  color: #2c353e;
-  border-bottom: 2px solid #f3f6f6;
-  font-weight: 400;
+.checkRow {
+  display: flex;
+  border-top: 2px solid rgb(236, 235, 235);
+  padding: 10px 0;
+}
+
+.checkRow p {
+  width: 33.3%;
+  padding-left: 10px;
+  text-align: center;
 }

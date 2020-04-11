@@ -36,9 +36,11 @@ class EnterDay extends Component {
               selected={startDate}
               onChange={this.handleChange}
               dateFormat="d MMMM , yyyy"
+              // disabled
+              readOnly
             />
-            <Clock />
           </div>
+          <Clock />
 
           {/* <div className={css.wrapTasksLevels}>
             <div className={css.wrapAllTaskIcon}>

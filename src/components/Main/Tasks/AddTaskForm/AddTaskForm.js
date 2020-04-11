@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import moment from 'moment';
-import 'moment/locale/uk';
-// import { validateAll } from 'indicative/validator';
 import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
-import Priority from '../../../../utils/Priority';
+import { Priority, getColor } from '../../../../utils/Priority';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
 
@@ -18,14 +16,12 @@ class AddTaskForm extends Component {
     endTime: new Date(),
     text: '',
     priority: Priority.NORMAL,
-    // eslint-disable-next-line react/no-unused-state
     id: '',
     completed: false,
   };
 
   componentDidMount() {
     const { editTask } = this.props;
-    // console.log(editTask, 'editTask');
     if (editTask !== null) {
       this.setState({
         endTime: editTask.endTime,
@@ -92,14 +88,14 @@ class AddTaskForm extends Component {
   };
 
   render() {
-    const { modalAddTasksClose } = this.props;
+    const { modalAddTasksClose, editTask } = this.props;
     const { endTime, text, priority } = this.state;
 
     return (
       <div className={css.wrapAllForm}>
         <button
           type="button"
-          className={css.backBtn}
+          className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
           onClick={modalAddTasksClose}
         >
           <span>⤫</span>
@@ -156,8 +152,11 @@ class AddTaskForm extends Component {
             </div>
           </div>
 
-          <button className={css.addBtn} type="submit">
-            Добавити
+          <button
+            className={`${css.addBtn} ${css[`${getColor(priority)}`]}`}
+            type="submit"
+          >
+            {editTask === null ? 'Зберегти' : 'Редагувати'}
           </button>
         </form>
       </div>

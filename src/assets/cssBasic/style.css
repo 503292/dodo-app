@@ -8,6 +8,7 @@ html {
   box-sizing: border-box;
   width: 100vw;
   overflow: hidden;
+  background-color: rgb(230, 230, 148);
 }
 *,
 *::before,

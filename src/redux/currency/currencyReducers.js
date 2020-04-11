@@ -1,6 +1,6 @@
 import { Type } from './currencyActions';
 
-const currencyReducer = (state = 'USD', { type, payload }) => {
+const currencyReducer = (state = '', { type, payload }) => {
   switch (type) {
     case Type.UPDATE_CURRENCY:
       return payload;

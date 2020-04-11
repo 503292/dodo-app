@@ -9,14 +9,15 @@ class Clock extends Component {
   };
 
   componentDidMount() {
-    setInterval(() => {
+    this.myInterval = setInterval(() => {
       this.setState({
         time: new Date().toLocaleTimeString(),
       });
     }, 1000);
-    // setInterval(() => {
-    //   this.setState(state => ({ isDots: !state.isDots }));
-    // }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.myInterval);
   }
 
   render() {
