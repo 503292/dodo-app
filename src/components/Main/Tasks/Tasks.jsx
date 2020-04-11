@@ -35,19 +35,21 @@ class Tasks extends Component {
     }
   }
 
-  viewTasks = data => {
+  viewTasks = async data => {
     const arrIds = data.map(el => el.id);
-
+    const { columns } = this.state;
+    const arr = columns['column-1'].tasksIds;
     this.setState({
       tasks: data,
       columns: {
         'column-1': {
           id: 'column-1',
           title: 'Сьогодні',
-          tasksIds: arrIds,
+          tasksIds: arrIds.length === arr.length ? arr : arrIds,
         },
       },
       editTask: null,
+      columnOrder: ['column-1'],
     });
   };
   /*
@@ -84,7 +86,7 @@ class Tasks extends Component {
    *   beautiful dnd
    */
   onDragStart = () => {
-    document.body.style.color = '#F34D4D';
+    // document.body.style.color = '#F34D4D';
   };
 
   onDragUpdate = update => {
@@ -98,7 +100,7 @@ class Tasks extends Component {
     document.body.style.transition = 'background-color 0.9s ease';
   };
 
-  onDragEnd = result => {
+  onDragEnd = async result => {
     document.body.style.color = 'inherit';
 
     const { columns } = this.state;
@@ -116,10 +118,8 @@ class Tasks extends Component {
 
     const startColumn = columns[source.droppableId];
     const finishColumn = columns[destination.droppableId];
-    // console.log(column, "column");
     if (startColumn === finishColumn) {
       const newTaskIds = Array.from(startColumn.tasksIds);
-      // console.log(newTaskIds, "newTaskIds");
 
       newTaskIds.splice(source.index, 1);
       newTaskIds.splice(destination.index, 0, draggableId);
@@ -137,6 +137,7 @@ class Tasks extends Component {
         },
       };
 
+      console.log(newState, 'newState');
       this.setState(newState);
       return;
     }
@@ -164,14 +165,14 @@ class Tasks extends Component {
         [newFinishColumn.id]: newFinishColumn,
       },
     };
-    this.setState(newState);
+    await this.setState(newState);
+    console.log(newState.columns['column-1'], 'newState');
   };
 
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
 
-    // console.log(editTask, 'editTask');
     return (
       <div className={css.wrapTasks}>
         <EnterDay />
@@ -180,6 +181,7 @@ class Tasks extends Component {
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
           onDragUpdate={this.onDragUpdate}
+          className={css.dragDropContext}
         >
           <div className={css.container}>
             {columnOrder.map(columnId => {
@@ -200,15 +202,16 @@ class Tasks extends Component {
               );
             })}
           </div>
+
+          <button
+            type="button"
+            className={css.addButton}
+            onClick={modalAddTasksOpen}
+          >
+            +
+          </button>
         </DragDropContext>
 
-        <button
-          type="button"
-          className={css.addButton}
-          onClick={modalAddTasksOpen}
-        >
-          +
-        </button>
         <ModalAddTask editTask={editTask} />
       </div>
     );

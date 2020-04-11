@@ -7,16 +7,23 @@ import css from './CurrencyNav.module.css';
 const mark = {
   USD: '$',
   EUR: '€',
-  RUR: '₽',
+  RUB: '₽',
 };
 
 class CurrencyNav extends Component {
   state = {
     currency: [],
-    currencyMark: 'USD',
+    currencyMark: '',
   };
 
   componentDidMount() {
+    // const currencyMark = localStorage.getItem('currencyMark');
+
+    // console.log(currencyMark, 'currencyMark');
+    // if (currencyMark) {
+    //   this.setState({ currencyMark });
+    // }
+
     fetchCurrencyPrivatBank()
       .then(data => {
         // console.log(data);
@@ -31,6 +38,7 @@ class CurrencyNav extends Component {
         const dataRUR = data.find(elem => elem.ccy === 'RUR');
         dataRUR.buy = Number(dataRUR.buy).toFixed(3);
         dataRUR.sale = Number(dataRUR.sale).toFixed(3);
+        dataRUR.ccy = 'RUB';
 
         const currency = [dataUSD, dataEUR, dataRUR];
 
@@ -57,7 +65,7 @@ class CurrencyNav extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
-
+    // console.log(currencyMark, 'currencyMark');
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
     return (

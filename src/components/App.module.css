@@ -1,13 +1,13 @@
 /* set background-color,  */
 
 .header {
-  width: 100%;
+  min-width: 320px;
   margin: 0 auto;
 }
 .main {
-  background-color: #fff;
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
+  /* background-color: rgb(230, 230, 148); */
 }
 .footer {
   background-color: rgb(95, 92, 91);

@@ -49,8 +49,6 @@ class Weather extends Component {
     const { updateLocation } = this.props;
 
     const lowerCaseSearch = search.toLowerCase().trim();
-    console.log(lowerCaseSearch, 'search');
-
     updateLocation(lowerCaseSearch);
 
     // reset search
