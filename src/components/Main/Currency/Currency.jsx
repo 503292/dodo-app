@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import { fetchCurrencyPrivatBank } from '../../../services/api';
-
-// import parseCurrency from './ParseCurrency';
-
 import css from './Currency.module.css';
-
-// const getMark = () => {
-//   const localMark = JSON.parse(localStorage.getItem('currencyMark'));
-//   if (localMark) {
-//     return localMark;
-//   }
-//   return 'USD';
-// };
 
 class Currency extends Component {
   state = {
@@ -30,11 +18,9 @@ class Currency extends Component {
 
   checkMarkCurrency = e => {
     const { updateCurrency } = this.props;
-    // const { currencyMark } = this.state;
 
     const currencyMark = e.currentTarget.nextSibling.firstChild.textContent;
 
-    console.log('currencyMark', currencyMark);
     localStorage.setItem('currencyMark', JSON.stringify(currencyMark));
     this.setState({ currencyMark });
     updateCurrency(currencyMark);
