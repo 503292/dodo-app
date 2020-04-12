@@ -10,6 +10,7 @@ const mark = {
   USD: '$',
   EUR: '€',
   RUB: '₽',
+  BTC: '฿',
 };
 
 const getMark = () => {
@@ -30,7 +31,7 @@ class CurrencyNav extends Component {
     await fetchCurrencyPrivatBank()
       .then(data => {
         const currencyParse = parseCurrency(data);
-        console.log(currencyParse, 'currencyParse');
+        // console.log(currencyParse, 'currencyParse');
 
         localStorage.setItem('currency', JSON.stringify(currencyParse));
         localStorage.setItem('currencyMark', JSON.stringify(getMark()));
@@ -65,14 +66,20 @@ class CurrencyNav extends Component {
             <p className={css.currencyMark}>{mark[gryvnyaToCurrency.ccy]}</p>
 
             <div>
-              <p title="Купівля" className={css.gryvnyaBuy}>
+              <p title="Продати" className={css.gryvnyaBuy}>
                 <span>▶</span>
                 {gryvnyaToCurrency.buy}
+                {gryvnyaToCurrency.ccy === 'BTC' && (
+                  <span className={css.dol}>{mark.USD}</span>
+                )}
               </p>
 
-              <p title="Продаж" className={css.gryvnyaSale}>
+              <p title="Купити" className={css.gryvnyaSale}>
                 <span>◀</span>
                 {gryvnyaToCurrency.sale}
+                {gryvnyaToCurrency.ccy === 'BTC' && (
+                  <span className={css.dol}>{mark.USD}</span>
+                )}
               </p>
             </div>
           </div>

@@ -11,6 +11,11 @@ export default function parseCurrency(data) {
   dataRUR.buy = Number(dataRUR.buy).toFixed(3);
   dataRUR.sale = Number(dataRUR.sale).toFixed(3);
   dataRUR.ccy = 'RUB';
-  const currency = [dataUSD, dataEUR, dataRUR];
+
+  const dataBTC = data.find(elem => elem.ccy === 'BTC');
+  dataBTC.buy = Number(dataBTC.buy).toFixed(1);
+  dataBTC.sale = Number(dataBTC.sale).toFixed(1);
+
+  const currency = [dataUSD, dataEUR, dataRUR, dataBTC];
   return currency;
 }

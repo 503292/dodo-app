@@ -51,3 +51,38 @@
   padding-left: 10px;
   text-align: center;
 }
+.checkRow p span {
+  font-size: 10px;
+  color: darkgray;
+}
+
+/* card */
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.oneCurrency {
+  background-color: #fff;
+  border-radius: 7px;
+  width: 33%;
+  padding: 5px;
+}
+.wrapFlag {
+  display: flex;
+  justify-content: space-between;
+  height: 15px;
+}
+.price {
+}
+.description {
+  padding: 5px 0 0 0;
+  color: rgb(197, 194, 194);
+  text-align: end;
+}
+
+.oneCurrency p {
+  margin: 0;
+}
