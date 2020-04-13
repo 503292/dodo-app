@@ -2,11 +2,10 @@
   width: 100%;
   position: relative;
 }
-.wrapClock{
+.wrapClock {
   position: absolute;
   top: 8px;
   right: 0;
-
 }
 .wrapTasks {
   /* width: 308px; */

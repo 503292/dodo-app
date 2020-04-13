@@ -34,11 +34,14 @@
   text-align: end;
   padding: 0 5px 0 0;
 }
-
+.wrapIcon{
+  padding: 3px 0;
+}
 .icon {
-  width: 15px;
+  /* width: 15px; */
   height: 25px;
   margin: 0 auto;
+  padding: 4px 0;
 }
 
 /*  table */
