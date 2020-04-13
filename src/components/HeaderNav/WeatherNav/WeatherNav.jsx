@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // import icons from './weatherIcons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
 import switchIcon from './weatherIcons';
@@ -51,7 +53,8 @@ class WeatherNav extends Component {
           });
         })
         .catch(error => {
-          console.log(error, 'err wheather worldWeather');
+          toast('Введіть населений пункт латиницею !');
+          console.log(error, 'такого населеного пункту немає');
         });
     }
   }
@@ -79,6 +82,7 @@ class WeatherNav extends Component {
             <p className={css.timezone}>{location}</p>
           </div>
         )}
+        <ToastContainer autoClose={4500} position="bottom-center" />
       </>
     );
   }

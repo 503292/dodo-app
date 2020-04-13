@@ -10,7 +10,6 @@ export const fetchCurrencyPrivatBank = () => {
 };
 
 // API всі валюти валюти НБУ
-// https://api.privatbank.ua/p24api/exchange_rates?json&date=11.04.2020
 export const fetchCurrencyNBU = () => {
   return fetch(
     `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`,
