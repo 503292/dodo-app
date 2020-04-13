@@ -30,9 +30,6 @@ export default function switchIcon(descrEn, isDay) {
 
     case 'cloudy':
     case 'overcast':
-      if (isDay === 'no') {
-        return cloudMoon;
-      }
       return cloud;
 
     case 'clear':
@@ -52,12 +49,17 @@ export default function switchIcon(descrEn, isDay) {
     case 'patchy light rain':
     case 'patchy rain possible':
     case 'patchy light rain with thunder':
+    case 'light rain shower, light rain with thunderstorm':
+    case 'light rain with thunderstorm':
       if (isDay === 'no') {
         return cloudMoonRain;
       }
       return cloudSunRain;
 
     case 'partly cloudy':
+      if (isDay === 'no') {
+        return cloudMoon;
+      }
       return cloudSun;
 
     case 'torrential rain shower':

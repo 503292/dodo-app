@@ -5,6 +5,7 @@ import css from './WeatherHours.module.css';
 
 const WeatherHours = ({ weather, indexDay, switchIcon }) => {
   const daysWeather = weather.days;
+
   return (
     <div>
       <div className={css.wrapCheckedDay}>
@@ -46,10 +47,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
                 <td key={h.time} className={css.wrapIcon}>
                   <img
                     className={css.icon}
-                    src={switchIcon(
-                      h.descrEn,
-                      weather.currentWeather.isdaytime,
-                    )}
+                    src={switchIcon(h.descrEn, h.isDayTime)}
                     alt="weatherIcon"
                   />
                 </td>

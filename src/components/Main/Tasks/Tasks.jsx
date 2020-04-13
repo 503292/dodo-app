@@ -4,7 +4,6 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
-import EnterDay from './EnterDay/EnterDay';
 
 import css from './Tasks.module.css';
 
@@ -137,7 +136,6 @@ class Tasks extends Component {
         },
       };
 
-      console.log(newState, 'newState');
       this.setState(newState);
       return;
     }
@@ -166,7 +164,6 @@ class Tasks extends Component {
       },
     };
     await this.setState(newState);
-    console.log(newState.columns['column-1'], 'newState');
   };
 
   render() {
@@ -175,8 +172,6 @@ class Tasks extends Component {
 
     return (
       <div className={css.wrapTasks}>
-        <EnterDay />
-
         <DragDropContext
           onDragEnd={this.onDragEnd}
           onDragStart={this.onDragStart}
@@ -202,15 +197,19 @@ class Tasks extends Component {
               );
             })}
           </div>
-
-          <button
-            type="button"
-            className={css.addButton}
-            onClick={modalAddTasksOpen}
-          >
-            +
-          </button>
         </DragDropContext>
+
+        {/* <div className={css.wrapEnterDay}>
+          <EnterDay />
+        </div> */}
+
+        <button
+          type="button"
+          className={css.addButton}
+          onClick={modalAddTasksOpen}
+        >
+          +
+        </button>
 
         <ModalAddTask editTask={editTask} />
       </div>

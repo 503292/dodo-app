@@ -1,6 +1,6 @@
 import { Type } from './locationActions';
 
-const locationReducer = (state = 'Kiev', { type, payload }) => {
+const locationReducer = (state = 'Lviv', { type, payload }) => {
   switch (type) {
     case Type.UPDATE_LOCATION:
       return payload;

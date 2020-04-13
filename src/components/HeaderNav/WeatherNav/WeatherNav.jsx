@@ -62,24 +62,22 @@ class WeatherNav extends Component {
     if (weather) {
       icon = switchIcon(
         weather.currentWeather.descrEn,
-        weather.currentWeather.isdaytime,
+        weather.currentWeather.isDayTime,
       );
-      // console.log(weather, 'weather');
     }
 
     return (
       <>
         {weather && (
-          <>
-            <div className={css.wrapWeather}>
-              <div className={css.wrapIcon}>
-                <img className={css.icon} src={icon} alt="img" />
-              </div>
-
+          <div className={css.wrapWeather}>
+            <div className={css.wrapIcon}>
+              <img className={css.icon} src={icon} alt="img" />
+            </div>
+            <div className={css.wrapDescr}>
               <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>
             </div>
-            <div className={css.timezone}>{location}</div>
-          </>
+            <p className={css.timezone}>{location}</p>
+          </div>
         )}
       </>
     );

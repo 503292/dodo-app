@@ -1,15 +1,28 @@
 .wrapTasks {
-  height: 87vh;
+  height: 100vh;
   background-color: rgba(20, 185, 255, 0.03);
+  position: relative;
+}
+.wrapEnterDay {
+  position: fixed;
+  bottom: 0px;
+
+  /* width: 320px; */
+  /* max-width: 425px; */
+}
+.wrapClock{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .dragDropContext {
-  position: relative;
+  height: 87vh;
 }
 .container {
   display: flex;
   justify-content: center;
   overflow: auto;
-  height: 80vh;
+  height: 86vh;
   padding: 0 5px;
 }
 .container::-webkit-scrollbar-track {
@@ -37,7 +50,7 @@
   color: #ffffff;
   font-size: 35px;
   position: absolute;
-  bottom: 5px;
+  bottom: 50px;
   right: 5px;
   outline: none;
   display: flex;

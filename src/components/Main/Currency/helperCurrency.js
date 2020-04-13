@@ -16,7 +16,7 @@ export const countries = [
   {
     name: 'BYN',
     country: 'Білорусь',
-    currency: 'рубель',
+    currency: 'рубль',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Belarus.svg/30px-Flag_of_Belarus.svg.png',
   },

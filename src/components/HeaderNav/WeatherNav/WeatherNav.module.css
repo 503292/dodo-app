@@ -1,21 +1,34 @@
 .wrapWeather {
-  font-weight: 700;
-  display: flex;
+  position: relative;
+
+  /* background-color: red; */
 }
 .wrapIcon {
   width: 20px;
   height: 20px;
+  position: absolute;
+  top: -4px;
+  left: -2px;
 }
+.wrapDescr {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 25px;
+}
+
 .degree {
   margin: 0;
   padding: 0 0 0 5px;
 }
 .timezone {
   font-size: 10px;
+  text-align: start;
+  /* padding: 5px 0 0 5px; */
+  margin: 0;
   text-align: center;
+  font-weight: 400;
 }
 .icon {
-  /* fill: red;
-  color: green;
-  background-color: magenta; */
+  padding: 5px;
 }
