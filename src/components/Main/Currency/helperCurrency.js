@@ -36,8 +36,8 @@ export const countries = [
   },
   {
     name: 'GBP',
-    country: 'Велика Британія',
-    currency: 'фунт стерлінг',
+    country: 'В.Британія',
+    currency: 'фунт',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/30px-Flag_of_the_United_Kingdom.svg.png',
   },
@@ -58,7 +58,7 @@ export const countries = [
   {
     name: 'ILS',
     country: 'Ізраїль',
-    currency: 'новий шекель',
+    currency: 'шекель',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/28px-Flag_of_Israel.svg.png',
   },
@@ -128,7 +128,7 @@ export const countries = [
   {
     name: 'TMT',
     country: 'Туркменістан',
-    currency: 'новий манат',
+    currency: 'манат',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/30px-Flag_of_Turkmenistan.svg.png',
   },
@@ -169,26 +169,29 @@ export const countries = [
   },
 ];
 
-export const metals = {
-  XAG: {
+export const metals = [
+  {
     name: 'XAG',
     uk: 'срібло',
     en: 'Ag',
-    number: 47,
-    mass: 107.87,
+    color: 'silver',
+    // number: 47,
+    // mass: 107.87,
   },
-  XAU: {
+  {
     name: 'XAU',
     uk: 'золото',
+    color: 'gold',
     en: 'Au',
-    number: 79,
-    mass: 196.97,
+    // number: 79,
+    // mass: 196.97,
   },
-  XPT: {
+  {
     name: 'XPT',
     uk: 'платина',
+    color: 'platinum',
     en: 'Pt',
-    number: 78,
-    mass: 195.08,
+    // number: 78,
+    // mass: 195.08,
   },
-};
+];

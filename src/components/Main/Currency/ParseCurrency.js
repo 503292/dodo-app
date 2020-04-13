@@ -1,23 +1,32 @@
 import { metals, countries } from './helperCurrency';
 
-export default function parseCurrency(data) {
-  console.log(data, 'data');
-  console.log(countries, 'countries');
-  const tmpArr = countries;
-  //   console.log(tmpArr, 'tmpArr');
+export function parseCountries(data) {
   countries.map(el => {
     data.find(d => {
       if (d.cc === el.name) {
-        console.log(d.rate, ' d.rate');
-        tmpArr[el.index].rate = d.rate;
-        return 0;
+        // eslint-disable-next-line no-param-reassign
+        el.rate = d.rate.toFixed(2);
       }
       return 0;
     });
-    console.log(tmpArr, 'tmpArr');
+
     return 0;
   });
-
-  //   console.log(metals, 'metals');
+  return countries;
 }
-// 31.10348
+
+export function parseMetals(data) {
+  metals.map(el => {
+    data.find(d => {
+      if (d.cc === el.name) {
+        const rate = (d.rate / 31.10348).toFixed(2);
+        // eslint-disable-next-line no-param-reassign
+        el.rate = rate;
+      }
+      return 0;
+    });
+
+    return 0;
+  });
+  return metals;
+}

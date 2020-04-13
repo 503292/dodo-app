@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import parseCurrency from './ParseCurrency';
+import { parseCountries, parseMetals } from './ParseCurrency';
 
 import css from './Currency.module.css';
 
@@ -11,15 +11,25 @@ class Currency extends Component {
   state = {
     currency: [],
     currencyMark: '',
+    contries: [],
+    metals: [],
   };
 
   async componentDidMount() {
     const localCurrency = JSON.parse(localStorage.getItem('currency'));
     const localCurrencyMark = JSON.parse(localStorage.getItem('currencyMark'));
 
-    fetchCurrencyNBU()
+    await fetchCurrencyNBU()
       .then(data => {
-        parseCurrency(data);
+        const contries = parseCountries(data);
+        const metals = parseMetals(data);
+
+        this.setState({
+          contries,
+          metals,
+        });
+        // console.log(contries, 'c');
+        console.log(metals, 'm');
       })
       .catch(error => console.log(error));
 
@@ -40,20 +50,18 @@ class Currency extends Component {
   };
 
   render() {
-    const { currency, currencyMark } = this.state;
-    // console.log(currency, 'currency');
+    const { currency, currencyMark, contries, metals } = this.state;
 
     return (
       <>
-        {currency && (
-          <div className={css.currencyContainer}>
-            <div className={css.wrapPB}>
-              {/* {currency.length && ( */}
+        <div className={css.currencyContainer}>
+          <div className={css.wrapPB}>
+            {currency.length && (
               <div className={css.cash}>
                 <div className={css.headCurrency}>
-                  <h3>Валюта</h3>
-                  <h3>Продати</h3>
-                  <h3>Купити</h3>
+                  <p>Валюта</p>
+                  <p>Продати</p>
+                  <p>Купити</p>
                 </div>
                 <div className={css.bodyCurrency}>
                   {currency.map(el => (
@@ -90,23 +98,43 @@ class Currency extends Component {
                   ))}
                 </div>
               </div>
-              {/* )} */}
-            </div>
-            <div className={css.card}>
-              <div className={css.oneCurrency}>
-                <div className={css.wrapFlag}>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/30px-Flag_of_Uzbekistan.svg.png"
-                    alt="country"
-                  />
-                  <p className={css.price}>10.45 грн</p>
-                </div>
-
-                <p className={css.description}>Узбецький сум</p>
-              </div>
-            </div>
+            )}
           </div>
-        )}
+
+          {contries && metals && (
+            <div className={css.card}>
+              {metals.map(el => (
+                <div key={el.name} className={css.oneMetal}>
+                  <div className={css.metalWrap}>
+                    <p className={`${css.en} ${css[`${el.color}`]}`}>{el.en}</p>
+                    <p className={css.uk}>{el.uk}</p>
+                  </div>
+                  <div className={css.wrapPriceM}>
+                    <p className={css.priceM}>{el.rate}</p>
+                    <p>грн/грам</p>
+                  </div>
+                </div>
+              ))}
+
+              {/* <div className={css.line} /> */}
+
+              {contries.map(el => (
+                <div key={el.name} className={css.oneCurrency}>
+                  <div className={css.wrapFlag}>
+                    <img src={el.url} alt="country" />
+                    <p className={css.country}>{el.country}</p>
+                  </div>
+                  <div className={css.wrapRate}>
+                    <p className={css.val}>{el.currency}</p>
+                    <p className={css.price}>
+                      {el.rate} <span>грн</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </>
     );
   }
