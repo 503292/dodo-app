@@ -116,8 +116,6 @@ class Currency extends Component {
                 </div>
               ))}
 
-              {/* <div className={css.line} /> */}
-
               {contries.map(el => (
                 <div key={el.name} className={css.oneCurrency}>
                   <div className={css.wrapFlag}>

@@ -125,27 +125,27 @@ export const countries = [
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/30px-Flag_of_Turkey.svg.png',
   },
-  {
-    name: 'TMT',
-    country: 'Туркменістан',
-    currency: 'манат',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/30px-Flag_of_Turkmenistan.svg.png',
-  },
-  {
-    name: 'HUF',
-    country: 'Угорщина',
-    currency: 'форинт',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/30px-Flag_of_Hungary.svg.png',
-  },
-  {
-    name: 'UZS',
-    country: 'Узбекистан',
-    currency: 'сум',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/30px-Flag_of_Uzbekistan.svg.png',
-  },
+  // {
+  //   name: 'TMT',
+  //   country: 'Туркменістан',
+  //   currency: 'манат',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/30px-Flag_of_Turkmenistan.svg.png',
+  // },
+  // {
+  //   name: 'HUF',
+  //   country: 'Угорщина',
+  //   currency: 'форинт',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/30px-Flag_of_Hungary.svg.png',
+  // },
+  // {
+  //   name: 'UZS',
+  //   country: 'Узбекистан',
+  //   currency: 'сум',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/30px-Flag_of_Uzbekistan.svg.png',
+  // },
   {
     name: 'CHF',
     country: 'Швейцарія',
