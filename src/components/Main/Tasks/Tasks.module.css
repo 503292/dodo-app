@@ -1,9 +1,5 @@
 .wrapTasks {
-  margin: 0 auto;
-  /* position: relative; */
   height: 87vh;
-  min-width: 320px;
-
   background-color: rgba(20, 185, 255, 0.03);
 }
 .dragDropContext {
@@ -14,10 +10,7 @@
   justify-content: center;
   overflow: auto;
   height: 80vh;
-  max-width: 425px;
-  margin: 0 auto;
   padding: 0 5px;
-  /* fill:rgb(158, 23, 23) */
 }
 .container::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);

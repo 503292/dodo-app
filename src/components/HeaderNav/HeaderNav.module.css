@@ -1,13 +1,15 @@
 .wrapHeader {
+  background-color: #ffeb3b;
+}
+
+.wrapList {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3px 5px;
-  background-color: #ffeb3b;
   list-style: none;
+  max-width: 425px;
   margin: 0 auto;
-  /* min-width: 320px;
-  height: 40px; */
 }
 .routeHeader {
 }

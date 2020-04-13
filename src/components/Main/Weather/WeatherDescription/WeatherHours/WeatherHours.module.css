@@ -1,7 +1,6 @@
 .wrapCheckedDay {
   display: flex;
   justify-content: center;
-  width: 320px;
   margin: 0 0 15px;
 }
 .wrapDescrDay {

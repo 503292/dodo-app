@@ -18,19 +18,20 @@ class Header extends Component {
 
   render() {
     return (
-      <ul className={css.wrapHeader}>
-        <li className={css.routeHeader}>
-          <NavLink
-            className={css.logoLink}
-            activeStyle={ativeStyle}
-            to="/"
-            exact
-          >
-            <Logo />
-          </NavLink>
-        </li>
+      <div className={css.wrapHeader}>
+        <ul className={css.wrapList}>
+          <li className={css.routeHeader}>
+            <NavLink
+              className={css.logoLink}
+              activeStyle={ativeStyle}
+              to="/"
+              exact
+            >
+              <Logo />
+            </NavLink>
+          </li>
 
-        {/* <li className={css.routeHeader}>
+          {/* <li className={css.routeHeader}>
           <NavLink
             className={css.contactsLink}
             to="/contacts"
@@ -41,39 +42,40 @@ class Header extends Component {
           </NavLink>
         </li> */}
 
-        <li className={css.routeHeader}>
-          <NavLink
-            className={css.weaterLink}
-            to="/weather"
-            exact
-            activeStyle={ativeStyle}
-          >
-            <WeatherNav />
-          </NavLink>
-        </li>
+          <li className={css.routeHeader}>
+            <NavLink
+              className={css.weaterLink}
+              to="/weather"
+              exact
+              activeStyle={ativeStyle}
+            >
+              <WeatherNav />
+            </NavLink>
+          </li>
 
-        <li className={css.routeHeader}>
-          <NavLink
-            className={css.rateLink}
-            to="/currency"
-            exact
-            activeStyle={ativeStyle}
-          >
-            <CurrencyNav />
-          </NavLink>
-        </li>
+          <li className={css.routeHeader}>
+            <NavLink
+              className={css.rateLink}
+              to="/currency"
+              exact
+              activeStyle={ativeStyle}
+            >
+              <CurrencyNav />
+            </NavLink>
+          </li>
 
-        <li className={css.routeHeader}>
-          <NavLink
-            className={css.loginLink}
-            to="/login"
-            exact
-            activeStyle={ativeStyle}
-          >
-            <BtnLogin />
-          </NavLink>
-        </li>
-      </ul>
+          <li className={css.routeHeader}>
+            <NavLink
+              className={css.loginLink}
+              to="/login"
+              exact
+              activeStyle={ativeStyle}
+            >
+              <BtnLogin />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     );
   }
 }

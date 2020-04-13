@@ -1,3 +1,4 @@
 .wrapMain {
-  /* width: 100%; */
+  max-width: 425px;
+  margin: 0 auto;
 }

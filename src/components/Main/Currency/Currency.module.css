@@ -1,8 +1,6 @@
 .currencyContainer {
   padding: 10px 5px;
   height: 95vh;
-  min-width: 320px;
-  margin: 0 auto;
 }
 .wrapPB {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
