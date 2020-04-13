@@ -51,6 +51,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'patchy light drizzle':
     case 'patchy light rain':
     case 'patchy rain possible':
+    case 'patchy light rain with thunder':
       if (isDay === 'no') {
         return cloudMoonRain;
       }
