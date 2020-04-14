@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
+import { ToastContainer, toast } from 'react-toastify';
 import WeatherSearch from './WeatherSearch/WeatherSearch';
 import WeatherDescription from './WeatherDescription/WeatherDescription';
-
+import 'react-toastify/dist/ReactToastify.css';
+import parseWeatherData from '../../HeaderNav/WeatherNav/ParseWorlWeather';
+import { fetchWorldWeather } from '../../../services/api';
 import css from './Weather.module.css';
 
 class Weather extends Component {
@@ -49,7 +52,24 @@ class Weather extends Component {
     const { updateLocation } = this.props;
 
     const lowerCaseSearch = search.toLowerCase().trim();
-    updateLocation(lowerCaseSearch);
+
+    fetchWorldWeather(lowerCaseSearch)
+      .then(data => {
+        // console.log(data, 'data');
+        const parseData = parseWeatherData(data);
+        localStorage.setItem('localWeather', JSON.stringify(parseData));
+        localStorage.setItem('location', parseData.timezone);
+        updateLocation(parseData.timezone);
+        this.setState({
+          weather: parseData,
+          location: lowerCaseSearch,
+        });
+        updateLocation(lowerCaseSearch);
+      })
+      .catch(error => {
+        toast('Введіть населений пункт латиницею !');
+        console.log(error, 'такого населеного пункту немає');
+      });
 
     // reset search
     this.setState({
@@ -69,6 +89,7 @@ class Weather extends Component {
           search={search}
         />
         {weather && <WeatherDescription weather={weather} />}
+        <ToastContainer autoClose={4500} position="bottom-center" />
       </div>
     );
   }

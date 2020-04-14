@@ -93,6 +93,8 @@ export default function switchIcon(descrEn, isDay) {
     case 'patchy snow nearby':
     case 'patchy snow possible':
     case 'blizzard':
+    case 'light rain and snow shower':
+    case 'light rain and snow shower, rain and snow shower':
       return snow;
 
     case 'moderate or heavy showers of ice pellets':

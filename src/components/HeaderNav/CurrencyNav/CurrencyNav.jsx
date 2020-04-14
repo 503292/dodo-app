@@ -69,17 +69,10 @@ class CurrencyNav extends Component {
               <p title="Продати" className={css.gryvnyaBuy}>
                 <span>▶</span>
                 {gryvnyaToCurrency.buy}
-                {/* {gryvnyaToCurrency.ccy === 'BTC' && (
-                  <span className={css.dol}>{mark.USD}</span>
-                )} */}
               </p>
-
               <p title="Купити" className={css.gryvnyaSale}>
                 <span>◀</span>
                 {gryvnyaToCurrency.sale}
-                {/* {gryvnyaToCurrency.ccy === 'BTC' && (
-                  <span className={css.dol}>{mark.USD}</span>
-                )} */}
               </p>
             </div>
           </div>

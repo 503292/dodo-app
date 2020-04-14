@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import icons from './weatherIcons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import parseWeatherData from './ParseWorlWeather';
@@ -19,8 +18,17 @@ class WeatherNav extends Component {
   };
 
   componentDidMount() {
-    const { locationFromRedux } = this.props;
-    fetchWorldWeather(locationFromRedux)
+    const { locationFromRedux, updateLocation } = this.props;
+
+    const setLocation = () => {
+      const localLocation = localStorage.getItem('location');
+      if (localLocation) {
+        return localLocation;
+      }
+      return locationFromRedux;
+    };
+
+    fetchWorldWeather(setLocation())
       .then(data => {
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
@@ -30,6 +38,7 @@ class WeatherNav extends Component {
           weather: parseData,
           location: parseData.timezone,
         });
+        updateLocation(parseData.timezone);
       })
       .catch(error => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
@@ -38,25 +47,12 @@ class WeatherNav extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { locationFromRedux, updateLocation } = this.props;
+    const { locationFromRedux } = this.props;
 
     if (locationFromRedux !== prevState.location) {
-      fetchWorldWeather(locationFromRedux)
-        .then(data => {
-          // console.log(data, 'data');
-          const parseData = parseWeatherData(data);
-          localStorage.setItem('localWeather', JSON.stringify(parseData));
-          localStorage.setItem('location', parseData.timezone);
-          updateLocation(parseData.timezone);
-          this.setState({
-            weather: parseData,
-            location: locationFromRedux,
-          });
-        })
-        .catch(error => {
-          toast('Введіть населений пункт латиницею !');
-          console.log(error, 'такого населеного пункту немає');
-        });
+      this.setState({
+        location: locationFromRedux,
+      });
     }
   }
 
@@ -69,6 +65,7 @@ class WeatherNav extends Component {
         weather.currentWeather.isDayTime,
       );
     }
+    // console.log(this.setLocation(), 'this.setLocation');
 
     return (
       <>

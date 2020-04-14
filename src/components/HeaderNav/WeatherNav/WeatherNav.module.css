@@ -24,10 +24,11 @@
 .timezone {
   font-size: 10px;
   text-align: start;
-  /* padding: 5px 0 0 5px; */
+
   margin: 0;
   text-align: center;
   font-weight: 400;
+  text-transform: capitalize;
 }
 .icon {
   padding: 5px;
