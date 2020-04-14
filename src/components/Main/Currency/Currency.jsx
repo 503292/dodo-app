@@ -29,7 +29,7 @@ class Currency extends Component {
           metals,
         });
         // console.log(contries, 'c');
-        console.log(metals, 'm');
+        // console.log(metals, 'm');
       })
       .catch(error => console.log(error));
 

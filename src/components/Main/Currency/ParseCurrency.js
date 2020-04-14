@@ -7,10 +7,10 @@ export function parseCountries(data) {
         // eslint-disable-next-line no-param-reassign
         el.rate = d.rate.toFixed(2);
       }
-      return 0;
+      return '';
     });
 
-    return 0;
+    return '';
   });
   return countries;
 }
@@ -23,10 +23,10 @@ export function parseMetals(data) {
         // eslint-disable-next-line no-param-reassign
         el.rate = rate;
       }
-      return 0;
+      return '';
     });
 
-    return 0;
+    return '';
   });
   return metals;
 }

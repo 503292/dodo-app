@@ -17,5 +17,6 @@ export default function parseCurrency(data) {
   dataBTC.sale = Number(dataBTC.sale).toFixed(1);
 
   const currency = [dataUSD, dataEUR, dataRUR, dataBTC];
+
   return currency;
 }
