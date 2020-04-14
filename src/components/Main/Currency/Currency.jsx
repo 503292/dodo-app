@@ -51,12 +51,11 @@ class Currency extends Component {
 
   render() {
     const { currency, currencyMark, contries, metals } = this.state;
-
     return (
       <>
-        <div className={css.currencyContainer}>
-          <div className={css.wrapPB}>
-            {currency.length && (
+        {currency.length > 0 && (
+          <div className={css.currencyContainer}>
+            <div className={css.wrapPB}>
               <div className={css.cash}>
                 <div className={css.headCurrency}>
                   <p>Валюта</p>
@@ -98,41 +97,43 @@ class Currency extends Component {
                   ))}
                 </div>
               </div>
+            </div>
+
+            {contries && metals && (
+              <div className={css.card}>
+                {metals.map(el => (
+                  <div key={el.name} className={css.oneMetal}>
+                    <div className={css.metalWrap}>
+                      <p className={`${css.en} ${css[`${el.color}`]}`}>
+                        {el.en}
+                      </p>
+                      <p className={css.uk}>{el.uk}</p>
+                    </div>
+                    <div className={css.wrapPriceM}>
+                      <p className={css.priceM}>{el.rate}</p>
+                      <p>грн/грам</p>
+                    </div>
+                  </div>
+                ))}
+
+                {contries.map(el => (
+                  <div key={el.name} className={css.oneCurrency}>
+                    <div className={css.wrapFlag}>
+                      <img src={el.url} alt="country" />
+                      <p className={css.country}>{el.country}</p>
+                    </div>
+                    <div className={css.wrapRate}>
+                      <p className={css.val}>{el.currency}</p>
+                      <p className={css.price}>
+                        {el.rate} <span>грн</span>
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             )}
           </div>
-
-          {contries && metals && (
-            <div className={css.card}>
-              {metals.map(el => (
-                <div key={el.name} className={css.oneMetal}>
-                  <div className={css.metalWrap}>
-                    <p className={`${css.en} ${css[`${el.color}`]}`}>{el.en}</p>
-                    <p className={css.uk}>{el.uk}</p>
-                  </div>
-                  <div className={css.wrapPriceM}>
-                    <p className={css.priceM}>{el.rate}</p>
-                    <p>грн/грам</p>
-                  </div>
-                </div>
-              ))}
-
-              {contries.map(el => (
-                <div key={el.name} className={css.oneCurrency}>
-                  <div className={css.wrapFlag}>
-                    <img src={el.url} alt="country" />
-                    <p className={css.country}>{el.country}</p>
-                  </div>
-                  <div className={css.wrapRate}>
-                    <p className={css.val}>{el.currency}</p>
-                    <p className={css.price}>
-                      {el.rate} <span>грн</span>
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        )}
       </>
     );
   }

@@ -9,7 +9,7 @@ import ErrorPage from '../../../pages/ErrorPage';
 import LoginPage from '../../../pages/LoginPage';
 
 const RoutesSite = () => (
-  <div>
+  <>
     <Switch>
       <Route path="/" exact component={TasksPage} />
       <Route path="/login" exact component={LoginPage} />
@@ -19,7 +19,7 @@ const RoutesSite = () => (
 
       <Route component={ErrorPage} />
     </Switch>
-  </div>
+  </>
 );
 
 export default RoutesSite;

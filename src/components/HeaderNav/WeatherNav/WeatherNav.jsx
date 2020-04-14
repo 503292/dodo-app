@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
 import switchIcon from './weatherIcons';
+// import Loader from '../../Loader/Loader';
 
 import css from './WeatherNav.module.css';
 
@@ -18,7 +20,14 @@ class WeatherNav extends Component {
   };
 
   componentDidMount() {
-    const { locationFromRedux, updateLocation } = this.props;
+    this._isMounted = true;
+    const {
+      locationFromRedux,
+      updateLocation,
+      loaderOff,
+      loaderOn,
+      isLoading,
+    } = this.props;
 
     const setLocation = () => {
       const localLocation = localStorage.getItem('location');
@@ -30,6 +39,7 @@ class WeatherNav extends Component {
 
     fetchWorldWeather(setLocation())
       .then(data => {
+        // console.log('on');
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
@@ -58,6 +68,7 @@ class WeatherNav extends Component {
 
   render() {
     const { weather, location } = this.state;
+    const { isLoading, loaderOff } = this.props;
     let icon = '';
     if (weather) {
       icon = switchIcon(
@@ -69,6 +80,10 @@ class WeatherNav extends Component {
 
     return (
       <>
+        {/* {isLoading ? (
+          <Loader isLoading={isLoading} />
+        ) : (
+          <> */}
         {weather && (
           <div className={css.wrapWeather}>
             <div className={css.wrapIcon}>
@@ -80,6 +95,9 @@ class WeatherNav extends Component {
             <p className={css.timezone}>{location}</p>
           </div>
         )}
+        {/* </>
+        )} */}
+
         <ToastContainer autoClose={4500} position="bottom-center" />
       </>
     );
@@ -88,6 +106,8 @@ class WeatherNav extends Component {
 WeatherNav.propTypes = {
   locationFromRedux: PropTypes.string.isRequired,
   updateLocation: PropTypes.func.isRequired,
+  loaderOn: PropTypes.func.isRequired,
+  loaderOff: PropTypes.func.isRequired,
 };
 
 export default WeatherNav;
