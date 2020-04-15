@@ -12,7 +12,7 @@ const isModalAddTasksOpen = (state = false, { type }) => {
   }
 };
 
-const isLoading = (state = false, { type }) => {
+const isLoading = (state = true, { type }) => {
   switch (type) {
     case Type.LOADER_ON:
       return true;

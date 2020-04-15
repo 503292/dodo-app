@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { parseCountries, parseMetals } from './ParseCurrency';
 
 import css from './Currency.module.css';
@@ -28,10 +31,12 @@ class Currency extends Component {
           contries,
           metals,
         });
-        // console.log(contries, 'c');
-        // console.log(metals, 'm');
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        toast('Наразі немає доступу до сервера (.');
+
+        console.log(error);
+      });
 
     await this.setState({
       currency: localCurrency,
@@ -51,9 +56,10 @@ class Currency extends Component {
 
   render() {
     const { currency, currencyMark, contries, metals } = this.state;
+
     return (
       <>
-        {currency.length > 0 && (
+        {currency && (
           <div className={css.currencyContainer}>
             <div className={css.wrapPB}>
               <div className={css.cash}>

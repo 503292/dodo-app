@@ -49,9 +49,15 @@ class Weather extends Component {
     e.preventDefault();
 
     const { search } = this.state;
-    const { updateLocation } = this.props;
+    const { updateLocation, loaderOn, loaderOff } = this.props;
 
     const lowerCaseSearch = search.toLowerCase().trim();
+
+    if (lowerCaseSearch === '') {
+      toast('Ви не вказали назву населеного пункту!');
+      return;
+    }
+    loaderOn();
 
     fetchWorldWeather(lowerCaseSearch)
       .then(data => {
@@ -65,10 +71,13 @@ class Weather extends Component {
           location: lowerCaseSearch,
         });
         updateLocation(lowerCaseSearch);
+
+        loaderOff();
       })
       .catch(error => {
-        toast('Введіть населений пункт латиницею !');
+        toast('Опаньки. Такого населеного пункту немає(.');
         console.log(error, 'такого населеного пункту немає');
+        loaderOff();
       });
 
     // reset search
@@ -101,6 +110,8 @@ Weather.defaultProps = {
 Weather.propTypes = {
   updateLocation: PropTypes.func.isRequired,
   locationFromRedux: PropTypes.string,
+  loaderOn: PropTypes.func.isRequired,
+  loaderOff: PropTypes.func.isRequired,
 };
 
 export default Weather;
