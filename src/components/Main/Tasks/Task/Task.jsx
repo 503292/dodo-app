@@ -24,9 +24,9 @@ class Task extends Component {
   state = {};
 
   formatEndTime = endTime => {
-    let hour = endTime.getHours();
+    let hour = new Date(endTime).getHours();
     if (hour < 10) hour = '0'.concat(hour);
-    let minutes = endTime.getMinutes();
+    let minutes = new Date(endTime).getMinutes();
     if (minutes < 10) minutes = '0'.concat(minutes);
 
     const newEndTime = `${hour}:${minutes}`;

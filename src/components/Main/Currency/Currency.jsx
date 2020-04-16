@@ -35,6 +35,7 @@ class Currency extends Component {
       .catch(error => {
         toast('Наразі немає доступу до сервера (.');
 
+        // eslint-disable-next-line no-console
         console.log(error);
       });
 

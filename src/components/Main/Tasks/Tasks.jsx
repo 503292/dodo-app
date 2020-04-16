@@ -22,15 +22,34 @@ class Tasks extends Component {
   };
 
   componentDidMount() {
-    const { data } = this.props;
-    this.viewTasks(data);
+    const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+    const { addTaskToRedux } = this.props;
+    // console.log(localTasksArr, 'localTasksArr');
+    if (localTasksArr) {
+      localTasksArr.map(el => addTaskToRedux(el));
+      this.viewTasks(localTasksArr);
+    }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const { data } = this.props;
-
     if (prevProps.data !== data) {
       this.viewTasks(data);
+    }
+
+    // save in localStorage new arrTask by sort arrIds
+    if (prevState !== this.state) {
+      const { columns } = this.state;
+      const tasksIdArr = columns['column-1'].tasksIds;
+      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+      const newTask = [];
+      tasksIdArr.forEach(el => {
+        const oneTask = localTasksArr.find(t => t.id === el);
+        newTask.push(oneTask);
+      });
+
+      localStorage.setItem('localTasks', JSON.stringify(newTask));
     }
   }
 
@@ -50,6 +69,7 @@ class Tasks extends Component {
       editTask: null,
       columnOrder: ['column-1'],
     });
+    // }
   };
   /*
    *   crud methods for REDUX
@@ -137,6 +157,8 @@ class Tasks extends Component {
       };
 
       this.setState(newState);
+
+      console.log(newState, 'newState');
       return;
     }
 
@@ -222,6 +244,7 @@ Tasks.propTypes = {
   modalAddTasksOpen: PropTypes.func.isRequired,
   updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
   deleteTaskFromRedux: PropTypes.func.isRequired,
+  addTaskToRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;

@@ -29,9 +29,9 @@ class Column extends Component {
 
         {tasksDraw.length <= 0 && (
           <div>
-            <p>Вітаємо Вас в Borsch).</p>
-
-            <p>Для початку роботи натисніть &quot;+&quot;</p>
+            <p className={css.start}>
+              Для початку роботи натисніть &quot;+&quot;
+            </p>
           </div>
         )}
         <Droppable droppableId={column.id}>

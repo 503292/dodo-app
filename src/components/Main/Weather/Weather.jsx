@@ -76,6 +76,7 @@ class Weather extends Component {
       })
       .catch(error => {
         toast('Опаньки. Такого населеного пункту немає(.');
+        // eslint-disable-next-line no-console
         console.log(error, 'такого населеного пункту немає');
         loaderOff();
       });

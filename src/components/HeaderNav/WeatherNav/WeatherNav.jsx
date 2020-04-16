@@ -80,10 +80,8 @@ class WeatherNav extends Component {
       );
     }
 
-
     return (
       <>
-
         {weather && (
           <div className={css.wrapWeather}>
             <div className={css.wrapIcon}>
@@ -95,7 +93,6 @@ class WeatherNav extends Component {
             <p className={css.timezone}>{location}</p>
           </div>
         )}
- 
 
         <ToastContainer autoClose={4500} position="bottom-center" />
       </>

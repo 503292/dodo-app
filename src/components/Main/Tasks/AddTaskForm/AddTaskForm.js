@@ -82,6 +82,19 @@ class AddTaskForm extends Component {
       }));
 
       addTaskToRedux(data);
+
+      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+      if (localTasksArr) {
+        localTasksArr.push(data);
+        localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
+        // console.log(localTasksArr, 'localTasksArr2');
+      } else {
+        const arr = [];
+        arr.push(data);
+        localStorage.setItem('localTasks', JSON.stringify(arr));
+        // console.log(arr, 'arr');
+      }
     }
 
     modalAddTasksClose();
