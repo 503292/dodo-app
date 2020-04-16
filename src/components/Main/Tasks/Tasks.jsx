@@ -38,8 +38,8 @@ class Tasks extends Component {
     }
 
     // save in localStorage new arrTask by sort arrIds
-    if (prevState !== this.state) {
-      const { columns } = this.state;
+    const { columns } = this.state;
+    if (prevState.columns !== columns) {
       const tasksIdArr = columns['column-1'].tasksIds;
       const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
