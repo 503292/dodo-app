@@ -38,7 +38,7 @@ class WeatherNav extends Component {
 
     fetchWorldWeather(setLocation())
       .then(data => {
-        console.log('data', data);
+        // console.log('data', data);
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);

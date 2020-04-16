@@ -26,8 +26,6 @@ class AddTaskForm extends Component {
     if (editTask !== null) {
       const date = new Date(editTask.endTime);
 
-      console.log(date, 'date');
-
       this.setState({
         endTime: date,
         text: editTask.text,
@@ -61,6 +59,8 @@ class AddTaskForm extends Component {
       updateTaskToRedux,
     } = this.props;
 
+    const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
     const idTmp = shortid.generate();
 
     const data = {
@@ -80,6 +80,11 @@ class AddTaskForm extends Component {
       }));
 
       updateTaskToRedux(getTasks);
+
+      // update task to localStorage
+      const filterArr = localTasksArr.filter(el => el.id !== id);
+      filterArr.push(getTasks);
+      localStorage.setItem('localTasks', JSON.stringify(filterArr));
     } else {
       this.setState(state => ({
         ...state,
@@ -88,17 +93,14 @@ class AddTaskForm extends Component {
 
       addTaskToRedux(data);
 
-      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
-
+      // add task to localStorage
       if (localTasksArr) {
         localTasksArr.push(data);
         localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
-        // console.log(localTasksArr, 'localTasksArr2');
       } else {
         const arr = [];
         arr.push(data);
         localStorage.setItem('localTasks', JSON.stringify(arr));
-        // console.log(arr, 'arr');
       }
     }
 
