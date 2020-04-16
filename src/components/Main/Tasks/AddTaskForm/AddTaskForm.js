@@ -91,12 +91,16 @@ class AddTaskForm extends Component {
         data,
       }));
 
+      console.log(data, 'data');
+      // console.log(localTasksArr, 'localTasksArr');
+
       addTaskToRedux(data);
 
       // add task to localStorage
       if (localTasksArr) {
         localTasksArr.push(data);
         localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
+        // console.log(localTasksArr, 'localTasksArr2');
       } else {
         const arr = [];
         arr.push(data);

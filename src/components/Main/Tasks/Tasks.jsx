@@ -13,7 +13,7 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        title: 'today',
+        title: `До роботи кусок м'яса`,
         tasksIds: [],
       },
     },
@@ -24,7 +24,8 @@ class Tasks extends Component {
   componentDidMount() {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const { addTaskToRedux } = this.props;
-    console.log(localTasksArr, 'localTasksArr');
+    console.log(this.state);
+
     if (localTasksArr) {
       localTasksArr.map(el => addTaskToRedux(el));
       this.viewTasks(localTasksArr);
@@ -33,32 +34,38 @@ class Tasks extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.props;
+    // const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     if (prevProps.data !== data) {
       this.viewTasks(data);
     }
 
-    // save in localStorage new arrTask sort after drop
+    // save in localStorage new arrTask & update sort after drop
 
     if (prevState !== this.state) {
       const { columns } = this.state;
       const tasksIdArr = columns['column-1'].tasksIds;
       const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
-      const newTask = [];
+      const newTasks = [];
       tasksIdArr.forEach(el => {
-        //
         const oneTask = localTasksArr.find(t => t.id === el);
-        newTask.push(oneTask);
+        newTasks.push(oneTask);
       });
 
-      localStorage.setItem('localTasks', JSON.stringify(newTask));
+      localStorage.setItem('localTasks', JSON.stringify(newTasks));
     }
   }
 
-  viewTasks = async data => {
+  viewTasks = data => {
     const arrIds = data.map(el => el.id);
     const { columns } = this.state;
     const arr = columns['column-1'].tasksIds;
+    console.log(arrIds, 'arrIds');
+    console.log(arr, 'arr');
+
+    // if(localTasksArr){
+
+    // }
     this.setState({
       tasks: data,
       columns: {
@@ -79,6 +86,7 @@ class Tasks extends Component {
 
   updateCompleted = async id => {
     const { updateIsCompletedTaskToRedux } = this.props;
+    const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
     await this.setState(state => ({
       tasks: state.tasks.map(task =>
@@ -88,14 +96,13 @@ class Tasks extends Component {
 
     const { tasks } = this.state;
     const taskTmp = tasks.find(el => el.id === id);
-    console.log(taskTmp, 'taskTmp');
-    console.log(id);
     updateIsCompletedTaskToRedux(taskTmp);
 
-    // update task by comleted
-    // const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+    // update task to localStorage by comleted
 
-    // localStorage.setItem('localTasks', JSON.stringify(newTask));
+    const indexCut = localTasksArr.findIndex(el => el.id === id);
+    localTasksArr.splice(indexCut, 1, taskTmp);
+    localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
   };
 
   updateTask = task => {
@@ -156,6 +163,8 @@ class Tasks extends Component {
         tasksIds: newTaskIds,
       };
 
+      // console.log(newColumn, 'newColumn');
+
       const newState = {
         ...this.state,
         columns: {
@@ -166,7 +175,22 @@ class Tasks extends Component {
 
       this.setState(newState);
 
-      console.log(newState, 'newState');
+      // console.log(newState, 'newState');
+
+      // save to localStorage after drop
+      const tasksIdArr = newColumn.tasksIds;
+      // console.log(tasksIdArr, 'tasksIdArr');
+      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+      const newTask = [];
+      tasksIdArr.forEach(el => {
+        //
+        const oneTask = localTasksArr.find(t => t.id === el);
+        newTask.push(oneTask);
+      });
+
+      localStorage.setItem('localTasks', JSON.stringify(newTask));
+      // console.log('object');
       return;
     }
 
@@ -194,12 +218,14 @@ class Tasks extends Component {
       },
     };
     await this.setState(newState);
+
+    console.log(newState, 'newState');
   };
 
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
-
+    // console.log(columns['column-1'].tasksIds, 'col');
     return (
       <div className={css.wrapTasks}>
         <DragDropContext
