@@ -24,7 +24,7 @@ class Tasks extends Component {
   componentDidMount() {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const { addTaskToRedux } = this.props;
-    // console.log(localTasksArr, 'localTasksArr');
+    console.log(localTasksArr, 'localTasksArr');
     if (localTasksArr) {
       localTasksArr.map(el => addTaskToRedux(el));
       this.viewTasks(localTasksArr);
@@ -37,14 +37,16 @@ class Tasks extends Component {
       this.viewTasks(data);
     }
 
-    // save in localStorage new arrTask by sort arrIds
-    const { columns } = this.state;
-    if (prevState.columns !== columns) {
+    // save in localStorage new arrTask sort after drop
+
+    if (prevState !== this.state) {
+      const { columns } = this.state;
       const tasksIdArr = columns['column-1'].tasksIds;
       const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
       const newTask = [];
       tasksIdArr.forEach(el => {
+        //
         const oneTask = localTasksArr.find(t => t.id === el);
         newTask.push(oneTask);
       });
@@ -86,8 +88,14 @@ class Tasks extends Component {
 
     const { tasks } = this.state;
     const taskTmp = tasks.find(el => el.id === id);
-
+    console.log(taskTmp, 'taskTmp');
+    console.log(id);
     updateIsCompletedTaskToRedux(taskTmp);
+
+    // update task by comleted
+    // const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+    // localStorage.setItem('localTasks', JSON.stringify(newTask));
   };
 
   updateTask = task => {

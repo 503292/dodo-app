@@ -22,9 +22,14 @@ class AddTaskForm extends Component {
 
   componentDidMount() {
     const { editTask } = this.props;
+
     if (editTask !== null) {
+      const date = new Date(editTask.endTime);
+
+      console.log(date, 'date');
+
       this.setState({
-        endTime: editTask.endTime,
+        endTime: date,
         text: editTask.text,
         priority: editTask.priority,
         id: editTask.id,

@@ -38,24 +38,20 @@ class WeatherNav extends Component {
 
     fetchWorldWeather(setLocation())
       .then(data => {
-        // loaderOn();
-        // console.log('on');
+        console.log('data', data);
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
-        // console.log(parseData, 'parseData');
+
         this.setState({
           weather: parseData,
           location: parseData.timezone,
         });
         updateLocation(parseData.timezone);
-        // console.log('off');
-        // loaderOff();
       })
       .catch(error => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
         console.log(error, 'Наразі якість трабли з сервером.(');
-        // loaderOff();
       });
   }
 
@@ -82,6 +78,7 @@ class WeatherNav extends Component {
 
     return (
       <>
+        <p></p>
         {weather && (
           <div className={css.wrapWeather}>
             <div className={css.wrapIcon}>
