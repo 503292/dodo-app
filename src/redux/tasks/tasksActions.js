@@ -4,6 +4,7 @@ export const Type = {
   UPDATE_TASK_TO_REDUX: 'UPDATE_TASK_TO_REDUX',
   UPDATE_IS_COMPLETED_TASK_TO_REDUX: 'UPDATE_IS_COMPLETED_TASK_TO_REDUX',
   DELETE_TASK_FROM_REDUX: 'DELETE_TASK_FROM_REDUX',
+  UPDATE_ALL_TASKS_TO_REDUX: 'UPDATE_ALL_TASKS_TO_REDUX',
 
   ADD_TASK_START: 'ADD_TASK_START',
   ADD_TASK_SUCCESS: 'ADD_TASK_SUCCESS',
@@ -35,6 +36,11 @@ export const updateIsCompletedTaskToRedux = data => ({
 });
 export const deleteTaskFromRedux = data => ({
   type: Type.DELETE_TASK_FROM_REDUX,
+  payload: data,
+});
+
+export const updateAllTasksToRedux = data => ({
+  type: Type.UPDATE_ALL_TASKS_TO_REDUX,
   payload: data,
 });
 

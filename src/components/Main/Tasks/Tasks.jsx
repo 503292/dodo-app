@@ -24,7 +24,6 @@ class Tasks extends Component {
   componentDidMount() {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const { addTaskToRedux } = this.props;
-    // console.log(this.state);
 
     if (localTasksArr) {
       localTasksArr.map(el => addTaskToRedux(el));
@@ -34,7 +33,6 @@ class Tasks extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.props;
-    // const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     if (prevProps.data !== data) {
       this.viewTasks(data);
     }
@@ -58,15 +56,9 @@ class Tasks extends Component {
 
   viewTasks = data => {
     const arrIds = data.map(el => el.id);
-    console.log(data, 'data');
     const { columns } = this.state;
     const arr = columns['column-1'].tasksIds;
-    console.log(arrIds, 'arrIds');
-    console.log(arr, 'arr');
 
-    // if(localTasksArr){
-
-    // }
     this.setState({
       tasks: data,
       columns: {
@@ -127,6 +119,7 @@ class Tasks extends Component {
   onDragUpdate = update => {
     const { destination } = update;
     const { tasks } = this.state;
+
     const opacity = destination
       ? destination.index / Object.keys(tasks).length
       : 0;
@@ -137,7 +130,7 @@ class Tasks extends Component {
 
   onDragEnd = async result => {
     document.body.style.color = 'inherit';
-
+    const { updateAllTasksToRedux } = this.props;
     const { columns } = this.state;
     const { destination, source, draggableId } = result;
     if (!destination) {
@@ -164,8 +157,6 @@ class Tasks extends Component {
         tasksIds: newTaskIds,
       };
 
-      // console.log(newColumn, 'newColumn');
-
       const newState = {
         ...this.state,
         columns: {
@@ -176,20 +167,19 @@ class Tasks extends Component {
 
       this.setState(newState);
 
-      // console.log(newState, 'newState');
-
       // save to localStorage after drop
       const tasksIdArr = newColumn.tasksIds;
 
       const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
-      const newTask = [];
+      const newTasks = [];
       tasksIdArr.forEach(el => {
         const oneTask = localTasksArr.find(t => t.id === el);
-        newTask.push(oneTask);
+        newTasks.push(oneTask);
       });
-      localStorage.setItem('localTasks', JSON.stringify(newTask));
-      console.log(newTask, 'newTask');
+      localStorage.setItem('localTasks', JSON.stringify(newTasks));
+      console.log(newTasks, 'newTasks');
+      updateAllTasksToRedux(newTasks);
       return;
     }
 
@@ -279,6 +269,7 @@ Tasks.propTypes = {
   updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
   deleteTaskFromRedux: PropTypes.func.isRequired,
   addTaskToRedux: PropTypes.func.isRequired,
+  updateAllTasksToRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;
