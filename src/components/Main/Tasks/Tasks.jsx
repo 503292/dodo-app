@@ -24,7 +24,7 @@ class Tasks extends Component {
   componentDidMount() {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const { addTaskToRedux } = this.props;
-    console.log(this.state);
+    // console.log(this.state);
 
     if (localTasksArr) {
       localTasksArr.map(el => addTaskToRedux(el));
@@ -58,6 +58,7 @@ class Tasks extends Component {
 
   viewTasks = data => {
     const arrIds = data.map(el => el.id);
+    console.log(data, 'data');
     const { columns } = this.state;
     const arr = columns['column-1'].tasksIds;
     console.log(arrIds, 'arrIds');
@@ -179,21 +180,20 @@ class Tasks extends Component {
 
       // save to localStorage after drop
       const tasksIdArr = newColumn.tasksIds;
-      // console.log(tasksIdArr, 'tasksIdArr');
+
       const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
       const newTask = [];
       tasksIdArr.forEach(el => {
-        //
         const oneTask = localTasksArr.find(t => t.id === el);
         newTask.push(oneTask);
       });
-
       localStorage.setItem('localTasks', JSON.stringify(newTask));
-      // console.log('object');
+      console.log(newTask, 'newTask');
       return;
     }
 
+    // ця частина коду не використовуєть у звязку з відсутністю інших колонок(columns)
     const startTaskIds = Array.from(startColumn.tasksIds);
     startTaskIds.splice(source.index, 1);
     const newStartColumn = {
