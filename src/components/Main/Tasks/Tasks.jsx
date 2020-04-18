@@ -13,7 +13,7 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        title: `До роботи кусок м'яса`,
+        title: `Доброго дня !`,
         tasksIds: [],
       },
     },
@@ -24,9 +24,17 @@ class Tasks extends Component {
   componentDidMount() {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const { addTaskToRedux } = this.props;
+    const { data } = this.props;
 
     if (localTasksArr) {
-      localTasksArr.map(el => addTaskToRedux(el));
+      localTasksArr.map(el => {
+        const ids = data.map(d => d.id);
+
+        if (!ids.includes(el.id)) {
+          addTaskToRedux(el);
+        }
+        return '';
+      });
       this.viewTasks(localTasksArr);
     }
   }
@@ -35,6 +43,7 @@ class Tasks extends Component {
     const { data } = this.props;
     if (prevProps.data !== data) {
       this.viewTasks(data);
+      // console.log('data', data);
     }
 
     // save in localStorage new arrTask & update sort after drop

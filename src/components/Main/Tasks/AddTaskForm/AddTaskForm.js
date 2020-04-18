@@ -91,7 +91,7 @@ class AddTaskForm extends Component {
         data,
       }));
 
-      console.log(data, 'data');
+      // console.log(data, 'data');s
       // console.log(localTasksArr, 'localTasksArr');
 
       addTaskToRedux(data);
