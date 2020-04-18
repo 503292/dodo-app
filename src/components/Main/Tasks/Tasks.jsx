@@ -13,7 +13,7 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        title: `Доброго дня !`,
+        title: `Будь вільний, керуй своїм життям !`,
         tasksIds: [],
       },
     },
@@ -187,7 +187,7 @@ class Tasks extends Component {
         newTasks.push(oneTask);
       });
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
-      console.log(newTasks, 'newTasks');
+      // console.log(newTasks, 'newTasks');
       updateAllTasksToRedux(newTasks);
       return;
     }

@@ -43,6 +43,9 @@ class Task extends Component {
       deleteTask,
     } = this.props;
 
+    const { text } = task;
+    const splitText = text.split(/\r?\n/);
+
     return (
       <>
         <Draggable
@@ -70,15 +73,18 @@ class Task extends Component {
                     checked={task.completed}
                     onChange={() => updateCompleted(task.id)}
                   />
-                  <p
+                  <div
                     className={
                       task.completed === true
                         ? `${css.text} ${css.lineThrough}`
                         : css.text
                     }
                   >
-                    {task.text}
-                  </p>
+                    {splitText.map((el, ind) => {
+                      // eslint-disable-next-line react/no-array-index-key
+                      return <p key={ind}>{el}</p>;
+                    })}
+                  </div>
                   <p
                     className={
                       task.completed === true
