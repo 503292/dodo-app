@@ -188,8 +188,8 @@ class Tasks extends Component {
       });
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
       // console.log(newTasks, 'newTasks');
-      updateAllTasksToRedux(newTasks);
-      return;
+
+      return updateAllTasksToRedux(newTasks);
     }
 
     // ця частина коду не використовуєть у звязку з відсутністю інших колонок(columns)

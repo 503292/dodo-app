@@ -85,7 +85,7 @@ class Task extends Component {
                       return <p key={ind}>{el}</p>;
                     })}
                   </div>
-                  <p
+                  {/* <p
                     className={
                       task.completed === true
                         ? `${css.completedCheckbox} ${css.endTime}`
@@ -93,8 +93,9 @@ class Task extends Component {
                     }
                   >
                     {this.formatEndTime(task.endTime)}
-                  </p>
+                  </p> */}
                 </label>
+
                 <div className={css.actions}>
                   {!task.completed ? (
                     <button
@@ -123,6 +124,16 @@ class Task extends Component {
                       />
                     </button>
                   )}
+
+                  <p
+                    className={
+                      task.completed === true
+                        ? `${css.completedCheckbox} ${css.endTime}`
+                        : css.endTime
+                    }
+                  >
+                    {this.formatEndTime(task.endTime)}
+                  </p>
                 </div>
               </div>
             </Container>
