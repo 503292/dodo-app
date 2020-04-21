@@ -1,0 +1,50 @@
+.container {
+  padding: 5px 5px 0 5px;
+  display: flex;
+
+  color: gray;
+}
+
+.wrapTimer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapValue {
+  display: flex;
+  flex-direction: column;
+  width: 45px;
+  justify-content: center;
+  text-align: center;
+}
+.value {
+  font-size: 16px;
+  background-color: #fff;
+  color: rgb(173, 172, 172);
+  box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  /* text-shadow: 1px 1px 1px rgba(112, 252, 94, 0.9); */
+  line-height: 1.6;
+  margin-right: 5px;
+}
+.descr {
+  font-size: 8px;
+  padding-right: 5px;
+}
+
+.newYear {
+  margin: 0;
+  font-size: 9px;
+  padding: 0 0 0 5px;
+  text-align: start;
+  position: relative;
+}
+.tree {
+  fill: green;
+}
+.data {
+  font-weight: 800;
+  font-size: 10px;
+  margin: 0;
+}

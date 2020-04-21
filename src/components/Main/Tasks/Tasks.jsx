@@ -4,6 +4,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
+import Timer from './Timer/Timer';
 
 import css from './Tasks.module.css';
 
@@ -188,8 +189,8 @@ class Tasks extends Component {
       });
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
       // console.log(newTasks, 'newTasks');
-
-      return updateAllTasksToRedux(newTasks);
+      updateAllTasksToRedux(newTasks);
+      return;
     }
 
     // ця частина коду не використовуєть у звязку з відсутністю інших колонок(columns)
@@ -257,7 +258,7 @@ class Tasks extends Component {
         {/* <div className={css.wrapEnterDay}>
           <EnterDay />
         </div> */}
-
+        <Timer />
         <button
           type="button"
           className={css.addButton}

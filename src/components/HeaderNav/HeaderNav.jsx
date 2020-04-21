@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
 // import Contacts from './Contacts/Contacts';
-// import WeatherNav from './WeatherNav/WeatherNav.Container';
+import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
 import BtnLogin from './BtnLogin/BtnLogin';
 
@@ -49,7 +49,7 @@ class Header extends Component {
               exact
               activeStyle={ativeStyle}
             >
-              {/* <WeatherNav /> */}
+              <WeatherNav />
             </NavLink>
           </li>
 

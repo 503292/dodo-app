@@ -5,12 +5,13 @@
 }
 .currencyMark {
   margin: auto 0;
-  font-size: 23px;
+  font-size: 28px;
 }
 .gryvnyaSale,
 .gryvnyaBuy {
   margin: 0;
   font-size: 12px;
+  line-height: 1.5;
 }
 .gryvnyaSale span,
 .gryvnyaBuy span {

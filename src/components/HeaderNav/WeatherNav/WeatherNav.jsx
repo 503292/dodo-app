@@ -78,7 +78,6 @@ class WeatherNav extends Component {
 
     return (
       <>
-        <p></p>
         {weather && (
           <div className={css.wrapWeather}>
             <div className={css.wrapIcon}>
