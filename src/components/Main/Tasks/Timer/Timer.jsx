@@ -50,9 +50,10 @@ class Timer extends Component {
       const endTimeToNewYear = unixNewYear - unixTimeNow;
 
       const days = String(Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24)));
+
       const hours = String(
         Math.floor(
-          (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 1,
+          (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 3,
         ),
       );
 

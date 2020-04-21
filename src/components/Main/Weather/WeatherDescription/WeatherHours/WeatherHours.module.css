@@ -1,13 +1,13 @@
 .wrapCheckedDay {
   display: flex;
   justify-content: center;
-  margin: 0 0 15px;
+  margin: 0 0 10px;
 }
 .wrapDescrDay {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 18%;
+  width: 20%;
 }
 
 .infoDay {
@@ -101,17 +101,19 @@
 .wrapSun {
   display: flex;
   justify-content: space-between;
-  padding: 0 4px;
+
 }
 .timezone {
   margin: 0;
   font-size: 22px;
   color: tomato;
   font-weight: 600;
+  display: flex;
+  align-items: flex-end;
 }
 
 .sunTime {
-  padding: 5px 10px;
+  padding: 14px 10px;
   text-align: left;
   width: 150px;
   height: 22px;
