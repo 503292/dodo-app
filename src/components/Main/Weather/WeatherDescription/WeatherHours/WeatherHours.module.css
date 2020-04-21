@@ -101,7 +101,6 @@
 .wrapSun {
   display: flex;
   justify-content: space-between;
-
 }
 .timezone {
   margin: 0;

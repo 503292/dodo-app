@@ -1,6 +1,7 @@
 .currencyContainer {
   padding: 10px 5px;
   height: 95vh;
+  color: gray;
 }
 .wrapPB {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -85,7 +86,7 @@
 }
 .metalWrap {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  padding: 3px;
+  padding: 3px 0;
   width: 45%;
   background-color: #fff;
 }
