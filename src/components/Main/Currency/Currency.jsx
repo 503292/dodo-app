@@ -22,8 +22,6 @@ class Currency extends Component {
     const localCurrency = JSON.parse(localStorage.getItem('currency'));
     const localCurrencyMark = JSON.parse(localStorage.getItem('currencyMark'));
 
-    console.log(localCurrency, 'localCurrency');
-    console.log(localCurrencyMark, 'localCurrencyMark');
     await fetchCurrencyNBU()
       .then(data => {
         const contries = parseCountries(data);

@@ -37,6 +37,9 @@
 .title {
   font-size: 20px;
 }
+.wrapTextarea {
+  position: relative;
+}
 
 .inputTask {
   width: 100%;
@@ -48,6 +51,15 @@
   outline: none;
   color: grey;
 }
+.error {
+  font-size: 12px;
+  margin: 0;
+  color: tomato;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
 .twoInputs {
   display: flex;
   justify-content: space-between;
