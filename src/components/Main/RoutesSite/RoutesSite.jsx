@@ -6,13 +6,13 @@ import Contacts from '../SideBar/Contacts/Contacts';
 import WeatherPage from '../../../pages/WeatherPage';
 import CurrencyPage from '../../../pages/CurrencyPage';
 import ErrorPage from '../../../pages/ErrorPage';
-import LoginPage from '../../../pages/LoginPage';
+import InfoSitePage from '../../../pages/InfoSitePage';
 
 const RoutesSite = () => (
   <>
     <Switch>
       <Route path="/" exact component={TasksPage} />
-      <Route path="/login" exact component={LoginPage} />
+      <Route path="/info" exact component={InfoSitePage} />
       <Route path="/contacts" component={Contacts} />
       <Route path="/weather" component={WeatherPage} />
       <Route path="/currency" component={CurrencyPage} />

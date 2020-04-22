@@ -67,10 +67,8 @@ class AddTaskForm extends Component {
     } = this.props;
 
     const error = document.querySelector('#missingText');
-
     if (text === '') {
       error.style.opacity = 1;
-      console.log('ddd');
       return;
     }
 

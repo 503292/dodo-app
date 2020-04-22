@@ -14,9 +14,11 @@
 }
 .routeHeader {
 }
-.logoLink {
+
+.infoLink {
   text-decoration: none;
   color: grey;
+  fill: grey;
 }
 .contactsLink {
   text-decoration: none;

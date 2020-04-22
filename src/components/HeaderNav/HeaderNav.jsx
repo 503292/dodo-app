@@ -5,7 +5,7 @@ import Logo from './Logo/Logo';
 // import Contacts from './Contacts/Contacts';
 import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
-import BtnLogin from './BtnLogin/BtnLogin';
+import InfoSite from './InfoSite/InfoSite';
 
 import css from './HeaderNav.module.css';
 
@@ -66,12 +66,12 @@ class Header extends Component {
 
           <li className={css.routeHeader}>
             <NavLink
-              className={css.loginLink}
-              to="/login"
+              className={css.infoLink}
+              to="/info"
               exact
               activeStyle={ativeStyle}
             >
-              <BtnLogin />
+              <InfoSite />
             </NavLink>
           </li>
         </ul>
