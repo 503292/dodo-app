@@ -2,6 +2,8 @@
   padding: 5px 5px 0 5px;
   display: flex;
   color: gray;
+  position: fixed;
+  bottom: 5px;
 }
 
 .wrapTimer {

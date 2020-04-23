@@ -49,8 +49,8 @@
   border: none;
   color: #ffffff;
   font-size: 35px;
-  position: absolute;
-  bottom: 50px;
+  position: fixed;
+  bottom: 5px;
   right: 5px;
   outline: none;
   display: flex;

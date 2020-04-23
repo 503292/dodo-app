@@ -35,14 +35,12 @@
   padding: 0 5px 0 0;
 }
 .wrapIcon {
-  padding: 8px 8px 5px;
+  padding: 5px 2px;
   fill: grey;
+  height: 45px;
 }
-.icon {
-  /* width: 15px; */
-  height: 25px;
-  margin: 0 auto;
-  padding: 4px 0;
+.wrapIcon svg {
+  width: 75%;
 }
 
 /*  table */
@@ -66,6 +64,9 @@
 .tbody tr td:nth-child(even):not(:last-child) {
   border-right: 1px solid gainsboro;
 }
+.tbody tr td {
+  width: 12.5% !important;
+}
 
 .tableTime {
   font-size: 10px;
@@ -75,7 +76,7 @@
 }
 
 .tableTemp {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: dimgray;
 }
