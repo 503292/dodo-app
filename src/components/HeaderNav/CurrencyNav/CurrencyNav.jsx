@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import parseCurrency from './ParseCurrency';
+import { toast } from 'react-toastify';
 
-// import Loader from '../../Loader/Loader';
+import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
 
-import { fetchCurrencyPrivatBank } from '../../../services/api';
+import 'react-toastify/dist/ReactToastify.css';
+
+import {
+  fetchCurrencyPrivatBank,
+  fetchCurrencyNBU,
+} from '../../../services/api';
 
 import css from './CurrencyNav.module.css';
 
@@ -31,6 +36,7 @@ class CurrencyNav extends Component {
 
   async componentDidMount() {
     const { loaderOff, loaderOn } = this.props;
+
     loaderOn();
     await fetchCurrencyPrivatBank()
       .then(data => {
@@ -49,6 +55,20 @@ class CurrencyNav extends Component {
           currency: error,
         });
         loaderOff();
+      });
+
+    fetchCurrencyNBU()
+      .then(data => {
+        const contries = parseCountries(data);
+        const metals = parseMetals(data);
+
+        localStorage.setItem('contries', JSON.stringify(contries));
+        localStorage.setItem('metals', JSON.stringify(metals));
+      })
+      .catch(error => {
+        toast('Наразі немає доступу до сервера (.');
+        // eslint-disable-next-line no-console
+        console.log(error);
       });
   }
 
