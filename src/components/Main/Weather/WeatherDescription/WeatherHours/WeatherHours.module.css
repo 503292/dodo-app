@@ -30,12 +30,13 @@
   font-weight: 700;
 }
 .infoDescr {
-  line-height: 1.75;
+  line-height: 1.6;
   text-align: end;
   padding: 0 5px 0 0;
 }
 .wrapIcon {
-  padding: 3px 0;
+  padding: 8px 8px 5px;
+  fill: grey;
 }
 .icon {
   /* width: 15px; */

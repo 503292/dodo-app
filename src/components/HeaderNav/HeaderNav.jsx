@@ -11,6 +11,7 @@ import css from './HeaderNav.module.css';
 
 const ativeStyle = {
   color: 'tomato',
+  fill: 'tomato',
 };
 
 class Header extends Component {

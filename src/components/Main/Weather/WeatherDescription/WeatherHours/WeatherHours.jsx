@@ -45,11 +45,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
             <tr>
               {daysWeather[indexDay].hourly.map(h => (
                 <td key={h.time} className={css.wrapIcon}>
-                  <img
-                    className={css.icon}
-                    src={switchIcon(h.descrEn, h.isDayTime)}
-                    alt="weatherIcon"
-                  />
+                  {switchIcon(h.descrEn, h.isDayTime)}
                 </td>
               ))}
             </tr>

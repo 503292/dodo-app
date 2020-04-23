@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
-import switchIcon from './weatherIcons';
-import Loader from '../../Loader/Loader';
+
+import switchIcon from './switchIcon';
 
 import css from './WeatherNav.module.css';
 
@@ -81,7 +81,10 @@ class WeatherNav extends Component {
         {weather && (
           <div className={css.wrapWeather}>
             <div className={css.wrapIcon}>
-              <img className={css.icon} src={icon} alt="img" />
+              {switchIcon(
+                weather.currentWeather.descrEn,
+                weather.currentWeather.isDayTime,
+              )}
             </div>
             <div className={css.wrapDescr}>
               <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>

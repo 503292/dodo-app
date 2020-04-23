@@ -12,27 +12,24 @@
   max-width: 425px;
   margin: 0 auto;
 }
-.routeHeader {
-}
-
-.infoLink {
-  text-decoration: none;
+.routeHeader a {
   color: grey;
   fill: grey;
+  text-decoration: none;
+}
+
+/* .infoLink {
+
 }
 .contactsLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .weaterLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .rateLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .loginLink {
-  text-decoration: none;
-  color: grey;
-}
+
+} */
