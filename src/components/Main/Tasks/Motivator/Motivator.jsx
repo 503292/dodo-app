@@ -4,6 +4,7 @@ import css from './Motivator.module.css';
 import motivations from './motivations';
 
 import { ReactComponent as Exclamation } from '../../../../assets/image/exclamation.svg';
+// import { ReactComponent as Quotes } from '../../../../assets/image/quotes.svg';
 
 class Motivator extends Component {
   state = {
@@ -29,9 +30,11 @@ class Motivator extends Component {
     }
 
     return (
+      // <>
       <div className={css.container}>
         <Exclamation className={css.exclamation} />
-        <p className={css.text}>&ldquo; {oneMotive} &rdquo;</p>
+        {/* <Quotes className={css.quotes} /> */}
+        <p className={css.text}>{oneMotive}</p>
         {oneAuthor ? (
           <span className={css.author}>{oneAuthor}</span>
         ) : (
@@ -40,6 +43,7 @@ class Motivator extends Component {
           </span>
         )}
       </div>
+      // </>
     );
   }
 }

@@ -1,18 +1,26 @@
 .container {
-  /* border: 2px dashed rgba(250, 128, 114, 0.5); */
   border: 2px dashed rgb(226, 221, 220);
-  background-color: #fff;
-  margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
   border-radius: 0 30px;
   position: relative;
 }
 .exclamation {
   position: absolute;
   height: 16px;
-  fill: gold;
-  top: 50%;
+  fill: salmon;
+  top: 8px;
   left: 15px;
-  transform: translate(-50%, -50%);
+  /* top: 50%;
+  left: 16px;
+  transform: translate(-50%, -50%); */
+}
+.quotes {
+  position: absolute;
+  width: 10px;
+  top: 0px;
+  left: 30px;
+  fill: lightgrey;
 }
 .text {
   font-family: 'Caveat';
@@ -20,13 +28,14 @@
   font-size: 18px;
   color: grey;
   margin: 0;
-  padding: 8px 15px 10px 30px;
+  padding: 8px 15px 10px 13px;
   text-align: center;
   text-align: justify;
+  text-indent: 19px;
 }
 .author {
   margin: 0;
-  color: tomato;
+  color: salmon;
   font-size: 10px;
   position: absolute;
   bottom: 1px;

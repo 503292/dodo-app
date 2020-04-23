@@ -3,10 +3,14 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import PropTypes from 'prop-types';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+// import { faPen } from '@fortawesome/free-solid-svg-icons';
+
 import styled from 'styled-components';
+
+import { ReactComponent as Trash } from '../../../../assets/image/trash.svg';
+import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
 
 import { getColor } from '../../../../utils/Priority';
 
@@ -85,15 +89,6 @@ class Task extends Component {
                       return <p key={ind}>{el}</p>;
                     })}
                   </div>
-                  {/* <p
-                    className={
-                      task.completed === true
-                        ? `${css.completedCheckbox} ${css.endTime}`
-                        : css.endTime
-                    }
-                  >
-                    {this.formatEndTime(task.endTime)}
-                  </p> */}
                 </label>
 
                 <div className={css.actions}>
@@ -107,7 +102,7 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <FontAwesomeIcon className={css.penIcon} icon={faPen} />
+                      <Pen className={css.penIcon} />
                     </button>
                   ) : (
                     <button
@@ -118,10 +113,11 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <FontAwesomeIcon
+                      <Trash className={css.trashIcon} />
+                      {/* <FontAwesomeIcon
                         className={css.trashIcon}
                         icon={faTrashAlt}
-                      />
+                      /> */}
                     </button>
                   )}
 
