@@ -9,8 +9,10 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import { ReactComponent as Trash } from '../../../../assets/image/trash.svg';
-import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
+// import { ReactComponent as Trash } from '../../../../assets/image/trash.svg';
+import { ReactComponent as Trash2 } from '../../../../assets/image/trash-solid.svg';
+// import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
+import { ReactComponent as Pen2 } from '../../../../assets/image/pen-solid.svg';
 
 import { getColor } from '../../../../utils/Priority';
 
@@ -102,7 +104,8 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <Pen className={css.penIcon} />
+                      {/* <Pen className={css.penIcon} /> */}
+                      <Pen2 className={css.penIcon} />
                     </button>
                   ) : (
                     <button
@@ -113,7 +116,8 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <Trash className={css.trashIcon} />
+                      {/* <Trash className={css.trashIcon} /> */}
+                      <Trash2 className={css.trashIcon} />
                       {/* <FontAwesomeIcon
                         className={css.trashIcon}
                         icon={faTrashAlt}

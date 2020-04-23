@@ -49,21 +49,22 @@ class Timer extends Component {
 
       const endTimeToNewYear = unixNewYear - unixTimeNow;
 
-      const days = String(Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24)));
+      let days = Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24));
 
-      const hours = String(
-        Math.floor(
-          (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 3,
-        ),
+      let hours = Math.floor(
+        (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 3,
       );
 
-      const minutes = String(
-        Math.floor((endTimeToNewYear % (1000 * 60 * 60)) / (1000 * 60)),
+      if (hours < 0) {
+        hours += 24;
+        days -= 1;
+      }
+
+      const minutes = Math.floor(
+        (endTimeToNewYear % (1000 * 60 * 60)) / (1000 * 60),
       );
 
-      const seconds = String(
-        Math.floor((endTimeToNewYear % (1000 * 60)) / 1000),
-      );
+      const seconds = Math.floor((endTimeToNewYear % (1000 * 60)) / 1000);
 
       this.setState({
         days: pad(days, 3),
