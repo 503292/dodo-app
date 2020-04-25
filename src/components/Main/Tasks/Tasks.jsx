@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
 import Timer from './Timer/Timer';
+import Clock from './Clock/Clock';
 
 import css from './Tasks.module.css';
 
@@ -44,7 +45,6 @@ class Tasks extends Component {
     const { data } = this.props;
     if (prevProps.data !== data) {
       this.viewTasks(data);
-      // console.log('data', data);
     }
 
     // save in localStorage new arrTask & update sort after drop
@@ -188,7 +188,6 @@ class Tasks extends Component {
         newTasks.push(oneTask);
       });
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
-      // console.log(newTasks, 'newTasks');
       updateAllTasksToRedux(newTasks);
       return;
     }
@@ -218,14 +217,11 @@ class Tasks extends Component {
       },
     };
     await this.setState(newState);
-
-    console.log(newState, 'newState');
   };
 
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
-    // console.log(columns['column-1'].tasksIds, 'col');
     return (
       <>
         <div className={css.wrapTasks}>
@@ -256,6 +252,7 @@ class Tasks extends Component {
             </div>
           </DragDropContext>
           <Timer />
+          <Clock />
           <button
             type="button"
             className={css.addButton}

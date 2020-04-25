@@ -5,7 +5,6 @@ import css from './Clock.module.css';
 class Clock extends Component {
   state = {
     time: new Date().toLocaleTimeString(),
-    // isDots: true,
   };
 
   componentDidMount() {
@@ -21,21 +20,14 @@ class Clock extends Component {
   }
 
   render() {
-    const { time } = this.state; // isDots
-    // console.log(time, 'time');
+    const { time } = this.state;
 
     const timeArr = time.split(':');
     return (
       <div className={css.clock}>
-        <div className={css.time}>
-          <div>
-            {`${timeArr[0]}`}
-            {/* {isDots ? <span>:</span> : <span> </span>} */}
-            {` : `}
-            {`${timeArr[1]} `}
-          </div>
-          {/* <span className={css.sec}>{timeArr[2]}</span> */}
-        </div>
+        {`${timeArr[0]}`}
+        {` : `}
+        {`${timeArr[1]} `}
       </div>
     );
   }

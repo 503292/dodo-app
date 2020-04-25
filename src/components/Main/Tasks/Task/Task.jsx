@@ -10,7 +10,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // import { ReactComponent as Trash } from '../../../../assets/image/trash.svg';
-import { ReactComponent as Trash2 } from '../../../../assets/image/trash-solid.svg';
+// import { ReactComponent as Trash2 } from '../../../../assets/image/trash-solid.svg';
+import { ReactComponent as CrissCross } from '../../../../assets/image/criss-cross.svg';
 // import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
 import { ReactComponent as Pen2 } from '../../../../assets/image/pen-solid.svg';
 
@@ -117,7 +118,8 @@ class Task extends Component {
                       className={css.wrapIcon}
                     >
                       {/* <Trash className={css.trashIcon} /> */}
-                      <Trash2 className={css.trashIcon} />
+                      {/* <Trash2 className={css.trashIcon} /> */}
+                      <CrissCross className={css.trashIcon} />
                       {/* <FontAwesomeIcon
                         className={css.trashIcon}
                         icon={faTrashAlt}
