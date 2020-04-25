@@ -6,6 +6,8 @@ import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import switchCurrency from './switchCurrency';
+
 import {
   fetchCurrencyPrivatBank,
   fetchCurrencyNBU,
@@ -88,7 +90,9 @@ class CurrencyNav extends Component {
       <>
         {gryvnyaToCurrency && (
           <div className={css.wrapCurrency}>
-            <p className={css.currencyMark}>{mark[gryvnyaToCurrency.ccy]}</p>
+            <div className={css.currencyMark}>
+              {switchCurrency(gryvnyaToCurrency.ccy)}
+            </div>
 
             <div>
               <p title="Продати" className={css.gryvnyaBuy}>
