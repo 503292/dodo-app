@@ -15,13 +15,6 @@ import {
 
 import css from './CurrencyNav.module.css';
 
-const mark = {
-  USD: '$',
-  EUR: '€',
-  RUB: '₽',
-  BTC: '฿',
-};
-
 const getMark = () => {
   const localMark = JSON.parse(localStorage.getItem('currencyMark'));
   if (localMark) {

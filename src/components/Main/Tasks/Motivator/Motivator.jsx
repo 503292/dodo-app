@@ -12,7 +12,7 @@ class Motivator extends Component {
   };
 
   componentDidMount() {
-    const motivationNumber = this.randomNumber(motivations);
+    const motivationNumber = String(this.randomNumber(motivations));
     this.setState({ motivationNumber });
   }
 
@@ -28,22 +28,23 @@ class Motivator extends Component {
       oneMotive = motivations[motivationNumber].motivation;
       oneAuthor = motivations[motivationNumber].author;
     }
-
+    // console.log(oneMotive, 'oneMotive');
+    // console.log(oneAuthor, 'oneAuthor');
     return (
-      // <>
-      <div className={css.container}>
-        <Exclamation className={css.exclamation} />
-        {/* <Quotes className={css.quotes} /> */}
-        <p className={css.text}>{oneMotive}</p>
-        {oneAuthor ? (
-          <span className={css.author}>{oneAuthor}</span>
-        ) : (
-          <span role="img" aria-label="Monkey" className={css.author}>
-            🙈 🙉 🙊
-          </span>
-        )}
-      </div>
-      // </>
+      <>
+        <div className={css.container}>
+          <Exclamation className={css.exclamation} />
+          {/* <Quotes className={css.quotes} /> */}
+          <p className={css.text}>{oneMotive}</p>
+          {oneAuthor ? (
+            <span className={css.author}>{oneAuthor}</span>
+          ) : (
+            <span role="img" aria-label="Monkey" className={css.author}>
+              🙈 🙉 🙊
+            </span>
+          )}
+        </div>
+      </>
     );
   }
 }

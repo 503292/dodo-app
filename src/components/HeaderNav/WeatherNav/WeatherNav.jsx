@@ -24,8 +24,6 @@ class WeatherNav extends Component {
     const {
       locationFromRedux,
       updateLocation,
-      loaderOff,
-      loaderOn,
     } = this.props;
 
     const setLocation = () => {
@@ -38,7 +36,6 @@ class WeatherNav extends Component {
 
     fetchWorldWeather(setLocation())
       .then(data => {
-        // console.log('data', data);
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
@@ -101,8 +98,6 @@ class WeatherNav extends Component {
 WeatherNav.propTypes = {
   locationFromRedux: PropTypes.string.isRequired,
   updateLocation: PropTypes.func.isRequired,
-  // loaderOn: PropTypes.func.isRequired,
-  // loaderOff: PropTypes.func.isRequired,
 };
 
 export default WeatherNav;

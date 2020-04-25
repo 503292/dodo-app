@@ -52,6 +52,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'patchy rain possible':
     case 'patchy light rain with thunder':
     case 'light rain shower, light rain with thunderstorm':
+    case 'light rain shower, light rain and hail with thunderstorm':
     case 'light rain and hail with thunderstorm':
     case 'light rain with thunderstorm':
       if (isDay === 'no') {
