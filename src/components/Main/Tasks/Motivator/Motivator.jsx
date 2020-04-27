@@ -20,7 +20,7 @@ class Motivator extends Component {
 
   render() {
     const { motivationNumber } = this.state;
-
+    // console.log(motivations.length, 'mot length');
     let oneMotive = '';
     let oneAuthor = '';
 

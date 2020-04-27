@@ -21,10 +21,7 @@ class WeatherNav extends Component {
 
   componentDidMount() {
     this._isMounted = true;
-    const {
-      locationFromRedux,
-      updateLocation,
-    } = this.props;
+    const { locationFromRedux, updateLocation } = this.props;
 
     const setLocation = () => {
       const localLocation = localStorage.getItem('location');
