@@ -15,22 +15,30 @@
   left: 16px;
   transform: translate(-50%, -50%); */
 }
-.quotes {
+.btnRefresh {
   position: absolute;
-  width: 10px;
-  top: 0px;
-  left: 30px;
-  fill: lightgrey;
+  top: -8px;
+  right: -5px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 2px;
 }
+.refresh {
+  fill: grey;
+  width: 25px;
+  height: 25px;
+}
+
 .text {
   font-family: 'Caveat';
   font-weight: 700;
   font-size: 18px;
   color: grey;
   margin: 0;
-  padding: 8px 15px 10px 13px;
+  padding: 8px 20px 10px 13px;
   text-align: center;
-  text-align: justify;
+  /* text-align: justify; */
   text-indent: 19px;
 }
 .author {
