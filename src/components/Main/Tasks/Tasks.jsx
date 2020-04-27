@@ -48,7 +48,6 @@ class Tasks extends Component {
     }
 
     // save in localStorage new arrTask & update sort after drop
-
     if (prevState !== this.state) {
       const { columns } = this.state;
       const tasksIdArr = columns['column-1'].tasksIds;

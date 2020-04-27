@@ -5,7 +5,6 @@ import motivations from './motivations';
 
 import { ReactComponent as Exclamation } from '../../../../assets/image/exclamation.svg';
 import { ReactComponent as Refresh } from '../../../../assets/image/refresh.svg';
-import { ReactComponent as Refresh1 } from '../../../../assets/image/refresh-1.svg';
 
 class Motivator extends Component {
   state = {
@@ -13,22 +12,18 @@ class Motivator extends Component {
   };
 
   componentDidMount() {
-    const motivationNumber = String(this.randomNumber(motivations));
-    this.setState({ motivationNumber });
+    this.loadNewMotivation();
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { motivationNumber } = this.state;
-  //   if (prevState.motivationNumber !== motivationNumber) {
-  //     this.setState({ motivationNumber });
-  //   }
-  // }
+  loadNewMotivation = () => {
+    const randomNumber = arr => Math.floor(Math.random() * arr.length);
+    const motivationNumber = String(randomNumber(motivations));
+    this.setState({ motivationNumber });
+  };
 
-  randomNumber = arr => Math.floor(Math.random() * arr.length);
-
-  // refreshMotivation = e => {
-  //   e.preventDefault;
-  // };
+  refreshMotivation = () => {
+    this.loadNewMotivation();
+  };
 
   render() {
     const { motivationNumber } = this.state;
@@ -44,9 +39,12 @@ class Motivator extends Component {
       <>
         <div className={css.container}>
           <Exclamation className={css.exclamation} />
-          <button type="button" className={css.btnRefresh}>
-            {/* <Refresh className={css.refresh} /> */}
-            <Refresh1 className={css.refresh} />
+          <button
+            type="button"
+            className={css.btnRefresh}
+            onClick={this.refreshMotivation}
+          >
+            <Refresh className={css.refresh} />
           </button>
 
           <p className={css.text}>{oneMotive}</p>
@@ -64,7 +62,3 @@ class Motivator extends Component {
 }
 
 export default Motivator;
-
-// const Motivator = () => <>ddd</>;
-
-// export default Motivator;

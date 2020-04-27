@@ -45,7 +45,7 @@ class WeatherNav extends Component {
       })
       .catch(error => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
-        console.log(error, 'Наразі якість трабли з сервером.(');
+        // console.log(error, 'Наразі якість трабли з сервером.(');
       });
   }
 

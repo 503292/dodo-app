@@ -37,7 +37,10 @@ class Currency extends Component {
 
   render() {
     const { currency, currencyMark, contries, metals } = this.state;
-    console.log(currency, currencyMark, contries, metals);
+    console.log(currency, 'currency');
+    console.log(currencyMark, 'currencyMark');
+    console.log(contries, 'contries');
+    console.log(metals, 'metals');
     return (
       <>
         {currency && contries && metals && (
