@@ -54,16 +54,17 @@ class CurrencyNav extends Component {
 
     fetchCurrencyNBU()
       .then(data => {
+        // console.log(data, 'data');
         const contries = parseCountries(data);
         const metals = parseMetals(data);
 
         localStorage.setItem('contries', JSON.stringify(contries));
         localStorage.setItem('metals', JSON.stringify(metals));
       })
+      // eslint-disable-next-line no-unused-vars
       .catch(error => {
-        toast('Наразі немає доступу до сервера (.');
-        // eslint-disable-next-line no-console
-        console.log(error);
+        toast('Вітаємо).');
+        // console.log(error);
       });
   }
 

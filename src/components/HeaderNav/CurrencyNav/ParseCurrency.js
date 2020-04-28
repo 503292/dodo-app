@@ -32,7 +32,6 @@ export function parseCountries(data) {
       }
       return '';
     });
-
     return '';
   });
   return countries;
