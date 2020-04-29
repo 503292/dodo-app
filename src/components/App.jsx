@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import HeaderNav from './HeaderNav/HeaderNav';
 import Main from './Main/Main';
+import Animation from './Animation/Animation';
 // import Footer from './Footer/Footer';
 
 import Loader from './Loader/Loader';
@@ -18,6 +19,8 @@ class App extends Component {
     return (
       <>
         {isLoading && <Loader isLoading={isLoading} />}
+
+        <Animation />
 
         <header className={css.header}>
           <HeaderNav />
