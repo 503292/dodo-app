@@ -11,11 +11,12 @@ export const fetchCurrencyPrivatBank = () => {
 
 // API всі валюти валюти НБУ
 export const fetchCurrencyNBU = () => {
-  return fetch(
-    `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`,
-  )
-    .then(response => response.json())
-    .catch(error => console.log(error));
+  return (
+    fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`)
+      .then(response => response.json())
+      // eslint-disable-next-line
+      .catch(error => console.log('error'))
+  );
 };
 
 // worldweatheronline.com API 26.03.2020 -> 26.05.2020

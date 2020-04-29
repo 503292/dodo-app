@@ -1,13 +1,18 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
-import flower from '../../assets/image/flower.png';
+import flower1 from '../../assets/image/flowers/flower1.png';
+import flower2 from '../../assets/image/flowers/flower2.png';
+import flower3 from '../../assets/image/flowers/flower3.png';
+import flower4 from '../../assets/image/flowers/flower4.png';
+import flower5 from '../../assets/image/flowers/flower5.png';
+import flower6 from '../../assets/image/flowers/flower6.png';
 
 const animation = {
   prop: {
     particles: {
       number: {
-        value: 40,
+        value: 20,
         density: {
           enable: true,
           value_area: 800,
@@ -25,11 +30,14 @@ const animation = {
         polygon: {
           nb_sides: 5,
         },
-        image: {
-          src: flower,
-          width: 100,
-          height: 100,
-        },
+        image: [
+          { src: flower1, height: 20, width: 20 },
+          { src: flower2, height: 20, width: 20 },
+          { src: flower3, height: 20, width: 20 },
+          { src: flower4, height: 20, width: 20 },
+          { src: flower5, height: 20, width: 20 },
+          { src: flower6, height: 20, width: 20 },
+        ],
       },
 
       opacity: {
@@ -48,17 +56,17 @@ const animation = {
         anim: {
           enable: true,
           speed: 5,
-          size_min: 25,
+          size_min: 50,
           sync: false,
         },
       },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: '#008000',
-        opacity: 0.5,
-        width: 1,
-      },
+      // line_linked: {
+      //   enable: true,
+      //   distance: 150,
+      //   color: '#008000',
+      //   opacity: 0.5,
+      //   width: 3,
+      // },
     },
   },
 };
