@@ -23,7 +23,17 @@ const isLoading = (state = true, { type }) => {
   }
 };
 
+const isAnimationCheck = (state = true, { type }) => {
+  switch (type) {
+    case Type.IS_ANIMATION_CHECK:
+      return !state;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   isModalAddTasksOpen,
   isLoading,
+  isAnimationCheck,
 });

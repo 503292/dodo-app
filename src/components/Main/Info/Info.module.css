@@ -1,31 +1,3 @@
 .container {
   overflow: hidden;
 }
-.wrapFlower{
-    display: flex;
-}
-.btnFlower {
-  width: 36px;
-  height: 36px;
-  outline: none;
-  padding: 0;
-  border: 2px solid grey;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.btnFlower:hover {
-  background-color: lightsalmon;
-}
-.flower {
-  width: 30px;
-  height: 30px;
-
-  fill: grey;
-}
-
-.flower:active {
-  fill: white;
-}

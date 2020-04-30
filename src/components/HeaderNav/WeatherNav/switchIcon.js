@@ -55,6 +55,7 @@ export default function switchIcon(descrEn, isDay) {
     case 'light rain shower, light rain and hail with thunderstorm':
     case 'light rain and hail with thunderstorm':
     case 'light rain with thunderstorm':
+    case 'rain and hail with thunderstorm, squalls':
       if (isDay === 'no') {
         return <CloudMoonRain />;
       }

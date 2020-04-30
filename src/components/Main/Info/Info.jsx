@@ -1,19 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { ReactComponent as Flower } from '../../../assets/image/flowers/flower.svg';
+import Toogle from '../Toogle/Toogle';
+// import { ReactComponent as Flower } from '../../../assets/image/flowers/flower.svg';
 
-// eslint-disable-next-line no-unused-vars
 import css from './Info.module.css';
 
-const Info = () => (
+const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
-    <div className={css.wrapFlower}>
-      <button type="button" className={css.btnFlower}>
-        <Flower className={css.flower} />
-      </button>
-      <p>Квіти включені</p>
+    <div className={css.wrapToogle}>
+      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
     </div>
   </div>
 );
 
+Info.propTypes = {
+  isChecked: PropTypes.bool.isRequired,
+  setAnimationCheched: PropTypes.func.isRequired,
+};
+
 export default Info;
+
+/* <div className={css.wrapFlower}>
+      <button type="button" className={css.btnFlower}>
+        <Flower className={css.flower} />
+      </button>
+      <p>Квіти включені</p>
+    </div> */
