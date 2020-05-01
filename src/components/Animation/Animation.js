@@ -12,7 +12,7 @@ const animation = {
   prop: {
     particles: {
       number: {
-        value: 33,
+        value: 20,
         density: {
           enable: true,
           value_area: 800,

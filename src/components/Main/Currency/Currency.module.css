@@ -4,6 +4,25 @@
   color: gray;
   overflow-y: auto;
 }
+.currencyContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border: 1px solid rgba(97, 74, 74, 0.3);
+  border-radius: 50px;
+  margin: 3px 0;
+}
+
+.currencyContainer::-webkit-scrollbar {
+  padding: 5px 0;
+  width: 6px;
+  background-color: transparent;
+}
+
+.currencyContainer::-webkit-scrollbar-thumb {
+  background-color: #b8b8b9;
+  border-radius: 50px;
+  padding: 5px 0;
+}
 .wrapPB {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 7px;

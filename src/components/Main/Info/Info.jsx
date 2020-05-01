@@ -9,7 +9,11 @@ import css from './Info.module.css';
 const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
     <div className={css.wrapToogle}>
-      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
+      <Toogle
+        // className={css.toogle}
+        isChecked={isChecked}
+        setAnimationCheched={setAnimationCheched}
+      />
     </div>
   </div>
 );
