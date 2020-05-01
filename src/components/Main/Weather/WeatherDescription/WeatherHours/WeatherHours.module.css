@@ -95,6 +95,22 @@
   background-color: whitesmoke;
   font-size: 10px;
 }
+.wrapWindSpeed {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapWayWind {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  font-size: 1px;
+  padding: 1.5px 0;
+  fill: rgb(111, 109, 117);
+  box-shadow: 0 0 1px 1px grey;
+}
+.wrapWayWind svg {
+  width: 7px;
+}
 .tableChanceOfRain {
   font-size: 10px;
 }

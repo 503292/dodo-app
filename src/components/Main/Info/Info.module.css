@@ -1,7 +1,7 @@
 .container {
   position: relative;
   color: grey;
-  height:93vh;
+  height: 93vh;
   overflow: auto;
 }
 
@@ -52,11 +52,13 @@
   margin: 0;
 }
 .fieldset {
-  border: 2px solid lightgray;
+  /* border: 2px solid lightgray; */
+  border: none;
   border-radius: 13px;
   background-color: #fff;
   font-style: italic;
   margin: 0;
+  box-shadow: 0 0 4px 0px grey;
 }
 .fieldset:not(:last-child) {
   margin: 0 0 5px;
@@ -90,11 +92,15 @@
   margin: 0;
   padding: 5px 10px;
 }
-.wrapCreater p a {
+.link {
   font-family: 'Caveat';
   font-weight: 700;
-  color: rgb(44, 143, 65);
+  color: green;
   text-decoration: none;
+}
+.link:hover,
+.link:focus {
+  color: rgb(243, 165, 165);
 }
 .wrapCreater p span {
   font-size: 10px;

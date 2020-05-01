@@ -14,11 +14,11 @@ const Info = ({ isChecked, setAnimationCheched }) => (
 
     <div className={css.wrapDescription}>
       <fieldset className={css.fieldset}>
-        <legend className={css.legend}> опис </legend>
+        <legend className={css.legend}> Опис </legend>
         <div className={css.wrapOneDescr}>
           <h5>Планер (іконка карти України):</h5>
           <ul>
-            <li>Зверху вкладки знаходиться мотиватор з цитатами.</li>
+            <li>Зверху вкладки знаходиться цитатами.</li>
             <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
             <li>Біля кнопки “+” годинник.</li>
             <li>
@@ -53,7 +53,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
         </div>
       </fieldset>
       <fieldset className={css.fieldset}>
-        <legend className={css.legend}> слово автора </legend>
+        <legend className={css.legend}> Слово автора </legend>
         <p className={css.authorWords}>
           Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
           зберегти, його можна тільки акумулювати в блага. Він є скінченною
@@ -67,7 +67,9 @@ const Info = ({ isChecked, setAnimationCheched }) => (
     <div className={css.wrapCreater}>
       <p>
         <span>© 2020</span>
-        <a href="https://www.linkedin.com/in/kalyshmax/">Максим Калиш</a>
+        <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
+          Максим Калиш
+        </a>
       </p>
     </div>
   </div>
