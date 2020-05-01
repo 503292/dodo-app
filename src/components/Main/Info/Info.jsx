@@ -8,21 +8,11 @@ import css from './Info.module.css';
 const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
     <div className={css.wrapToogle}>
-      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
       {isChecked ? <p>Анімація включена</p> : <p>Анімація виключена</p>}
+      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
     </div>
 
     <div className={css.wrapDescription}>
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Слово автора </legend>
-        <p className={css.authorWords}>
-          Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
-          зберегти, його можна тільки акумулювати в блага. Він є скінченною
-          величиною, тому його потрібно використовувати ефективно. Для
-          ефективного контролю тобі потрібно планувати і виконувати завдання. У
-          цьому тобі допоможе моя програма.
-        </p>
-      </fieldset>
       <fieldset className={css.fieldset}>
         <legend className={css.legend}> опис </legend>
         <div className={css.wrapOneDescr}>
@@ -32,7 +22,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
             <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
             <li>Біля кнопки “+” годинник.</li>
             <li>
-              У лівому нижньому - куті таймер зворотного відліку до нового року.
+              У лівому нижньому куті - таймер зворотного відліку до нового року.
             </li>
             <li>Завдання можна створювати, редагувати, викреслювати.</li>
             <li>При створенні можна вибрати пріоритетність завдання і час.</li>
@@ -58,15 +48,12 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           <h5> Інфо (іконка лотоса):</h5>
           <ul>
             <li>Можна виключити анімацію).</li>
-            <li>На даний момент ти тут</li>
             <li>&ldquo;Тебе чекають великі справи&rdquo;</li>
           </ul>
         </div>
       </fieldset>
-    </div>
-    {/* <div className={css.wrapDescription}>
       <fieldset className={css.fieldset}>
-        <legend className={css.legend}> опис </legend>
+        <legend className={css.legend}> слово автора </legend>
         <p className={css.authorWords}>
           Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
           зберегти, його можна тільки акумулювати в блага. Він є скінченною
@@ -75,7 +62,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           цьому тобі допоможе моя програма.
         </p>
       </fieldset>
-    </div> */}
+    </div>
 
     <div className={css.wrapCreater}>
       <p>
