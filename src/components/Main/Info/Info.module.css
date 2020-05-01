@@ -1,6 +1,62 @@
 .container {
   overflow: hidden;
+  position: relative;
+  height: 95vh;
+  /* width: 100%; */
 }
+
+/* 1 div */
 .wrapToogle {
-  padding-top: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapToogle p {
+  margin: 0;
+}
+
+/*  2 div */
+.wrapDescription {
+  font-size: 12px;
+  padding: 10px;
+}
+.wrapDescription p {
+  margin: 0;
+}
+.fieldset {
+  border: 2px solid lightgray;
+  background-color: #fff;
+  margin: 0 0 10px;
+}
+.legend {
+  padding: 2px 5px;
+  background-color: #fff;
+  border: 2px solid lightgray;
+}
+.authorWords {
+  text-align: justify;
+}
+.wrapOneDescr h5,
+.wrapOneDescr ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+/* 3 div */
+.wrapCreater {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+}
+.wrapCreater p a {
+  font-family: 'Caveat';
+  font-weight: 700;
+  color: rgb(44, 143, 65);
+  text-decoration: none;
+}
+.wrapCreater p span {
+  font-size: 10px;
+  padding-right: 5px;
 }

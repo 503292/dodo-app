@@ -6,16 +6,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { ReactComponent as Delete } from '../../../../assets/image/delete.svg';
-
 import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
-
 import { getColor } from '../../../../utils/Priority';
 
 import css from './Task.module.css';
 
 const Container = styled.div`
   margin-bottom: 8px;
-  background-color: ${props => (props.isDragging ? 'lightgrey' : 'white')};
   color: grey;
   // color: ${props => (props.isDragging ? 'white' : 'black')};
   // font-weight: ${props => (props.isDragging ? '700' : '400')};

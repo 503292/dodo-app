@@ -2,18 +2,86 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toogle from '../Toogle/Toogle';
-// import { ReactComponent as Flower } from '../../../assets/image/flowers/flower.svg';
 
 import css from './Info.module.css';
 
 const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
     <div className={css.wrapToogle}>
-      <Toogle
-        // className={css.toogle}
-        isChecked={isChecked}
-        setAnimationCheched={setAnimationCheched}
-      />
+      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
+      {isChecked ? <p>Анімація включена</p> : <p>Анімація виключена</p>}
+    </div>
+
+    <div className={css.wrapDescription}>
+      <fieldset className={css.fieldset}>
+        <legend className={css.legend}> Слово автора </legend>
+        <p className={css.authorWords}>
+          Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
+          зберегти, його можна тільки акумулювати в блага. Він є скінченною
+          величиною, тому його потрібно використовувати ефективно. Для
+          ефективного контролю тобі потрібно планувати і виконувати завдання. У
+          цьому тобі допоможе моя програма.
+        </p>
+      </fieldset>
+      <fieldset className={css.fieldset}>
+        <legend className={css.legend}> опис </legend>
+        <div className={css.wrapOneDescr}>
+          <h5>Планер (іконка карти України):</h5>
+          <ul>
+            <li>Зверху вкладки знаходиться мотиватор з цитатами.</li>
+            <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
+            <li>Біля кнопки “+” годинник.</li>
+            <li>
+              У лівому нижньому - куті таймер зворотного відліку до нового року.
+            </li>
+            <li>Завдання можна створювати, редагувати, викреслювати.</li>
+            <li>При створенні можна вибрати пріоритетність завдання і час.</li>
+            <li>Завдання можна перетягувати по вертикалі для зручності.</li>
+          </ul>
+        </div>
+        <div className={css.wrapOneDescr}>
+          <h5>Прогноз погоди (іконка погоди і температура в даний час):</h5>
+          <ul>
+            <li>Показує погоду на 7 наступних днів.</li>
+            <li>Також є пошук по населеному пункту.</li>
+          </ul>
+        </div>
+        <div className={css.wrapOneDescr}>
+          <h5>Курс валют (іконка іноземної валюти і суми купівлі-продажу):</h5>
+          <ul>
+            <li>Курс купівлі продажу основних валют.</li>
+            <li>Курс НБУ основних дорогоцінних металів.</li>
+            <li>Курс НБУ основних валют світу.</li>
+          </ul>
+        </div>
+        <div className={css.wrapOneDescr}>
+          <h5> Інфо (іконка лотоса):</h5>
+          <ul>
+            <li>Можна виключити анімацію).</li>
+            <li>На даний момент ти тут</li>
+            <li>&ldquo;Тебе чекають великі справи&rdquo;</li>
+          </ul>
+        </div>
+      </fieldset>
+    </div>
+    {/* <div className={css.wrapDescription}>
+      <fieldset className={css.fieldset}>
+        <legend className={css.legend}> опис </legend>
+        <p className={css.authorWords}>
+          Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
+          зберегти, його можна тільки акумулювати в блага. Він є скінченною
+          величиною, тому його потрібно використовувати ефективно. Для
+          ефективного контролю тобі потрібно планувати і виконувати завдання. У
+          цьому тобі допоможе моя програма.
+        </p>
+      </fieldset>
+    </div> */}
+
+    <div className={css.wrapCreater}>
+      <p>
+        <span>© 2020</span>
+        <a href="https://www.linkedin.com/in/kalyshmax/">Максим Калиш</a>
+      </p>
     </div>
   </div>
 );
@@ -24,10 +92,3 @@ Info.propTypes = {
 };
 
 export default Info;
-
-/* <div className={css.wrapFlower}>
-      <button type="button" className={css.btnFlower}>
-        <Flower className={css.flower} />
-      </button>
-      <p>Квіти включені</p>
-    </div> */

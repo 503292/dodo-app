@@ -8,6 +8,8 @@ input[type='checkbox'].switch {
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 4px 0px grey;
+  outline: none;
 }
 
 input[type='checkbox'].switch:checked {

@@ -128,12 +128,12 @@ class Tasks extends Component {
   onDragUpdate = update => {
     const { destination } = update;
     const { tasks } = this.state;
-
     const opacity = destination
       ? destination.index / Object.keys(tasks).length
       : 0;
 
-    document.body.style.backgroundColor = `rgba(135,180,89, ${opacity})`;
+    document.body.style.backgroundColor = `rgba(170,225,250, ${opacity})`;
+
     document.body.style.transition = 'background-color 0.9s ease';
   };
 
