@@ -3,14 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
 // import Contacts from './Contacts/Contacts';
-// import WeatherNav from './WeatherNav/WeatherNav.Container';
+import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
-import BtnLogin from './BtnLogin/BtnLogin';
+import InfoSite from './InfoSite/InfoSite';
 
 import css from './HeaderNav.module.css';
 
 const ativeStyle = {
   color: 'tomato',
+  fill: 'tomato',
 };
 
 class Header extends Component {
@@ -49,7 +50,7 @@ class Header extends Component {
               exact
               activeStyle={ativeStyle}
             >
-              {/* <WeatherNav /> */}
+              <WeatherNav />
             </NavLink>
           </li>
 
@@ -66,12 +67,12 @@ class Header extends Component {
 
           <li className={css.routeHeader}>
             <NavLink
-              className={css.loginLink}
-              to="/login"
+              className={css.infoLink}
+              to="/info"
               exact
               activeStyle={ativeStyle}
             >
-              <BtnLogin />
+              <InfoSite />
             </NavLink>
           </li>
         </ul>

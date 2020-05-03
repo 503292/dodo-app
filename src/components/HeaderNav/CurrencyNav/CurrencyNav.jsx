@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import parseCurrency from './ParseCurrency';
 
-// import Loader from '../../Loader/Loader';
+import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
 
-import { fetchCurrencyPrivatBank } from '../../../services/api';
+import switchCurrency from './switchCurrency';
+
+import {
+  fetchCurrencyPrivatBank,
+  fetchCurrencyNBU,
+} from '../../../services/api';
 
 import css from './CurrencyNav.module.css';
-
-const mark = {
-  USD: '$',
-  EUR: '€',
-  RUB: '₽',
-  BTC: '฿',
-};
 
 const getMark = () => {
   const localMark = JSON.parse(localStorage.getItem('currencyMark'));
@@ -31,6 +28,7 @@ class CurrencyNav extends Component {
 
   async componentDidMount() {
     const { loaderOff, loaderOn } = this.props;
+
     loaderOn();
     await fetchCurrencyPrivatBank()
       .then(data => {
@@ -50,6 +48,21 @@ class CurrencyNav extends Component {
         });
         loaderOff();
       });
+
+    fetchCurrencyNBU()
+      .then(data => {
+        // console.log(data, 'data');
+        const contries = parseCountries(data);
+        const metals = parseMetals(data);
+
+        localStorage.setItem('contries', JSON.stringify(contries));
+        localStorage.setItem('metals', JSON.stringify(metals));
+      })
+      // eslint-disable-next-line no-unused-vars
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.log('А-ча-ча');
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -68,7 +81,9 @@ class CurrencyNav extends Component {
       <>
         {gryvnyaToCurrency && (
           <div className={css.wrapCurrency}>
-            <p className={css.currencyMark}>{mark[gryvnyaToCurrency.ccy]}</p>
+            <div className={css.currencyMark}>
+              {switchCurrency(gryvnyaToCurrency.ccy)}
+            </div>
 
             <div>
               <p title="Продати" className={css.gryvnyaBuy}>

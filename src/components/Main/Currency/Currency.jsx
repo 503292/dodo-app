@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import { parseCountries, parseMetals } from './ParseCurrency';
-
 import css from './Currency.module.css';
-
-import { fetchCurrencyNBU } from '../../../services/api';
 
 class Currency extends Component {
   state = {
@@ -21,27 +14,14 @@ class Currency extends Component {
   async componentDidMount() {
     const localCurrency = JSON.parse(localStorage.getItem('currency'));
     const localCurrencyMark = JSON.parse(localStorage.getItem('currencyMark'));
-
-    await fetchCurrencyNBU()
-      .then(data => {
-        const contries = parseCountries(data);
-        const metals = parseMetals(data);
-
-        this.setState({
-          contries,
-          metals,
-        });
-      })
-      .catch(error => {
-        toast('Наразі немає доступу до сервера (.');
-
-        // eslint-disable-next-line no-console
-        console.log(error);
-      });
+    const localContries = JSON.parse(localStorage.getItem('contries'));
+    const LocalMetals = JSON.parse(localStorage.getItem('metals'));
 
     await this.setState({
       currency: localCurrency,
       currencyMark: localCurrencyMark,
+      contries: localContries,
+      metals: LocalMetals,
     });
   }
 
@@ -57,10 +37,13 @@ class Currency extends Component {
 
   render() {
     const { currency, currencyMark, contries, metals } = this.state;
-
+    // console.log(currency, 'currency');
+    // console.log(currencyMark, 'currencyMark');
+    // console.log(contries, 'contries');
+    // console.log(metals, 'metals');
     return (
       <>
-        {currency && (
+        {currency && contries && metals && (
           <div className={css.currencyContainer}>
             <div className={css.wrapPB}>
               <div className={css.cash}>
@@ -124,7 +107,7 @@ class Currency extends Component {
                 ))}
 
                 {contries.map(el => (
-                  <div key={el.name} className={css.oneCurrency}>
+                  <div key={el.name} className={css.oneCountry}>
                     <div className={css.wrapFlag}>
                       <img src={el.url} alt="country" />
                       <p className={css.country}>{el.country}</p>

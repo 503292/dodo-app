@@ -11,6 +11,8 @@ import css from './AddTaskForm.module.css';
 
 const options = Object.values(Priority);
 
+const errorMessage = 'Введіть будь ласка, текст';
+
 class AddTaskForm extends Component {
   state = {
     endTime: new Date(),
@@ -44,6 +46,11 @@ class AddTaskForm extends Component {
   handleChange = ({ target }) => {
     const { name, value } = target;
 
+    if (name === 'text' && value.length > 0) {
+      const error = document.querySelector('#missingText');
+      error.style.opacity = 0;
+    }
+
     this.setState({
       [name]: value,
     });
@@ -51,7 +58,6 @@ class AddTaskForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     const { endTime, text, priority, completed, id } = this.state;
     const {
       modalAddTasksClose,
@@ -59,6 +65,12 @@ class AddTaskForm extends Component {
       allTasks,
       updateTaskToRedux,
     } = this.props;
+
+    const error = document.querySelector('#missingText');
+    if (text === '') {
+      error.style.opacity = 1;
+      return;
+    }
 
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
@@ -92,16 +104,12 @@ class AddTaskForm extends Component {
         data,
       }));
 
-      // console.log(data, 'data');s
-      // console.log(localTasksArr, 'localTasksArr');
-
       addTaskToRedux(data);
 
       // add task to localStorage
       if (localTasksArr) {
         localTasksArr.push(data);
         localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
-        // console.log(localTasksArr, 'localTasksArr2');
       } else {
         const arr = [];
         arr.push(data);
@@ -133,17 +141,20 @@ class AddTaskForm extends Component {
         >
           <h2 className={css.title}>Нове завдання</h2>
 
-          <div className={css.formAdd_textarea}>
+          <div className={css.wrapTextarea}>
             <textarea
               className={css.inputTask}
               type="text"
               autoFocus
-              required
+              // required
               placeholder=" . . ."
               name="text"
               value={text}
               onChange={this.handleChange}
             />
+            <p id="missingText" className={css.error}>
+              {errorMessage}
+            </p>
           </div>
 
           <div className={css.twoInputs}>
@@ -153,7 +164,6 @@ class AddTaskForm extends Component {
               </span>
               <DatePicker
                 locale={uk}
-                // todayButton="Сьогодні"
                 className={css.dataInput}
                 selected={endTime}
                 onChange={this.handleChangeTime}

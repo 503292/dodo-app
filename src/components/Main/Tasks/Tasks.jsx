@@ -4,6 +4,8 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
+import Timer from './Timer/Timer';
+import Clock from './Clock/Clock';
 
 import css from './Tasks.module.css';
 
@@ -43,11 +45,9 @@ class Tasks extends Component {
     const { data } = this.props;
     if (prevProps.data !== data) {
       this.viewTasks(data);
-      // console.log('data', data);
     }
 
     // save in localStorage new arrTask & update sort after drop
-
     if (prevState !== this.state) {
       const { columns } = this.state;
       const tasksIdArr = columns['column-1'].tasksIds;
@@ -128,12 +128,12 @@ class Tasks extends Component {
   onDragUpdate = update => {
     const { destination } = update;
     const { tasks } = this.state;
-
     const opacity = destination
       ? destination.index / Object.keys(tasks).length
       : 0;
 
-    document.body.style.backgroundColor = `rgba(135,180,89, ${opacity})`;
+    document.body.style.backgroundColor = `rgba(170,225,250, ${opacity})`;
+
     document.body.style.transition = 'background-color 0.9s ease';
   };
 
@@ -187,9 +187,8 @@ class Tasks extends Component {
         newTasks.push(oneTask);
       });
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
-      // console.log(newTasks, 'newTasks');
-
-      return updateAllTasksToRedux(newTasks);
+      updateAllTasksToRedux(newTasks);
+      return;
     }
 
     // ця частина коду не використовуєть у звязку з відсутністю інших колонок(columns)
@@ -217,57 +216,52 @@ class Tasks extends Component {
       },
     };
     await this.setState(newState);
-
-    console.log(newState, 'newState');
   };
 
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
-    // console.log(columns['column-1'].tasksIds, 'col');
     return (
-      <div className={css.wrapTasks}>
-        <DragDropContext
-          onDragEnd={this.onDragEnd}
-          onDragStart={this.onDragStart}
-          onDragUpdate={this.onDragUpdate}
-          className={css.dragDropContext}
-        >
-          <div className={css.container}>
-            {columnOrder.map(columnId => {
-              const column = columns[columnId];
-              const tasksDraw = column.tasksIds.map(taskId =>
-                tasks.find(el => el.id === taskId),
-              );
-              return (
-                <Column
-                  key={column.id}
-                  tasksDraw={tasksDraw}
-                  column={column}
-                  modalAddTasksOpen={modalAddTasksOpen}
-                  updateCompleted={this.updateCompleted}
-                  updateTask={this.updateTask}
-                  deleteTask={this.deleteTask}
-                />
-              );
-            })}
-          </div>
-        </DragDropContext>
-
-        {/* <div className={css.wrapEnterDay}>
-          <EnterDay />
-        </div> */}
-
-        <button
-          type="button"
-          className={css.addButton}
-          onClick={modalAddTasksOpen}
-        >
-          +
-        </button>
-
-        <ModalAddTask editTask={editTask} />
-      </div>
+      <>
+        <div className={css.wrapTasks}>
+          <DragDropContext
+            onDragEnd={this.onDragEnd}
+            onDragStart={this.onDragStart}
+            onDragUpdate={this.onDragUpdate}
+            className={css.dragDropContext}
+          >
+            <div className={css.container}>
+              {columnOrder.map(columnId => {
+                const column = columns[columnId];
+                const tasksDraw = column.tasksIds.map(taskId =>
+                  tasks.find(el => el.id === taskId),
+                );
+                return (
+                  <Column
+                    key={column.id}
+                    tasksDraw={tasksDraw}
+                    column={column}
+                    modalAddTasksOpen={modalAddTasksOpen}
+                    updateCompleted={this.updateCompleted}
+                    updateTask={this.updateTask}
+                    deleteTask={this.deleteTask}
+                  />
+                );
+              })}
+            </div>
+          </DragDropContext>
+          <Timer />
+          <Clock />
+          <button
+            type="button"
+            className={css.addButton}
+            onClick={modalAddTasksOpen}
+          >
+            +
+          </button>
+          <ModalAddTask editTask={editTask} />
+        </div>
+      </>
     );
   }
 }

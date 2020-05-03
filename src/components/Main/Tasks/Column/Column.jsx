@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Droppable } from 'react-beautiful-dnd';
 
 import Task from '../Task/Task';
 
 import css from './Column.module.css';
-import Clock from '../Clock/Clock';
+
+import Motivator from '../Motivator/Motivator';
 
 class Column extends Component {
   state = {};
@@ -22,10 +23,7 @@ class Column extends Component {
 
     return (
       <div className={css.wrapColumn}>
-        <h3 className={css.title}>{column.title}</h3>
-        <div className={css.wrapClock}>
-          <Clock />
-        </div>
+        <Motivator />
 
         {tasksDraw.length <= 0 && (
           <div>
@@ -62,5 +60,13 @@ class Column extends Component {
     );
   }
 }
+Column.propTypes = {
+  tasksDraw: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+  column: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
+  modalAddTasksOpen: PropTypes.func.isRequired,
+  updateCompleted: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+};
 
 export default Column;

@@ -41,13 +41,10 @@ class WeatherDays extends Component {
               </div>
               <div className={css.nameMonth}>{el.month}</div>
               <div className={css.wrapIcon}>
-                <img
-                  src={switchIcon(
-                    el.hourly[5].descrEn,
-                    weather.currentWeather.isdaytime,
-                  )}
-                  alt="img"
-                />
+                {switchIcon(
+                  el.hourly[5].descrEn,
+                  weather.currentWeather.isdaytime,
+                )}
               </div>
               <div className={css.descrTemp}>
                 <p>мін.</p>

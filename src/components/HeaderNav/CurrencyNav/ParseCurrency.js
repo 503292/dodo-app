@@ -1,4 +1,6 @@
-export default function parseCurrency(data) {
+import { metals, countries } from './helperCurrency';
+
+export function parseCurrency(data) {
   const dataUSD = data.find(elem => elem.ccy === 'USD');
   dataUSD.buy = Number(dataUSD.buy).toFixed(2);
   dataUSD.sale = Number(dataUSD.sale).toFixed(2);
@@ -19,4 +21,34 @@ export default function parseCurrency(data) {
   const currency = [dataUSD, dataEUR, dataRUR, dataBTC];
 
   return currency;
+}
+
+export function parseCountries(data) {
+  countries.map(el => {
+    data.find(d => {
+      if (d.cc === el.name) {
+        // eslint-disable-next-line no-param-reassign
+        el.rate = d.rate.toFixed(2);
+      }
+      return '';
+    });
+    return '';
+  });
+  return countries;
+}
+
+export function parseMetals(data) {
+  metals.map(el => {
+    data.find(d => {
+      if (d.cc === el.name) {
+        const rate = (d.rate / 31.10348).toFixed(2);
+        // eslint-disable-next-line no-param-reassign
+        el.rate = rate;
+      }
+      return '';
+    });
+
+    return '';
+  });
+  return metals;
 }

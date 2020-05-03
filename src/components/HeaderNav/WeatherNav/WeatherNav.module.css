@@ -1,13 +1,11 @@
 .wrapWeather {
   position: relative;
-
-  /* background-color: red; */
 }
 .wrapIcon {
   width: 20px;
   height: 20px;
   position: absolute;
-  top: -4px;
+  top: 0;
   left: -2px;
 }
 .wrapDescr {
@@ -19,11 +17,10 @@
 
 .degree {
   margin: 0;
-  padding: 0 0 0 5px;
 }
 .timezone {
   font-size: 10px;
-  padding-top: 5px;
+  padding-top: 2px;
   margin: 0;
   text-align: center;
   font-weight: 400;

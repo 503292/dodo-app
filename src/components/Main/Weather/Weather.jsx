@@ -15,11 +15,19 @@ class Weather extends Component {
     weather: '',
     location: '',
     search: '',
+    lastSearch: [],
   };
 
   componentDidMount() {
     const localWeather = JSON.parse(localStorage.getItem('localWeather'));
     const location = localStorage.getItem('location');
+    const lastSearch = JSON.parse(localStorage.getItem('lastSearch'));
+
+    if (lastSearch) {
+      this.setState({
+        lastSearch,
+      });
+    }
     this.setState({
       weather: localWeather,
       location,
@@ -49,14 +57,31 @@ class Weather extends Component {
     e.preventDefault();
 
     const { search } = this.state;
-    const { updateLocation, loaderOn, loaderOff } = this.props;
 
     const lowerCaseSearch = search.toLowerCase().trim();
 
     if (lowerCaseSearch === '') {
-      toast('Ви не вказали назву населеного пункту!');
+      toast('Ви не вказали назву населеного пункту! (.');
       return;
     }
+
+    this.fetchWeather(lowerCaseSearch);
+
+    // reset search
+    this.setState({
+      search: '',
+    });
+  };
+
+  clickLastSearch = e => {
+    e.preventDefault();
+
+    const search = e.target.value;
+    this.fetchWeather(search);
+  };
+
+  fetchWeather = lowerCaseSearch => {
+    const { updateLocation, loaderOn, loaderOff } = this.props;
     loaderOn();
 
     fetchWorldWeather(lowerCaseSearch)
@@ -66,6 +91,9 @@ class Weather extends Component {
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
         updateLocation(parseData.timezone);
+
+        this.updateLastSearch(parseData.timezone);
+
         this.setState({
           weather: parseData,
           location: lowerCaseSearch,
@@ -74,22 +102,44 @@ class Weather extends Component {
 
         loaderOff();
       })
+      // eslint-disable-next-line no-unused-vars
       .catch(error => {
-        toast('Опаньки. Такого населеного пункту немає(.');
-        // eslint-disable-next-line no-console
-        console.log(error, 'такого населеного пункту немає');
+        toast('Такого населеного пункту немає (. Попробуйте латиницею.');
         loaderOff();
       });
+  };
 
-    // reset search
-    this.setState({
-      search: '',
-    });
+  updateLastSearch = async data => {
+    const { lastSearch } = this.state;
+
+    if (lastSearch.includes(data)) {
+      return;
+    }
+
+    if (lastSearch.length < 5) {
+      await this.setState({
+        lastSearch: [...lastSearch, data],
+      });
+
+      localStorage.setItem('lastSearch', JSON.stringify(this.state.lastSearch));
+
+      return;
+    }
+
+    if (lastSearch.length === 5) {
+      const tmp = lastSearch;
+      tmp.shift();
+      tmp.push(data);
+
+      await this.setState({
+        lastSearch: tmp,
+      });
+      localStorage.setItem('lastSearch', JSON.stringify(this.state.lastSearch));
+    }
   };
 
   render() {
-    const { weather, location, search } = this.state;
-
+    const { weather, location, search, lastSearch } = this.state;
     return (
       <div className={css.weather}>
         <WeatherSearch
@@ -97,6 +147,8 @@ class Weather extends Component {
           handleSubmit={this.handleSubmit}
           location={location}
           search={search}
+          lastSearch={lastSearch}
+          clickLastSearch={this.clickLastSearch}
         />
         {weather && <WeatherDescription weather={weather} />}
         <ToastContainer autoClose={4500} position="bottom-center" />
