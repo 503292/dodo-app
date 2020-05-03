@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
 
 import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
-
-import 'react-toastify/dist/ReactToastify.css';
 
 import switchCurrency from './switchCurrency';
 
@@ -63,8 +60,8 @@ class CurrencyNav extends Component {
       })
       // eslint-disable-next-line no-unused-vars
       .catch(error => {
-        toast('Вітаємо).');
-        // console.log(error);
+        // eslint-disable-next-line no-console
+        console.log('А-ча-ча');
       });
   }
 

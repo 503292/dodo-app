@@ -73,7 +73,6 @@ const animation = {
 
 const Animation = () => (
   <>
-    {console.log('tyt')}
     <Particles
       style={{
         position: 'absolute',

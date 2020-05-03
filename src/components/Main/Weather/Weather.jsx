@@ -21,11 +21,16 @@ class Weather extends Component {
   componentDidMount() {
     const localWeather = JSON.parse(localStorage.getItem('localWeather'));
     const location = localStorage.getItem('location');
-    // const lastSearch = JSON.parse(localStorage.getItem('lastSearch'));
+    const lastSearch = JSON.parse(localStorage.getItem('lastSearch'));
+
+    if (lastSearch) {
+      this.setState({
+        lastSearch,
+      });
+    }
     this.setState({
       weather: localWeather,
       location,
-      // lastSearch,
     });
   }
 
@@ -100,13 +105,11 @@ class Weather extends Component {
       // eslint-disable-next-line no-unused-vars
       .catch(error => {
         toast('Такого населеного пункту немає (.');
-        // eslint-disable-next-line no-console
-        // console.log(error, 'Такого населеного пункту немає');
         loaderOff();
       });
   };
 
-  updateLastSearch = data => {
+  updateLastSearch = async data => {
     const { lastSearch } = this.state;
 
     if (lastSearch.includes(data)) {
@@ -114,9 +117,11 @@ class Weather extends Component {
     }
 
     if (lastSearch.length < 5) {
-      this.setState({
+      await this.setState({
         lastSearch: [...lastSearch, data],
       });
+
+      localStorage.setItem('lastSearch', JSON.stringify(this.state.lastSearch));
 
       return;
     }
@@ -126,9 +131,10 @@ class Weather extends Component {
       tmp.shift();
       tmp.push(data);
 
-      this.setState({
+      await this.setState({
         lastSearch: tmp,
       });
+      localStorage.setItem('lastSearch', JSON.stringify(this.state.lastSearch));
     }
   };
 
