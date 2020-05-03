@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import switchWind from './switchWind';
+
 import css from './WeatherHours.module.css';
 
 const WeatherHours = ({ weather, indexDay, switchIcon }) => {
@@ -45,11 +47,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
             <tr>
               {daysWeather[indexDay].hourly.map(h => (
                 <td key={h.time} className={css.wrapIcon}>
-                  <img
-                    className={css.icon}
-                    src={switchIcon(h.descrEn, h.isDayTime)}
-                    alt="weatherIcon"
-                  />
+                  {switchIcon(h.descrEn, h.isDayTime)}
                 </td>
               ))}
             </tr>
@@ -76,7 +74,14 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
             </tr>
             <tr className={css.tableWind}>
               {daysWeather[indexDay].hourly.map(h => (
-                <td key={h.time}>{h.windSpeed}</td>
+                <td key={h.time}>
+                  <div className={css.wrapWindSpeed}>
+                    <div className={css.wrapWayWind}>
+                      {switchWind(h.windFrom)}
+                    </div>
+                    {h.windSpeed}
+                  </div>
+                </td>
               ))}
             </tr>
             <tr className={css.tableChanceOfRain}>

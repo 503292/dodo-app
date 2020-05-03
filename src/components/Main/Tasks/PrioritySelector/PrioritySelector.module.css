@@ -26,6 +26,7 @@ select option[value='висока'] {
   padding: 3px;
   outline: none;
   color: grey;
+  border: 1px solid grey;
 }
 .oneOption {
   border-radius: 7px;

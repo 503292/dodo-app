@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import WeatherHours from './WeatherHours/WeatherHours';
 import WeatherDays from './WeatherDays/WeatherDays';
 
-import switchIcon from '../../../HeaderNav/WeatherNav/weatherIcons';
+import switchIcon from '../../../HeaderNav/WeatherNav/switchIcon';
 
 import css from './WeatherDescription.module.css';
 

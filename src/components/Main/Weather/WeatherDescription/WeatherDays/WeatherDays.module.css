@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 3px;
+  /* padding: 3px; */
 }
 .dayOfWeek {
   display: flex;
@@ -50,6 +50,7 @@
   width: 25px;
   height: 25px;
   margin: 0 auto;
+  fill: grey;
 }
 
 .descrTemp {

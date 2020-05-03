@@ -8,7 +8,7 @@
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
-  padding: 2px 2px 2px 10px;
+  padding: 2px 2px 2px 15px;
   border-top: 3px solid transparent;
   margin: 0 auto;
   display: flex;
@@ -22,16 +22,23 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  font-style: italic;
 }
 .wrapText p {
   margin: 0;
 }
 .text {
-  line-height: 2;
+  line-height: 1.4;
+  font-weight: 400;
 }
 .endTime {
   font-size: 10px;
-  padding-right: 5px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  color: #848484;
+  font-weight: 500;
 }
 
 .lowPriority {
@@ -48,45 +55,37 @@
 .completedCheckbox {
   display: none;
 }
+
 .lineThrough {
   text-decoration: line-through;
   color: rgb(190, 189, 189);
 }
 .actions {
-  display: none;
-}
-.task:hover .actions {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.task:hover .endTime {
-  opacity: 0;
+  justify-content: flex-end;
+  width: 62px;
 }
 
 .wrapIcon {
-  /* position: absolute; */
   align-items: center;
   width: 2rem;
   height: 2rem;
-  padding: 0;
+  padding-top: 5px;
   margin: 0;
   border: none;
   background-color: transparent;
   outline: none;
   border-radius: 50%;
-  /* top: 50%;
-  right: -5%; */
-  /* transform: translate(-50%, -50%); */
 }
 .penIcon,
-.trashIcon {
-  color: grey;
+.deleteIcon {
+  width: 16px;
+  fill: lightgrey;
 }
 .wrapIcon:hover,
 .wrapIcon:active {
   background-color: #fff;
-
   box-shadow: inset 0px 0px 5px -1px rgba(133, 128, 133, 1);
 }
