@@ -107,7 +107,7 @@ class Currency extends Component {
                 ))}
 
                 {contries.map(el => (
-                  <div key={el.name} className={css.oneCurrency}>
+                  <div key={el.name} className={css.oneCountry}>
                     <div className={css.wrapFlag}>
                       <img src={el.url} alt="country" />
                       <p className={css.country}>{el.country}</p>

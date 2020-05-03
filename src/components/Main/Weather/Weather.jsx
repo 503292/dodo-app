@@ -104,7 +104,7 @@ class Weather extends Component {
       })
       // eslint-disable-next-line no-unused-vars
       .catch(error => {
-        toast('Такого населеного пункту немає (.');
+        toast('Такого населеного пункту немає (. Попробуйте латиницею.');
         loaderOff();
       });
   };

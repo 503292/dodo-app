@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,8 +10,6 @@ import switchIcon from './switchIcon';
 
 import css from './WeatherNav.module.css';
 
-// wind S SW SSW SSE SE ESE E NE NNE N NNW  NW WNW WSW ENE
-
 class WeatherNav extends Component {
   state = {
     weather: '',
@@ -20,7 +17,6 @@ class WeatherNav extends Component {
   };
 
   componentDidMount() {
-    this._isMounted = true;
     const { locationFromRedux, updateLocation } = this.props;
 
     const setLocation = () => {
@@ -43,6 +39,7 @@ class WeatherNav extends Component {
         });
         updateLocation(parseData.timezone);
       })
+      // eslint-disable-next-line no-unused-vars
       .catch(error => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
         // console.log(error, 'Наразі якість трабли з сервером.(');
@@ -61,14 +58,6 @@ class WeatherNav extends Component {
 
   render() {
     const { weather, location } = this.state;
-    const { isLoading, loaderOff } = this.props;
-    let icon = '';
-    if (weather) {
-      icon = switchIcon(
-        weather.currentWeather.descrEn,
-        weather.currentWeather.isDayTime,
-      );
-    }
 
     return (
       <>

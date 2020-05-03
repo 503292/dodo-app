@@ -47,8 +47,8 @@ const Info = ({ isChecked, setAnimationCheched }) => (
         <div className={css.wrapOneDescr}>
           <h5> Інфо (іконка лотоса):</h5>
           <ul>
-            <li>Можна виключити анімацію).</li>
-            <li>&ldquo;Тебе чекають великі справи&rdquo;</li>
+            <li>Можна виключити анімацію.</li>
+            <li>&ldquo;Тебе чекають великі справи&rdquo; :)</li>
           </ul>
         </div>
       </fieldset>

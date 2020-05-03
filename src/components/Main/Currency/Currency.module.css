@@ -152,7 +152,7 @@
 }
 
 /* world currency */
-.oneCurrency {
+.oneCountry {
   background-color: rgb(254, 255, 250);
   border-radius: 7px;
   width: 32.5%;
@@ -160,13 +160,13 @@
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 3px;
 }
-.oneCurrency p {
+.oneCountry p {
   margin: 0;
 }
-.oneCurrency:hover,
-.oneCurrency:hover {
+/* .oneCountry:hover,
+.oneCountry:focus {
   background-color: rgb(219, 245, 114);
-}
+} */
 .wrapFlag {
   display: flex;
   justify-content: space-between;
