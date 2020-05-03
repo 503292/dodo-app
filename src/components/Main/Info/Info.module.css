@@ -1,0 +1,108 @@
+.container {
+  position: relative;
+  color: grey;
+  height: 93vh;
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border: 1px solid rgba(97, 74, 74, 0.3);
+  border-radius: 50px;
+  margin: 3px 0;
+}
+
+.container::-webkit-scrollbar {
+  padding: 5px 0;
+  width: 6px;
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #b8b8b9;
+  border-radius: 50px;
+  padding: 5px 0;
+}
+
+/* 1 div */
+.wrapToogle {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+
+  align-items: center;
+}
+.wrapToogle p {
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+/*  2 div */
+.wrapDescription {
+  font-size: 10px;
+  padding: 32px 10px 0;
+}
+.wrapDescription p {
+  margin: 0;
+}
+.fieldset {
+  /* border: 2px solid lightgray; */
+  border: none;
+  border-radius: 13px;
+  background-color: #fff;
+  font-style: italic;
+  margin: 0;
+  box-shadow: 0 0 4px 0px grey;
+}
+.fieldset:not(:last-child) {
+  margin: 0 0 5px;
+}
+.legend {
+  padding: 2px 5px;
+  margin: 0;
+  background-color: #fff;
+  border: 2px solid lightgray;
+  border-radius: 15px;
+}
+.authorWords {
+  text-align: justify;
+}
+.wrapOneDescr h5 {
+  font-size: 10px;
+}
+.wrapOneDescr h5,
+.wrapOneDescr ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+/* 3 div */
+.wrapCreater {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapCreater p {
+  margin: 0;
+  padding: 5px 10px;
+}
+.link {
+  font-family: Caveat, sans-serif;
+  font-weight: 700;
+  color: green;
+  text-decoration: none;
+}
+.link:hover,
+.link:focus {
+  color: rgb(243, 165, 165);
+}
+.wrapCreater p span {
+  font-size: 10px;
+  padding-right: 5px;
+}

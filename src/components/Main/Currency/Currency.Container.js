@@ -3,7 +3,9 @@ import Currency from './Currency';
 
 import { updateCurrency } from '../../../redux/currency/currencyActions';
 
-const mapDispatchToProps = { updateCurrency };
+const mapDispatchToProps = {
+  updateCurrency,
+};
 
 export default connect(
   null,

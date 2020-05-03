@@ -1,14 +1,13 @@
 .wrapCheckedDay {
   display: flex;
   justify-content: center;
-  width: 320px;
-  margin: 0 0 15px;
+  margin: 0 0 10px;
 }
 .wrapDescrDay {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 18%;
+  width: 20%;
 }
 
 .infoDay {
@@ -31,15 +30,17 @@
   font-weight: 700;
 }
 .infoDescr {
-  line-height: 1.75;
+  line-height: 1.6;
   text-align: end;
   padding: 0 5px 0 0;
 }
-
-.icon {
-  width: 15px;
-  height: 25px;
-  margin: 0 auto;
+.wrapIcon {
+  padding: 5px 2px;
+  fill: grey;
+  height: 45px;
+}
+.wrapIcon svg {
+  width: 20px;
 }
 
 /*  table */
@@ -54,6 +55,7 @@
 }
 .thead tr th {
   font-weight: 400;
+  width: 25%;
 }
 .thead tr th:not(:last-child) {
   border-right: 1px solid gainsboro;
@@ -61,6 +63,9 @@
 
 .tbody tr td:nth-child(even):not(:last-child) {
   border-right: 1px solid gainsboro;
+}
+.tbody tr td {
+  width: 12.5% !important;
 }
 
 .tableTime {
@@ -71,7 +76,7 @@
 }
 
 .tableTemp {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: dimgray;
 }
@@ -90,6 +95,22 @@
   background-color: whitesmoke;
   font-size: 10px;
 }
+.wrapWindSpeed {
+  display: flex;
+  justify-content: space-around;
+}
+.wrapWayWind {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  font-size: 1px;
+  padding: 1.5px 0;
+  fill: rgb(111, 109, 117);
+  box-shadow: 0 0 1px 1px grey;
+}
+.wrapWayWind svg {
+  width: 7px;
+}
 .tableChanceOfRain {
   font-size: 10px;
 }
@@ -98,17 +119,18 @@
 .wrapSun {
   display: flex;
   justify-content: space-between;
-  padding: 0 4px;
 }
 .timezone {
   margin: 0;
   font-size: 22px;
   color: tomato;
   font-weight: 600;
+  display: flex;
+  align-items: flex-end;
 }
 
 .sunTime {
-  padding: 5px 10px;
+  padding: 14px 10px;
   text-align: left;
   width: 150px;
   height: 22px;

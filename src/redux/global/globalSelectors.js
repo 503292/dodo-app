@@ -1,2 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
 export const getIsModalAddTasksOpen = state => state.global.isModalAddTasksOpen;
+
+export const getIsLoading = state => state.global.isLoading;
+export const getIsAnimationCheck = state => state.global.isAnimationCheck;

@@ -1,22 +1,7 @@
 .clock {
-  color: grey;
   font-weight: bold;
-  /* width: 40%; */
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.time {
-  display: flex;
-  padding: 3px 10px;
-}
-.time div {
-  width: 55px;
-}
-.sec {
-  font-size: 10px;
-  color: rgb(180, 93, 93);
-  display: flex;
-  align-items: flex-end;
-  font-weight: normal;
+  position: absolute;
+  right: 60px;
+  bottom: 65px;
+  color: salmon;
 }

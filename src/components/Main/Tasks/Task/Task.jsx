@@ -3,18 +3,16 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import PropTypes from 'prop-types';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
+import { ReactComponent as Delete } from '../../../../assets/image/delete.svg';
+import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
 import { getColor } from '../../../../utils/Priority';
 
 import css from './Task.module.css';
 
 const Container = styled.div`
   margin-bottom: 8px;
-  background-color: ${props => (props.isDragging ? 'lightgrey' : 'white')};
   color: grey;
   // color: ${props => (props.isDragging ? 'white' : 'black')};
   // font-weight: ${props => (props.isDragging ? '700' : '400')};
@@ -24,9 +22,9 @@ class Task extends Component {
   state = {};
 
   formatEndTime = endTime => {
-    let hour = endTime.getHours();
+    let hour = new Date(endTime).getHours();
     if (hour < 10) hour = '0'.concat(hour);
-    let minutes = endTime.getMinutes();
+    let minutes = new Date(endTime).getMinutes();
     if (minutes < 10) minutes = '0'.concat(minutes);
 
     const newEndTime = `${hour}:${minutes}`;
@@ -42,6 +40,9 @@ class Task extends Component {
       updateTask,
       deleteTask,
     } = this.props;
+
+    const { text } = task;
+    const splitText = text.split(/\r?\n/);
 
     return (
       <>
@@ -70,25 +71,20 @@ class Task extends Component {
                     checked={task.completed}
                     onChange={() => updateCompleted(task.id)}
                   />
-                  <p
+                  <div
                     className={
                       task.completed === true
                         ? `${css.text} ${css.lineThrough}`
                         : css.text
                     }
                   >
-                    {task.text}
-                  </p>
-                  <p
-                    className={
-                      task.completed === true
-                        ? `${css.completedCheckbox} ${css.endTime}`
-                        : css.endTime
-                    }
-                  >
-                    {this.formatEndTime(task.endTime)}
-                  </p>
+                    {splitText.map((el, ind) => {
+                      // eslint-disable-next-line react/no-array-index-key
+                      return <p key={ind}>{el}</p>;
+                    })}
+                  </div>
                 </label>
+
                 <div className={css.actions}>
                   {!task.completed ? (
                     <button
@@ -100,7 +96,7 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <FontAwesomeIcon className={css.penIcon} icon={faPen} />
+                      <Pen className={css.penIcon} />
                     </button>
                   ) : (
                     <button
@@ -111,12 +107,19 @@ class Task extends Component {
                       value={task.id}
                       className={css.wrapIcon}
                     >
-                      <FontAwesomeIcon
-                        className={css.trashIcon}
-                        icon={faTrashAlt}
-                      />
+                      <Delete className={css.deleteIcon} />
                     </button>
                   )}
+
+                  <p
+                    className={
+                      task.completed === true
+                        ? `${css.completedCheckbox} ${css.endTime}`
+                        : css.endTime
+                    }
+                  >
+                    {this.formatEndTime(task.endTime)}
+                  </p>
                 </div>
               </div>
             </Container>

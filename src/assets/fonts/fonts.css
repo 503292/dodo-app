@@ -1,0 +1,30 @@
+/* caveat-regular - cyrillic */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.eot');
+  src: local('Caveat Regular'), local('Caveat-Regular'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.woff2') format('woff2'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.woff') format('woff'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.ttf')
+      format('truetype'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-regular.svg#Caveat')
+      format('svg');
+}
+/* caveat-700 - cyrillic */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.eot');
+  src: local('Caveat Bold'), local('Caveat-Bold'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.eot?#iefix')
+      format('embedded-opentype'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.woff2') format('woff2'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.woff') format('woff'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.ttf') format('truetype'),
+    url('./caveat-v7-cyrillic/caveat-v7-cyrillic-700.svg#Caveat') format('svg');
+}

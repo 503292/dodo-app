@@ -1,33 +1,35 @@
 .wrapHeader {
+  background-color: #ffeb3b;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.wrapList {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5px;
-  background-color: #ffeb3b;
+  padding: 3px 5px;
   list-style: none;
+  max-width: 425px;
   margin: 0 auto;
-  min-width: 320px;
-  height: 40px;
 }
-.routeHeader {
-}
-.logoLink {
-  text-decoration: none;
+.routeHeader a {
   color: grey;
+  fill: grey;
+  text-decoration: none;
+}
+
+/* .infoLink {
+
 }
 .contactsLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .weaterLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .rateLink {
-  text-decoration: none;
-  color: grey;
+
 }
 .loginLink {
-  text-decoration: none;
-  color: grey;
-}
+
+} */

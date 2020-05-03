@@ -4,7 +4,8 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from './Column/Column';
 import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
-import EnterDay from './EnterDay/EnterDay';
+import Timer from './Timer/Timer';
+import Clock from './Clock/Clock';
 
 import css from './Tasks.module.css';
 
@@ -14,7 +15,7 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        title: 'today',
+        title: `Будь вільний, керуй своїм життям !`,
         tasksIds: [],
       },
     },
@@ -23,22 +24,50 @@ class Tasks extends Component {
   };
 
   componentDidMount() {
-    const { data } = this.props;
-    this.viewTasks(data);
-  }
-
-  componentDidUpdate(prevProps) {
+    const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+    const { addTaskToRedux } = this.props;
     const { data } = this.props;
 
-    if (prevProps.data !== data) {
-      this.viewTasks(data);
+    if (localTasksArr) {
+      localTasksArr.map(el => {
+        const ids = data.map(d => d.id);
+
+        if (!ids.includes(el.id)) {
+          addTaskToRedux(el);
+        }
+        return '';
+      });
+      this.viewTasks(localTasksArr);
     }
   }
 
-  viewTasks = async data => {
+  componentDidUpdate(prevProps, prevState) {
+    const { data } = this.props;
+    if (prevProps.data !== data) {
+      this.viewTasks(data);
+    }
+
+    // save in localStorage new arrTask & update sort after drop
+    if (prevState !== this.state) {
+      const { columns } = this.state;
+      const tasksIdArr = columns['column-1'].tasksIds;
+      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+      const newTasks = [];
+      tasksIdArr.forEach(el => {
+        const oneTask = localTasksArr.find(t => t.id === el);
+        newTasks.push(oneTask);
+      });
+
+      localStorage.setItem('localTasks', JSON.stringify(newTasks));
+    }
+  }
+
+  viewTasks = data => {
     const arrIds = data.map(el => el.id);
     const { columns } = this.state;
     const arr = columns['column-1'].tasksIds;
+
     this.setState({
       tasks: data,
       columns: {
@@ -51,6 +80,7 @@ class Tasks extends Component {
       editTask: null,
       columnOrder: ['column-1'],
     });
+    // }
   };
   /*
    *   crud methods for REDUX
@@ -58,6 +88,7 @@ class Tasks extends Component {
 
   updateCompleted = async id => {
     const { updateIsCompletedTaskToRedux } = this.props;
+    const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
 
     await this.setState(state => ({
       tasks: state.tasks.map(task =>
@@ -67,8 +98,13 @@ class Tasks extends Component {
 
     const { tasks } = this.state;
     const taskTmp = tasks.find(el => el.id === id);
-
     updateIsCompletedTaskToRedux(taskTmp);
+
+    // update task to localStorage by comleted
+
+    const indexCut = localTasksArr.findIndex(el => el.id === id);
+    localTasksArr.splice(indexCut, 1, taskTmp);
+    localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
   };
 
   updateTask = task => {
@@ -96,13 +132,14 @@ class Tasks extends Component {
       ? destination.index / Object.keys(tasks).length
       : 0;
 
-    document.body.style.backgroundColor = `rgba(135,180,89, ${opacity})`;
+    document.body.style.backgroundColor = `rgba(170,225,250, ${opacity})`;
+
     document.body.style.transition = 'background-color 0.9s ease';
   };
 
   onDragEnd = async result => {
     document.body.style.color = 'inherit';
-
+    const { updateAllTasksToRedux } = this.props;
     const { columns } = this.state;
     const { destination, source, draggableId } = result;
     if (!destination) {
@@ -137,11 +174,24 @@ class Tasks extends Component {
         },
       };
 
-      console.log(newState, 'newState');
       this.setState(newState);
+
+      // save to localStorage after drop
+      const tasksIdArr = newColumn.tasksIds;
+
+      const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
+
+      const newTasks = [];
+      tasksIdArr.forEach(el => {
+        const oneTask = localTasksArr.find(t => t.id === el);
+        newTasks.push(oneTask);
+      });
+      localStorage.setItem('localTasks', JSON.stringify(newTasks));
+      updateAllTasksToRedux(newTasks);
       return;
     }
 
+    // ця частина коду не використовуєть у звязку з відсутністю інших колонок(columns)
     const startTaskIds = Array.from(startColumn.tasksIds);
     startTaskIds.splice(source.index, 1);
     const newStartColumn = {
@@ -166,43 +216,42 @@ class Tasks extends Component {
       },
     };
     await this.setState(newState);
-    console.log(newState.columns['column-1'], 'newState');
   };
 
   render() {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
-
     return (
-      <div className={css.wrapTasks}>
-        <EnterDay />
-
-        <DragDropContext
-          onDragEnd={this.onDragEnd}
-          onDragStart={this.onDragStart}
-          onDragUpdate={this.onDragUpdate}
-          className={css.dragDropContext}
-        >
-          <div className={css.container}>
-            {columnOrder.map(columnId => {
-              const column = columns[columnId];
-              const tasksDraw = column.tasksIds.map(taskId =>
-                tasks.find(el => el.id === taskId),
-              );
-              return (
-                <Column
-                  key={column.id}
-                  tasksDraw={tasksDraw}
-                  column={column}
-                  modalAddTasksOpen={modalAddTasksOpen}
-                  updateCompleted={this.updateCompleted}
-                  updateTask={this.updateTask}
-                  deleteTask={this.deleteTask}
-                />
-              );
-            })}
-          </div>
-
+      <>
+        <div className={css.wrapTasks}>
+          <DragDropContext
+            onDragEnd={this.onDragEnd}
+            onDragStart={this.onDragStart}
+            onDragUpdate={this.onDragUpdate}
+            className={css.dragDropContext}
+          >
+            <div className={css.container}>
+              {columnOrder.map(columnId => {
+                const column = columns[columnId];
+                const tasksDraw = column.tasksIds.map(taskId =>
+                  tasks.find(el => el.id === taskId),
+                );
+                return (
+                  <Column
+                    key={column.id}
+                    tasksDraw={tasksDraw}
+                    column={column}
+                    modalAddTasksOpen={modalAddTasksOpen}
+                    updateCompleted={this.updateCompleted}
+                    updateTask={this.updateTask}
+                    deleteTask={this.deleteTask}
+                  />
+                );
+              })}
+            </div>
+          </DragDropContext>
+          <Timer />
+          <Clock />
           <button
             type="button"
             className={css.addButton}
@@ -210,10 +259,9 @@ class Tasks extends Component {
           >
             +
           </button>
-        </DragDropContext>
-
-        <ModalAddTask editTask={editTask} />
-      </div>
+          <ModalAddTask editTask={editTask} />
+        </div>
+      </>
     );
   }
 }
@@ -223,6 +271,8 @@ Tasks.propTypes = {
   modalAddTasksOpen: PropTypes.func.isRequired,
   updateIsCompletedTaskToRedux: PropTypes.func.isRequired,
   deleteTaskFromRedux: PropTypes.func.isRequired,
+  addTaskToRedux: PropTypes.func.isRequired,
+  updateAllTasksToRedux: PropTypes.func.isRequired,
 };
 
 export default Tasks;

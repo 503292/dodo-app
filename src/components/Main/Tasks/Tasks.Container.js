@@ -6,6 +6,7 @@ import {
   addTaskToRedux,
   updateIsCompletedTaskToRedux,
   deleteTaskFromRedux,
+  updateAllTasksToRedux,
 } from '../../../redux/tasks/tasksActions';
 
 const mapStateToProps = state => ({
@@ -17,6 +18,7 @@ const mapDispatchToProps = {
   addTaskToRedux,
   updateIsCompletedTaskToRedux,
   deleteTaskFromRedux,
+  updateAllTasksToRedux,
 };
 
 export default connect(

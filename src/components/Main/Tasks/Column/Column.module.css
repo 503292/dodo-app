@@ -1,15 +1,23 @@
 .wrapColumn {
   width: 100%;
+  position: relative;
 }
-.wrapTasks {
-  /* width: 308px; */
+.start {
+  padding: 10px;
 }
+.wrapClock {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+/* .wrapTasks {
+  width: 308px;
+} */
 .title {
   padding: 8px;
   margin: 0;
   color: gray;
 }
-.tasks {
-  /* flex-grow: 1; */
-  /* width: 100%; */
-}
+/* .tasks {
+  width: 100%;
+} */
