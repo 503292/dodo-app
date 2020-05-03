@@ -85,7 +85,7 @@ class Timer extends Component {
         <div className={css.wrapTimer}>
           <div className={css.wrapValue}>
             <span className={css.value}>{days}</span>
-            <span className={css.descr}>Днів</span>
+            <span className={css.descr}>Дня</span>
           </div>
           <div className={css.wrapValue}>
             <span className={css.value}>{hours}</span>

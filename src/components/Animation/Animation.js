@@ -12,7 +12,7 @@ const animation = {
   prop: {
     particles: {
       number: {
-        value: 20,
+        value: 13,
         density: {
           enable: true,
           value_area: 800,
@@ -73,6 +73,7 @@ const animation = {
 
 const Animation = () => (
   <>
+    {console.log('tyt')}
     <Particles
       style={{
         position: 'absolute',
