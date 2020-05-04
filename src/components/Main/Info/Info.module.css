@@ -52,7 +52,6 @@
   margin: 0;
 }
 .fieldset {
-  /* border: 2px solid lightgray; */
   border: none;
   border-radius: 13px;
   background-color: #fff;
@@ -102,6 +101,7 @@
 .link:focus {
   color: rgb(243, 165, 165);
 }
+
 .wrapCreater p span {
   font-size: 10px;
   padding-right: 5px;

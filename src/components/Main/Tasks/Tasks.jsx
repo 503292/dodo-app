@@ -121,9 +121,6 @@ class Tasks extends Component {
   /*
    *   beautiful dnd
    */
-  onDragStart = () => {
-    // document.body.style.color = '#F34D4D';
-  };
 
   onDragUpdate = update => {
     const { destination } = update;

@@ -10,7 +10,6 @@ const Loader = ({ isLoading }) => {
       <WaveSpinner size={30} color="gold" loading={isLoading} />
     </div>
   );
-  // },
 };
 
 Loader.propTypes = {

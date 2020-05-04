@@ -71,6 +71,14 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           Максим Калиш
         </a>
       </p>
+      <p>
+        <a
+          className={css.link}
+          href="mailto:kalysh.max@gmail.com?subject=Питання з YaK!"
+        >
+          kalysh.max@gmail.com
+        </a>
+      </p>
     </div>
   </div>
 );

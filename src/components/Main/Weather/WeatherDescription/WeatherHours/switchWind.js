@@ -40,10 +40,3 @@ export default function switchWind(wind) {
       return '';
   }
 }
-
-// const switchWind = wind => {
-//   console.log(allWinds[wind]);
-
-//   return ``;
-// };
-// export default switchWind;

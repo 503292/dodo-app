@@ -11,9 +11,6 @@
   fill: salmon;
   top: 8px;
   left: 15px;
-  /* top: 50%;
-  left: 16px;
-  transform: translate(-50%, -50%); */
 }
 .btnRefresh {
   position: absolute;
@@ -42,8 +39,6 @@
   color: grey;
   margin: 0;
   padding: 8px 30px 10px 20px;
-  /* text-align: start; */
-  text-align: center;
   text-align: justify;
   text-indent: 19px;
 }

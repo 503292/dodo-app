@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 
 import HeaderNav from './HeaderNav/HeaderNav';
 import Main from './Main/Main';
-import Animation from './Animation/Animation';
-// import Footer from './Footer/Footer';
 
+import Animation from './Animation/Animation';
 import Loader from './Loader/Loader';
 
 import css from './App.module.css';
@@ -46,9 +45,6 @@ class App extends Component {
         <main className={css.main}>
           <Main />
         </main>
-        {/* <footer className={css.footer}>
-        <Footer />
-      </footer> */}
       </>
     );
   }
