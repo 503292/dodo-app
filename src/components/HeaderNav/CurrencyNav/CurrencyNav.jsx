@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
 
+import { ReactComponent as ArrowL } from '../../../assets/image/arrow-l.svg';
+import { ReactComponent as ArrowR } from '../../../assets/image/arrow-r.svg';
+
 import switchCurrency from './switchCurrency';
 
 import {
@@ -84,11 +87,13 @@ class CurrencyNav extends Component {
 
             <div>
               <p title="Продати" className={css.gryvnyaBuy}>
-                <span>▶</span>
+                <ArrowR className={css.arrowR} />
+                {/* <span>▶</span> */}
                 {gryvnyaToCurrency.buy}
               </p>
               <p title="Купити" className={css.gryvnyaSale}>
-                <span>◀</span>
+                <ArrowL className={css.arrowL} />
+                {/* <span>◀</span> */}
                 {gryvnyaToCurrency.sale}
               </p>
             </div>

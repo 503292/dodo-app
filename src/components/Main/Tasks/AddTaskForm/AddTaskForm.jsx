@@ -6,6 +6,8 @@ import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import { Priority, getColor } from '../../../../utils/Priority';
 
+import { ReactComponent as Close } from '../../../../assets/image/close-x.svg';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
 
@@ -131,7 +133,7 @@ class AddTaskForm extends Component {
           className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
           onClick={modalAddTasksClose}
         >
-          <span>⤫</span>
+          <Close className={css.close} />
         </button>
 
         <form

@@ -1,5 +1,5 @@
 {
-  "name": "Yak-ua",
+  "name": "yak-158",
   "version": "0.1.0",
   "private": true,
   "description": "info from the README, or an empty string ",
@@ -71,5 +71,5 @@
   },
   "author": "503292@ukr.net",
   "license": "ISC",
-  "homepage": "https://503292.github.io/dodo-app"
+  "homepage": "."
 }

@@ -1,5 +1,5 @@
 .wrapTasks {
-  height: 100vh;
+  height: 95vh;
   position: relative;
 }
 .wrapEnterDay {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   overflow: auto;
-  height: 86vh;
+  height: 78vh;
   padding: 10px 5px 0;
 }
 .container::-webkit-scrollbar-track {
@@ -37,20 +37,30 @@
   background-color: #b8b8b9;
   border-radius: 50px;
 }
+.footerWrap {
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 425px;
+}
+.wrapBtn {
+  display: flex;
+  padding-right: 5px;
+}
 .addButton {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: #ffeb3b;
   border: none;
-  font-size: 35px;
-  position: absolute;
-  bottom: 45px;
-  right: 5px;
+  /* font-size: 35px; */
   outline: none;
   display: flex;
   justify-content: center;
-  padding-bottom: 8px;
+  align-items: center;
   font-weight: 700;
   margin: 0 auto;
   color: grey;
@@ -58,4 +68,8 @@
   text-shadow: 2px 2px 0 grey, 2px -2px 0 grey, -2px 2px 0 grey,
     -2px -2px 0 grey, 2px 0px 0 grey, 0px 2px 0 grey, -2px 0px 0 grey,
     0px -2px 0 grey;
+}
+.plus {
+  width: 30px;
+  fill: grey;
 }

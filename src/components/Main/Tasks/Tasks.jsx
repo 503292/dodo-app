@@ -7,6 +7,8 @@ import ModalAddTask from './ModalAddTask/ModalAddTask.Container';
 import Timer from './Timer/Timer';
 import Clock from './Clock/Clock';
 
+import { ReactComponent as Plus } from '../../../assets/image/plus.svg';
+
 import css from './Tasks.module.css';
 
 class Tasks extends Component {
@@ -15,7 +17,7 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        title: `Будь вільний, керуй своїм життям !`,
+        // title: `Будь вільний, керуй своїм життям !`,
         tasksIds: [],
       },
     },
@@ -247,15 +249,21 @@ class Tasks extends Component {
               })}
             </div>
           </DragDropContext>
-          <Timer />
-          <Clock />
-          <button
-            type="button"
-            className={css.addButton}
-            onClick={modalAddTasksOpen}
-          >
-            +
-          </button>
+          <div className={css.footerWrap}>
+            <Timer />
+            <div className={css.wrapBtn}>
+              <Clock />
+              <button
+                type="button"
+                className={css.addButton}
+                onClick={modalAddTasksOpen}
+              >
+                <Plus className={css.plus} />
+                {/* + */}
+              </button>
+            </div>
+          </div>
+
           <ModalAddTask editTask={editTask} />
         </div>
       </>
