@@ -1,22 +1,25 @@
 .wrapAllForm {
   color: rgb(173, 175, 173);
   margin: 0 auto;
-  width: 310px;
+  width: calc(100% - 20px);
   background-color: rgb(248, 245, 245);
   border-radius: 7px;
-}
-.backBtn {
-  width: 100%;
-  border: none;
-  display: flex;
-  padding: 10px;
-  align-items: center;
-  justify-content: flex-end;
-  outline: none;
-  border-radius: 7px 7px 0 0;
-  background-color: rgb(32, 29, 29);
+  position: relative;
 }
 
+.backBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border-radius: 50px;
+}
 
 .backBtn:hover,
 .backBtn:focus {
@@ -37,7 +40,7 @@
 .title {
   font-size: 20px;
   margin: 0;
-  padding: 0 0 5px;
+  padding: 5px 0 15px 0;
 }
 .wrapTextarea {
   position: relative;
@@ -45,7 +48,7 @@
 
 .inputTask {
   width: 100%;
-  height: 18vh;
+  height: 82px;
   margin-bottom: 10px;
   padding: 5px;
   padding-right: 20px;
@@ -95,10 +98,24 @@
   flex-direction: column;
   width: 50%;
 }
-.wrapInput span {
+.wrapDescr {
+  display: flex;
+  align-items: flex-end;
+}
+.clock,
+.level {
+  /* width: 15px; */
+  height: 20px;
+  fill: lightgray;
+}
+
+.wrapInput p {
+  /* display: inline-block; */
   font-size: 12px;
   color: lightgrey;
   padding-bottom: 5px;
+  margin: 0;
+  padding-right: 5px;
 }
 .dataInput {
   padding: 5px;
@@ -124,7 +141,6 @@
   border-radius: 7px;
   color: grey;
   padding: 10px;
-  font-weight: 600;
   outline: none;
 }
 .addBtn:hover,

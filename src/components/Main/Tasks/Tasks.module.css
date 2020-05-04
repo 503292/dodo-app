@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   overflow: auto;
-  height: 78vh;
+  height: 77vh;
   padding: 10px 5px 0;
 }
 .container::-webkit-scrollbar-track {
@@ -39,7 +39,7 @@
 }
 .footerWrap {
   position: absolute;
-  bottom: 65px;
+  bottom: 68px;
   left: 0;
   display: flex;
   justify-content: space-between;

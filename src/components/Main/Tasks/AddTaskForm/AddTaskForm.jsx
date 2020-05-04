@@ -7,6 +7,8 @@ import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import { Priority, getColor } from '../../../../utils/Priority';
 
 import { ReactComponent as Close } from '../../../../assets/image/close-x.svg';
+import { ReactComponent as Clock } from '../../../../assets/image/clock.svg';
+import { ReactComponent as Level } from '../../../../assets/image/level.svg';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
@@ -128,20 +130,19 @@ class AddTaskForm extends Component {
 
     return (
       <div className={css.wrapAllForm}>
-        <button
-          type="button"
-          className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
-          onClick={modalAddTasksClose}
-        >
-          <Close className={css.close} />
-        </button>
-
         <form
           onSubmit={this.handleSubmit}
           className={css.addForm}
           type="submit"
         >
           <h2 className={css.title}>Нове завдання</h2>
+          <button
+            type="button"
+            className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
+            onClick={modalAddTasksClose}
+          >
+            <Close className={css.close} />
+          </button>
 
           <div className={css.wrapTextarea}>
             <textarea
@@ -160,9 +161,11 @@ class AddTaskForm extends Component {
 
           <div className={css.twoInputs}>
             <div className={css.wrapInput}>
-              <span role="img" aria-label="Clock">
-                час виконання: 🕘
-              </span>
+              <div className={css.wrapDescr}>
+                <p>час виконання:</p>
+                <Clock className={css.clock} />
+              </div>
+
               <DatePicker
                 locale={uk}
                 className={css.dataInput}
@@ -178,7 +181,10 @@ class AddTaskForm extends Component {
               />
             </div>
             <div className={css.wrapInput}>
-              <span> важливість: ▅ ▆ ▉ </span>
+              <div className={css.wrapDescr}>
+                <p> важливість: </p>
+                <Level className={css.level} />
+              </div>
               <PrioritySelector
                 className={css.priorityInput}
                 options={options}

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ReactComponent as ArrowD } from '../../../../../assets/image/arrows/arrow-d.svg';
 import { ReactComponent as ArrowDl } from '../../../../../assets/image/arrows/arrow-dl.svg';
 import { ReactComponent as ArrowDr } from '../../../../../assets/image/arrows/arrow-dr.svg';
@@ -7,6 +8,7 @@ import { ReactComponent as ArrowR } from '../../../../../assets/image/arrows/arr
 import { ReactComponent as ArrowT } from '../../../../../assets/image/arrows/arrow-t.svg';
 import { ReactComponent as ArrowTl } from '../../../../../assets/image/arrows/arrow-tl.svg';
 import { ReactComponent as ArrowTr } from '../../../../../assets/image/arrows/arrow-tr.svg';
+import { ReactComponent as CircleDot } from '../../../../../assets/image/arrows/circle-dot.svg';
 
 export default function switchWind(wind) {
   switch (wind) {
@@ -37,6 +39,6 @@ export default function switchWind(wind) {
       return <ArrowTl />;
 
     default:
-      return '';
+      return <CircleDot />;
   }
 }

@@ -76,6 +76,10 @@ export default function switchIcon(descrEn, isDay) {
     case 'patchy rain nearby':
     case 'light sleet showers':
     case 'moderate or heavy rain with thunder':
+    case 'thunderstorm, rain and hail with thunderstorm, squalls':
+    case 'light rain with thunderstorm, rain and hail with thunderstorm, squalls':
+    case 'light rain with thunderstorm, heavy rain and hail with thunderstorm, squalls':
+    case 'thunderstorm in vicinity, rain and hail with thunderstorm, squalls':
       return <CloudShowersHeavy />;
 
     case 'moderate or heavy snow in area with thunder':

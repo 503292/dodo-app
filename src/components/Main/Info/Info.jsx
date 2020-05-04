@@ -62,6 +62,18 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           цьому тобі допоможе моя програма.
         </p>
       </fieldset>
+      <fieldset className={css.fieldset}>
+        <legend className={css.legend}> Для швидкого доступу </legend>
+        <div className={css.inWall}>
+          <p>Для швидкого доступу з головного екрану телефона:</p>
+          <p>
+            - У верхній частині браузера натисніть
+            <span className={css.threeDots}>⋮</span>
+          </p>
+          <p> - З випадаючього вікна виберіть Додати на головний екран</p>
+          <p> - Все готово).</p>
+        </div>
+      </fieldset>
     </div>
 
     <div className={css.wrapCreater}>

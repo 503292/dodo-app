@@ -79,6 +79,7 @@ const WeatherHours = ({ weather, indexDay, switchIcon }) => {
                     <div className={css.wrapWayWind}>
                       {switchWind(h.windFrom)}
                     </div>
+                    {h.windFrom}
                     {h.windSpeed}
                   </div>
                 </td>
