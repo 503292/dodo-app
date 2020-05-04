@@ -42,7 +42,6 @@ class WeatherNav extends Component {
       // eslint-disable-next-line no-unused-vars
       .catch(error => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
-        // console.log(error, 'Наразі якість трабли з сервером.(');
       });
   }
 

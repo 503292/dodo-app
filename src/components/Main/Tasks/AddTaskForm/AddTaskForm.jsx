@@ -146,7 +146,6 @@ class AddTaskForm extends Component {
               className={css.inputTask}
               type="text"
               autoFocus
-              // required
               placeholder=" . . ."
               name="text"
               value={text}
@@ -204,7 +203,6 @@ AddTaskForm.defaultProps = {
 };
 
 AddTaskForm.propTypes = {
-  // addTransactionOperation: PropTypes.func.isRequired,
   modalAddTasksClose: PropTypes.func.isRequired,
   addTaskToRedux: PropTypes.func.isRequired,
   updateTaskToRedux: PropTypes.func.isRequired,

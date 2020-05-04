@@ -14,7 +14,3 @@ export const getColor = el => {
       return 'normalPriority';
   }
 };
-
-// LOW - every-day
-// NORMAL - 2-day
-// HIGH - today

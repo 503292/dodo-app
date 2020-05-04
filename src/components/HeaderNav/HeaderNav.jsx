@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
-// import Contacts from './Contacts/Contacts';
 import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
 import InfoSite from './InfoSite/InfoSite';
@@ -22,56 +21,23 @@ class Header extends Component {
       <div className={css.wrapHeader}>
         <ul className={css.wrapList}>
           <li className={css.routeHeader}>
-            <NavLink
-              className={css.logoLink}
-              activeStyle={ativeStyle}
-              to="/"
-              exact
-            >
+            <NavLink activeStyle={ativeStyle} to="/" exact>
               <Logo />
             </NavLink>
           </li>
-
-          {/* <li className={css.routeHeader}>
-          <NavLink
-            className={css.contactsLink}
-            to="/contacts"
-            exact
-            activeStyle={ativeStyle}
-          >
-            <Contacts />
-          </NavLink>
-        </li> */}
-
           <li className={css.routeHeader}>
-            <NavLink
-              className={css.weaterLink}
-              to="/weather"
-              exact
-              activeStyle={ativeStyle}
-            >
+            <NavLink to="/weather" exact activeStyle={ativeStyle}>
               <WeatherNav />
             </NavLink>
           </li>
-
           <li className={css.routeHeader}>
-            <NavLink
-              className={css.rateLink}
-              to="/currency"
-              exact
-              activeStyle={ativeStyle}
-            >
+            <NavLink to="/currency" exact activeStyle={ativeStyle}>
               <CurrencyNav />
             </NavLink>
           </li>
 
           <li className={css.routeHeader}>
-            <NavLink
-              className={css.infoLink}
-              to="/info"
-              exact
-              activeStyle={ativeStyle}
-            >
+            <NavLink to="/info" exact activeStyle={ativeStyle}>
               <InfoSite />
             </NavLink>
           </li>

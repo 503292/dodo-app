@@ -3,13 +3,13 @@
   height: 100vh;
   position: fixed;
   min-width: 400px;
-  /* top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%); */
   background-color: rgba(0, 0, 0, 0.3);
   overflow: hidden;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); */
 }

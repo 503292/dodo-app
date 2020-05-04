@@ -33,7 +33,6 @@ class CurrencyNav extends Component {
     await fetchCurrencyPrivatBank()
       .then(data => {
         const currencyParse = parseCurrency(data);
-        // console.log(currencyParse, 'currencyParse');
         localStorage.setItem('currency', JSON.stringify(currencyParse));
         localStorage.setItem('currencyMark', JSON.stringify(getMark()));
         this.setState({
@@ -51,7 +50,6 @@ class CurrencyNav extends Component {
 
     fetchCurrencyNBU()
       .then(data => {
-        // console.log(data, 'data');
         const contries = parseCountries(data);
         const metals = parseMetals(data);
 
@@ -61,7 +59,7 @@ class CurrencyNav extends Component {
       // eslint-disable-next-line no-unused-vars
       .catch(error => {
         // eslint-disable-next-line no-console
-        console.log('А-ча-ча');
+        console.log('😉');
       });
   }
 
@@ -74,7 +72,6 @@ class CurrencyNav extends Component {
 
   render() {
     const { currency, currencyMark } = this.state;
-    // const { isLoading } = this.props;
     const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
     return (
@@ -97,7 +94,6 @@ class CurrencyNav extends Component {
             </div>
           </div>
         )}
-        {/* {isLoading && <Loader isLoading={isLoading} />} */}
       </>
     );
   }

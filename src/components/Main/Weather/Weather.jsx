@@ -86,7 +86,6 @@ class Weather extends Component {
 
     fetchWorldWeather(lowerCaseSearch)
       .then(data => {
-        // console.log(data, 'data');
         const parseData = parseWeatherData(data);
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);

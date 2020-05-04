@@ -5,7 +5,7 @@ import { ReactComponent as Flower } from '../../../assets/image/flowers/flowerIn
 import css from './InfoSite.module.css';
 
 const InfoSite = () => (
-  <div className={css.wrapInfo}>
+  <div>
     <Flower className={css.flower} />
   </div>
 );
