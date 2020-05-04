@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toogle from '../Toogle/Toogle';
+import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 
 import css from './Info.module.css';
 
@@ -67,10 +68,13 @@ const Info = ({ isChecked, setAnimationCheched }) => (
         <div className={css.inWall}>
           <p>Для швидкого доступу з головного екрану телефона:</p>
           <p>
-            - У верхній частині браузера натисніть
-            <span className={css.threeDots}>⋮</span>
+            - У верхній частині браузера натисніть -&gt;
+            <ThreeDots className={css.threeDots} />
           </p>
-          <p> - З випадаючього вікна виберіть Додати на головний екран</p>
+          <p>
+            - З випадаючього вікна виберіть -&gt;
+            <span className={css.desctop}>Додати на головний екран</span>
+          </p>
           <p> - Все готово).</p>
         </div>
       </fieldset>
