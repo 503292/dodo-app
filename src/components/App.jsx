@@ -46,6 +46,7 @@ class App extends Component {
         <main className={css.main}>
           <Main />
         </main>
+
         {/* <footer className={css.footer}>
         <Footer />
       </footer> */}
