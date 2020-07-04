@@ -13,10 +13,5 @@
   height: 100vh;
 }
 .modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-color: transparent;
-  flex-direction: column;
+  margin-bottom: 18px;
 }

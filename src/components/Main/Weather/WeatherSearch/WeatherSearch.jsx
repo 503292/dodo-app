@@ -21,7 +21,6 @@ class WeatherSearch extends Component {
         <form className={css.wrapFind} onSubmit={handleSubmit}>
           <input
             className={css.input}
-            autoFocus
             placeholder="Назва населеного пункту . . ."
             onChange={handleChange}
             name="search"

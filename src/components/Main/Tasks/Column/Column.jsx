@@ -35,11 +35,7 @@ class Column extends Component {
         <Droppable droppableId={column.id}>
           {provided => {
             return (
-              <div
-                className={css.tasks}
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-              >
+              <div ref={provided.innerRef} {...provided.droppableProps}>
                 {tasksDraw.map((task, index) => (
                   <Task
                     key={task.id}

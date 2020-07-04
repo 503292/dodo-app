@@ -1,10 +1,5 @@
 import { connect } from 'react-redux';
 import AddTaskForm from './AddTaskForm';
-// import { addTransactionOperation } from '../../redux/finance/financeOperations';
-// import {
-//   getTotalBalance,
-//   getTypeTotalBalance,
-// } from '../../redux/finance/financeSelectors';
 import { modalAddTasksClose } from '../../../../redux/global/globalActions';
 import {
   addTaskToRedux,
@@ -17,7 +12,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  //   addTransactionOperation,
   modalAddTasksClose,
   addTaskToRedux,
   updateTaskToRedux,

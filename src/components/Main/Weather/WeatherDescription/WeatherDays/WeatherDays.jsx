@@ -28,7 +28,7 @@ class WeatherDays extends Component {
                   : `${css.btnDays}`
               }
             >
-              <div className={css.dayWeek}>{el.dayOfWeek}</div>
+              <div>{el.dayOfWeek}</div>
               <div
                 className={
                   el.dayOfWeek === weekend.saturday ||

@@ -60,13 +60,6 @@ const animation = {
           sync: false,
         },
       },
-      // line_linked: {
-      //   enable: true,
-      //   distance: 150,
-      //   color: '#008000',
-      //   opacity: 0.5,
-      //   width: 3,
-      // },
     },
   },
 };

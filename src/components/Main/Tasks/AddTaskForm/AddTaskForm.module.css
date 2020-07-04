@@ -1,25 +1,24 @@
 .wrapAllForm {
   color: rgb(173, 175, 173);
   margin: 0 auto;
-  width: 310px;
+  width: calc(100% - 20px);
   background-color: rgb(248, 245, 245);
   border-radius: 7px;
+  position: relative;
 }
+
 .backBtn {
-  width: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
   border: none;
   display: flex;
-  padding: 10px;
   align-items: center;
+  justify-content: center;
   outline: none;
-  border-radius: 7px 7px 0 0;
-  background-color: rgb(32, 29, 29);
-}
-.backBtn span {
-  margin-right: 20px;
-  color: grey;
-  font-size: 20px;
-  padding-left: 90%;
+  border-radius: 50px;
 }
 
 .backBtn:hover,
@@ -29,6 +28,10 @@
 .backBtn:active {
   box-shadow: none;
 }
+.close {
+  width: 15px;
+  fill: grey;
+}
 .addForm {
   padding: 10px;
   width: 100%;
@@ -36,6 +39,8 @@
 }
 .title {
   font-size: 20px;
+  margin: 0;
+  padding: 5px 0 15px 0;
 }
 .wrapTextarea {
   position: relative;
@@ -43,12 +48,12 @@
 
 .inputTask {
   width: 100%;
-  height: 18vh;
+  height: 82px;
   margin-bottom: 10px;
   padding: 5px;
   padding-right: 20px;
   border-radius: 7px;
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   outline: none;
   color: grey;
   resize: none;
@@ -87,23 +92,36 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 10px;
 }
 .wrapInput {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.wrapInput span {
+.wrapDescr {
+  display: flex;
+  align-items: flex-end;
+}
+.clock,
+.level {
+  /* width: 15px; */
+  height: 20px;
+  fill: lightgray;
+}
+
+.wrapInput p {
+  /* display: inline-block; */
   font-size: 12px;
   color: lightgrey;
   padding-bottom: 5px;
+  margin: 0;
+  padding-right: 5px;
 }
 .dataInput {
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 7px;
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   outline: none;
   color: grey;
   width: 42%;
@@ -123,7 +141,6 @@
   border-radius: 7px;
   color: grey;
   padding: 10px;
-  font-weight: 600;
   outline: none;
 }
 .addBtn:hover,

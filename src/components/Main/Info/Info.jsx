@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toogle from '../Toogle/Toogle';
+import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 
 import css from './Info.module.css';
 
@@ -45,7 +46,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           </ul>
         </div>
         <div className={css.wrapOneDescr}>
-          <h5> Інфо (іконка лотоса):</h5>
+          <h5> Інфо (іконка алатир):</h5>
           <ul>
             <li>Можна виключити анімацію.</li>
             <li>&ldquo;Тебе чекають великі справи&rdquo; :)</li>
@@ -62,6 +63,21 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           цьому тобі допоможе моя програма.
         </p>
       </fieldset>
+      <fieldset className={css.fieldset}>
+        <legend className={css.legend}> Для швидкого доступу </legend>
+        <div className={css.inWall}>
+          <p>Для швидкого доступу з головного екрану телефона:</p>
+          <p>
+            - У верхній частині браузера натисніть -&gt;
+            <ThreeDots className={css.threeDots} />
+          </p>
+          <p>
+            - З випадаючього вікна виберіть -&gt;
+            <span className={css.desctop}>Додати на головний екран</span>
+          </p>
+          <p> - Все готово).</p>
+        </div>
+      </fieldset>
     </div>
 
     <div className={css.wrapCreater}>
@@ -69,6 +85,14 @@ const Info = ({ isChecked, setAnimationCheched }) => (
         <span>© 2020</span>
         <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
           Максим Калиш
+        </a>
+      </p>
+      <p>
+        <a
+          className={css.link}
+          href="mailto:kalysh.max@gmail.com?subject=Питання з YaK!"
+        >
+          kalysh.max@gmail.com
         </a>
       </p>
     </div>

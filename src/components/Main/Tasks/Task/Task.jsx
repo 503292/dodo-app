@@ -14,8 +14,6 @@ import css from './Task.module.css';
 const Container = styled.div`
   margin-bottom: 8px;
   color: grey;
-  // color: ${props => (props.isDragging ? 'white' : 'black')};
-  // font-weight: ${props => (props.isDragging ? '700' : '400')};
 `;
 
 class Task extends Component {

@@ -1,5 +1,5 @@
 {
-  "name": "Yak-ua",
+  "name": "yak-158",
   "version": "0.1.0",
   "private": true,
   "description": "info from the README, or an empty string ",
@@ -16,7 +16,6 @@
     "husky": "^3.0.5",
     "lint-staged": "^9.4.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.14.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -72,5 +71,5 @@
   },
   "author": "503292@ukr.net",
   "license": "ISC",
-  "homepage": "https://503292.github.io/dodo-app"
+  "homepage": "."
 }

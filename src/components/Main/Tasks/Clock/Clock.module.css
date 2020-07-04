@@ -1,7 +1,7 @@
 .clock {
   font-weight: bold;
-  position: absolute;
+  /* position: absolute;
   right: 60px;
-  bottom: 65px;
+  bottom: 65px; */
   color: salmon;
 }

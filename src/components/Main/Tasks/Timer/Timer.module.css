@@ -2,8 +2,6 @@
   padding: 5px 5px 0 5px;
   display: flex;
   color: gray;
-  position: fixed;
-  bottom: 5px;
 }
 
 .wrapTimer {
@@ -25,7 +23,7 @@
   color: grey;
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-right: 5px;
 }
 .descr {
@@ -37,10 +35,13 @@
   margin: 0;
   font-size: 9px;
   padding: 0 0 0 5px;
-  text-align: start;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .tree {
+  width: 28px;
   fill: forestgreen;
 }
 .data {
