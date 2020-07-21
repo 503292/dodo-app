@@ -43,8 +43,7 @@
   left: 0;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
-  max-width: 425px;
+  width: 100%;
 }
 .wrapBtn {
   display: flex;
