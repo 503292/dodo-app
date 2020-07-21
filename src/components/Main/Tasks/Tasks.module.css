@@ -39,7 +39,8 @@
 }
 .footerWrap {
   position: absolute;
-  bottom: 68px;
+  /* bottom: 68px; можливо потрібно буде вернути для вигляду на мобілці*/
+  bottom: 12px;
   left: 0;
   display: flex;
   justify-content: space-between;
