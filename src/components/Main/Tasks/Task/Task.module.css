@@ -1,6 +1,5 @@
 .dragContainer {
   background-color: transparent !important;
-
 }
 
 .task {
@@ -13,12 +12,10 @@
   border-top: 3px solid transparent;
   margin: 0 auto;
   display: flex;
-  
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
   transform: scale(1.02);
- 
 }
 
 .wrapText {
