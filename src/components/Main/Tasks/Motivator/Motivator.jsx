@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import css from './Motivator.module.css';
+import css from './Motivator.module.scss';
 
 import motivations from './motivations';
 

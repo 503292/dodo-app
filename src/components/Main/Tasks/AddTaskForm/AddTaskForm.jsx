@@ -5,10 +5,13 @@ import uk from 'date-fns/locale/uk';
 import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import { Priority, getColor } from '../../../../utils/Priority';
+import LongShortTaskButtons from '../LongShortTaskButtons/LongShortTaskButtons';
 
 import { ReactComponent as Close } from '../../../../assets/image/close-x.svg';
 import { ReactComponent as Clock } from '../../../../assets/image/clock.svg';
 import { ReactComponent as Level } from '../../../../assets/image/level.svg';
+// import { ReactComponent as ShortTask } from '../../../../assets/image/cookie-bite.svg';
+// import { ReactComponent as LongTask } from '../../../../assets/image/world.svg';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.css';
@@ -136,6 +139,15 @@ class AddTaskForm extends Component {
           type="submit"
         >
           <h2 className={css.title}>Нове завдання</h2>
+
+          <LongShortTaskButtons />
+          {/* <button className={css.shortTaskBtn} type="button">
+            <ShortTask className={css.shortTaskIcon} />
+          </button>
+          <button className={css.longTaskBtn} type="button">
+            <LongTask className={css.longTaskIcon} />
+          </button> */}
+
           <button
             type="button"
             className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}

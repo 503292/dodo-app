@@ -15,7 +15,10 @@
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
+  /* choise one of them */
   transform: scale(1.02);
+  transform: scale(1.005);
+  /*  */
 }
 
 .wrapText {
