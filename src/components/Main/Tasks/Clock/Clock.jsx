@@ -28,11 +28,11 @@ class Clock extends Component {
     const timeSplit = timeStr.split(':');
     return (
       <div className={css.clock}>
-        {`${timeSplit[0]}`}
+        {timeSplit[0]}
         {` : `}
-        {`${timeSplit[1]} `}
+        {timeSplit[1]}
         {` : `}
-        {`${timeSplit[2]} `}
+        {timeSplit[2]}
       </div>
     );
   }
