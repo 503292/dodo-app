@@ -4,13 +4,14 @@ import css from './Clock.module.css';
 
 class Clock extends Component {
   state = {
-    time: new Date().toLocaleTimeString(),
+    time: new Date(),
   };
 
   componentDidMount() {
+    // console.log(this.state.time, 'time');
     this.clock = setInterval(() => {
       this.setState({
-        time: new Date().toLocaleTimeString(),
+        time: new Date(),
       });
     }, 1000);
   }
@@ -22,12 +23,16 @@ class Clock extends Component {
   render() {
     const { time } = this.state;
 
-    const timeArr = time.split(':');
+    // const timeStr = time.toLocaleTimeString();
+    const timeStr = time.toLocaleTimeString();
+    const timeSplit = timeStr.split(':');
     return (
       <div className={css.clock}>
-        {`${timeArr[0]}`}
+        {timeSplit[0]}
         {` : `}
-        {`${timeArr[1]} `}
+        {timeSplit[1]}
+        {/* {` : `}
+        {timeSplit[2]} */}
       </div>
     );
   }

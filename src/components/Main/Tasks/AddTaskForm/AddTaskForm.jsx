@@ -138,23 +138,24 @@ class AddTaskForm extends Component {
           className={css.addForm}
           type="submit"
         >
-          <h2 className={css.title}>Нове завдання</h2>
+          <div className={css.topAddForm}>
+            <h2 className={css.title}>Нове завдання</h2>
 
-          <LongShortTaskButtons />
-          {/* <button className={css.shortTaskBtn} type="button">
+            <LongShortTaskButtons />
+            {/* <button className={css.shortTaskBtn} type="button">
             <ShortTask className={css.shortTaskIcon} />
           </button>
           <button className={css.longTaskBtn} type="button">
             <LongTask className={css.longTaskIcon} />
           </button> */}
-
-          <button
-            type="button"
-            className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
-            onClick={modalAddTasksClose}
-          >
-            <Close className={css.close} />
-          </button>
+            <button
+              type="button"
+              className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
+              onClick={modalAddTasksClose}
+            >
+              <Close className={css.close} />
+            </button>
+          </div>
 
           <div className={css.wrapTextarea}>
             <textarea
