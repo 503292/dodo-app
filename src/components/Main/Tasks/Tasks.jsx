@@ -259,7 +259,6 @@ class Tasks extends Component {
                 onClick={modalAddTasksOpen}
               >
                 <Plus className={css.plus} />
-                {/* + */}
               </button>
             </div>
           </div>

@@ -1,0 +1,32 @@
+.wrapBtn {
+  display: inline-flex;
+}
+.btn {
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  padding: 0;
+}
+.notPayBtn {
+  margin-right: 10px;
+  background-color: rgb(243, 179, 179);
+  background-color: lightgrey;
+}
+.notPayBtn svg {
+  height: 15px;
+  width: 15px;
+  color: grey;
+}
+.payBtn {
+  background-color: #fff;
+}
+.payBtn svg {
+  height: 15px;
+  width: 15px;
+  fill: grey;
+}

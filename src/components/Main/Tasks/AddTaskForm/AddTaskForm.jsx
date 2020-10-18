@@ -6,6 +6,7 @@ import shortid from 'shortid';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
 import { Priority, getColor } from '../../../../utils/Priority';
 import LongShortTaskButtons from '../LongShortTaskButtons/LongShortTaskButtons';
+import PayNotPayTaskButtons from '../PayNotPayTaskButtons/PayNotPayTaskButtons';
 
 import { ReactComponent as Close } from '../../../../assets/image/close-x.svg';
 import { ReactComponent as Clock } from '../../../../assets/image/clock.svg';
@@ -140,6 +141,7 @@ class AddTaskForm extends Component {
         >
           <div className={css.topAddForm}>
             <h2 className={css.title}>Нове завдання</h2>
+            <PayNotPayTaskButtons />
 
             <LongShortTaskButtons />
             {/* <button className={css.shortTaskBtn} type="button">
