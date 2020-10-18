@@ -8,7 +8,7 @@ class Clock extends Component {
   };
 
   componentDidMount() {
-    console.log(this.state.time, 'time');
+    // console.log(this.state.time, 'time');
     this.clock = setInterval(() => {
       this.setState({
         time: new Date(),
@@ -31,8 +31,8 @@ class Clock extends Component {
         {timeSplit[0]}
         {` : `}
         {timeSplit[1]}
-        {` : `}
-        {timeSplit[2]}
+        {/* {` : `}
+        {timeSplit[2]} */}
       </div>
     );
   }

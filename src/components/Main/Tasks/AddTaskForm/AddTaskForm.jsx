@@ -135,14 +135,16 @@ class AddTaskForm extends Component {
           className={css.addForm}
           type="submit"
         >
-          <h2 className={css.title}>Нове завдання</h2>
-          <button
-            type="button"
-            className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
-            onClick={modalAddTasksClose}
-          >
-            <Close className={css.close} />
-          </button>
+          <div className={css.topAddForm}>
+            <h2 className={css.title}>Нове завдання</h2>
+            <button
+              type="button"
+              className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
+              onClick={modalAddTasksClose}
+            >
+              <Close className={css.close} />
+            </button>
+          </div>
 
           <div className={css.wrapTextarea}>
             <textarea

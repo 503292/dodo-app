@@ -6,6 +6,15 @@
   border-radius: 7px;
   position: relative;
 }
+.addForm {
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+}
+.topAddForm {
+  width: 100%;
+  /* TO-DO style */
+}
 
 .backBtn {
   position: absolute;
@@ -32,11 +41,7 @@
   width: 15px;
   fill: grey;
 }
-.addForm {
-  padding: 10px;
-  width: 100%;
-  font-size: 20px;
-}
+
 .title {
   font-size: 20px;
   margin: 0;
