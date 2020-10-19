@@ -2,7 +2,7 @@ import React from 'react';
 import css from './PayNotPayTaskButtons.module.scss';
 
 import { ReactComponent as Strawberry } from '../../../../assets/image/rest-strawberry.svg';
-import { ReactComponent as Dollar } from '../../../../assets/image/currency/dollar.svg';
+import { ReactComponent as Hryvnia } from '../../../../assets/image/currency/hryvnia.svg';
 
 const PayNotPayTaskButtons = () => {
   return (
@@ -11,7 +11,7 @@ const PayNotPayTaskButtons = () => {
         <Strawberry />
       </button>
       <button className={`${css.payBtn} ${css.btn}`} type="button">
-        <Dollar />
+        <Hryvnia />
       </button>
     </div>
   );
