@@ -31,6 +31,7 @@ class Clock extends Component {
         {timeSplit[0]}
         {` : `}
         {timeSplit[1]}
+
         {/* {` : `}
         {timeSplit[2]} */}
       </div>
