@@ -1,15 +1,9 @@
 .wrapTasks {
-  height: 95vh;
-  position: relative;
+  height: 100vh;
 }
 .wrapEnterDay {
   position: fixed;
   bottom: 0px;
-}
-.wrapClock {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 .dragDropContext {
   height: 87vh;
@@ -18,7 +12,7 @@
   display: flex;
   justify-content: center;
   overflow: auto;
-  height: 77vh;
+  height: calc(100% - 10rem);
   padding: 10px 5px 0;
 }
 .container::-webkit-scrollbar-track {
@@ -38,17 +32,13 @@
   border-radius: 50px;
 }
 .footerWrap {
-  position: absolute;
-  bottom: 68px;
-  left: 0;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
-  max-width: 425px;
+  padding-top: 0.5rem;
 }
 .wrapBtn {
   display: flex;
-  padding-right: 5px;
+  padding-right: 0.25rem;
 }
 .addButton {
   width: 50px;
@@ -56,7 +46,6 @@
   border-radius: 50%;
   background-color: #ffeb3b;
   border: none;
-  /* font-size: 35px; */
   outline: none;
   display: flex;
   justify-content: center;
