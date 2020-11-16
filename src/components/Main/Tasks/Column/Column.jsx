@@ -28,7 +28,8 @@ class Column extends Component {
         {tasksDraw.length <= 0 && (
           <div>
             <p className={css.start}>
-              Для початку роботи натисніть &quot;+&quot;
+              Подумай що ти можеш зробити преємного для себе і близьких. І
+              запиши. Натисни &quot;+&quot;).
             </p>
           </div>
         )}
