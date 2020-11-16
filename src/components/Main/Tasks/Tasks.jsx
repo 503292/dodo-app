@@ -9,7 +9,7 @@ import Clock from './Clock/Clock';
 
 import { ReactComponent as Plus } from '../../../assets/image/plus.svg';
 
-import css from './Tasks.module.scss';
+import css from './Tasks.module.css';
 
 class Tasks extends Component {
   state = {
