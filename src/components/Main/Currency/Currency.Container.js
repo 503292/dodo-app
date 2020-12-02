@@ -7,7 +7,4 @@ const mapDispatchToProps = {
   updateCurrency,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(Currency);
+export default connect(null, mapDispatchToProps)(Currency);

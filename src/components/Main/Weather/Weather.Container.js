@@ -10,7 +10,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { updateLocation, loaderOff, loaderOn };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Weather);
+export default connect(mapStateToProps, mapDispatchToProps)(Weather);
