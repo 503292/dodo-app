@@ -6,7 +6,7 @@ import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
 import InfoSite from './InfoSite/InfoSite';
 
-import css from './HeaderNav.module.scss';
+import css from './HeaderNav.module.css';
 
 const ativeStyle = {
   color: 'tomato',
