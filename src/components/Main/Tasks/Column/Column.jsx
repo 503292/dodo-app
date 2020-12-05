@@ -53,6 +53,9 @@ class Column extends Component {
               </div>
             );
           }}
+
+          {/* TODO */}
+          {/* <span style={{ height: '2rem' }} /> */}
         </Droppable>
       </div>
     );
