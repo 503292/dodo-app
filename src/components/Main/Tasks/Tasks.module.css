@@ -34,7 +34,7 @@
 .footerWrap {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem;
 }
 .wrapBtn {
   display: flex;
