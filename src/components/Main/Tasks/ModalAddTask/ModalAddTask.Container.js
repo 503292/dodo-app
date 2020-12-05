@@ -11,7 +11,4 @@ const mapDispatchToProps = {
   modalAddTasksClose,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ModalAddTask);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalAddTask);

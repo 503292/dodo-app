@@ -11,7 +11,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { loaderOff, loaderOn };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CurrencyNav);
+export default connect(mapStateToProps, mapDispatchToProps)(CurrencyNav);

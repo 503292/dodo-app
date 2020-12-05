@@ -10,7 +10,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { setAnimationCheched };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Info);
+export default connect(mapStateToProps, mapDispatchToProps)(Info);
