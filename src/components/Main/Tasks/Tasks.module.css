@@ -34,11 +34,10 @@
 .footerWrap {
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.25rem;
 }
 .wrapBtn {
   display: flex;
-  padding-right: 0.75rem;
 }
 .addButton {
   width: 3rem;
