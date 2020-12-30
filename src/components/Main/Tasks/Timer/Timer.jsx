@@ -52,7 +52,7 @@ class Timer extends Component {
       let days = Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24));
 
       let hours = Math.floor(
-        (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 3,
+        (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 2,
       );
 
       if (hours < 0) {
