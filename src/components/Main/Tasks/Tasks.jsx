@@ -17,7 +17,6 @@ class Tasks extends Component {
     columns: {
       'column-1': {
         id: 'column-1',
-        // title: `Будь вільний, керуй своїм життям !`,
         tasksIds: [],
       },
     },
@@ -64,6 +63,10 @@ class Tasks extends Component {
       localStorage.setItem('localTasks', JSON.stringify(newTasks));
     }
   }
+
+  handleResetEditTask = () => {
+    this.setState({ editTask: null });
+  };
 
   viewTasks = data => {
     const arrIds = data.map(el => el.id);
@@ -263,7 +266,10 @@ class Tasks extends Component {
             </div>
           </div>
 
-          <ModalAddTask editTask={editTask} />
+          <ModalAddTask
+            editTask={editTask}
+            handleResetEditTask={this.handleResetEditTask}
+          />
         </div>
       </>
     );

@@ -27,7 +27,7 @@ class ModalAddTask extends Component {
   };
 
   render() {
-    const { isModalAddTasksOpen, editTask } = this.props;
+    const { isModalAddTasksOpen, editTask, handleResetEditTask } = this.props;
     return (
       <>
         {isModalAddTasksOpen && (
@@ -40,7 +40,10 @@ class ModalAddTask extends Component {
             onKeyUp={this.handleKeyPress}
           >
             <div className={css.modal}>
-              <AddTaskForm editTask={editTask} />
+              <AddTaskForm
+                editTask={editTask}
+                handleResetEditTask={handleResetEditTask}
+              />
             </div>
           </div>
         )}
@@ -57,6 +60,7 @@ ModalAddTask.propTypes = {
   modalAddTasksClose: PropTypes.func.isRequired,
   isModalAddTasksOpen: PropTypes.bool.isRequired,
   editTask: PropTypes.shape({}),
+  handleResetEditTask: PropTypes.func.isRequired,
 };
 
 export default ModalAddTask;
