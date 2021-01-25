@@ -125,7 +125,7 @@ class AddTaskForm extends Component {
   };
 
   render() {
-    const { modalAddTasksClose, editTask } = this.props;
+    const { modalAddTasksClose, editTask, handleResetEditTask } = this.props;
     const { endTime, text, priority } = this.state;
 
     return (
@@ -140,7 +140,11 @@ class AddTaskForm extends Component {
             <button
               type="button"
               className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
-              onClick={modalAddTasksClose}
+              // onClick={modalAddTasksClose}
+              onClick={() => {
+                modalAddTasksClose();
+                handleResetEditTask();
+              }}
             >
               <Close className={css.close} />
             </button>
@@ -218,6 +222,7 @@ AddTaskForm.propTypes = {
   updateTaskToRedux: PropTypes.func.isRequired,
   editTask: PropTypes.shape(PropTypes.string.isRequired),
   allTasks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  handleResetEditTask: PropTypes.func.isRequired,
 };
 
 export default AddTaskForm;
