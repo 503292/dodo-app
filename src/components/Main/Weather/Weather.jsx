@@ -20,8 +20,12 @@ class Weather extends Component {
 
   componentDidMount() {
     const localWeather = JSON.parse(localStorage.getItem('localWeather'));
+
+    console.log(localWeather, 'localWeather');
     const location = localStorage.getItem('location');
     const lastSearch = JSON.parse(localStorage.getItem('lastSearch'));
+
+    console.log(location, 'location');
 
     if (lastSearch) {
       this.setState({

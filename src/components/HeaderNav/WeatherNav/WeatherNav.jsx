@@ -33,6 +33,8 @@ class WeatherNav extends Component {
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
 
+        console.log(parseData, 'parseData.timezone');
+
         this.setState({
           weather: parseData,
           location: parseData.timezone,
@@ -52,6 +54,8 @@ class WeatherNav extends Component {
       this.setState({
         location: locationFromRedux,
       });
+
+      console.log(locationFromRedux, 'locationFromRedux');
     }
   }
 
