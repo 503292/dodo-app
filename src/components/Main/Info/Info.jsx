@@ -84,7 +84,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
       <p>
         <span>© 2020</span>
         <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
-          Максим Калиш
+          МaVKa
         </a>
       </p>
       <p>
