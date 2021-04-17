@@ -51,8 +51,11 @@ class Timer extends Component {
 
       let days = Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24));
 
+      const changeHours = new Date().getTimezoneOffset() / 60;
+
       let hours = Math.floor(
-        (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) - 3,
+        (endTimeToNewYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) +
+          changeHours,
       );
 
       if (hours < 0) {
