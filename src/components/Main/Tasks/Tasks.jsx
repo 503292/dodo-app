@@ -252,24 +252,24 @@ class Tasks extends Component {
               })}
             </div>
           </DragDropContext>
-          <div className={css.footerWrap}>
-            <Timer />
-            <div className={css.wrapBtn}>
-              <Clock />
-              <button
-                type="button"
-                className={css.addButton}
-                onClick={modalAddTasksOpen}
-              >
-                <Plus className={css.plus} />
-              </button>
-            </div>
-          </div>
 
           <ModalAddTask
             editTask={editTask}
             handleResetEditTask={this.handleResetEditTask}
           />
+        </div>
+        <div className={css.footerWrap}>
+          <Timer />
+          <div className={css.wrapBtn}>
+            <Clock />
+            <button
+              type="button"
+              className={css.addButton}
+              onClick={modalAddTasksOpen}
+            >
+              <Plus className={css.plus} />
+            </button>
+          </div>
         </div>
       </>
     );
