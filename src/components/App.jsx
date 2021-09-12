@@ -33,7 +33,7 @@ class App extends Component {
     const { isChecked } = this.state;
 
     return (
-      <>
+      <div className={css.app}>
         {isLoading && <Loader isLoading={isLoading} />}
 
         {isChecked && <Animation />}
@@ -45,7 +45,7 @@ class App extends Component {
         <main className={css.main}>
           <Main />
         </main>
-      </>
+      </div>
     );
   }
 }
