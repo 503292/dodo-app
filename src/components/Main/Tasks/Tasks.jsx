@@ -33,7 +33,7 @@ class Tasks extends Component {
       localTasksArr.map(el => {
         const ids = data.map(d => d.id);
 
-        if (!ids.includes(el.id)) {
+        if (!ids.includes(el?.id ?? -1)) {
           addTaskToRedux(el);
         }
         return '';
