@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Droppable } from 'react-beautiful-dnd';
 
-import Task from '../Task/Task';
-
-import css from './Column.module.css';
-
+import Task from '../TaskItem/TaskItem';
 import Motivator from '../Motivator/Motivator';
 
-class Column extends Component {
+import css from './TasksColumn.module.css';
+
+class TasksColumn extends Component {
   state = {};
 
   render() {
@@ -61,7 +60,7 @@ class Column extends Component {
     );
   }
 }
-Column.propTypes = {
+TasksColumn.propTypes = {
   tasksDraw: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   column: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
@@ -70,4 +69,4 @@ Column.propTypes = {
   deleteTask: PropTypes.func.isRequired,
 };
 
-export default Column;
+export default TasksColumn;

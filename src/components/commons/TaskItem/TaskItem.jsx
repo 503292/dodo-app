@@ -5,18 +5,18 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import { ReactComponent as Delete } from '../../../../assets/image/delete.svg';
-import { ReactComponent as Pen } from '../../../../assets/image/pen.svg';
-import { getColor } from '../../../../utils/Priority';
+import { ReactComponent as Delete } from '../../../assets/image/delete.svg';
+import { ReactComponent as Pen } from '../../../assets/image/pen.svg';
+import { getColor } from '../../../utils/Priority';
 
-import css from './Task.module.css';
+import css from './TaskItem.module.css';
 
 const Container = styled.div`
   margin-bottom: 8px;
   color: grey;
 `;
 
-class Task extends Component {
+class TaskItem extends Component {
   state = {};
 
   formatEndTime = endTime => {
@@ -128,7 +128,7 @@ class Task extends Component {
   }
 }
 
-Task.propTypes = {
+TaskItem.propTypes = {
   task: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
   index: PropTypes.number.isRequired,
   modalAddTasksOpen: PropTypes.func.isRequired,
@@ -137,4 +137,4 @@ Task.propTypes = {
   deleteTask: PropTypes.func.isRequired,
 };
 
-export default Task;
+export default TaskItem;

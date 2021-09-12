@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import css from './Timer.module.css';
-import { ReactComponent as Tree } from '../../../../assets/image/tree.svg';
+import { ReactComponent as Tree } from '../../../assets/image/tree.svg';
 
 class Timer extends Component {
   state = {

@@ -3,8 +3,8 @@ import css from './Motivator.module.css';
 
 import motivations from './motivations';
 
-import { ReactComponent as Exclamation } from '../../../../assets/image/exclamation.svg';
-import { ReactComponent as Refresh } from '../../../../assets/image/refresh.svg';
+import { ReactComponent as Exclamation } from '../../../assets/image/exclamation.svg';
+import { ReactComponent as Refresh } from '../../../assets/image/refresh.svg';
 
 class Motivator extends Component {
   state = {

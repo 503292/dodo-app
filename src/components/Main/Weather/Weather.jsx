@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 
-import { ToastContainer, toast } from 'react-toastify';
-import WeatherSearch from './WeatherSearch/WeatherSearch';
-import WeatherDescription from './WeatherDescription/WeatherDescription';
-import 'react-toastify/dist/ReactToastify.css';
-import parseWeatherData from '../../HeaderNav/WeatherNav/ParseWorlWeather';
+import WeatherSearch from '../../commons/WeatherSearch/WeatherSearch';
+import WeatherDescription from '../../commons/WeatherDescription/WeatherDescription';
+import parseWeatherData from '../../Header/WeatherNav/ParseWorlWeather';
+
 import { fetchWorldWeather } from '../../../services/api';
+
+import 'react-toastify/dist/ReactToastify.css';
 import css from './Weather.module.css';
 
 class Weather extends Component {

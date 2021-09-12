@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import HeaderNav from './HeaderNav/HeaderNav';
+import HeaderNav from './Header/Header';
 import Main from './Main/Main';
 
 import Animation from './Animation/Animation';
