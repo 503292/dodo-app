@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Toogle from '../Toogle/Toogle';
+import Toogle from '../../commons/Toogle/Toogle';
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 
 import css from './Info.module.css';

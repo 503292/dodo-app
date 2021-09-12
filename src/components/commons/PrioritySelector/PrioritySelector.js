@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './PrioritySelector.module.css';
 
-import { getColor } from '../../../../utils/Priority';
+import { getColor } from '../../../utils/Priority';
 
 const PrioritySelector = ({ options, value, onChange }) => {
   return (

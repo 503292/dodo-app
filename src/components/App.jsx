@@ -5,7 +5,7 @@ import HeaderNav from './HeaderNav/HeaderNav';
 import Main from './Main/Main';
 
 import Animation from './Animation/Animation';
-import Loader from './Loader/Loader';
+import Loader from './commons/Loader/Loader';
 
 import css from './App.module.css';
 
