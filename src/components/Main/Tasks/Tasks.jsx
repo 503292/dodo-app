@@ -11,6 +11,14 @@ import { ReactComponent as Plus } from '../../../assets/image/plus.svg';
 
 import css from './Tasks.module.css';
 
+// const filteredArrOfNull = data => {
+//   data.filter(function(el) {
+//     return el != null;
+//   });
+
+//   console.log(data, 'data');
+// };
+
 class Tasks extends Component {
   state = {
     tasks: [],
@@ -30,10 +38,15 @@ class Tasks extends Component {
     const { data } = this.props;
 
     if (localTasksArr) {
-      localTasksArr.map(el => {
-        const ids = data.map(d => d.id);
+      // eslint-disable-next-line func-names
+      const filtered = localTasksArr.filter(function(el) {
+        return el != null;
+      });
 
-        if (!ids.includes(el?.id ?? -1)) {
+      filtered.map(el => {
+        const ids = data?.map(d => d.id);
+
+        if (!ids.includes(el?.id)) {
           addTaskToRedux(el);
         }
         return '';
@@ -69,7 +82,14 @@ class Tasks extends Component {
   };
 
   viewTasks = data => {
-    const arrIds = data.map(el => el.id);
+    // eslint-disable-next-line func-names
+    const filtered = data.filter(function(el) {
+      return el != null;
+    });
+
+    console.log(filtered, 'filtered');
+
+    const arrIds = filtered?.map(el => el.id);
     const { columns } = this.state;
     const arr = columns['column-1'].tasksIds;
 
