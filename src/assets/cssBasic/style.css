@@ -1,6 +1,58 @@
 @import './normalize.css';
 @import '../fonts/fonts.css';
 
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #495057;
+  --gray-darker: #343a40;
+  --primary: #0083cd;
+  --secondary: #c4c9ce;
+  --success: #00a65a;
+  --info: #95efff;
+  --warning: #ffdf11;
+  --danger: #e44655;
+  --light: #eef0f2;
+  --dark: #212121;
+  --black: #000000;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --chervone: #ff9b95;
+  --chorne: #333333;
+  --jowte: #ffff99;
+  --golube: #cce6ff;
+
+  /* grey scale*/
+  --G000: #000000;
+  --B040: #282a2c;
+  --B090: #5a5c5e;
+  --B100: #646668;
+  --B150: #96989a;
+  --B175: #afb1b3;
+  --B200: #c8cacc;
+  --B215: #d7d9db;
+  --B225: #e1e3e5;
+  --B230: #e6e8ea;
+  --B235: #ebedef;
+  --B240: #f0f2f4;
+  --B245: #f5f7f9;
+  --G255: #ffffff;
+}
+
 html {
   box-sizing: border-box;
 }
