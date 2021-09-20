@@ -31,10 +31,14 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
 
+  /* mavka colors */
   --chervone: #ff9b95;
   --chorne: #333333;
   --jowte: #ffff99;
   --golube: #cce6ff;
+
+  --trava: rgba(153, 196, 165, 0.36);
+  --trava_btn: rgb(57 255 48 / 34%);
 
   /* grey scale*/
   --G000: #000000;
