@@ -158,13 +158,16 @@
 
 /* priority */
 .lowPriority {
-  background-color: #fcf952;
+  background-color: var(--jowte);
 }
 
 .normalPriority {
-  background-color: #91ff95;
+  background-color: var(--golube);
 }
 
 .highPriority {
-  background-color: #f3a987;
+  background-color: var(--chervone);
+}
+.longPriority {
+  background-color: var(--B200);
 }

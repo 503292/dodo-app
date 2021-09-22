@@ -44,16 +44,21 @@
 }
 
 .lowPriority {
-  border-color: #fcf952;
+  border-color: var(--jowte);
 }
 
 .normalPriority {
-  border-color: #91ff95;
+  border-color: var(--golube);
 }
 
 .highPriority {
-  border-color: #f3a987;
+  border-color: var(--chervone);
 }
+.longPriority {
+  border-color: var(--B150);
+  background-color: var(--B225);
+}
+
 .completedCheckbox {
   display: none;
 }
