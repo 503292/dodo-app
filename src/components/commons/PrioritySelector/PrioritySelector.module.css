@@ -1,4 +1,4 @@
-select option[value='робота'] {
+select option[value='завдання'] {
   background: var(--jowte);
 }
 

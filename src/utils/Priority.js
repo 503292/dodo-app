@@ -1,5 +1,5 @@
 export const Priority = Object.freeze({
-  LOW: 'робота',
+  LOW: 'завдання',
   NORMAL: 'відпочинок',
   HIGH: 'сьогодні',
   LONG: 'довготермінові цілі',
@@ -7,7 +7,7 @@ export const Priority = Object.freeze({
 
 export const getColor = el => {
   switch (el) {
-    case 'робота':
+    case 'завдання':
       return 'lowPriority';
     case 'сьогодні':
       return 'highPriority';

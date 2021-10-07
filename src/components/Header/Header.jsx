@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from './Logo/Logo';
+import Logo from './Info/Info';
 import WeatherNav from './WeatherNav/WeatherNav.Container';
 import CurrencyNav from './CurrencyNav/CurrencyNav.Container';
-import InfoSite from './InfoSite/InfoSite';
+import InfoSite from './Logo/Logo';
 
 import css from './Header.module.css';
 
@@ -22,7 +22,7 @@ class Header extends Component {
         <ul className={css.wrapList}>
           <li className={css.routeHeader}>
             <NavLink activeStyle={ativeStyle} to="/" exact>
-              <Logo />
+              <InfoSite />
             </NavLink>
           </li>
           <li className={css.routeHeader}>
@@ -38,7 +38,7 @@ class Header extends Component {
 
           <li className={css.routeHeader}>
             <NavLink to="/info" exact activeStyle={ativeStyle}>
-              <InfoSite />
+              <Logo />
             </NavLink>
           </li>
         </ul>

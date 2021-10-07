@@ -17,7 +17,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
       <fieldset className={css.fieldset}>
         <legend className={css.legend}> Опис </legend>
         <div className={css.wrapOneDescr}>
-          <h5>Планер (іконка карти України):</h5>
+          <h5>Планер (іконка алатир):</h5>
           <ul>
             <li>Зверху вкладки знаходяться цитати.</li>
             <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
@@ -46,7 +46,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           </ul>
         </div>
         <div className={css.wrapOneDescr}>
-          <h5> Інфо (іконка алатир):</h5>
+          <h5>Інфо (іконка карти України):</h5>
           <ul>
             <li>Можна виключити анімацію.</li>
             <li>&ldquo;Тебе чекають великі справи&rdquo; :)</li>

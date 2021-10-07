@@ -72,6 +72,9 @@
 .authorWords {
   text-align: justify;
 }
+.wrapOneDescr {
+  margin-bottom: 10px;
+}
 .wrapOneDescr h5 {
   font-size: 10px;
 }

@@ -1,6 +1,6 @@
 .wrapHeader {
-  /* background-color: #ffeb3b; */
-  background-color: var(--golube);
+  /* background-color: var(--golube); */
+  background-color: #ffeb3b;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.35);
 }
 

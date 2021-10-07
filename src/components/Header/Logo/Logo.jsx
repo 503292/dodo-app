@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { ReactComponent as LogoMap } from '../../../assets/image/logo/mapUa.svg';
+// import { ReactComponent as Flower } from '../../../assets/image/flowers/flowerInfo.svg';
+import { ReactComponent as Alatyr } from '../../../assets/image/alatyr.svg';
 
 import css from './Logo.module.css';
 
 const Logo = () => (
-  <>
-    <div className={css.wrapLogo}>
-      <LogoMap className={css.logoMap} />
-    </div>
-  </>
+  <div>
+    <Alatyr className={css.alatyr} />
+  </div>
 );
 
 export default Logo;

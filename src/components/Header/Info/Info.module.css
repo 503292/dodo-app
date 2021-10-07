@@ -1,0 +1,33 @@
+.wrapLogo {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background: linear-gradient(
+    0deg,
+    rgba(248, 255, 107, 1) 0%,
+    rgba(248, 255, 107, 1) 49%,
+    rgba(20, 185, 255, 1) 50%,
+    rgba(20, 185, 255, 1) 100%
+  );
+  box-shadow: inset 0px 0px 2px 0.1px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+.logoMap {
+  height: 40px;
+  width: 40px;
+}
+
+.wrapLogo:hover,
+.wrapLogo:focus,
+.wrapLogo:active {
+  background: linear-gradient(
+    0deg,
+    rgb(96, 97, 90) 0%,
+    rgb(96, 97, 90) 49%,
+    rgb(248, 155, 149) 50%,
+    rgba(248, 155, 149) 100%
+  );
+}
