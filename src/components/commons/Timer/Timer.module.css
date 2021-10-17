@@ -15,7 +15,7 @@
   justify-content: center;
   text-align: center;
 }
-.value {
+.btn {
   font-size: 16px;
   background-color: #fff;
   color: rgb(173, 172, 172);
@@ -24,6 +24,8 @@
   border-radius: 20px;
   line-height: 1.8;
   margin-right: 5px;
+  border: 0.5px solid lightgray;
+  text-shadow: 0px 0px 2px #cfcfcf;
 }
 .descr {
   font-size: 8px;
@@ -47,4 +49,20 @@
   font-weight: 800;
   font-size: 10px;
   margin: 0;
+}
+
+/* colors */
+.grey {
+  background: var(--grey_btn);
+  color: var(--jowte);
+}
+.red {
+  background: var(--chervone);
+}
+.yellow {
+  background: var(--jowte);
+}
+
+.blue {
+  background: var(--golube);
 }
