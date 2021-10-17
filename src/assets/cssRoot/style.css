@@ -38,9 +38,13 @@
   --jowte: #ffff99;
   --golube: #cce6ff;
 
-  --nebo: rgb(24 197 255 / 34%);
+  /* --nebo: rgb(24 197 255 / 34%);
   --trava: rgb(38 255 98 / 36%);
-  --trava_btn: rgb(57 255 48 / 34%);
+  --trava_btn: rgb(57 255 48 / 34%); */
+  --blue_btn: rgba(20, 185, 255, 1);
+  --yellow_btn: rgba(255, 255, 0, 1);
+  --red_btn: rgba(248, 155, 149, 1);
+  --grey_btn: rgba(128, 128, 128, 1);
 
   /* grey scale*/
   --G000: #000000;

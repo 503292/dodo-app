@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import css from './Timer.module.css';
 import { ReactComponent as Tree } from '../../../assets/image/tree.svg';
 
+// TODO change to functional component
+// TODO add filter handlers for button
+
 class Timer extends Component {
   state = {
     days: 0,
@@ -87,19 +90,27 @@ class Timer extends Component {
       <div className={css.container}>
         <div className={css.wrapTimer}>
           <div className={css.wrapValue}>
-            <span className={css.value}>{days}</span>
+            <button type="button" className={`${css.btn} ${css.grey}`}>
+              {days}
+            </button>
             <span className={css.descr}>Дня</span>
           </div>
           <div className={css.wrapValue}>
-            <span className={css.value}>{hours}</span>
+            <button type="button" className={`${css.btn} ${css.red}`}>
+              {hours}
+            </button>
             <span className={css.descr}>Годин</span>
           </div>
           <div className={css.wrapValue}>
-            <span className={css.value}>{minutes}</span>
+            <button type="button" className={`${css.btn} ${css.yellow}`}>
+              {minutes}
+            </button>
             <span className={css.descr}>Хвилин</span>
           </div>
           <div className={css.wrapValue}>
-            <span className={css.value}>{seconds}</span>
+            <button type="button" className={`${css.btn} ${css.blue}`}>
+              {seconds}
+            </button>
             <span className={css.descr}>Секунд</span>
           </div>
         </div>
