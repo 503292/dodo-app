@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import css from './Motivator.module.css';
-
 import motivations from './motivations';
 
 import { ReactComponent as Exclamation } from '../../../assets/image/exclamation.svg';
 import { ReactComponent as Refresh } from '../../../assets/image/refresh.svg';
+import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
+
+import copyText from '../../../utils/copyText';
+
+import css from './Motivator.module.css';
 
 class Motivator extends Component {
   state = {
@@ -23,6 +26,15 @@ class Motivator extends Component {
 
   refreshMotivation = () => {
     this.loadNewMotivation();
+  };
+
+  handleCopy = () => {
+    const { motivationNumber } = this.state;
+    copyText(
+      `${motivations[motivationNumber].motivation} ${motivations[
+        motivationNumber
+      ].author ?? ''}`,
+    );
   };
 
   render() {
@@ -45,6 +57,13 @@ class Motivator extends Component {
             onClick={this.refreshMotivation}
           >
             <Refresh className={css.refresh} />
+          </button>
+          <button
+            type="button"
+            className={css.btnCopy}
+            onClick={this.handleCopy}
+          >
+            <Copy className={css.copy} />
           </button>
 
           <p className={css.text}>{oneMotive}</p>
