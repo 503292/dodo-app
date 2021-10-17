@@ -86,8 +86,8 @@ class Tasks extends Component {
     const filtered = data.filter(function(el) {
       return el != null;
     });
-
-    console.log(filtered, 'filtered');
+    // TODO filter by sec/m/h/days
+    // console.log(filtered, 'filtered');
 
     const arrIds = filtered?.map(el => el.id);
     const { columns } = this.state;
