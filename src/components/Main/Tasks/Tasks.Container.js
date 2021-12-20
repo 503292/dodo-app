@@ -21,4 +21,7 @@ const mapDispatchToProps = {
   updateAllTasksToRedux,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tasks);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Tasks);

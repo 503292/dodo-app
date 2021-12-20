@@ -11,4 +11,7 @@ const mapDispatchToProps = {
   updateLocation,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(WeatherNav);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(WeatherNav);

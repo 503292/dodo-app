@@ -17,4 +17,7 @@ const mapDispatchToProps = {
   updateTaskToRedux,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTaskForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AddTaskForm);
