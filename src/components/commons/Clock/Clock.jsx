@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import css from './Clock.module.css';
 
-class Clock extends Component {
-  state = {
-    time: new Date(),
-  };
+const Clock = () => {
+  const [time, setTime] = useState(new Date());
 
-  componentDidMount() {
-    // console.log(this.state.time, 'time');
-    this.clock = setInterval(() => {
-      this.setState({
-        time: new Date(),
-      });
+  useEffect(() => {
+    const clock = setInterval(() => {
+      setTime(new Date());
     }, 1000);
-  }
+    return () => {
+      clearInterval(clock);
+    };
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.clock);
-  }
-
-  render() {
-    const { time } = this.state;
-
-    // const timeStr = time.toLocaleTimeString();
-    const timeStr = time.toLocaleTimeString();
-    const timeSplit = timeStr.split(':');
-    return (
+  const timeStr = time.toLocaleTimeString();
+  const timeSplit = timeStr.split(':');
+  return (
+    <div>
+      {' '}
       <div className={css.clock}>
         {timeSplit[0]}
         {` : `}
@@ -34,8 +26,8 @@ class Clock extends Component {
         {/* {` : `}
         {timeSplit[2]} */}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Clock;
