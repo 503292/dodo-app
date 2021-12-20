@@ -5,7 +5,7 @@ import css from './PrioritySelector.module.css';
 import { getColor } from '../../../utils/Priority';
 
 const PrioritySelector = ({ options, value, onChange }) => {
-  console.log(getColor(value), 'value');
+  // console.log(getColor(value), 'value');
   return (
     <select
       name="priority"
