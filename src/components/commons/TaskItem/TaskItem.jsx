@@ -3,18 +3,11 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import PropTypes from 'prop-types';
 
-import styled from 'styled-components';
-
 import { ReactComponent as Delete } from '../../../assets/image/delete.svg';
 import { ReactComponent as Pen } from '../../../assets/image/pen.svg';
 import { getColor } from '../../../utils/Priority';
 
 import css from './TaskItem.module.css';
-
-const Container = styled.div`
-  margin-bottom: 8px;
-  color: grey;
-`;
 
 class TaskItem extends Component {
   state = {};
@@ -50,11 +43,12 @@ class TaskItem extends Component {
           index={index}
         >
           {(provided, snapshot) => (
-            <Container
+            // eslint-disable-next-line
+            <div
               {...provided.draggableProps}
               {...provided.dragHandleProps}
               ref={provided.innerRef}
-              isDragging={snapshot.isDragging}
+              isdragging={snapshot.isDragging.toString()}
               onClick={this.onClick}
               className={css.dragContainer}
             >
@@ -120,7 +114,7 @@ class TaskItem extends Component {
                   </p>
                 </div>
               </div>
-            </Container>
+            </div>
           )}
         </Draggable>
       </>

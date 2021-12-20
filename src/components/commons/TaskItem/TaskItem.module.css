@@ -1,5 +1,7 @@
 .dragContainer {
   background-color: transparent !important;
+  margin-bottom: 8px;
+  color: grey;
 }
 
 .task {
