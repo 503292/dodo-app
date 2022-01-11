@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+
+import { useSelector } from 'react-redux';
 
 import HeaderNav from './Header/Header';
 import Main from './Main/Main';
@@ -9,50 +10,25 @@ import Loader from './commons/Loader/Loader';
 
 import css from './App.module.css';
 
-class App extends Component {
-  state = { isChecked: false };
+const App2 = () => {
+  const isChecked = useSelector(state => state.global.isAnimationCheck);
+  const isLoading = useSelector(state => state.global.isLoading);
 
-  componentDidMount() {
-    const { isChecked } = this.props;
-    this.setState({
-      isChecked,
-    });
-  }
+  return (
+    <div className={css.app}>
+      {isLoading && <Loader isLoading={isLoading} />}
 
-  componentDidUpdate(prevProps) {
-    const { isChecked } = this.props;
-    if (prevProps.isChecked !== isChecked) {
-      this.setState({
-        isChecked,
-      });
-    }
-  }
+      {isChecked && <Animation />}
 
-  render() {
-    const { isLoading } = this.props;
-    const { isChecked } = this.state;
+      <header className={css.header}>
+        <HeaderNav />
+      </header>
 
-    return (
-      <div className={css.app}>
-        {isLoading && <Loader isLoading={isLoading} />}
-
-        {isChecked && <Animation />}
-
-        <header className={css.header}>
-          <HeaderNav />
-        </header>
-
-        <main className={css.main}>
-          <Main />
-        </main>
-      </div>
-    );
-  }
-}
-
-App.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  isChecked: PropTypes.bool.isRequired,
+      <main className={css.main}>
+        <Main />
+      </main>
+    </div>
+  );
 };
 
-export default App;
+export default App2;

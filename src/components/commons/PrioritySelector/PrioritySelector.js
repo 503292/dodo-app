@@ -6,6 +6,7 @@ import { getColor } from '../../../utils/Priority';
 
 const PrioritySelector = ({ options, value, onChange }) => {
   // console.log(getColor(value), 'value');
+  // TODO  change to custom Selector console.log(getColor(value), 'value');
   return (
     <select
       name="priority"
