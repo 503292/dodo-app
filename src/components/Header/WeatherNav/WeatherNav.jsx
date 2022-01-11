@@ -1,88 +1,92 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
+import { updateLocation } from '../../../redux/location/locationActions';
 
 import switchIcon from './switchIcon';
 
 import css from './WeatherNav.module.css';
 
-class WeatherNav extends Component {
-  state = {
-    weather: '',
-    location: '',
+const getWeather = () => {
+  const localWeather = JSON.parse(localStorage.getItem('currencyWheather'));
+  if (localWeather) {
+    return localWeather;
+  }
+  return '';
+};
+
+const WeatherNav = () => {
+  const dispatch = useDispatch();
+  const locationRDX = useSelector(state => state.location);
+  const [weather, setWeather] = useState(getWeather());
+  const [location, setLocation] = useState(locationRDX ?? '');
+
+  //   helpers
+  const setNewLocation = () => {
+    const localLocation = localStorage.getItem('location');
+    if (localLocation) {
+      return localLocation;
+    }
+    return location;
   };
 
-  componentDidMount() {
-    const { locationFromRedux, updateLocation } = this.props;
-
-    const setLocation = () => {
-      const localLocation = localStorage.getItem('location');
-      if (localLocation) {
-        return localLocation;
-      }
-      return locationFromRedux;
-    };
-
-    fetchWorldWeather(setLocation())
+  const getGlobalWeather = () => {
+    fetchWorldWeather(setNewLocation())
       .then(data => {
-        const parseData = parseWeatherData(data);
-        localStorage.setItem('localWeather', JSON.stringify(parseData));
-        localStorage.setItem('location', parseData.timezone);
+        const dataWeather = parseWeatherData(data);
+        localStorage.setItem('localWeather', JSON.stringify(dataWeather));
+        localStorage.setItem('location', dataWeather.timezone);
 
-        this.setState({
-          weather: parseData,
-          location: parseData.timezone,
-        });
-        updateLocation(parseData.timezone);
+        setWeather(dataWeather);
+        setLocation(dataWeather.timezone);
+        dispatch(updateLocation(dataWeather.timezone));
       })
-      // eslint-disable-next-line no-unused-vars
-      .catch(error => {
+      .catch(() => {
         toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
       });
-  }
+  };
 
-  componentDidUpdate(prevProps, prevState) {
-    const { locationFromRedux } = this.props;
+  useEffect(() => {
+    getGlobalWeather();
+    // eslint-disable-next-line
+  }, []);
 
-    if (locationFromRedux !== prevState.location) {
-      this.setState({
-        location: locationFromRedux,
-      });
+  useEffect(() => {
+    if (locationRDX) {
+      setLocation(locationRDX);
+      setWeather(getWeather());
     }
-  }
+  }, [locationRDX]);
+  //   useEffect(() => {
+  //     if (weather) {
+  //     }
+  //   }, [weather]);
 
-  render() {
-    const { weather, location } = this.state;
-
-    return (
-      <>
-        {weather && (
-          <div className={css.wrapWeather}>
-            <div className={css.wrapIcon}>
-              {switchIcon(
-                weather.currentWeather.descrEn,
-                weather.currentWeather.isDayTime,
-              )}
-            </div>
-            <div className={css.wrapDescr}>
-              <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>
-            </div>
-            <p className={css.timezone}>{location}</p>
+  return (
+    <>
+      {weather && (
+        <div className={css.wrapWeather}>
+          <div className={css.wrapIcon}>
+            {switchIcon(
+              weather.currentWeather.descrEn,
+              weather.currentWeather.isDayTime,
+            )}
           </div>
-        )}
+          <div className={css.wrapDescr}>
+            <p className={css.degree}>{weather.currentWeather.tempC}&deg;</p>
+          </div>
+          <p className={css.timezone}>{location}</p>
+        </div>
+      )}
 
-        <ToastContainer autoClose={4500} position="bottom-center" />
-      </>
-    );
-  }
-}
-WeatherNav.propTypes = {
-  locationFromRedux: PropTypes.string.isRequired,
-  updateLocation: PropTypes.func.isRequired,
+      <ToastContainer autoClose={4500} position="bottom-center" />
+    </>
+  );
 };
 
 export default WeatherNav;
