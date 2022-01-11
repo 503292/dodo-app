@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from './Info/Info';
@@ -13,38 +13,34 @@ const ativeStyle = {
   fill: 'tomato',
 };
 
-class Header extends Component {
-  state = {};
+const Header = () => {
+  return (
+    <div className={css.wrapHeader}>
+      <ul className={css.wrapList}>
+        <li className={css.routeHeader}>
+          <NavLink activeStyle={ativeStyle} to="/" exact>
+            <InfoSite />
+          </NavLink>
+        </li>
+        <li className={css.routeHeader}>
+          <NavLink to="/weather" exact activeStyle={ativeStyle}>
+            <WeatherNav />
+          </NavLink>
+        </li>
+        <li className={css.routeHeader}>
+          <NavLink to="/currency" exact activeStyle={ativeStyle}>
+            <CurrencyNav />
+          </NavLink>
+        </li>
 
-  render() {
-    return (
-      <div className={css.wrapHeader}>
-        <ul className={css.wrapList}>
-          <li className={css.routeHeader}>
-            <NavLink activeStyle={ativeStyle} to="/" exact>
-              <InfoSite />
-            </NavLink>
-          </li>
-          <li className={css.routeHeader}>
-            <NavLink to="/weather" exact activeStyle={ativeStyle}>
-              <WeatherNav />
-            </NavLink>
-          </li>
-          <li className={css.routeHeader}>
-            <NavLink to="/currency" exact activeStyle={ativeStyle}>
-              <CurrencyNav />
-            </NavLink>
-          </li>
-
-          <li className={css.routeHeader}>
-            <NavLink to="/info" exact activeStyle={ativeStyle}>
-              <Logo />
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-}
+        <li className={css.routeHeader}>
+          <NavLink to="/info" exact activeStyle={ativeStyle}>
+            <Logo />
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default Header;
