@@ -10,7 +10,7 @@ import { fetchWorldWeather } from '../../../services/api';
 
 import 'react-toastify/dist/ReactToastify.css';
 import css from './Weather.module.css';
-
+// TODO refact to func component
 class Weather extends Component {
   state = {
     weather: '',
