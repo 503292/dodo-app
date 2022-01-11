@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './redux/store';
 
-import App from './components/App.Container';
+import App from './components/App';
 
 import './assets/cssRoot/style.css';
 
