@@ -6,6 +6,7 @@ import Column from '../../commons/TasksColumn/TasksColumn';
 import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask.Container';
 import Timer from '../../commons/Timer/Timer';
 import Clock from '../../commons/Clock/Clock';
+import DateView from '../../commons/DateView/DateView';
 
 import { ReactComponent as Plus } from '../../../assets/image/plus.svg';
 
@@ -281,7 +282,10 @@ class Tasks extends Component {
         <div className={css.footerWrap}>
           <Timer />
           <div className={css.wrapBtn}>
-            <Clock />
+            <div className={css.wrapDate}>
+              <Clock />
+              <DateView />
+            </div>
             <button
               type="button"
               className={css.addButton}
