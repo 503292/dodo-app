@@ -156,16 +156,16 @@ export default function parseWeatherData(data) {
 
           hourly.push(hourlyTmp);
 
-          return 0;
+          return null;
         }
-        return 0;
+        return null;
       });
       daysTmp.hourly = hourly;
 
-      return 0;
+      return null;
     });
     days.push(daysTmp);
-    return 0;
+    return null;
   });
 
   weather.days = days;
