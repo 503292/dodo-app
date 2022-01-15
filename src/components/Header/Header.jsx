@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from './Info/Info';
-import WeatherNav from './WeatherNav/WeatherNav.Container';
+import WeatherNav from './WeatherNav/WeatherNav';
 import CurrencyNav from './CurrencyNav/CurrencyNav';
 import InfoSite from './Logo/Logo';
 

@@ -25,11 +25,10 @@ const getMark = () => {
 };
 
 const CurrencyNav = () => {
+  const dispatch = useDispatch();
+  const markFromStore = useSelector(state => state.currencyMark);
   const [currency, setCurrency] = useState([]);
   const [currencyMark, setCurrencyMark] = useState('');
-  const dispatch = useDispatch();
-
-  const markFromStore = useSelector(state => state.currencyMark);
 
   const getCurrency = async () => {
     await fetchCurrencyPrivatBank()
