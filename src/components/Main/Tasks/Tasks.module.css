@@ -43,6 +43,12 @@
 .wrapBtn {
   display: flex;
 }
+.wrapDate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 .addButton {
   width: 3rem;
   height: 3rem;
