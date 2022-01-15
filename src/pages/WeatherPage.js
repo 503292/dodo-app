@@ -1,5 +1,5 @@
 import React from 'react';
-import Weather from '../components/Main/Weather/Weather.Container';
+import Weather from '../components/Main/Weather/Weather';
 
 const WeatherPage = () => (
   <>
