@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -59,13 +58,9 @@ const WeatherNav = () => {
   useEffect(() => {
     if (locationRDX) {
       setLocation(locationRDX);
-      setWeather(getWeather());
+      setWeather(JSON.parse(localStorage.getItem('localWeather')));
     }
   }, [locationRDX]);
-  //   useEffect(() => {
-  //     if (weather) {
-  //     }
-  //   }, [weather]);
 
   return (
     <>

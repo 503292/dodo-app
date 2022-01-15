@@ -34,16 +34,17 @@ const Weather = () => {
     }
 
     if (lastSearch.length < 5) {
-      setLastSearch([...lastSearch, data]);
-      localStorage.setItem('lastSearch', JSON.stringify(lastSearch));
+      const tmp = [...lastSearch, data];
+      setLastSearch(tmp);
+      localStorage.setItem('lastSearch', JSON.stringify(tmp));
     }
 
     if (lastSearch.length === 5) {
-      const tmp = lastSearch;
+      const tmp = [...lastSearch];
       tmp.shift();
       tmp.push(data);
       setLastSearch(tmp);
-      localStorage.setItem('lastSearch', JSON.stringify(lastSearch));
+      localStorage.setItem('lastSearch', JSON.stringify(tmp));
     }
   };
 
