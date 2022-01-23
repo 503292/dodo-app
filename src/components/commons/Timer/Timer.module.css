@@ -1,3 +1,10 @@
+.wrapTimer {
+}
+/* 
+Refact in up
+Delete in bottom 
+*/
+
 .container {
   display: flex;
   color: gray;
