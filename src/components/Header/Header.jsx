@@ -6,7 +6,7 @@ import WeatherNav from './WeatherNav/WeatherNav';
 import CurrencyNav from './CurrencyNav/CurrencyNav';
 import InfoSite from './Logo/Logo';
 
-import css from './Header.module.css';
+import css from './Header.module.scss';
 
 const ativeStyle = {
   color: 'tomato',
@@ -33,10 +33,8 @@ const Header = () => {
           </NavLink>
         </li>
 
-        <li className={css.routeHeader}>
-          <NavLink to="/info" exact activeStyle={ativeStyle}>
-            <Logo />
-          </NavLink>
+        <li className={`${css.routeHeader} ${css.dropdown}`}>
+          <Logo />
         </li>
       </ul>
     </div>
