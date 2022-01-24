@@ -10,7 +10,7 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [timerStart, setTimerStart] = useState(null);
-  const [newYear, setNewYear] = useState(new Date().getFullYear + 1);
+  const [newYear, setNewYear] = useState(new Date().getFullYear() + 1);
 
   // helper
   const reversClock = () => {
@@ -19,10 +19,9 @@ const Timer = () => {
     }
 
     setInterval(() => {
-      //   const newYear = new Date().getFullYear() + 1;
-
+      const newYearTmp = new Date().getFullYear() + 1;
       const unixTimeNow = new Date().getTime();
-      const unixNewYear = Date.parse(new Date(`${newYear}`));
+      const unixNewYear = Date.parse(new Date(`${newYearTmp}`));
       const endTimeToNewYear = unixNewYear - unixTimeNow;
       let daysTmp = Math.floor(endTimeToNewYear / (1000 * 60 * 60 * 24));
 
@@ -48,24 +47,51 @@ const Timer = () => {
       setHours(pad(hoursTmp, 2));
       setMinutes(pad(minutesTmp, 2));
       setSeconds(pad(secondsTmp, 2));
-
-      //   this.setState({
-      //     days: pad(daysTmp, 3),
-      //     hours: pad(hoursTmp, 2),
-      //     minutes: pad(minutesTmp, 2),
-      //     seconds: pad(secondsTmp, 2),
-      //   });
     }, 1000);
-
-    // return this.timer;
   };
 
-  //   useEffect;
+  useEffect(() => {
+    return () => {
+      clearInterval(timerStart);
+    };
+  }, []);
+  useEffect(() => {
+    reversClock();
+  }, [timerStart]);
 
   return (
-    <div className={css.wrapTimer}>
-      {console.log(newYear, 'newYear')}
-      <Tree />
+    <div className={css.container}>
+      <div className={css.wrapTimer}>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.grey}`}>
+            {days}
+          </button>
+          <span className={css.descr}>Дня</span>
+        </div>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.red}`}>
+            {hours}
+          </button>
+          <span className={css.descr}>Годин</span>
+        </div>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.yellow}`}>
+            {minutes}
+          </button>
+          <span className={css.descr}>Хвилин</span>
+        </div>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.blue}`}>
+            {seconds}
+          </button>
+          <span className={css.descr}>Секунд</span>
+        </div>
+      </div>
+
+      <div className={css.newYear}>
+        <Tree className={css.tree} />
+        <p className={css.data}>{newYear}</p>
+      </div>
     </div>
   );
 };
