@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 
 import css from './Timer.module.css';
@@ -9,7 +8,7 @@ const Timer = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-  const [timerStart, setTimerStart] = useState(null);
+  const [timerStart] = useState(null);
   const [newYear, setNewYear] = useState(new Date().getFullYear() + 1);
 
   // helper
@@ -47,16 +46,15 @@ const Timer = () => {
       setHours(pad(hoursTmp, 2));
       setMinutes(pad(minutesTmp, 2));
       setSeconds(pad(secondsTmp, 2));
+      setNewYear(newYearTmp);
     }, 1000);
   };
 
   useEffect(() => {
+    reversClock();
     return () => {
       clearInterval(timerStart);
     };
-  }, []);
-  useEffect(() => {
-    reversClock();
   }, [timerStart]);
 
   return (
