@@ -34,9 +34,8 @@ const Header = () => {
         </li>
 
         <li className={css.routeHeader}>
-          <NavLink to="/info" exact activeStyle={ativeStyle}>
-            <Logo />
-          </NavLink>
+          {/* TODO dropdown */}
+          <Logo />
         </li>
       </ul>
     </div>
