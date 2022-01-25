@@ -16,10 +16,13 @@
       height: 50px;
       border-radius: 25px;
       position: relative;
-      margin-bottom: 15px;
       background: #caec6d;
       border: 1px solid #f8d929;
       box-shadow: 0 0 4px 2px grey;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
 
       a {
         width: 50px;
