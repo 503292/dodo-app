@@ -1,0 +1,18 @@
+.wrapList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  list-style: none;
+  max-width: 425px;
+  margin: 0 auto;
+
+  .routeHeader a {
+    color: grey;
+    fill: grey;
+    text-decoration: none;
+  }
+  .dropdown {
+    position: relative;
+  }
+}
