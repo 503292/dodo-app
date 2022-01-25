@@ -42,12 +42,12 @@ const DropdownProfile = ({ isActive, refProfile }) => {
 
 DropdownProfile.defaultProps = {
   isActive: false,
-  refProfile: <></>,
+  refProfile: {},
 };
 
 DropdownProfile.propTypes = {
   isActive: PropTypes.bool,
-  refProfile: PropTypes.node,
+  refProfile: PropTypes.shape(PropTypes.any.isRequired),
 };
 
 export default DropdownProfile;

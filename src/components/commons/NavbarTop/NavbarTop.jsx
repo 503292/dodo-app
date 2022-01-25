@@ -45,9 +45,7 @@ const NavbarTop = () => {
         onKeyPress={handleClick}
         aria-hidden
       >
-        <NavLink to="/info" exact activeStyle={ativeStyle}>
-          <InfoSite />
-        </NavLink>
+        <InfoSite />
         <DropdownProfile refProfile={refProfile} isActive={isActive} />
       </li>
     </ul>

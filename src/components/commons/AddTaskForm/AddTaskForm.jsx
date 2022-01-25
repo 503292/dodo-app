@@ -32,7 +32,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   const [text, setText] = useState('');
   const [priority, setPriority] = useState(Priority.NORMAL);
   const [id, setId] = useState('');
-  const [completed, setCompleted] = useState(new Date());
+  const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
     if (editTask !== null) {
@@ -41,6 +41,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
       setText(editTask.text);
       setPriority(editTask.priority);
       setId(editTask.id);
+      setCompleted(editTask.completed);
     }
   }, [editTask]);
 
@@ -72,21 +73,9 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
     const idTmp = shortid.generate();
 
-    const data = {
-      endTime,
-      text,
-      priority,
-      id: idTmp,
-      completed,
-    };
-
     let oneTask = allTasks.find(el => el.id === id);
     if (oneTask) {
       oneTask = { ...oneTask, text, priority, endTime };
-      //   this.setState(state => ({
-      //     ...state,
-      //     oneTask,
-      //   }));
 
       dispatch(updateTaskToRedux(oneTask));
 
@@ -95,11 +84,13 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
       filterArr.unshift(oneTask);
       localStorage.setItem('localTasks', JSON.stringify(filterArr));
     } else {
-      // console.log(data, 'data');
-      //   this.setState(state => ({
-      //     ...state,
-      //     data,
-      //   }));
+      const data = {
+        endTime,
+        text,
+        priority,
+        id: idTmp,
+        completed,
+      };
 
       dispatch(addTaskToRedux(data));
 
