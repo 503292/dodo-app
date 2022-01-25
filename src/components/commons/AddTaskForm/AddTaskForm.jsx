@@ -34,6 +34,16 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   const [id, setId] = useState('');
   const [completed, setCompleted] = useState(new Date());
 
+  useEffect(() => {
+    if (editTask !== null) {
+      const date = new Date(editTask.endTime);
+      setEndTime(date);
+      setText(editTask.text);
+      setPriority(editTask.priority);
+      setId(editTask.id);
+    }
+  }, [editTask]);
+
   const handleText = ({ target }) => {
     const { name, value } = target;
 
@@ -60,7 +70,6 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
     }
 
     const localTasksArr = JSON.parse(localStorage.getItem('localTasks'));
-
     const idTmp = shortid.generate();
 
     const data = {
@@ -72,7 +81,6 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
     };
 
     let oneTask = allTasks.find(el => el.id === id);
-    console.log(oneTask, 'oneTask');
     if (oneTask) {
       oneTask = { ...oneTask, text, priority, endTime };
       //   this.setState(state => ({
@@ -84,7 +92,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
 
       // update task to localStorage
       const filterArr = localTasksArr.filter(el => el.id !== id);
-      filterArr.push(oneTask);
+      filterArr.unshift(oneTask);
       localStorage.setItem('localTasks', JSON.stringify(filterArr));
     } else {
       // console.log(data, 'data');
@@ -192,11 +200,7 @@ AddTaskForm.defaultProps = {
 };
 
 AddTaskForm.propTypes = {
-  //   modalAddTasksClose: PropTypes.func.isRequired,
-  //   addTaskToRedux: PropTypes.func.isRequired,
-  //   updateTaskToRedux: PropTypes.func.isRequired,
   editTask: PropTypes.shape(PropTypes.string.isRequired),
-  //   allTasks: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   handleResetEditTask: PropTypes.func.isRequired,
 };
 export default AddTaskForm;

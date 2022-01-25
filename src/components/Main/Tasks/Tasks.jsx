@@ -273,7 +273,6 @@ class Tasks extends Component {
               })}
             </div>
           </DragDropContext>
-
           <ModalAddTask
             editTask={editTask}
             handleResetEditTask={this.handleResetEditTask}

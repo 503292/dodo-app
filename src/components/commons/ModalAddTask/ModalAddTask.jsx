@@ -30,6 +30,7 @@ const ModalAddTask = ({ editTask, handleResetEditTask }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
