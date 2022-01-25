@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from '../../commons/TasksColumn/TasksColumn';
-import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask.Container';
+import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask';
 import Timer from '../../commons/Timer/Timer';
 import Clock from '../../commons/Clock/Clock';
 import DateView from '../../commons/DateView/DateView';
@@ -273,7 +273,6 @@ class Tasks extends Component {
               })}
             </div>
           </DragDropContext>
-
           <ModalAddTask
             editTask={editTask}
             handleResetEditTask={this.handleResetEditTask}

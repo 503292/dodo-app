@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import HeaderNav from './Header/Header';
 import Main from './Main/Main';
 
-import Animation from './Animation/Animation';
+import Animation from './commons/Animation/Animation';
 import Loader from './commons/Loader/Loader';
 
 import css from './App.module.css';
