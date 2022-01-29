@@ -7,6 +7,8 @@ import CurrencyNav from '../../Header/CurrencyNav/CurrencyNav';
 import InfoSite from '../../Header/Info/Info';
 import DropdownProfile from '../DropdownProfile/DropdownProfile';
 
+import { ReactComponent as Menu } from '../../../assets/image/menu.svg';
+
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';
 
 import css from './NavbarTop.module.scss';
@@ -25,8 +27,7 @@ const NavbarTop = () => {
     <ul className={css.wrapList}>
       <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/">
-          {/* <Logo /> */}
-          menu
+          <Menu />
         </NavLink>
       </li>
       <li className={css.routeHeader}>
