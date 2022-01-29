@@ -1,0 +1,39 @@
+.productOne {
+  //   border: ;
+
+  .title {
+    margin: 0;
+  }
+
+  //
+  .wrapSubtitle {
+    display: flex;
+    // /
+    .wrapBrand {
+      flex: 2;
+      width: 150px;
+    }
+  }
+
+  // /
+  .fieldset {
+    border: none;
+    flex: 1;
+    border-radius: 13px;
+    background-color: #fff;
+    font-style: italic;
+    margin: 0;
+    box-shadow: 0 0 4px 0px grey;
+
+    .legend {
+      padding: 2px 5px;
+      margin: 0;
+      background-color: #fff;
+      border: 2px solid lightgray;
+      border-radius: 15px;
+    }
+  }
+  .fieldset:not(:last-child) {
+    margin: 0 0 5px;
+  }
+}
