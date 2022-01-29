@@ -30,12 +30,12 @@ export const fetchCurrencyNBU = () => {
 const baseWorldWeather =
   'http://api.worldweatheronline.com/premium/v1/weather.ashx';
 
-const apiKey = '698196a968db4533afc83244212012'; // Trial ending on 20-Dec-2021 8:32
+const apiKey = 'e78c8fe6ceaf4ac28e9153630222901'; // Trial ending on 20-Dec-2021 8:32
 const settings2 =
   '&format=json&num_of_days=7&extra=localObsTime,isDayTime&fx=yes&cc=yes&mca=no&tp=1&showlocaltime=yes&lang=uk';
 export const fetchWorldWeather = query => {
   return (
-    fetch(`${proxy}${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
+    fetch(`${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
       .then(response => response.json())
       // eslint-disable-next-line
       .catch(error => console.log('Привіт). Щось ся стало.'))
