@@ -25,6 +25,12 @@ const NavbarTop = () => {
     <ul className={css.wrapList}>
       <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/">
+          {/* <Logo /> */}
+          menu
+        </NavLink>
+      </li>
+      <li className={css.routeHeader}>
+        <NavLink exact activeStyle={ativeStyle} to="/todo">
           <Logo />
         </NavLink>
       </li>
