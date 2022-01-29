@@ -94,3 +94,32 @@ body {
 img {
   display: block;
 }
+
+/* style for scrollbar-track */
+.scrollbarThumb::-webkit-scrollbar-track {
+  background-color: transparent;
+  padding-right: 0.25rem;
+  margin-left: 10px;
+}
+
+.scrollbarThumb::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+.scrollbarThumb::-webkit-scrollbar-thumb {
+  background-color: var(--grey);
+  border-radius: 50px;
+}
+
+/* unselectable block*/
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
