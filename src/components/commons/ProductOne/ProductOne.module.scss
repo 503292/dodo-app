@@ -8,17 +8,21 @@
   //
   .wrapSubtitle {
     display: flex;
+    justify-content: space-between;
+    // margin-bottom: 15px;
     // /
     .wrapBrand {
-      flex: 2;
       width: 150px;
+
+      & > svg {
+        fill: red;
+      }
     }
   }
 
   // /
   .fieldset {
     border: none;
-    flex: 1;
     border-radius: 13px;
     background-color: #fff;
     font-style: italic;
