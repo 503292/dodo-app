@@ -5,7 +5,7 @@ import css from './Products.module.scss';
 
 const Products = () => {
   return (
-    <ul div className={`${css.products} scrollbarThumb`}>
+    <ul className={`${css.products} scrollbarThumb`}>
       <Product />
       {/* <Product /> */}
       {/* <Product /> */}
