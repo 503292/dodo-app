@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import css from './ProductOne.module.scss';
 
 import { ReactComponent as Brand } from '../../../assets/image/alatyr.svg';
 const ProductOne = () => {
-  const [imgUrl, setImgUrl] = useState('');
+  // const [imgUrl, setImgUrl] = useState('');
 
   return (
     <li className={css.productOne}>
