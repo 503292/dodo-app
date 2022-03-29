@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import MenuPage from '../../../pages/MenuPage';
+// import MenuPage from '../../../pages/MenuPage';
 import TasksPage from '../../../pages/TasksPage';
 import WeatherPage from '../../../pages/WeatherPage';
 import CurrencyPage from '../../../pages/CurrencyPage';
