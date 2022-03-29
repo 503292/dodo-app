@@ -80,7 +80,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
       </fieldset>
     </div>
 
-    <div className={css.wrapCreater}>
+    {/* <div className={css.wrapCreater}>
       <p>
         <span>© 2020</span>
         <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
@@ -95,7 +95,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           kalysh.max@gmail.com
         </a>
       </p>
-    </div>
+    </div> */}
   </div>
 );
 

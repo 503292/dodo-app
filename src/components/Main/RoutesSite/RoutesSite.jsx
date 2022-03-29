@@ -11,7 +11,7 @@ import InfoSitePage from '../../../pages/InfoSitePage';
 const RoutesSite = () => (
   <>
     <Switch>
-      <Route path="/" exact component={MenuPage} />
+      {/* <Route path="/" exact component={MenuPage} /> */}
       <Route path="/todo" exact component={TasksPage} />
       <Route path="/info" exact component={InfoSitePage} />
       <Route path="/weather" component={WeatherPage} />
