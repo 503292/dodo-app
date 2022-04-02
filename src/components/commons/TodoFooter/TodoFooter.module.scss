@@ -1,40 +1,4 @@
-.wrapTasks {
-  height: calc(100vh - 104px);
-}
-.wrapEnterDay {
-  position: fixed;
-  bottom: 0px;
-}
-.dragDropContext {
-  height: 87vh;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  padding: 10px 5px 0;
-  border-bottom: 1px dotted grey;
-  box-shadow: inset 0 -10px 10px -10px #000000;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.container::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-  background-color: transparent;
-  border: 1px solid rgba(97, 74, 74, 0.3);
-  border-radius: 50px;
-}
-
-.container::-webkit-scrollbar {
-  width: 6px;
-  background-color: transparent;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background-color: #b8b8b9;
-  border-radius: 50px;
-}
-/* .footerWrap {
+.footerWrap {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
@@ -80,4 +44,4 @@
   100% {
     box-shadow: 0 0 1px 2px #c1eb27, 0 0 1px 2px #2eeb27, 0 0 1px 2px #278ceb;
   }
-} */
+}

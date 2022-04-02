@@ -4,11 +4,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import PropTypes from 'prop-types';
 import Column from '../../commons/TasksColumn/TasksColumn';
 import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask';
-import Timer from '../../commons/Timer/Timer';
-import Clock from '../../commons/Clock/Clock';
-import DateView from '../../commons/DateView/DateView';
-
-import { ReactComponent as Plus } from '../../../assets/image/plus.svg';
+import TodoFooter from '../../commons/TodoFooter/TodoFooter';
 
 import css from './Tasks.module.css';
 
@@ -245,7 +241,7 @@ class Tasks extends Component {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
     return (
-      <>
+      <div className={css.todo}>
         <div className={css.wrapTasks}>
           <DragDropContext
             onDragEnd={this.onDragEnd}
@@ -273,28 +269,15 @@ class Tasks extends Component {
               })}
             </div>
           </DragDropContext>
-          <ModalAddTask
-            editTask={editTask}
-            handleResetEditTask={this.handleResetEditTask}
-          />
         </div>
-        <div className={css.footerWrap}>
-          <Timer />
-          <div className={css.wrapBtn}>
-            <div className={css.wrapDate}>
-              <Clock />
-              <DateView />
-            </div>
-            <button
-              type="button"
-              className={css.addButton}
-              onClick={modalAddTasksOpen}
-            >
-              <Plus className={css.plus} />
-            </button>
-          </div>
-        </div>
-      </>
+
+        <TodoFooter modalAddTasksOpen={modalAddTasksOpen} />
+
+        <ModalAddTask
+          editTask={editTask}
+          handleResetEditTask={this.handleResetEditTask}
+        />
+      </div>
     );
   }
 }
