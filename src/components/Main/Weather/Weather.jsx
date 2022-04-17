@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import WeatherSearch from '../../commons/WeatherSearch/WeatherSearch';
 import WeatherDescription from '../../commons/WeatherDescription/WeatherDescription';
+// TODO add WeatherFolk
 import WeatherFolk from '../../commons/WeatherFolk/WeatherFolk';
 import parseWeatherData from '../../Header/WeatherNav/ParseWorlWeather';
 
