@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import WeatherSearch from '../../commons/WeatherSearch/WeatherSearch';
 import WeatherDescription from '../../commons/WeatherDescription/WeatherDescription';
+import WeatherFolk from '../../commons/WeatherFolk/WeatherFolk';
 import parseWeatherData from '../../Header/WeatherNav/ParseWorlWeather';
 
 import { fetchWorldWeather } from '../../../services/api';
@@ -107,6 +108,8 @@ const Weather = () => {
         clickLastSearch={clickLastSearch}
       />
       {weather && <WeatherDescription weather={weather} />}
+
+      <WeatherFolk />
       <ToastContainer autoClose={4500} position="bottom-center" />
     </div>
   );
