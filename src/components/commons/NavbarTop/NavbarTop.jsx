@@ -42,7 +42,7 @@ const NavbarTop = () => {
       </li>
       <li className={css.routeHeader}>
         <NavLink to="/currency" exact activeStyle={ativeStyle}>
-          <CurrencyNav />в
+          <CurrencyNav />
         </NavLink>
       </li>
 
