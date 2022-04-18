@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import WeatherHours from '../WeatherHours/WeatherHours';
@@ -8,13 +8,7 @@ import switchIcon from '../../Header/WeatherNav/switchIcon';
 
 import css from './WeatherDescription.module.css';
 
-const WeatherDescription = ({ weather }) => {
-  const [indexDay, setIndexDay] = useState(0);
-
-  const handleIndexDay = idx => {
-    setIndexDay(idx);
-  };
-
+const WeatherDescription = ({ weather, indexDay, handleIndexDay }) => {
   return (
     <div className={css.wrapDescription}>
       <WeatherDays
@@ -35,6 +29,8 @@ const WeatherDescription = ({ weather }) => {
 
 WeatherDescription.propTypes = {
   weather: PropTypes.shape(PropTypes.arrayOf().isRequired).isRequired,
+  indexDay: PropTypes.number.isRequired,
+  handleIndexDay: PropTypes.func.isRequired,
 };
 
 export default WeatherDescription;
