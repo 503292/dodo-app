@@ -1,2 +1,11 @@
 .wrapWeatherFolk {
 }
+
+.wrapWeatherFolk ::selection {
+  background: #2ca200;
+  color: #fff;
+}
+.wrapWeatherFolk ::-moz-selection {
+  background: #2ca200;
+  color: #fff;
+}
