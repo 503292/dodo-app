@@ -29,6 +29,11 @@ const Weather = () => {
   const [location, setLocation] = useState(getLocation());
   const [search, setSearch] = useState('');
   const [lastSearch, setLastSearch] = useState(getLastSearch());
+  const [indexDay, setIndexDay] = useState(0);
+
+  const handleIndexDay = idx => {
+    setIndexDay(idx);
+  };
 
   const updateLastSearch = async data => {
     if (lastSearch.includes(data)) {
@@ -108,9 +113,15 @@ const Weather = () => {
         lastSearch={lastSearch}
         clickLastSearch={clickLastSearch}
       />
-      {weather && <WeatherDescription weather={weather} />}
+      {weather && (
+        <WeatherDescription
+          weather={weather}
+          indexDay={indexDay}
+          handleIndexDay={handleIndexDay}
+        />
+      )}
 
-      <WeatherFolk />
+      <WeatherFolk indexDay={indexDay} />
       <ToastContainer autoClose={4500} position="bottom-center" />
     </div>
   );
