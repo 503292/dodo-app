@@ -12,11 +12,15 @@
     fill: grey;
     text-decoration: none;
   }
+
   .dropdown {
     position: relative;
 
+    &:hover svg {
+      fill: lightgray;
+    }
+
     svg {
-      color: red;
       fill: var(--B150);
     }
   }

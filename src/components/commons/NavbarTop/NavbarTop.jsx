@@ -61,6 +61,7 @@ const NavbarTop = () => {
 
 export default NavbarTop;
 
+// TODO refact route
 // const route = [
 //   {
 //     url: '/',

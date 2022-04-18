@@ -1,19 +1,27 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as LogoMap } from '../../../assets/image/logo/mapUa.svg';
 
-import css from './Info.module.css';
+import css from './Info.module.scss';
 
 const Info = () => {
-  // TODO in progress dropdown
-  // const [isOpen, setisOpen] = useState(false);
+  const history = useHistory();
+  const { pathname } = history.location;
+  const routeName = pathname.substring(1);
+
   return (
-    <div className={css.wrapInfo}>
-      <div className={css.wrapLogo}>
-        <LogoMap className={css.logoMap} />
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={() => history.push('/country')}
+      className={
+        routeName === 'country'
+          ? `${css.mapBtn} ${css.active}`
+          : `${css.mapBtn}`
+      }
+    >
+      <LogoMap />
+    </button>
   );
 };
 

@@ -1,9 +1,7 @@
-.wrapInfo {
-}
-
-.wrapLogo {
+.mapBtn {
   display: flex;
   align-items: center;
+  border: none;
   padding: 5px;
   height: 34px;
   width: 34px;
@@ -23,14 +21,28 @@
   width: 40px;
 }
 
-.wrapLogo:hover,
-.wrapLogo:focus,
-.wrapLogo:active {
+.mapBtn:hover,
+.mapBtn:focus,
+.mapBtn:active {
   background: linear-gradient(
     0deg,
     rgb(96, 97, 90) 0%,
     rgb(96, 97, 90) 49%,
     rgb(248, 155, 149) 50%,
-    rgba(248, 155, 149) 100%
+    rgba(248, 155, 149, 1)
   );
+}
+
+.active {
+  background: linear-gradient(
+    0deg,
+    rgb(96, 97, 90) 0%,
+    rgb(96, 97, 90) 49%,
+    rgb(248, 155, 149) 50%,
+    rgba(248, 155, 149, 1)
+  );
+
+  & svg {
+    fill: lightgray !important;
+  }
 }
