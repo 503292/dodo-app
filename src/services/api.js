@@ -35,7 +35,7 @@ const settings2 =
   '&format=json&num_of_days=7&extra=localObsTime,isDayTime&fx=yes&cc=yes&mca=no&tp=1&showlocaltime=yes&lang=uk';
 export const fetchWorldWeather = query => {
   return (
-    fetch(`${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
+    fetch(`${proxy}${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
       .then(response => response.json())
       // eslint-disable-next-line
       .catch(error => console.log('Привіт). Щось ся стало.'))
