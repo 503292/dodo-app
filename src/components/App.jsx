@@ -11,6 +11,7 @@ import Loader from './commons/Loader/Loader';
 import css from './App.module.css';
 
 const App2 = () => {
+  // TODO
   const isChecked = useSelector(state => state.global.isAnimationCheck);
   const isLoading = useSelector(state => state.global.isLoading);
 

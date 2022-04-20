@@ -8,6 +8,8 @@ import flower4 from '../../../assets/image/flowers/flower4.png';
 import flower5 from '../../../assets/image/flowers/flower5.png';
 import flower6 from '../../../assets/image/flowers/flower6.png';
 
+// import css from './Animation.module.scss';
+
 const animation = {
   prop: {
     particles: {
