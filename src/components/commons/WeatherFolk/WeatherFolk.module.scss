@@ -1,11 +1,12 @@
-// .wrapWeatherFolk {
-// }
+.wrapWeatherFolk {
+  color: grey;
+}
 // TODO fix  select text color
-.wrapWeatherFolk ::selection {
-  background: #2ca200;
+.wrapWeatherFolk::selection {
+  background: #82dcf3;
   color: #fff;
 }
-.wrapWeatherFolk ::-moz-selection {
-  background: #2ca200;
+.wrapWeatherFolk::-moz-selection {
+  background: #82dcf3;
   color: #fff;
 }
