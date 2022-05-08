@@ -14,12 +14,12 @@ import {
 } from '../../../redux/tasks/tasksActions';
 import { modalAddTasksClose } from '../../../redux/global/globalActions';
 
-import { ReactComponent as Close } from '../../../assets/image/close-x.svg';
+import { ReactComponent as СrissСross } from '../../../assets/image/criss_cross.svg';
 import { ReactComponent as Clock } from '../../../assets/image/clock.svg';
 import { ReactComponent as Level } from '../../../assets/image/level.svg';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import css from './AddTaskForm.module.css';
+import css from './AddTaskForm.module.scss';
 
 const options = Object.values(Priority);
 const errorMessage = 'Введіть будь ласка, текст';
@@ -121,7 +121,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
               handleResetEditTask();
             }}
           >
-            <Close className={css.close} />
+            <СrissСross className={css.close} />
           </button>
         </div>
 

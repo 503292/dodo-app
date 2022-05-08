@@ -3,6 +3,7 @@
   color: grey;
   height: 93vh;
   overflow: auto;
+  padding: 20px 10px 0;
 }
 
 .container::-webkit-scrollbar-track {
@@ -46,42 +47,33 @@
 /*  2 div */
 .wrapDescription {
   font-size: 10px;
-  padding: 32px 10px 0;
-}
-.wrapDescription p {
-  margin: 0;
-}
-.fieldset {
-  border: none;
-  border-radius: 13px;
-  background-color: #fff;
-  font-style: italic;
-  margin: 0;
-  box-shadow: 0 0 4px 0px grey;
-}
-.fieldset:not(:last-child) {
-  margin: 0 0 5px;
-}
-.legend {
-  padding: 2px 5px;
-  margin: 0;
-  background-color: #fff;
-  border: 2px solid lightgray;
-  border-radius: 15px;
-}
-.authorWords {
-  text-align: justify;
-}
-.wrapOneDescr {
-  margin-bottom: 10px;
-}
-.wrapOneDescr h5 {
-  font-size: 10px;
-}
-.wrapOneDescr h5,
-.wrapOneDescr ul {
-  margin: 0;
-  padding: 0 0 0 10px;
+
+  & > p {
+    margin: 0;
+  }
+
+  .authorWords {
+    text-align: justify;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .wrapList {
+    margin: 10px 0 5px 30px;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 0;
+  }
+
+  .inWall {
+    padding: 0 20px;
+    margin: 10px 0 10px;
+    & > p {
+      margin: 0;
+    }
+  }
 }
 
 /* 3 div */

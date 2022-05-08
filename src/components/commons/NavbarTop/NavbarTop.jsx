@@ -7,7 +7,9 @@ import CurrencyNav from '../../Header/CurrencyNav/CurrencyNav';
 import InfoSite from '../../Header/Info/Info';
 import DropdownProfile from '../DropdownProfile/DropdownProfile';
 
-// import { ReactComponent as Menu } from '../../../assets/image/menu.svg';
+// import planetUrl from '../../../assets/image/inProgress/planet.png';
+import { ReactComponent as Sun } from '../../../assets/image/inProgress/sun.svg';
+// import { ReactComponent as Compass } from '../../../assets/image/inProgress/compass2.svg';
 
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';
 
@@ -30,6 +32,11 @@ const NavbarTop = () => {
           <Menu />
         </NavLink>
       </li> */}
+      <li className={css.routeHeader}>
+        <NavLink exact activeStyle={ativeStyle} to="/planet">
+          <Sun />
+        </NavLink>
+      </li>
       <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/todo">
           <Logo />

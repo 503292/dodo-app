@@ -3,7 +3,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import PropTypes from 'prop-types';
 
-import { ReactComponent as Delete } from '../../../assets/image/delete.svg';
+import { ReactComponent as Delete } from '../../../assets/image/criss_cross.svg';
 import { ReactComponent as Pen } from '../../../assets/image/pen.svg';
 import { getColor } from '../../../utils/Priority';
 
