@@ -11,17 +11,17 @@
   }
 
   .wrapMap {
-    border: 1px solid lightgrey;
     border-radius: 9px;
     margin: auto;
-    margin: 2px;
     max-width: inherit;
     width: inherit;
 
     & > img {
+      box-shadow: 0 0 4px 0px grey;
       object-fit: fill;
       width: 100%;
       border-radius: 9px;
+      overflow: hidden;
     }
   }
 

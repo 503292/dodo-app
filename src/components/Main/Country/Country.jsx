@@ -1,6 +1,7 @@
 import React from 'react';
 
 import VideoPlayer from '../../commons/VideoPlayer/VideoPlayer';
+import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
 
 import ukraineMapUrl from '../../../assets/image/UA/UkraineMap.jpg';
 
@@ -13,9 +14,12 @@ const Country = () => {
   return (
     <div className={css.wrapCountry}>
       <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
-      <div className={css.wrapMap}>
-        <img src={ukraineMapUrl} alt="map" />
-      </div>
+      <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
+        <div className={css.wrapMap}>
+          <img src={ukraineMapUrl} alt="map" />
+          {/* <img src={ukraineMapUrl} alt="map" /> */}
+        </div>
+      </BoxWithBorder>
 
       <div className={css.wrapVideo}>
         <VideoPlayer url={videoUrl} />
