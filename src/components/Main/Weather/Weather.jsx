@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-// import PropTypes from 'prop-types';
 
 import WeatherSearch from '../../commons/WeatherSearch/WeatherSearch';
 import WeatherDescription from '../../commons/WeatherDescription/WeatherDescription';
-// TODO add WeatherFolk
 import WeatherFolk from '../../commons/WeatherFolk/WeatherFolk';
 import parseWeatherData from '../../Header/WeatherNav/ParseWorlWeather';
 
