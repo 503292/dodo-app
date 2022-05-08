@@ -5,7 +5,7 @@ import ukraineMapUrl from '../../../assets/image/UA/UkraineMap.jpg';
 import css from './Country.module.scss';
 
 const Country = () => {
-  const videoUrl = 'https://www.youtube.com/embed/qMhLmxBs2qE';
+  const videoUrl = 'https://www.youtube.com/embed/ZATdVxeksjU';
 
   return (
     <div className={css.wrapCountry}>
