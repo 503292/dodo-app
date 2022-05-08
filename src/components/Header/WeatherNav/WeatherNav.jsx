@@ -65,7 +65,10 @@ const WeatherNav = () => {
   return (
     <>
       {weather && (
-        <div className={css.wrapWeather}>
+        <div
+          title="Прогноз погоди (іконка погоди і температура в даний час):"
+          className={css.wrapWeather}
+        >
           <div className={css.wrapIcon}>
             {switchIcon(
               weather.currentWeather.descrEn,

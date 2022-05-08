@@ -77,18 +77,18 @@ const CurrencyNav = () => {
   return (
     <>
       {gryvnyaToCurrency && (
-        <div className={css.wrapCurrency}>
+        <div title="Курси валют до гривні" className={css.wrapCurrency}>
           <div className={css.currencyMark}>
             {switchCurrency(gryvnyaToCurrency.ccy)}
           </div>
 
           <div>
-            <p title="Продати" className={css.gryvnyaBuy}>
+            <p className={css.gryvnyaBuy}>
               <ArrowR className={css.arrowR} />
               {/* <span>▶</span> */}
               {gryvnyaToCurrency.buy}
             </p>
-            <p title="Купити" className={css.gryvnyaSale}>
+            <p className={css.gryvnyaSale}>
               <ArrowL className={css.arrowL} />
               {/* <span>◀</span> */}
               {gryvnyaToCurrency.sale}

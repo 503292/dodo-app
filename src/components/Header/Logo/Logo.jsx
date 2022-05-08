@@ -6,7 +6,7 @@ import { ReactComponent as Alatyr } from '../../../assets/image/alatyr.svg';
 import css from './Logo.module.css';
 
 const Logo = () => (
-  <div>
+  <div title="Планер (іконка алатир):">
     <Alatyr className={css.alatyr} />
   </div>
 );

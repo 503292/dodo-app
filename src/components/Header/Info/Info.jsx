@@ -12,6 +12,7 @@ const Info = () => {
 
   return (
     <button
+      title="Твоя країна це ти)."
       type="button"
       onClick={() => history.push('/country')}
       className={
