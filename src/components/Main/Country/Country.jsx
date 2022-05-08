@@ -1,10 +1,13 @@
 import React from 'react';
 
+import VideoPlayer from '../../commons/VideoPlayer/VideoPlayer';
+
 import ukraineMapUrl from '../../../assets/image/UA/UkraineMap.jpg';
 
 import css from './Country.module.scss';
 
 const Country = () => {
+  // TODO helper with key videos
   const videoUrl = 'https://www.youtube.com/embed/ZATdVxeksjU';
 
   return (
@@ -15,12 +18,7 @@ const Country = () => {
       </div>
 
       <div className={css.wrapVideo}>
-        <iframe
-          title="video"
-          src={`${videoUrl}?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1&fs=1&cc_load_policy=1&autoplay=1`}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-        />
+        <VideoPlayer url={videoUrl} />
       </div>
       <div className={css.wrapAudio}>
         {/* <audio
