@@ -1,2 +1,6 @@
-// .wrapVideoPlayer {
-// }
+.wrapVideoPlayer {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 20px;
+  margin: 20px;
+}

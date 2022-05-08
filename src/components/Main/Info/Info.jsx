@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Toogle from '../../commons/Toogle/Toogle';
+import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
+
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 
-import css from './Info.module.css';
+import css from './Info.module.scss';
 
 const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
@@ -14,47 +16,29 @@ const Info = ({ isChecked, setAnimationCheched }) => (
     </div>
 
     <div className={css.wrapDescription}>
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Опис </legend>
-        <div className={css.wrapOneDescr}>
-          <h5>Планер (іконка алатир):</h5>
-          <ul>
-            <li>Зверху вкладки знаходяться цитати.</li>
-            <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
-            <li>Біля кнопки “+” годинник.</li>
-            <li>
-              У лівому нижньому куті - таймер зворотного відліку до нового року.
-            </li>
-            <li>Завдання можна створювати, редагувати, викреслювати.</li>
-            <li>При створенні можна вибрати пріоритетність завдання і час.</li>
-            <li>Завдання можна перетягувати по вертикалі для зручності.</li>
-          </ul>
-        </div>
-        <div className={css.wrapOneDescr}>
-          <h5>Прогноз погоди (іконка погоди і температура в даний час):</h5>
-          <ul>
-            <li>Показує погоду на 7 наступних днів.</li>
-            <li>Також є пошук по населеному пункту.</li>
-          </ul>
-        </div>
-        <div className={css.wrapOneDescr}>
-          <h5>Курс валют (іконка іноземної валюти і купівля-продаж):</h5>
-          <ul>
-            <li>Курс купівлі продажу основних валют.</li>
-            <li>Курс НБУ основних дорогоцінних металів.</li>
-            <li>Курс НБУ основних валют світу.</li>
-          </ul>
-        </div>
-        <div className={css.wrapOneDescr}>
-          <h5>Інфо (іконка карти України):</h5>
-          <ul>
-            <li>Можна виключити анімацію.</li>
-            <li>&ldquo;Тебе чекають великі справи&rdquo; :)</li>
-          </ul>
-        </div>
-      </fieldset>
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Слово автора </legend>
+      {/* 1 */}
+      <BoxWithBorder title="Планер (іконка алатир):">
+        <ul className={css.wrapList}>
+          <li>Зверху вкладки знаходяться цитати.</li>
+          <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
+          <li>Біля кнопки “+” годинник.</li>
+          <li>
+            У лівому нижньому куті - таймер зворотного відліку до нового року.
+          </li>
+          <li>Завдання можна створювати, редагувати, викреслювати.</li>
+          <li>При створенні можна вибрати пріоритетність завдання і час.</li>
+          <li>Завдання можна перетягувати по вертикалі для зручності.</li>
+        </ul>
+      </BoxWithBorder>
+      {/* 2 */}
+      <BoxWithBorder title="Прогноз погоди (іконка погоди і температура в даний час):">
+        <ul className={css.wrapList}>
+          <li>Показує погоду на 7 наступних днів.</li>
+          <li>Також є пошук по населеному пункту.</li>
+        </ul>
+      </BoxWithBorder>
+      {/* 3 */}
+      <BoxWithBorder title="Слово автора">
         <p className={css.authorWords}>
           Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
           зберегти, його можна тільки акумулювати в блага. Він є скінченною
@@ -62,9 +46,9 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           ефективного контролю тобі потрібно планувати і виконувати завдання. У
           цьому тобі допоможе моя програма.
         </p>
-      </fieldset>
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Для швидкого доступу </legend>
+      </BoxWithBorder>
+      {/* 4 */}
+      <BoxWithBorder title="Для швидкого доступу з головного екрану телефона:">
         <div className={css.inWall}>
           <p>Для швидкого доступу з головного екрану телефона:</p>
           <p>
@@ -77,7 +61,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           </p>
           <p> - Все готово).</p>
         </div>
-      </fieldset>
+      </BoxWithBorder>
     </div>
 
     {/* <div className={css.wrapCreater}>

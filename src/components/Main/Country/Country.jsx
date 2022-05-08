@@ -14,32 +14,18 @@ const Country = () => {
   return (
     <div className={css.wrapCountry}>
       <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
-      <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
-        <div className={css.wrapMap}>
-          <img src={ukraineMapUrl} alt="map" />
-          {/* <img src={ukraineMapUrl} alt="map" /> */}
-        </div>
-      </BoxWithBorder>
+      <div className={css.wrapFielset}>
+        <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
+          <div className={css.wrapMap}>
+            <img src={ukraineMapUrl} alt="map" />
+          </div>
+        </BoxWithBorder>
+      </div>
 
       <div className={css.wrapVideo}>
         <VideoPlayer url={videoUrl} />
       </div>
-      <div className={css.wrapAudio}>
-        {/* <audio
-          className="nativeEmbedPlayerPid"
-          id="pid_mwe_player_0"
-          src="//upload.wikimedia.org/wikipedia/commons/6/6d/National_anthem_of_Ukraine%2C_instrumental.oga"
-          style={{ width: '100%', height: '100%', zIndex: '1' }}
-        ></audio> */}
-
-        {/* <audio
-          controls
-          src="/upload.wikimedia.org/wikipedia/commons/6/6d/National_anthem_of_Ukraine%2C_instrumental.oga"
-        >
-          Your browser does not support the
-          <code>audio</code> element.
-        </audio> */}
-      </div>
+      <div className={css.wrapAudio}></div>
     </div>
   );
 };
