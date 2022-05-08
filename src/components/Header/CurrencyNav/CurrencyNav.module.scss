@@ -1,0 +1,63 @@
+.wrapCurrency {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+
+  //
+  .currencyMark {
+    display: flex;
+    align-items: center;
+    width: 20px;
+
+    & > svg {
+      margin: auto;
+      width: 20px;
+      height: 22px;
+    }
+  }
+
+  //
+  .wrapGryvnya {
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      width: 25px;
+      height: 30px;
+    }
+  }
+
+  //
+  .wrapUSD {
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      width: 20px;
+      height: 24px;
+    }
+  }
+  .gryvnyaSale,
+  .gryvnyaBuy {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+
+  .arrowR,
+  .arrowL {
+    width: 10px;
+    height: 10px;
+    padding-right: 3px;
+  }
+
+  .arrowR {
+    fill: #6cd670;
+  }
+
+  .arrowL {
+    fill: tomato;
+  }
+}

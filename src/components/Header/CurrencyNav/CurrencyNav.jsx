@@ -5,6 +5,7 @@ import { parseCurrency, parseCountries, parseMetals } from './ParseCurrency';
 
 import { ReactComponent as ArrowL } from '../../../assets/image/arrow-l.svg';
 import { ReactComponent as ArrowR } from '../../../assets/image/arrow-r.svg';
+import { ReactComponent as Gryvnya } from '../../../assets/image/UA/gryvnya.svg';
 import { loaderOn, loaderOff } from '../../../redux/global/globalActions';
 
 import switchCurrency from './switchCurrency';
@@ -14,7 +15,7 @@ import {
   fetchCurrencyNBU,
 } from '../../../services/api';
 
-import css from './CurrencyNav.module.css';
+import css from './CurrencyNav.module.scss';
 
 const getMark = () => {
   const localMark = JSON.parse(localStorage.getItem('currencyMark'));
@@ -94,6 +95,15 @@ const CurrencyNav = () => {
               {gryvnyaToCurrency.sale}
             </p>
           </div>
+          {currencyMark === 'BTC' ? (
+            <div className={css.wrapUSD}>{switchCurrency('USD')}</div>
+          ) : (
+            <div className={css.wrapGryvnya}>
+              {/* <div className={css.wrapUSD}>{switchCurrency('USD')}</div> */}
+              <Gryvnya />
+            </div>
+          )}
+          {/* <Gryvnya /> */}
         </div>
       )}
     </>
