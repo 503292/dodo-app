@@ -16,7 +16,7 @@ const VideoPlayer = ({ url }) => {
   );
 };
 
-PropTypes = {
+VideoPlayer.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
