@@ -1,11 +1,27 @@
 import React from 'react';
 
+import ukraineMapUrl from '../../../assets/image/UA/UkraineMap.jpg';
+
 import css from './Country.module.scss';
 
 const Country = () => {
+  const videoUrl = 'https://www.youtube.com/embed/qMhLmxBs2qE';
+
   return (
     <div className={css.wrapCountry}>
-      UA, Україна, Червоноград 80103
+      <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
+      <div className={css.wrapMap}>
+        <img src={ukraineMapUrl} alt="map" />
+      </div>
+
+      <div className={css.wrapVideo}>
+        <iframe
+          title="video"
+          src={`${videoUrl}?rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&enablejsapi=1&fs=1&cc_load_policy=1&autoplay=1`}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+        />
+      </div>
       <div className={css.wrapAudio}>
         {/* <audio
           className="nativeEmbedPlayerPid"
