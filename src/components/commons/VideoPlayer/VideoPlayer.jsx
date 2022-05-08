@@ -16,4 +16,8 @@ const VideoPlayer = ({ url }) => {
   );
 };
 
+PropTypes = {
+  url: PropTypes.string.isRequired,
+};
+
 export default VideoPlayer;
