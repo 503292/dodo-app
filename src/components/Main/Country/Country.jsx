@@ -15,8 +15,12 @@ const Country = () => {
 
   return (
     <div className={css.wrapCountry}>
-      <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
       <div className={css.wrapFielset}>
+        <BoxWithBorder title="Карта України).svg">
+          <div className={`${css.wrapMap} ${css.blueYellow}`}>
+            <MapUa />
+          </div>
+        </BoxWithBorder>
         <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
           <div className={css.wrapMap}>
             <img src={ukraineMapUrl} alt="map" />
@@ -27,11 +31,7 @@ const Country = () => {
             <img src={patelnyaMapUrl} alt="map" />
           </div>
         </BoxWithBorder>
-        <BoxWithBorder title="Карта України).svg">
-          <div className={`${css.wrapMap} ${css.blueYellow}`}>
-            <MapUa />
-          </div>
-        </BoxWithBorder>
+        <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
       </div>
 
       <div className={css.wrapVideo}>
