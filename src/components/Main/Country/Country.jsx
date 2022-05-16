@@ -3,7 +3,8 @@ import React from 'react';
 import VideoPlayer from '../../commons/VideoPlayer/VideoPlayer';
 import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
 
-import ukraineMapUrl from '../../../assets/image/UA/UkraineMap.jpg';
+import ukraineMapUrl from '../../../assets/image/UA/map_ukraine.jpg';
+import patelnyaMapUrl from '../../../assets/image/UA/map_patelnya.jpg';
 
 import css from './Country.module.scss';
 
@@ -18,6 +19,11 @@ const Country = () => {
         <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
           <div className={css.wrapMap}>
             <img src={ukraineMapUrl} alt="map" />
+          </div>
+        </BoxWithBorder>
+        <BoxWithBorder title="Українська карта (Пательня).">
+          <div className={css.wrapMap}>
+            <img src={patelnyaMapUrl} alt="map" />
           </div>
         </BoxWithBorder>
       </div>
