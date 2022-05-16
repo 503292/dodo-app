@@ -20,15 +20,31 @@
 
     background: transparent;
 
+    .blueYellow {
+      & > svg {
+        background: linear-gradient(
+          180deg,
+          rgba(3, 128, 252, 0.4983370057007178) 0%,
+          rgba(255, 253, 0, 1) 100%
+        );
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        margin: 6px 9px;
+        border-radius: 9px;
+        border: 0.5px solid lightgrey;
+      }
+    }
+
     .wrapMap {
       border-radius: 9px;
+      border: 0.5px solid lightgrey;
       margin: auto;
       max-width: inherit;
       width: inherit;
       height: inherit;
 
       & > img {
-        box-shadow: 0 0 4px 0px grey;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        border: 0.5px solid lightgrey;
         object-fit: fill;
         width: calc(100% - 20px);
         height: calc(100% - 20px);

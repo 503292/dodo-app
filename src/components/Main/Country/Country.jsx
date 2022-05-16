@@ -5,6 +5,7 @@ import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
 
 import ukraineMapUrl from '../../../assets/image/UA/map_ukraine.jpg';
 import patelnyaMapUrl from '../../../assets/image/UA/map_patelnya.jpg';
+import { ReactComponent as MapUa } from '../../../assets/image/logo/mapUa.svg';
 
 import css from './Country.module.scss';
 
@@ -21,9 +22,14 @@ const Country = () => {
             <img src={ukraineMapUrl} alt="map" />
           </div>
         </BoxWithBorder>
-        <BoxWithBorder title="Українська карта (Пательня).">
+        <BoxWithBorder title="Карта України (Пательня).">
           <div className={css.wrapMap}>
             <img src={patelnyaMapUrl} alt="map" />
+          </div>
+        </BoxWithBorder>
+        <BoxWithBorder title="Карта України).svg">
+          <div className={`${css.wrapMap} ${css.blueYellow}`}>
+            <MapUa />
           </div>
         </BoxWithBorder>
       </div>
