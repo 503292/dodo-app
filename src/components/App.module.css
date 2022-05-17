@@ -3,10 +3,8 @@
   display: flex;
   flex-direction: column;
 }
-.header {
-  /* margin: 0 auto;
-  height: 70px; */
-}
+/* .header {} */
+
 .main {
   margin: 0 auto;
   overflow: hidden;
