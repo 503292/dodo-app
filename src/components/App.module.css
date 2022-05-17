@@ -11,5 +11,5 @@
   margin: 0 auto;
   overflow: hidden;
   height: inherit;
-  height: calc(100% - 60px);
+  height: calc(100vh - 60px);
 }
