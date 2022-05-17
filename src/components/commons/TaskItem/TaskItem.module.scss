@@ -1,7 +1,10 @@
 .dragContainer {
   background-color: transparent !important;
-  margin-bottom: 8px;
   color: grey;
+
+  &:not(:last-of-type) {
+    margin-bottom: 6px;
+  }
 }
 
 .task {

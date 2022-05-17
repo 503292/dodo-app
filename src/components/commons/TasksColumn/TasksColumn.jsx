@@ -5,7 +5,7 @@ import { Droppable } from 'react-beautiful-dnd';
 import Task from '../TaskItem/TaskItem';
 import Motivator from '../Motivator/Motivator';
 
-import css from './TasksColumn.module.css';
+import css from './TasksColumn.module.scss';
 
 class TasksColumn extends Component {
   state = {};

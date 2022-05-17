@@ -7,7 +7,7 @@ import { ReactComponent as Delete } from '../../../assets/image/criss_cross.svg'
 import { ReactComponent as Pen } from '../../../assets/image/pen.svg';
 import { getColor } from '../../../utils/Priority';
 
-import css from './TaskItem.module.css';
+import css from './TaskItem.module.scss';
 
 class TaskItem extends Component {
   state = {};

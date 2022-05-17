@@ -1,6 +1,11 @@
 .wrapColumn {
   width: 100%;
   position: relative;
+  padding-bottom: 3px;
+
+  & > div:last-of-type {
+    padding-bottom: 6px;
+  }
 }
 .start {
   padding: 0.375rem 0.75rem;
