@@ -241,7 +241,7 @@ class Tasks extends Component {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
     return (
-      <div className={css.todo}>
+      <>
         <div className={css.wrapTasks}>
           <DragDropContext
             onDragEnd={this.onDragEnd}
@@ -277,7 +277,7 @@ class Tasks extends Component {
           editTask={editTask}
           handleResetEditTask={this.handleResetEditTask}
         />
-      </div>
+      </>
     );
   }
 }

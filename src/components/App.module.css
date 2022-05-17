@@ -1,9 +1,15 @@
 .app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .header {
-  margin: 0 auto;
+  /* margin: 0 auto;
+  height: 70px; */
 }
 .main {
   margin: 0 auto;
   overflow: hidden;
+  height: inherit;
+  height: calc(100% - 60px);
 }

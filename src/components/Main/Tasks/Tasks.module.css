@@ -1,12 +1,12 @@
 .wrapTasks {
-  height: calc(100vh / 100 * 82);
+  height: inherit;
 }
 .wrapEnterDay {
   position: fixed;
   bottom: 0px;
 }
 .dragDropContext {
-  height: 87vh;
+  height: inherit;
 }
 .container {
   display: flex;
