@@ -1,0 +1,70 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.dayOfWeek {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.btnDays {
+  margin: 0;
+  width: 99%;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: #fff;
+  color: dimgray;
+  outline: none;
+}
+
+.active {
+  color: black;
+  transition: all 400ms linear;
+  background-color: rgba(255, 207, 0, 0.1);
+  transform: scale(1.05);
+}
+.arrowSelect {
+  font-size: 20px;
+  color: tomato;
+}
+
+.numDay {
+  text-align: center;
+  font-size: 24px;
+}
+.weekend {
+  color: tomato;
+}
+.nameMonth {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.wrapIcon {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  fill: grey;
+}
+
+.descrTemp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valueTemp {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.descrTemp p,
+.valueTemp p {
+  margin: 0;
+}
+.valueTemp p {
+  font-size: 9px;
+}
