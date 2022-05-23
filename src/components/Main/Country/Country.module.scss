@@ -2,9 +2,12 @@
   overflow-x: hidden;
   overflow-y: auto;
   height: calc(100vh - 36px);
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 5px;
+  width: 50vh;
+  margin: 0 auto;
 
   .title {
     margin: 10px auto;
@@ -13,12 +16,12 @@
 
   .wrapFielset {
     margin-bottom: 5px;
+    background: transparent;
 
     & > fieldset {
       background: transparent;
+      border-radius: 50%;
     }
-
-    background: transparent;
 
     .blueYellow {
       & > svg {
@@ -29,14 +32,14 @@
         );
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
         margin: 6px 9px;
-        border-radius: 9px;
+        border-radius: 50%;
         border: 0.5px solid lightgrey;
         color: rgba(130, 130, 150, 0.3);
       }
     }
 
     .wrapMap {
-      border-radius: 9px;
+      border-radius: 50%;
       border: 0.5px solid lightgrey;
       margin: auto;
       max-width: inherit;
