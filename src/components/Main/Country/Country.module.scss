@@ -2,11 +2,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   height: calc(100vh - 36px);
-  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 5px;
-  width: 50vh;
   margin: 0 auto;
 
   .title {
@@ -21,6 +19,9 @@
     & > fieldset {
       background: transparent;
       border-radius: 50%;
+      width: 45vh;
+      margin: 20px auto;
+      overflow: hidden;
     }
 
     .blueYellow {
@@ -40,7 +41,6 @@
 
     .wrapMap {
       border-radius: 50%;
-      border: 0.5px solid lightgrey;
       margin: auto;
       max-width: inherit;
       width: inherit;
@@ -56,6 +56,28 @@
         overflow: hidden;
         margin: 5px auto;
       }
+    }
+
+    .backCard {
+      margin: auto;
+      max-width: inherit;
+      width: inherit;
+      height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(45vh - 3px);
+      padding: 15px;
+      background: linear-gradient(
+        180deg,
+        rgba(3, 128, 252, 0.498337) 0%,
+        #fffd00 100%
+      );
+
+      // position: relative;
+
+      // & > div {
+      // }
     }
   }
 
