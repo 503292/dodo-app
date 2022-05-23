@@ -7,7 +7,7 @@ import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
 
 import copyText from '../../../utils/copyText';
 
-import css from './Motivator.module.css';
+import css from './Motivator.module.scss';
 
 class Motivator extends Component {
   state = {

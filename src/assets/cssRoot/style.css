@@ -83,11 +83,27 @@ body {
   height: 100vh;
   overflow: hidden;
   color: grey;
-  /* background-color: rgba(255, 255, 125, 0.8); */
 }
 
 img {
   display: block;
+}
+
+p::selection {
+  background: var(--blue_btn);
+  color: var(--yellow_btn);
+}
+p::-moz-selection {
+  background: var(--blue_btn);
+  color: var(--yellow_btn);
+}
+span::selection {
+  background: var(--yellow_btn);
+  color: var(--blue_btn);
+}
+span::-moz-selection {
+  background: var(--yellow_btn);
+  color: var(--blue_btn);
 }
 
 /* style for scrollbar-track */
