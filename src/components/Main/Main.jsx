@@ -2,7 +2,7 @@ import React from 'react';
 
 import RoutesSite from './RoutesSite/RoutesSite';
 
-import css from './Main.module.css';
+import css from './Main.module.scss';
 
 const Main = () => {
   return (
