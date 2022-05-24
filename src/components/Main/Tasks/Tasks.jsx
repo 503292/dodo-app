@@ -6,7 +6,7 @@ import Column from '../../commons/TasksColumn/TasksColumn';
 import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask';
 import TodoFooter from '../../commons/TodoFooter/TodoFooter';
 
-import css from './Tasks.module.css';
+import css from './Tasks.module.scss';
 
 // const filteredArrOfNull = data => {
 //   data.filter(function(el) {
@@ -241,8 +241,8 @@ class Tasks extends Component {
     const { modalAddTasksOpen } = this.props;
     const { columnOrder, columns, tasks, editTask } = this.state;
     return (
-      <>
-        <div className={css.wrapTasks}>
+      <div className={css.wrapTasks}>
+        <div className={css.tasks}>
           <DragDropContext
             onDragEnd={this.onDragEnd}
             onDragStart={this.onDragStart}
@@ -277,7 +277,7 @@ class Tasks extends Component {
           editTask={editTask}
           handleResetEditTask={this.handleResetEditTask}
         />
-      </>
+      </div>
     );
   }
 }
