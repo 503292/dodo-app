@@ -65,7 +65,9 @@ const Motivator = () => {
           <Copy className={css.copy} />
         </button>
 
-        <p className={css.text}>{oneMotive}</p>
+        <p onClick={e => e.stopPropagation()} className={css.text}>
+          {oneMotive}
+        </p>
         {oneAuthor ? (
           <span className={css.author}>{oneAuthor}</span>
         ) : (
