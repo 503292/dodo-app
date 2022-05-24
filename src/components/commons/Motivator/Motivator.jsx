@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import motivations from './motivations';
 
-import { ReactComponent as Exclamation } from '../../../assets/image/exclamation.svg';
+import { ReactComponent as Alatyr } from '../../../assets/image/alatyr.svg';
 import { ReactComponent as Refresh } from '../../../assets/image/refresh.svg';
 import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
 
@@ -45,7 +45,7 @@ const Motivator = () => {
   return (
     <>
       <div className={css.container}>
-        <Exclamation className={css.exclamation} />
+        <Alatyr className={css.alatyr} />
         <button
           type="button"
           className={css.btnRefresh}
