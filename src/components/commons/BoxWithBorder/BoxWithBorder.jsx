@@ -15,9 +15,13 @@ const BoxWithBorder = ({ children, title }) => {
   );
 };
 
+BoxWithBorder.defaultProps = {
+  title: '',
+};
+
 BoxWithBorder.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default BoxWithBorder;

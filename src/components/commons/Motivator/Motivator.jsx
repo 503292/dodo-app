@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import motivations from './motivations';
 
 import { ReactComponent as Exclamation } from '../../../assets/image/exclamation.svg';
@@ -9,75 +9,73 @@ import copyText from '../../../utils/copyText';
 
 import css from './Motivator.module.scss';
 
-class Motivator extends Component {
-  state = {
-    motivationNumber: '',
-  };
+const Motivator = () => {
+  const [motivationNumber, setMotivationNumber] = useState('');
 
-  componentDidMount() {
-    this.loadNewMotivation();
-  }
-
-  loadNewMotivation = () => {
+  const loadNewMotivation = e => {
+    if (e) {
+      e.stopPropagation();
+    }
     const randomNumber = arr => Math.floor(Math.random() * arr.length);
     const motivationNumber = String(randomNumber(motivations));
-    this.setState({ motivationNumber });
+    setMotivationNumber(motivationNumber);
   };
 
-  refreshMotivation = () => {
-    this.loadNewMotivation();
-  };
+  useEffect(e => {
+    loadNewMotivation(e);
+  }, []);
 
-  handleCopy = () => {
-    const { motivationNumber } = this.state;
+  const handleCopy = e => {
+    e.stopPropagation();
     copyText(
       `${motivations[motivationNumber].motivation} ${motivations[
         motivationNumber
-      ].author ?? ''}`,
+      ].author ?? '🙈 🙉 🙊'}`,
     );
   };
 
-  render() {
-    const { motivationNumber } = this.state;
-    let oneMotive = '';
-    let oneAuthor = '';
+  let oneMotive = '';
+  let oneAuthor = '';
 
-    if (motivationNumber) {
-      oneMotive = motivations[motivationNumber].motivation;
-      oneAuthor = motivations[motivationNumber].author;
-    }
-
-    return (
-      <>
-        <div className={css.container}>
-          <Exclamation className={css.exclamation} />
-          <button
-            type="button"
-            className={css.btnRefresh}
-            onClick={this.refreshMotivation}
-          >
-            <Refresh className={css.refresh} />
-          </button>
-          <button
-            type="button"
-            className={css.btnCopy}
-            onClick={this.handleCopy}
-          >
-            <Copy className={css.copy} />
-          </button>
-
-          <p className={css.text}>{oneMotive}</p>
-          {oneAuthor ? (
-            <span className={css.author}>{oneAuthor}</span>
-          ) : (
-            <span role="img" aria-label="Monkey" className={css.author}>
-              🙈 🙉 🙊
-            </span>
-          )}
-        </div>
-      </>
-    );
+  if (motivationNumber) {
+    oneMotive = motivations?.[+motivationNumber]?.motivation;
+    oneAuthor = motivations?.[+motivationNumber]?.author;
   }
-}
+
+  return (
+    <>
+      <div className={css.container}>
+        <Exclamation className={css.exclamation} />
+        <button
+          type="button"
+          className={css.btnRefresh}
+          onClick={e => {
+            loadNewMotivation(e);
+          }}
+        >
+          <Refresh className={css.refresh} />
+        </button>
+        <button
+          type="button"
+          className={css.btnCopy}
+          onClick={e => {
+            handleCopy(e);
+          }}
+        >
+          <Copy className={css.copy} />
+        </button>
+
+        <p className={css.text}>{oneMotive}</p>
+        {oneAuthor ? (
+          <span className={css.author}>{oneAuthor}</span>
+        ) : (
+          <span role="img" aria-label="Monkey" className={css.author}>
+            🙈 🙉 🙊
+          </span>
+        )}
+      </div>
+    </>
+  );
+};
 
 export default Motivator;
