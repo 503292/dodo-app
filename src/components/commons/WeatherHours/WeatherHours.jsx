@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import switchWind from './switchWind';
 
-import css from './WeatherHours.module.css';
+import css from './WeatherHours.module.scss';
 
 const WeatherHours = ({ weather, indexDay, switchIcon }) => {
   const { days } = weather;
