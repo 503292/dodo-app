@@ -1,10 +1,8 @@
 .wrapTasks {
-  /* display: grid; */
-  /* grid-template-rows: 1fr 2fr; */
   height: calc(100% - 60px);
 
   .tasks {
-    height: 100%;
+    height: calc(100vh - 120px);
   }
 }
 
