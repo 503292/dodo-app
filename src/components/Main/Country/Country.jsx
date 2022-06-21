@@ -35,6 +35,7 @@ const Country = () => {
             </div>
           </ReactCardFlip>
         </BoxWithBorder>
+
         {/* <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
           <div className={css.wrapMap}>
             <img src={ukraineMapUrl} alt="map" />

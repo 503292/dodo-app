@@ -1,7 +1,7 @@
 .container {
   position: relative;
   color: grey;
-  height: 93vh;
+  height: 100%;
   overflow: auto;
   padding: 20px 10px 0;
 }
@@ -111,4 +111,53 @@
   padding-left: 5px;
   font-weight: 700;
   color: grey;
+}
+
+// messangers
+
+.messangers {
+  display: flex;
+
+  .messenger {
+    height: 54px;
+    width: 54px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+      margin-right: 6px;
+    }
+
+    & > svg {
+      height: 50px;
+      width: 50px;
+      margin-top: 2px;
+      margin-left: 2px;
+      padding: 5px;
+    }
+
+    .bgBlock {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 54px;
+      width: 54px;
+
+      border-radius: 9px;
+      z-index: -1;
+    }
+    .green {
+      background: linear-gradient(
+        180deg,
+        rgba(142, 224, 150, 1) 0%,
+        rgba(38, 179, 60, 1) 100%
+      );
+    }
+    .purple {
+      background: linear-gradient(180deg, #c08ee0 0%, #9526b3 100%);
+    }
+    .blue {
+      background: linear-gradient(180deg, #8ec3e0 0%, #268cb3 100%);
+    }
+  }
 }

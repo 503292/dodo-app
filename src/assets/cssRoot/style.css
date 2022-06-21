@@ -85,6 +85,10 @@ body {
   color: grey;
 }
 
+header {
+  height: 60px;
+}
+
 img {
   display: block;
 }
@@ -106,17 +110,22 @@ span::-moz-selection {
   color: var(--blue_btn);
 }
 
+/* .scrollbarThumb {
+} */
+
 /* style for scrollbar-track */
 .scrollbarThumb::-webkit-scrollbar-track {
   background-color: transparent;
   padding-right: 0.25rem;
   margin-left: 10px;
+  /* background-color: red; */
+  /* background: linear-gradient(#fff, #000); */
 }
 
 .scrollbarThumb::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background-color: transparent;
+  background-color: rgba(211, 208, 208, 0.479);
 }
 
 .scrollbarThumb::-webkit-scrollbar-thumb {
