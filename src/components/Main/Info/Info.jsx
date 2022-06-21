@@ -5,6 +5,9 @@ import Toogle from '../../commons/Toogle/Toogle';
 import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
 
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
+import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
+import { ReactComponent as Viber } from '../../../assets/image/messengers/viber.svg';
+import { ReactComponent as Telegram } from '../../../assets/image/messengers/telegram.svg';
 
 import css from './Info.module.scss';
 
@@ -64,7 +67,7 @@ const Info = ({ isChecked, setAnimationCheched }) => (
       </BoxWithBorder>
     </div>
 
-    {/* <div className={css.wrapCreater}>
+    <div className={css.wrapCreater}>
       <p>
         <span>© 2020</span>
         <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
@@ -79,7 +82,39 @@ const Info = ({ isChecked, setAnimationCheched }) => (
           kalysh.max@gmail.com
         </a>
       </p>
-    </div> */}
+    </div>
+
+    {/* messangers */}
+    <div className={css.messangers}>
+      <a
+        className={css.messenger}
+        href="https://wa.me/+380938800911"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <WhatSappUrl />
+        <span className={`${css.bgBlock} ${css.green}`} />
+      </a>
+      <a
+        className={css.messenger}
+        href="viber://chat?number=%2B380938800911"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Viber />
+        <span className={`${css.bgBlock} ${css.purple}`} />
+      </a>
+
+      <a
+        className={css.messenger}
+        href="https://telegram.me/alatyr_ua"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Telegram />
+        <span className={`${css.bgBlock} ${css.blue}`} />
+      </a>
+    </div>
   </div>
 );
 

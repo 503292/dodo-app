@@ -29,7 +29,7 @@ const Currency = () => {
   return (
     <>
       {currency && contries && metals && (
-        <div className={css.currencyContainer}>
+        <div className={`${css.currencyContainer} scrollbarThumb`}>
           <div className={css.wrapPB}>
             <div className={css.cash}>
               <div className={css.headCurrency}>

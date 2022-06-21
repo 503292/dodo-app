@@ -102,7 +102,7 @@ const Weather = () => {
     fetchWeather(e.target.value);
   };
   return (
-    <div className={css.weather}>
+    <div className={`${css.weather} scrollbarThumb`}>
       <WeatherSearch
         handleChange={handleChange}
         handleSubmit={handleSubmit}

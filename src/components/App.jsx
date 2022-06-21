@@ -37,7 +37,7 @@ const App2 = () => {
         <HeaderNav />
       </header>
 
-      <main className={css.main}>
+      <main className={`${css.main} scrollbarThumb`}>
         <Main />
       </main>
     </div>
