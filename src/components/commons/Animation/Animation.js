@@ -1,6 +1,9 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
+// import { fruits, parseAnimateItems } from './helper';
+
+// Flowers
 import flower1 from '../../../assets/image/flowers/flower1.png';
 import flower2 from '../../../assets/image/flowers/flower2.png';
 import flower3 from '../../../assets/image/flowers/flower3.png';
@@ -8,13 +11,24 @@ import flower4 from '../../../assets/image/flowers/flower4.png';
 import flower5 from '../../../assets/image/flowers/flower5.png';
 import flower6 from '../../../assets/image/flowers/flower6.png';
 
+// Fruits
+import apple from '../../../assets/image/fruit/apple.png';
+import carrot from '../../../assets/image/fruit/carrot.png';
+import cherry from '../../../assets/image/fruit/cherry.png';
+import grape from '../../../assets/image/fruit/grape.png';
+import lemon from '../../../assets/image/fruit/lemon.png';
+import pear from '../../../assets/image/fruit/pear.png';
+import pumpkin from '../../../assets/image/fruit/pumpkin.png';
+import strawberry from '../../../assets/image/fruit/strawberry.png';
+import watermelon from '../../../assets/image/fruit/watermelon.png';
+
 // import css from './Animation.module.scss';
 
 const animation = {
   prop: {
     particles: {
       number: {
-        value: 13,
+        value: 12,
         density: {
           enable: true,
           value_area: 800,
@@ -32,13 +46,24 @@ const animation = {
         polygon: {
           nb_sides: 5,
         },
+        // image: [
+        //   { src: flower1, height: 20, width: 20 },
+        //   { src: flower2, height: 20, width: 20 },
+        //   { src: flower3, height: 20, width: 20 },
+        //   { src: flower4, height: 20, width: 20 },
+        //   { src: flower5, height: 20, width: 20 },
+        //   { src: flower6, height: 20, width: 20 },
+        // ],
         image: [
-          { src: flower1, height: 20, width: 20 },
-          { src: flower2, height: 20, width: 20 },
-          { src: flower3, height: 20, width: 20 },
-          { src: flower4, height: 20, width: 20 },
-          { src: flower5, height: 20, width: 20 },
-          { src: flower6, height: 20, width: 20 },
+          { src: apple, height: 20, width: 20 },
+          { src: carrot, height: 20, width: 20 },
+          { src: cherry, height: 20, width: 20 },
+          { src: grape, height: 20, width: 20 },
+          { src: lemon, height: 20, width: 20 },
+          { src: pear, height: 20, width: 20 },
+          { src: pumpkin, height: 20, width: 20 },
+          { src: strawberry, height: 20, width: 20 },
+          { src: watermelon, height: 20, width: 20 },
         ],
       },
 
