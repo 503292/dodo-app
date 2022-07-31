@@ -30,7 +30,7 @@ export const fetchCurrencyNBU = () => {
 const baseWorldWeather =
   'http://api.worldweatheronline.com/premium/v1/weather.ashx';
 
-const apiKey = '0fc2d6c499184719aa2141627221806'; // Trial ending on 17 Jul, 2022
+const apiKey = '8d6cd70dde3c480f8af201650223107'; // Trial ending on 29 Aug, 2022
 const settings2 =
   '&format=json&num_of_days=7&extra=localObsTime,isDayTime&fx=yes&cc=yes&mca=no&tp=1&showlocaltime=yes&lang=uk';
 export const fetchWorldWeather = query => {
