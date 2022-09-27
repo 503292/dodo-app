@@ -2,7 +2,7 @@
   height: calc(100vh - 60px);
 
   .tasks {
-    height: calc(100% - 60px);
+    height: 100%;
   }
 }
 
@@ -11,9 +11,10 @@
 }
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
-  padding: 10px 5px 0;
+  padding: 9px 6px 0;
   border-bottom: 1px dotted grey;
   box-shadow: inset 0 -10px 10px -10px #000000;
   overflow-x: hidden;
