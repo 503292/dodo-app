@@ -1,15 +1,16 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
+// TODO
 // import { fruits, parseAnimateItems } from './helper';
 
 // Flowers
-// import flower1 from '../../../assets/image/flowers/flower1.png';
-// import flower2 from '../../../assets/image/flowers/flower2.png';
-// import flower3 from '../../../assets/image/flowers/flower3.png';
-// import flower4 from '../../../assets/image/flowers/flower4.png';
-// import flower5 from '../../../assets/image/flowers/flower5.png';
-// import flower6 from '../../../assets/image/flowers/flower6.png';
+import flower1 from '../../../assets/image/flowers/flower1.png';
+import flower2 from '../../../assets/image/flowers/flower2.png';
+import flower3 from '../../../assets/image/flowers/flower3.png';
+import flower4 from '../../../assets/image/flowers/flower4.png';
+import flower5 from '../../../assets/image/flowers/flower5.png';
+import flower6 from '../../../assets/image/flowers/flower6.png';
 
 // Fruits
 import apple from '../../../assets/image/fruit/apple.png';
@@ -21,6 +22,13 @@ import pear from '../../../assets/image/fruit/pear.png';
 import pumpkin from '../../../assets/image/fruit/pumpkin.png';
 import strawberry from '../../../assets/image/fruit/strawberry.png';
 import watermelon from '../../../assets/image/fruit/watermelon.png';
+
+// Autumn
+import maple1 from '../../../assets/image/autumn/maple1.png';
+import maple2 from '../../../assets/image/autumn/maple2.png';
+import mushroom1 from '../../../assets/image/autumn/mushroom1.png';
+import mushroom2 from '../../../assets/image/autumn/mushroom2.png';
+import mushroom3 from '../../../assets/image/autumn/mushroom3.png';
 
 // import css from './Animation.module.scss';
 
@@ -54,17 +62,30 @@ const animation = {
         //   { src: flower5, height: 20, width: 20 },
         //   { src: flower6, height: 20, width: 20 },
         // ],
+        // ===================
         image: [
-          { src: apple, height: 20, width: 20 },
-          { src: carrot, height: 20, width: 20 },
-          { src: cherry, height: 20, width: 20 },
-          { src: grape, height: 20, width: 20 },
-          { src: lemon, height: 20, width: 20 },
-          { src: pear, height: 20, width: 20 },
+          { src: maple1, height: 20, width: 20 },
+          { src: maple2, height: 20, width: 20 },
+          { src: mushroom1, height: 20, width: 20 },
+          { src: mushroom2, height: 20, width: 20 },
+          { src: mushroom3, height: 20, width: 20 },
+          //
           { src: pumpkin, height: 20, width: 20 },
-          { src: strawberry, height: 20, width: 20 },
-          { src: watermelon, height: 20, width: 20 },
+          { src: grape, height: 20, width: 20 },
+          { src: apple, height: 20, width: 20 },
         ],
+        // ===================
+        // image: [
+        //   { src: apple, height: 20, width: 20 },
+        //   { src: carrot, height: 20, width: 20 },
+        //   { src: cherry, height: 20, width: 20 },
+        //   { src: grape, height: 20, width: 20 },
+        //   { src: lemon, height: 20, width: 20 },
+        //   { src: pear, height: 20, width: 20 },
+        //   { src: pumpkin, height: 20, width: 20 },
+        //   { src: strawberry, height: 20, width: 20 },
+        //   { src: watermelon, height: 20, width: 20 },
+        // ],
       },
 
       opacity: {
