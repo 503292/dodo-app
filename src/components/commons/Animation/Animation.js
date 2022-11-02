@@ -5,23 +5,23 @@ import Particles from 'react-particles-js';
 // import { fruits, parseAnimateItems } from './helper';
 
 // Flowers
-import flower1 from '../../../assets/image/flowers/flower1.png';
-import flower2 from '../../../assets/image/flowers/flower2.png';
-import flower3 from '../../../assets/image/flowers/flower3.png';
-import flower4 from '../../../assets/image/flowers/flower4.png';
-import flower5 from '../../../assets/image/flowers/flower5.png';
-import flower6 from '../../../assets/image/flowers/flower6.png';
+// import flower1 from '../../../assets/image/flowers/flower1.png';
+// import flower2 from '../../../assets/image/flowers/flower2.png';
+// import flower3 from '../../../assets/image/flowers/flower3.png';
+// import flower4 from '../../../assets/image/flowers/flower4.png';
+// import flower5 from '../../../assets/image/flowers/flower5.png';
+// import flower6 from '../../../assets/image/flowers/flower6.png';
 
 // Fruits
 import apple from '../../../assets/image/fruit/apple.png';
-import carrot from '../../../assets/image/fruit/carrot.png';
-import cherry from '../../../assets/image/fruit/cherry.png';
+// import carrot from '../../../assets/image/fruit/carrot.png';
+// import cherry from '../../../assets/image/fruit/cherry.png';
 import grape from '../../../assets/image/fruit/grape.png';
-import lemon from '../../../assets/image/fruit/lemon.png';
-import pear from '../../../assets/image/fruit/pear.png';
+// import lemon from '../../../assets/image/fruit/lemon.png';
+// import pear from '../../../assets/image/fruit/pear.png';
 import pumpkin from '../../../assets/image/fruit/pumpkin.png';
-import strawberry from '../../../assets/image/fruit/strawberry.png';
-import watermelon from '../../../assets/image/fruit/watermelon.png';
+// import strawberry from '../../../assets/image/fruit/strawberry.png';
+// import watermelon from '../../../assets/image/fruit/watermelon.png';
 
 // Autumn
 import maple1 from '../../../assets/image/autumn/maple1.png';
