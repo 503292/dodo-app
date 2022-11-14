@@ -38,6 +38,6 @@ export const fetchWorldWeather = query => {
     fetch(`${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
       .then(response => response.json())
       // eslint-disable-next-line
-      .catch(error => console.log('Привіт). Щось ся стало.'))
+      .catch(() => console.log('Some trouble with wheather'))
   );
 };
