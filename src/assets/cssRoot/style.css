@@ -143,11 +143,3 @@ span::-moz-selection {
   user-select: none; /* Non-prefixed version, currently
                                   not supported by any browser */
 }
-
-/* .blueYellowBg {
-  background: linear-gradient(
-    180deg,
-    rgba(3, 128, 252, 0.4983370057007178) 0%,
-    rgba(255, 253, 0, 1) 100%
-  );
-} */

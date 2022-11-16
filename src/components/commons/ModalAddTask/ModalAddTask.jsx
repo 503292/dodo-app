@@ -38,7 +38,7 @@ const ModalAddTask = ({ editTask, handleResetEditTask }) => {
       {isModalAddTasksOpen && (
         <div
           role="toolbar"
-          aria-label="Закрыть"
+          aria-label="Закрити"
           tabIndex={-1}
           className={css.modal_overlay}
           onClick={handleBackdropClick}

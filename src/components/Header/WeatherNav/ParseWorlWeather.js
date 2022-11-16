@@ -1,14 +1,14 @@
-// 000 windSpeed
+// windSpeed
 function windSpeedRound(windSpeed) {
   return Math.round(((windSpeed * 1000) / 3600) * 10) / 10;
 }
 
-// 000 перевести тиск в міліметри ртутного стовпчика (* 0.7501)
+// Сonvert the pressure into millimeters of mercury (* 0.7501)
 function convertPressure(pressure) {
   return Math.round(pressure * 0.736);
 }
 
-// 000 time перевести UNIX час в години
+// time перевести UNIX час в години
 function cutTimeZone(timezone) {
   const index = timezone.indexOf(',');
   const cutString = timezone.slice(0, index);
