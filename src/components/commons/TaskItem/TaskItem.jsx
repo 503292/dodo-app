@@ -18,8 +18,7 @@ class TaskItem extends Component {
     let minutes = new Date(endTime).getMinutes();
     if (minutes < 10) minutes = '0'.concat(minutes);
 
-    const newEndTime = `${hour}:${minutes}`;
-    return newEndTime;
+    return `${hour}:${minutes}`;
   };
 
   render() {

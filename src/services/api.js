@@ -7,7 +7,9 @@ export const fetchCurrencyPrivatBank = () => {
     fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11')
       .then(response => response.json())
       // eslint-disable-next-line
-      .catch(error => console.log('Привіт). Щось ся стало.'))
+      .catch(error =>
+        console.log(error, 'Привіт). Щось ся стало. Api pryvat24'),
+      )
   );
 };
 
@@ -17,7 +19,7 @@ export const fetchCurrencyNBU = () => {
     fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json`)
       .then(response => response.json())
       // eslint-disable-next-line
-      .catch(error => console.log('Привіт). Щось ся стало.'))
+      .catch(error => console.log('Привіт). Щось ся стало. Api NBU'))
   );
 };
 
@@ -38,6 +40,6 @@ export const fetchWorldWeather = query => {
     fetch(`${proxy}${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
       .then(response => response.json())
       // eslint-disable-next-line
-      .catch(error => console.log('Привіт). Щось ся стало.'))
+      .catch(() => console.log('Some trouble with wheather'))
   );
 };

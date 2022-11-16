@@ -17,7 +17,6 @@ const Clock = () => {
   }, []);
 
   const timeStr = time.toLocaleTimeString();
-  // console.log(timeStr, 'timeStr');
   const timeSplit = timeStr.split(':');
   return (
     <div>
@@ -26,10 +25,9 @@ const Clock = () => {
         {timeSplit[0]}
         {` : `}
         {timeSplit[1]}
-        {/* {` : `}
-        {timeSplit[2]} */}
+        {/* {` : `} */}
+        {/* {timeSplit[2]}  // sec */}
       </div>
-      {/* <>{console.log(time, 'time')}</> */}
     </div>
   );
 };
