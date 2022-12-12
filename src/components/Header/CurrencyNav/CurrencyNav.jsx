@@ -74,7 +74,6 @@ const CurrencyNav = () => {
   }, [markFromStore]);
 
   const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
-  console.log(gryvnyaToCurrency, 'gryvnyaToCurrency');
   return (
     <>
       {gryvnyaToCurrency ? (
@@ -95,14 +94,9 @@ const CurrencyNav = () => {
               {gryvnyaToCurrency.sale}
             </p>
           </div>
-          {/* {currencyMark === 'BTC' ? (
-            <div className={css.wrapUSD}>{switchCurrency('USD')}</div>
-          ) : ( */}
           <div className={css.wrapGryvnya}>
             <Gryvnya />
           </div>
-          {/* )} */}
-          {/*  */}
         </div>
       ) : (
         <span className={css.wrapCurrency}>
