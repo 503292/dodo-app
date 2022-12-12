@@ -42,7 +42,6 @@ const TaskItem = ({
             {...provided.dragHandleProps}
             ref={provided.innerRef}
             isdragging={snapshot.isDragging.toString()}
-            // onClick={this.onClick}
             className={css.dragContainer}
           >
             <div className={`${css.task} ${css[`${getColor(task.priority)}`]}`}>
