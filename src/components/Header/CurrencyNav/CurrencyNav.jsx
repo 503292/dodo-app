@@ -74,7 +74,7 @@ const CurrencyNav = () => {
   }, [markFromStore]);
 
   const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
-
+  console.log(gryvnyaToCurrency, 'gryvnyaToCurrency');
   return (
     <>
       {gryvnyaToCurrency ? (
