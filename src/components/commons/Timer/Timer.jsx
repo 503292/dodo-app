@@ -10,6 +10,7 @@ const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [timerStart] = useState(null);
   const [newYear, setNewYear] = useState(new Date().getFullYear() + 1);
+  let intervalID = null;
 
   // helper
   const reversClock = () => {
@@ -17,7 +18,7 @@ const Timer = () => {
       return String(value).padStart(decr, '0');
     }
 
-    setInterval(() => {
+    intervalID = setInterval(() => {
       const newYearTmp = new Date().getFullYear() + 1;
       const unixTimeNow = new Date().getTime();
       const unixNewYear = Date.parse(new Date(`${newYearTmp}`));
@@ -53,7 +54,7 @@ const Timer = () => {
   useEffect(() => {
     reversClock();
     return () => {
-      clearInterval(timerStart);
+      clearInterval(intervalID);
     };
   }, [timerStart]);
 
