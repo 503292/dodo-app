@@ -72,8 +72,8 @@ const CurrencyNav = () => {
       localStorage.setItem('currencyMark', JSON.stringify(markFromStore));
     }
   }, [markFromStore]);
-
-  const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
+  u;
+  const gryvnyaToCrrency = currency.find(el => el.ccy === currencyMark);
 
   return (
     <>
@@ -95,13 +95,13 @@ const CurrencyNav = () => {
               {gryvnyaToCurrency.sale}
             </p>
           </div>
-          {currencyMark === 'BTC' ? (
+          {/* {currencyMark === 'BTC' ? (
             <div className={css.wrapUSD}>{switchCurrency('USD')}</div>
-          ) : (
-            <div className={css.wrapGryvnya}>
-              <Gryvnya />
-            </div>
-          )}
+          ) : ( */}
+          <div className={css.wrapGryvnya}>
+            <Gryvnya />
+          </div>
+          {/* )} */}
           {/*  */}
         </div>
       ) : (
