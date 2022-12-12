@@ -73,7 +73,7 @@ const CurrencyNav = () => {
     }
   }, [markFromStore]);
 
-  const gryvnyaToCrrency = currency.find(el => el.ccy === currencyMark);
+  const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
 
   return (
     <>
