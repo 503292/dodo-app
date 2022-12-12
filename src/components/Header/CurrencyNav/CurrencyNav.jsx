@@ -72,7 +72,7 @@ const CurrencyNav = () => {
       localStorage.setItem('currencyMark', JSON.stringify(markFromStore));
     }
   }, [markFromStore]);
-  u;
+
   const gryvnyaToCrrency = currency.find(el => el.ccy === currencyMark);
 
   return (
