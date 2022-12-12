@@ -8,17 +8,15 @@ const Timer = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-  const [timerStart] = useState(null);
   const [newYear, setNewYear] = useState(new Date().getFullYear() + 1);
-  let intervalID = null;
 
+  function pad(value, decr) {
+    return String(value).padStart(decr, '0');
+  }
   // helper
-  const reversClock = () => {
-    function pad(value, decr) {
-      return String(value).padStart(decr, '0');
-    }
 
-    intervalID = setInterval(() => {
+  useEffect(() => {
+    const intervalID = setInterval(() => {
       const newYearTmp = new Date().getFullYear() + 1;
       const unixTimeNow = new Date().getTime();
       const unixNewYear = Date.parse(new Date(`${newYearTmp}`));
@@ -49,14 +47,11 @@ const Timer = () => {
       setSeconds(pad(secondsTmp, 2));
       setNewYear(newYearTmp);
     }, 1000);
-  };
 
-  useEffect(() => {
-    reversClock();
     return () => {
       clearInterval(intervalID);
     };
-  }, [timerStart]);
+  }, []);
 
   return (
     <div className={css.container}>
