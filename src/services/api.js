@@ -4,7 +4,8 @@ const proxy = 'https://cors-anywhere.herokuapp.com/';
 // Приват банк API валюта
 export const fetchCurrencyPrivatBank = () => {
   return fetch(
-    'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11',
+    // 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11',
+    `${proxy}https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11`,
   )
     .then(response => response.json())
     .catch(error => console.log(error, 'Привіт). Щось ся стало. Api pryvat24'));
