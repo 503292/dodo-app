@@ -1,0 +1,38 @@
+.wrapTasks {
+  height: calc(100vh - 60px);
+
+  .tasks {
+    height: 100%;
+  }
+}
+
+.dragDropContext {
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 9px 6px 0;
+  border-bottom: 1px dashed #14b9ff;
+  box-shadow: inset 0 -10px 10px -10px #000000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border: 1px solid rgba(97, 74, 74, 0.3);
+  border-radius: 50px;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #b8b8b9;
+  border-radius: 50px;
+}
