@@ -46,7 +46,7 @@ const Country = () => {
             <img src={patelnyaMapUrl} alt="map" />
           </div>
         </BoxWithBorder> */}
-        <h3 className={css.title}>UA, Україна, Червоноград 80103</h3>
+        <p className={css.location}>UA, Україна, Червоноград 80103</p>
       </div>
 
       {/* <div className={css.wrapVideo}>

@@ -1,23 +1,18 @@
-.fieldset {
+.boxWithBorder {
   border: none;
   border-radius: 9px;
-  background: #fff;
+  background: var(--tr_light);
   font-style: italic;
   margin: 0;
-  margin-top: 20px;
-  padding: 0;
   box-shadow: 0 0 4px 0px grey;
   position: relative;
+  padding: 0 15px 12px 15px;
+  margin-bottom: 10px;
 
-  //
-  .legend {
-    padding: 2px 5px;
+  .title {
     margin: 0;
-    background-color: #fff;
-    box-shadow: 0 0 4px 0px grey;
-    border-radius: 9px;
-    position: absolute;
-    top: -12px;
-    left: 17px;
+    line-height: 2.1;
+  }
+  .descr {
   }
 }

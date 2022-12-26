@@ -18,14 +18,14 @@ select option[value='довготермінові цілі'] {
 }
 
 .normalPriority {
-  background-color: var(--golube);
+  background-color: var(--tr_blue);
 }
 
 .highPriority {
-  background-color: var(--chervone);
+  background-color: var(--tr_red);
 }
 .longPriority {
-  background-color: var(--G7);
+  background-color: var(--G10);
 }
 .select {
   border-radius: 7px;

@@ -3,10 +3,16 @@
   margin-bottom: 9px;
   border-radius: 0 30px;
   position: relative;
+  // TODO
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(3, 128, 252, 0.498337) 0%,
+  //   #fffd00 100%
+  // );
   background: linear-gradient(
     180deg,
-    rgba(3, 128, 252, 0.498337) 0%,
-    #fffd00 100%
+    rgba(3, 128, 252, 0.5) 0%,
+    rgba(255, 253, 0, 0.3) 100%
   );
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
   min-width: 100%;

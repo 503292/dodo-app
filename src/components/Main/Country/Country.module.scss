@@ -7,9 +7,11 @@
   padding: 5px;
   margin: 0 auto;
 
-  .title {
+  .location {
     margin: 10px auto;
     text-align: center;
+    font-size: 14px;
+    font-family: Lato, arial, sans-serif;
   }
 
   .wrapFielset {
@@ -19,8 +21,10 @@
     & > fieldset {
       background: transparent;
       border-radius: 50%;
-      width: 45vh;
+      width: 40vh;
+      height: 40vh;
       margin: 20px auto;
+      padding: 0;
     }
 
     .blueYellow {
@@ -66,7 +70,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      height: calc(45vh - 3px);
+      height: calc(40vh - 3px);
       padding: 15px;
       background: var(--tr_dark);
     }

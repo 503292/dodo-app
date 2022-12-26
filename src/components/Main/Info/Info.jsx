@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
+import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder2';
 
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
@@ -12,8 +12,6 @@ import css from './Info.module.scss';
 
 const Info = () => (
   <div className={css.container}>
-    <div className={css.wrapToogle}></div>
-
     <div className={css.wrapDescription}>
       {/* 1 */}
       <BoxWithBorder title="Планер (іконка алатир):">

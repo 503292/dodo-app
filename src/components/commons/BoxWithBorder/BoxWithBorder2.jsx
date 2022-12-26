@@ -5,17 +5,10 @@ import css from './BoxWithBorder.module.scss';
 
 const BoxWithBorder = ({ children, title }) => {
   return (
-    <>
-      <fieldset className={css.fieldset}>
-        {title ? (
-          <legend className={css.legend}>
-            <p>{title}</p>
-          </legend>
-        ) : null}
-
-        {children}
-      </fieldset>
-    </>
+    <div className={css.boxWithBorder}>
+      {title ? <h4 className={css.title}>{title}</h4> : null}
+      <div className={css.descr}>{children}</div>
+    </div>
   );
 };
 

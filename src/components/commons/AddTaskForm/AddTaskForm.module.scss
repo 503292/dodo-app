@@ -32,7 +32,8 @@
 
 .backBtn:hover,
 .backBtn:focus {
-  box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid var(--G5);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 .backBtn:active {
   box-shadow: none;
@@ -107,6 +108,9 @@
 .wrapDescr {
   display: flex;
   align-items: flex-end;
+  & > div {
+    margin-bottom: 30px;
+  }
 }
 .clock,
 .level {
@@ -165,12 +169,12 @@
 }
 
 .normalPriority {
-  background-color: var(--golube);
+  background-color: var(--tr_blue);
 }
 
 .highPriority {
-  background-color: var(--chervone);
+  background-color: var(--tr_red);
 }
 .longPriority {
-  background-color: var(--G7);
+  background-color: var(--G10);
 }

@@ -3,7 +3,7 @@
   color: grey;
   height: 100%;
   overflow: auto;
-  padding: 20px 10px 0;
+  padding: 10px;
 }
 
 .container::-webkit-scrollbar-track {
@@ -39,7 +39,6 @@
     font-size: 12px;
     font-weight: 300;
     margin: 0;
-    padding: 15px;
   }
 
   .wrapList {
@@ -47,11 +46,10 @@
     font-size: 12px;
     font-weight: 300;
     padding: 0;
+    margin: 0;
   }
 
   .inWall {
-    padding: 0 20px;
-    margin: 10px 0 10px;
     & > p {
       margin: 0;
     }

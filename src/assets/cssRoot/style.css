@@ -32,7 +32,6 @@
   --breakpoint-xl: 1200px;
 
   /* mavka colors */
-  /* --chervone: #ff9b95; */
   --chervone: #f3a987;
   --chorne: #333333;
   --jowte: #ffff99;
@@ -49,6 +48,9 @@
   --tr_dark: rgba(255, 207, 0, 0.1);
   --tr_light: rgba(255, 255, 255, 0.22);
   --tr_green: rgba(0, 172, 23, 0.2);
+  --tr_blue: rgba(20, 184, 255, 0.3);
+  --tr_red: rgba(255, 104, 93, 0.3);
+  --tr_yellow: rgba(238, 255, 0, 0.3);
 
   /* grey scale*/
   --G1: #000000;

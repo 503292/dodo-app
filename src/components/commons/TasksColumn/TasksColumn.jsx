@@ -48,9 +48,6 @@ const TasksColumn = ({
             </div>
           );
         }}
-
-        {/* TODO */}
-        {/* <span style={{ height: '2rem' }} /> */}
       </Droppable>
     </div>
   );
