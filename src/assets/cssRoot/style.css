@@ -44,10 +44,11 @@
   --blue_btn: rgba(20, 185, 255, 1);
   --yellow_btn: rgba(255, 255, 0, 1);
   --red_btn: rgba(248, 155, 149, 1);
-  --grey_btn: rgba(128, 128, 128, 1);
+  --grey_btn: rgba(128, 128, 128, 0.5);
 
   --tr_dark: rgba(255, 207, 0, 0.1);
   --tr_light: rgba(255, 255, 255, 0.22);
+  --tr_green: rgba(0, 172, 23, 0.2);
 
   /* grey scale*/
   --G1: #000000;

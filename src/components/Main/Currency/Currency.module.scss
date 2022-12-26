@@ -1,6 +1,5 @@
 .currencyContainer {
   padding: 6px 3px 0 3px;
-  /* height: 95vh; */
   height: calc(100% - 60px);
   height: inherit;
   color: gray;
@@ -24,7 +23,6 @@
 .currencyContainer::-webkit-scrollbar-thumb {
   background-color: #b8b8b9;
   border-radius: 50px;
-  /* padding: 0px 0; */
 }
 .wrapPB {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -34,8 +32,8 @@
 
 .headCurrency {
   display: flex;
-  background-color: whitesmoke;
   border-radius: 7px 7px 0 0;
+  background: var(--tr_dark);
 }
 .headCurrency p {
   width: 33.3%;
@@ -50,7 +48,7 @@
 }
 .bodyCurrency {
   font-size: 12px;
-  background-color: #fff;
+  background: var(--tr_dark);
   border-radius: 0 0 7px 7px;
 }
 .lable {
@@ -87,7 +85,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* padding: 10px 0; */
   font-size: 10px;
   width: 100%;
 }
@@ -97,7 +94,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: whitesmoke;
+  background: var(--tr_light);
   border-radius: 7px;
   width: 32.5%;
   padding: 5px 2px 5px 5px;
@@ -112,7 +109,7 @@
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   padding: 3px 0;
   width: 45%;
-  background-color: #fff;
+  background: var(--tr_dark);
 }
 .metalDescr {
   display: flex;
@@ -157,16 +154,24 @@
 
 /* world currency */
 .oneCountry {
-  background-color: rgb(254, 255, 250);
+  background-color: var(--tr_light);
   border-radius: 7px;
   width: 32.5%;
   padding: 5px;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 3px;
+
+  & > p {
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--tr_green);
+    cursor: pointer;
+  }
 }
-.oneCountry p {
-  margin: 0;
-}
+.oneCountry 
 /* .oneCountry:hover,
 .oneCountry:focus {
   background-color: rgb(219, 245, 114);

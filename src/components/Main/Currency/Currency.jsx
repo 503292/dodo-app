@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCurrency } from '../../../redux/currency/currencyActions';
 
-import css from './Currency.module.css';
+import css from './Currency.module.scss';
 
 // helpers
 const getCurrency = () => JSON.parse(localStorage.getItem('currency')) ?? [];
@@ -12,12 +12,11 @@ const getСontries = () => JSON.parse(localStorage.getItem('contries')) ?? [];
 const getMetals = () => JSON.parse(localStorage.getItem('metals')) ?? [];
 
 const Currency = () => {
+  const dispatch = useDispatch();
   const [currency] = useState(getCurrency());
   const [currencyMark, setCurrencyMark] = useState(getCurrencyMark());
   const [contries] = useState(getСontries());
   const [metals] = useState(getMetals());
-
-  const dispatch = useDispatch();
 
   const checkMarkCurrency = async e => {
     const cMark = e.currentTarget.nextSibling.firstChild.textContent;

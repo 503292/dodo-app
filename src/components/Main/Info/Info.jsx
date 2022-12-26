@@ -13,10 +13,7 @@ import css from './Info.module.scss';
 
 const Info = ({ isChecked, setAnimationCheched }) => (
   <div className={css.container}>
-    <div className={css.wrapToogle}>
-      {isChecked ? <p>Анімація включена</p> : <p>Анімація виключена</p>}
-      <Toogle isChecked={isChecked} setAnimationCheched={setAnimationCheched} />
-    </div>
+    <div className={css.wrapToogle}></div>
 
     <div className={css.wrapDescription}>
       {/* 1 */}

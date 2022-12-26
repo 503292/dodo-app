@@ -8,6 +8,7 @@ import CurrencyPage from '../../../pages/CurrencyPage';
 import ErrorPage from '../../../pages/ErrorPage';
 import InfoSitePage from '../../../pages/InfoSitePage';
 import CountryPage from '../../../pages/CountryPage';
+import SettingPage from '../../../pages/SettingPage';
 
 const RoutesSite = () => (
   <>
@@ -18,6 +19,7 @@ const RoutesSite = () => (
       <Route path="/weather" component={WeatherPage} />
       <Route path="/currency" component={CurrencyPage} />
       <Route path="/country" component={CountryPage} />
+      <Route path="/settings" component={SettingPage} />
 
       <Route component={ErrorPage} />
     </Switch>
