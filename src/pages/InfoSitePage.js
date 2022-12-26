@@ -1,5 +1,5 @@
 import React from 'react';
-import Info from '../components/Main/Info/Info.Container';
+import Info from '../components/Main/Info/Info';
 
 const LoginPage = () => (
   <>

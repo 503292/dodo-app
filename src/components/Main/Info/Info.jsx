@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Toogle from '../../commons/Toogle/Toogle';
 import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder';
 
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
@@ -11,7 +10,7 @@ import { ReactComponent as Telegram } from '../../../assets/image/messengers/tel
 
 import css from './Info.module.scss';
 
-const Info = ({ isChecked, setAnimationCheched }) => (
+const Info = () => (
   <div className={css.container}>
     <div className={css.wrapToogle}></div>
 
