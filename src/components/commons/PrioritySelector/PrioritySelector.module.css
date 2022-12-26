@@ -25,7 +25,7 @@ select option[value='довготермінові цілі'] {
   background-color: var(--chervone);
 }
 .longPriority {
-  background-color: var(--B200);
+  background-color: var(--G7);
 }
 .select {
   border-radius: 7px;
