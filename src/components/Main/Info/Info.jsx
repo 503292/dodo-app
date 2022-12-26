@@ -112,9 +112,13 @@ const Info = () => (
   </div>
 );
 
+Info.defaultProps = {
+  isChecked: false,
+  setAnimationCheched: () => null,
+};
 Info.propTypes = {
-  isChecked: PropTypes.bool.isRequired,
-  setAnimationCheched: PropTypes.func.isRequired,
+  isChecked: PropTypes.bool,
+  setAnimationCheched: PropTypes.func,
 };
 
 export default Info;
