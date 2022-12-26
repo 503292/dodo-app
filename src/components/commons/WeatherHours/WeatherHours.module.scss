@@ -62,11 +62,15 @@
   width: 25%;
 }
 .thead tr th:not(:last-child) {
-  border-right: 1px solid gainsboro;
+  border-right: 1px solid var(--chorne);
 }
 
-.tbody tr td:nth-child(even):not(:last-child) {
-  border-right: 1px solid gainsboro;
+.tbody tr td:nth-child(even) {
+  background: var(--tr_light);
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--chorne);
+  }
 }
 .tbody tr td {
   width: 12.5% !important;

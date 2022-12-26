@@ -58,12 +58,12 @@
   --B175: #afb1b3;
   --B200: #c8cacc;
   --B215: #d7d9db;
-  --B225: #e1e3e5;
-  --B230: #e6e8ea;
-  --B235: #ebedef;
-  --B240: #f0f2f4;
-  --B245: #f5f7f9;
-  --G255: #ffffff;
+  --G9: #e1e3e5;
+  --G10: #e6e8ea;
+  --G11: #ebedef;
+  --G12: #f0f2f4;
+  --G13: #f5f7f9;
+  --G14: #ffffff;
 }
 
 html {
@@ -111,6 +111,10 @@ span::selection {
 span::-moz-selection {
   background: var(--yellow_btn);
   color: var(--blue_btn);
+}
+
+button {
+  cursor: pointer;
 }
 
 /* .scrollbarThumb {

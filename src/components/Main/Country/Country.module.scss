@@ -68,11 +68,7 @@
       border-radius: 50%;
       height: calc(45vh - 3px);
       padding: 15px;
-      background: linear-gradient(
-        180deg,
-        rgba(3, 128, 252, 0.498337) 0%,
-        #fffd00 100%
-      );
+      background: var(--tr_dark);
     }
   }
 
