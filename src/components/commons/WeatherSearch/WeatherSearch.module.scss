@@ -12,6 +12,7 @@
   color: tomato;
   line-height: 1.2;
   font-size: 12px;
+  background-color: var(--tr_light);
 }
 
 .btn {
@@ -24,8 +25,8 @@
   color: grey;
   font-weight: 600;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: whitesmoke;
   outline: none;
+  background-color: var(--tr_dark);
 }
 .search {
   width: 22px;

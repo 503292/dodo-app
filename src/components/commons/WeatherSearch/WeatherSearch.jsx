@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as Search } from '../../../assets/image/search.svg';
 
-import css from './WeatherSearch.module.css';
+import css from './WeatherSearch.module.scss';
 
 class WeatherSearch extends Component {
   state = {};

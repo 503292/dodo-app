@@ -16,15 +16,15 @@
   border-radius: 5px;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   border: none;
-  background-color: #fff;
   color: dimgray;
   outline: none;
+  background-color: var(--tr_light);
 }
 
 .active {
   color: black;
   transition: all 400ms linear;
-  background-color: rgba(255, 207, 0, 0.1);
+  background-color: var(--tr_dark);
   transform: scale(1.05);
 }
 .arrowSelect {

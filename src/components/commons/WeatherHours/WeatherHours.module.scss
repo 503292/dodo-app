@@ -17,7 +17,7 @@
   padding: 5px 0 5px 5px;
   font-size: 12px;
   color: dimgray;
-  background-color: #fff;
+  background-color: var(--tr_dark);
   box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2);
 
   & > div:first-of-type {
@@ -55,7 +55,7 @@
   border-collapse: collapse;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0 7px 7px 0;
-  background-color: #fff;
+  background-color: var(--tr_dark);
 }
 .thead tr th {
   font-weight: 400;
@@ -75,8 +75,8 @@
 .tableTime {
   font-size: 10px;
   font-weight: 300;
-  background-color: whitesmoke;
   color: darkgray;
+  background-color: var(--tr_light);
 }
 
 .tableTemp {
@@ -89,15 +89,15 @@
   color: darkgray;
 }
 .tableHumidity {
-  background-color: whitesmoke;
   font-size: 10px;
+  background-color: var(--tr_light);
 }
 .tablePressure {
   font-size: 10px;
 }
 .tableWind {
-  background-color: whitesmoke;
   font-size: 10px;
+  background-color: var(--tr_light);
 }
 .wrapWindSpeed {
   display: flex;
@@ -145,7 +145,7 @@
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   font-size: 11px;
-  background-color: #fff;
+  background-color: var(--tr_light);
 }
 .sunTime p {
   margin: 0;
