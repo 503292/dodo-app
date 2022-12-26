@@ -17,10 +17,12 @@
   border-top: 3px solid transparent;
   margin: 0 auto;
   display: flex;
+  background: var(--tr_dark);
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
   transform: scale(1.005);
+  background: var(--tr_light);
 }
 
 .wrapText {
@@ -61,7 +63,7 @@
 }
 .longPriority {
   border-color: var(--B150);
-  background-color: var(--B225);
+  background-color: var(--G9);
 }
 
 .completedCheckbox {
@@ -98,6 +100,5 @@
 }
 .wrapIcon:hover,
 .wrapIcon:active {
-  background-color: #fff;
   box-shadow: inset 0px 0px 5px -1px rgba(133, 128, 133, 1);
 }
