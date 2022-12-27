@@ -39,7 +39,7 @@ export const countries = [
     country: 'В.Британія',
     currency: 'фунт',
     url:
-      'https://https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/320px-Flag_of_the_United_Kingdom.svg.png',
+      'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/320px-Flag_of_the_United_Kingdom.svg.png',
   },
   {
     name: 'GEL',
