@@ -17,12 +17,12 @@
   border-top: 3px solid transparent;
   margin: 0 auto;
   display: flex;
-  background: var(--tr_dark);
+  background: var(--tr_light);
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
   transform: scale(1.005);
-  background: var(--tr_light);
+  background: var(--tr_dark);
 }
 
 .wrapText {
@@ -63,7 +63,6 @@
 }
 .longPriority {
   border-color: var(--G6);
-  background: var(--tr_green);
 }
 
 .completedCheckbox {
