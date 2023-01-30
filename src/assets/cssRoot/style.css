@@ -1,5 +1,6 @@
 @import './normalize.css';
 @import '../fonts/fonts.css';
+@import './mixins.scss';
 
 :root {
   --blue: #007bff;

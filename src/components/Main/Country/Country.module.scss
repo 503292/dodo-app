@@ -21,10 +21,15 @@
     & > fieldset {
       background: transparent;
       border-radius: 50%;
-      width: 40vh;
-      height: 40vh;
+      width: calc(100vw - 10px);
+      height: calc(100vw - 14px);
       margin: 20px auto;
       padding: 0;
+
+      @media (min-width: 855px) {
+        width: calc(100vh - 120px);
+        height: calc(100vh - 120px);
+      }
     }
 
     .blueYellow {
@@ -64,15 +69,23 @@
     .backCard {
       margin: auto;
       max-width: inherit;
-      width: inherit;
+      // width: inherit;
       height: inherit;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      height: calc(40vh - 3px);
+      // height: calc(40vh - 3px);
       padding: 15px;
       background: var(--tr_dark);
+
+      width: calc(100vw - 14px);
+      height: calc(100vw - 14px);
+
+      @media (min-width: 855px) {
+        width: calc(100vh - 125px);
+        height: calc(100vh - 121px);
+      }
     }
   }
 
