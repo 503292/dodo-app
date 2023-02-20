@@ -7,15 +7,6 @@ import ModalAddTask from '../../commons/ModalAddTask/ModalAddTask';
 import TodoFooter from '../../commons/TodoFooter/TodoFooter';
 
 import css from './Tasks.module.scss';
-
-// const filteredArrOfNull = data => {
-//   data.filter(function(el) {
-//     return el != null;
-//   });
-
-//   console.log(data, 'data');
-// };
-
 class Tasks extends Component {
   state = {
     tasks: [],
