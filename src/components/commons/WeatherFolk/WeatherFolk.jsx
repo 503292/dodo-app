@@ -14,7 +14,7 @@ function getDayOfYear(indexDay) {
 
 function getDayFolk(num, arr) {
   // TODO fix for 29march year (365 to 366 days)
-  const folk = arr[num - 1];
+  const folk = arr[num];
   // const folk = arr[num];
   return folk;
 }
