@@ -8,13 +8,13 @@ export const Priority = Object.freeze({
 export const getColor = el => {
   switch (el) {
     case 'завдання':
-      return 'lowPriority';
+      return 'normalPriority';
     case 'сьогодні':
       return 'highPriority';
     case 'довготермінові цілі':
       return 'longPriority';
     default:
-      return 'normalPriority';
+      return 'lowPriority';
   }
 };
 
