@@ -17,3 +17,6 @@ export const getColor = el => {
       return 'normalPriority';
   }
 };
+
+// TODO obj priority
+// const priority = {};
