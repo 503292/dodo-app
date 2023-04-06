@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import css from './Timer.module.css';
+import ColorDot from '../../commons/ColorDot/ColorDot';
 import { ReactComponent as Tree } from '../../../assets/image/tree.svg';
+import css from './Timer.module.css';
 
 const Timer = () => {
   const [days, setDays] = useState(0);
@@ -57,16 +58,10 @@ const Timer = () => {
     <div className={css.container}>
       <div className={css.wrapTimer}>
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.grey}`}>
-            {days}
+          <button type="button" className={`${css.btn} ${css.blue}`}>
+            {seconds}
           </button>
-          <span className={css.descr}>Дня</span>
-        </div>
-        <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.red}`}>
-            {hours}
-          </button>
-          <span className={css.descr}>Годин</span>
+          <span className={css.descr}>Секунд</span>
         </div>
         <div className={css.wrapValue}>
           <button type="button" className={`${css.btn} ${css.yellow}`}>
@@ -74,15 +69,23 @@ const Timer = () => {
           </button>
           <span className={css.descr}>Хвилин</span>
         </div>
+
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.blue}`}>
-            {seconds}
+          <button type="button" className={`${css.btn} ${css.red}`}>
+            {hours}
           </button>
-          <span className={css.descr}>Секунд</span>
+          <span className={css.descr}>Годин</span>
+        </div>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.grey}`}>
+            {days}
+          </button>
+          <span className={css.descr}>Дня</span>
         </div>
       </div>
 
       <div className={css.newYear}>
+        <TreeToys />
         <Tree className={css.tree} />
         <p className={css.data}>{newYear}</p>
       </div>
@@ -91,3 +94,22 @@ const Timer = () => {
 };
 
 export default Timer;
+
+const TreeToys = () => {
+  return (
+    <>
+      <ColorDot
+        styles={{ top: '5px', left: '17px', background: 'var(--G8)' }}
+      />
+      <ColorDot
+        styles={{ top: '13px', left: '15px', background: 'var(--danger)' }}
+      />
+      <ColorDot
+        styles={{ top: '20px', left: '20px', background: 'var(--warning)' }}
+      />
+      <ColorDot
+        styles={{ top: '23px', left: '12px', background: 'var(--primary)' }}
+      />
+    </>
+  );
+};

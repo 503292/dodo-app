@@ -1,9 +1,9 @@
 select option[value='завдання'] {
-  background: var(--jowte);
+  background: var(--golube);
 }
 
 select option[value='відпочинок'] {
-  background: var(--golube);
+  background: var(--jowte);
 }
 
 select option[value='сьогодні'] {
@@ -12,21 +12,21 @@ select option[value='сьогодні'] {
 select option[value='довготермінові цілі'] {
   background: var(--chorne);
 }
-
+/* <<< Priority */
 .lowPriority {
   background-color: var(--jowte);
 }
-
 .normalPriority {
   background-color: var(--tr_blue);
 }
-
 .highPriority {
   background-color: var(--tr_red);
 }
 .longPriority {
   background-color: var(--G10);
 }
+/* >>> Priority */
+
 .select {
   border-radius: 7px;
   padding: 2px;

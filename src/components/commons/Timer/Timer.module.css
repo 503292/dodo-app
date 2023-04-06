@@ -38,10 +38,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 }
 .tree {
   width: 35px;
   fill: forestgreen;
+  z-index: 1;
 }
 .data {
   font-weight: 800;
