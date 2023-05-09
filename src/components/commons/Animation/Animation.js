@@ -5,12 +5,12 @@ import Particles from 'react-particles-js';
 // import { fruits, parseAnimateItems } from './helper';
 
 // Flowers
-// import flower1 from '../../../assets/image/flowers/flower1.png';
-// import flower2 from '../../../assets/image/flowers/flower2.png';
-// import flower3 from '../../../assets/image/flowers/flower3.png';
-// import flower4 from '../../../assets/image/flowers/flower4.png';
-// import flower5 from '../../../assets/image/flowers/flower5.png';
-// import flower6 from '../../../assets/image/flowers/flower6.png';
+import flower1 from '../../../assets/image/flowers/flower1.png';
+import flower2 from '../../../assets/image/flowers/flower2.png';
+import flower3 from '../../../assets/image/flowers/flower3.png';
+import flower4 from '../../../assets/image/flowers/flower4.png';
+import flower5 from '../../../assets/image/flowers/flower5.png';
+import flower6 from '../../../assets/image/flowers/flower6.png';
 
 // Fruits
 // import apple from '../../../assets/image/fruit/apple.png';
@@ -30,13 +30,13 @@ import Particles from 'react-particles-js';
 // import mushroom2 from '../../../assets/image/autumn/mushroom2.png';
 // import mushroom3 from '../../../assets/image/autumn/mushroom3.png';
 
-import winter_1 from '../../../assets/image/winter/winter_1.png';
+// import winter_1 from '../../../assets/image/winter/winter_1.png';
 // import winter_2 from '../../../assets/image/winter/winter_2.png';
 // import winter_3 from '../../../assets/image/winter/winter_3.png';
-import winter_4 from '../../../assets/image/winter/winter_4.png';
+// import winter_4 from '../../../assets/image/winter/winter_4.png';
 // import winter_5 from '../../../assets/image/winter/winter_5.png';
-import winter_6 from '../../../assets/image/winter/winter_6.png';
-import winter_7 from '../../../assets/image/winter/winter_7.png';
+// import winter_6 from '../../../assets/image/winter/winter_6.png';
+// import winter_7 from '../../../assets/image/winter/winter_7.png';
 // import winter_8 from '../../../assets/image/winter/winter_8.png';
 
 // import css from './Animation.module.scss';
@@ -64,14 +64,14 @@ const animation = {
           nb_sides: 5,
         },
         // =================== summer
-        // image: [
-        //   { src: flower1, height: 20, width: 20 },
-        //   { src: flower2, height: 20, width: 20 },
-        //   { src: flower3, height: 20, width: 20 },
-        //   { src: flower4, height: 20, width: 20 },
-        //   { src: flower5, height: 20, width: 20 },
-        //   { src: flower6, height: 20, width: 20 },
-        // ],
+        image: [
+          { src: flower1, height: 20, width: 20 },
+          { src: flower2, height: 20, width: 20 },
+          { src: flower3, height: 20, width: 20 },
+          { src: flower4, height: 20, width: 20 },
+          { src: flower5, height: 20, width: 20 },
+          { src: flower6, height: 20, width: 20 },
+        ],
         // =================== autumn 2
         // image: [
         //   { src: maple1, height: 20, width: 20 },
@@ -97,16 +97,16 @@ const animation = {
         //   { src: watermelon, height: 20, width: 20 },
         // ],
         // =================== winter
-        image: [
-          { src: winter_1, height: 20, width: 20 },
-          // { src: winter_2, height: 20, width: 20 },
-          // { src: winter_3, height: 20, width: 20 },
-          { src: winter_4, height: 20, width: 20 },
-          // { src: winter_5, height: 20, width: 20 },
-          { src: winter_6, height: 20, width: 20 },
-          { src: winter_7, height: 20, width: 20 },
-          // { src: winter_8, height: 20, width: 20 },
-        ],
+        // image: [
+        // { src: winter_1, height: 20, width: 20 },
+        // { src: winter_2, height: 20, width: 20 },
+        // { src: winter_3, height: 20, width: 20 },
+        // { src: winter_4, height: 20, width: 20 },
+        // { src: winter_5, height: 20, width: 20 },
+        // { src: winter_6, height: 20, width: 20 },
+        // { src: winter_7, height: 20, width: 20 },
+        // { src: winter_8, height: 20, width: 20 },
+        // ],
       },
 
       opacity: {
