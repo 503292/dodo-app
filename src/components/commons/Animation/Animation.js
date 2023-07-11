@@ -31,8 +31,8 @@ import mushroom2 from '../../../assets/image/autumn/mushroom2.png';
 import mushroom3 from '../../../assets/image/autumn/mushroom3.png';
 
 import winter_1 from '../../../assets/image/winter/winter_1.png';
-// import winter_2 from '../../../assets/image/winter/winter_2.png';
-// import winter_3 from '../../../assets/image/winter/winter_3.png';
+import winter_2 from '../../../assets/image/winter/winter_2.png';
+import winter_3 from '../../../assets/image/winter/winter_3.png';
 import winter_4 from '../../../assets/image/winter/winter_4.png';
 import winter_5 from '../../../assets/image/winter/winter_5.png';
 import winter_6 from '../../../assets/image/winter/winter_6.png';
@@ -87,6 +87,8 @@ const seasons = {
     { src: winter_8, height: 20, width: 20 },
   ],
 };
+
+console.log(seasons, seasons);
 
 const animation = {
   prop: {
