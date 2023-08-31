@@ -36,8 +36,6 @@ import winter_3 from '../../../assets/image/winter/winter_3.png';
 import winter_4 from '../../../assets/image/winter/winter_4.png';
 import winter_5 from '../../../assets/image/winter/winter_5.png';
 import winter_6 from '../../../assets/image/winter/winter_6.png';
-import winter_7 from '../../../assets/image/winter/winter_7.png';
-import winter_8 from '../../../assets/image/winter/winter_8.png';
 
 // import css from './Animation.module.scss';
 
@@ -83,8 +81,6 @@ const seasons = {
     { src: winter_4, height: 20, width: 20 },
     { src: winter_5, height: 20, width: 20 },
     { src: winter_6, height: 20, width: 20 },
-    { src: winter_7, height: 20, width: 20 },
-    { src: winter_8, height: 20, width: 20 },
   ],
 };
 
@@ -113,14 +109,14 @@ const animation = {
           nb_sides: 5,
         },
         // =================== summer
-        image: [
-          { src: flower1, height: 20, width: 20 },
-          { src: flower2, height: 20, width: 20 },
-          { src: flower3, height: 20, width: 20 },
-          { src: flower4, height: 20, width: 20 },
-          { src: flower5, height: 20, width: 20 },
-          { src: flower6, height: 20, width: 20 },
-        ],
+        // image: [
+        //   { src: flower1, height: 20, width: 20 },
+        //   { src: flower2, height: 20, width: 20 },
+        //   { src: flower3, height: 20, width: 20 },
+        //   { src: flower4, height: 20, width: 20 },
+        //   { src: flower5, height: 20, width: 20 },
+        //   { src: flower6, height: 20, width: 20 },
+        // ],
         // =================== autumn 2
         // image: [
         //   { src: maple1, height: 20, width: 20 },
@@ -134,25 +130,25 @@ const animation = {
         //   { src: apple, height: 20, width: 20 },
         // ],
         // =================== autumn
-        // image: [
-        //   { src: apple, height: 20, width: 20 },
-        //   { src: carrot, height: 20, width: 20 },
-        //   { src: cherry, height: 20, width: 20 },
-        //   { src: grape, height: 20, width: 20 },
-        //   { src: lemon, height: 20, width: 20 },
-        //   { src: pear, height: 20, width: 20 },
-        //   { src: pumpkin, height: 20, width: 20 },
-        //   { src: strawberry, height: 20, width: 20 },
-        //   { src: watermelon, height: 20, width: 20 },
-        // ],
+        image: [
+          { src: apple, height: 20, width: 20 },
+          { src: carrot, height: 20, width: 20 },
+          { src: cherry, height: 20, width: 20 },
+          { src: grape, height: 20, width: 20 },
+          { src: lemon, height: 20, width: 20 },
+          { src: pear, height: 20, width: 20 },
+          { src: pumpkin, height: 20, width: 20 },
+          { src: strawberry, height: 20, width: 20 },
+          { src: watermelon, height: 20, width: 20 },
+        ],
         // =================== winter
         // image: [
-        // { src: winter_1, height: 20, width: 20 },
-        // { src: winter_4, height: 20, width: 20 },
-        // { src: winter_5, height: 20, width: 20 },
-        // { src: winter_6, height: 20, width: 20 },
-        // { src: winter_7, height: 20, width: 20 },
-        // { src: winter_8, height: 20, width: 20 },
+        //   { src: winter_1, height: 20, width: 20 },
+        //   { src: winter_2, height: 20, width: 20 },
+        //   { src: winter_3, height: 20, width: 20 },
+        //   { src: winter_4, height: 20, width: 20 },
+        //   { src: winter_5, height: 20, width: 20 },
+        //   { src: winter_6, height: 20, width: 20 },
         // ],
       },
 
