@@ -7,6 +7,6 @@
   overflow: overlay;
   /* TODO */
   /* overflow: auto; */
-  height: inherit;
+  height: calc(100% - 60px);
   width: 100%;
 }
