@@ -258,11 +258,10 @@ class Tasks extends Component {
                   />
                 );
               })}
-              <TodoFooter modalAddTasksOpen={modalAddTasksOpen} />
             </div>
           </DragDropContext>
         </div>
-
+        <TodoFooter modalAddTasksOpen={modalAddTasksOpen} />
         <ModalAddTask
           editTask={editTask}
           handleResetEditTask={this.handleResetEditTask}
