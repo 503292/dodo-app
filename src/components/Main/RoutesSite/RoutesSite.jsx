@@ -9,6 +9,7 @@ import ErrorPage from '../../../pages/ErrorPage';
 import InfoSitePage from '../../../pages/InfoSitePage';
 import CountryPage from '../../../pages/CountryPage';
 import SettingPage from '../../../pages/SettingPage';
+import ProfilePage from '../../../pages/ProfilePage';
 
 const RoutesSite = () => (
   <>
@@ -20,6 +21,8 @@ const RoutesSite = () => (
       <Route path="/currency" component={CurrencyPage} />
       <Route path="/country" component={CountryPage} />
       <Route path="/settings" component={SettingPage} />
+      {/* TODO in progress */}
+      {/* <Route path="/profile" component={ProfilePage} /> */}
 
       <Route component={ErrorPage} />
     </Switch>
