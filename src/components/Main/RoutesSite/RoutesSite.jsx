@@ -9,7 +9,7 @@ import ErrorPage from '../../../pages/ErrorPage';
 import InfoSitePage from '../../../pages/InfoSitePage';
 import CountryPage from '../../../pages/CountryPage';
 import SettingPage from '../../../pages/SettingPage';
-import ProfilePage from '../../../pages/ProfilePage';
+// import ProfilePage from '../../../pages/ProfilePage';
 
 const RoutesSite = () => (
   <>

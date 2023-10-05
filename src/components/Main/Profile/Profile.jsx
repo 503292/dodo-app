@@ -24,7 +24,7 @@ const Profile = () => {
       instagram: 'Посилання на Instagram',
     },
     error: '',
-    damage: [],
+    // damage: [],
     countTomato: 0, // Кількість кинутих помідорів
     description: '',
     danger: '', //  0, 1, 2, 3, 4
@@ -46,7 +46,7 @@ const Profile = () => {
     children,
     socialMedia,
     error,
-    damage,
+    // damage,
     countTomato,
     description,
     danger,
