@@ -15,8 +15,8 @@ const TodoFooter = ({ modalAddTasksOpen }) => {
       <Timer />
       <div className={css.wrapBtn}>
         <div className={css.wrapDate}>
-          <Clock />
           <DateView />
+          <Clock />
         </div>
         <button
           type="button"

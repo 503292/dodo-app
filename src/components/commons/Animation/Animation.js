@@ -43,7 +43,7 @@ import winter_6 from '../../../assets/image/winter/winter_6.png';
 // summer
 // autumn
 // winter
-
+// eslint-disable-next-line
 const seasons = {
   spring: [
     { src: flower1, height: 20, width: 20 },
@@ -84,7 +84,7 @@ const seasons = {
   ],
 };
 
-console.log(seasons, seasons);
+// console.log(seasons, seasons);
 
 const animation = {
   prop: {

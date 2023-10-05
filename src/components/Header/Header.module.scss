@@ -1,7 +1,31 @@
 .wrapHeader {
   border-bottom: 1px dashed #14b9ff;
-  background-color: #ffeb3b;
+  // background-color: #ffeb3b;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.35);
   position: relative;
   height: 60px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #fff; /* Колір крапки */
+  border-radius: 50%; /* Зробити крапку круглою */
+  animation: pulse 10s ease-in-out infinite; /* Анімація pulse тривалістю 2 секунди, безкінечна, з плавним збільшенням і зменшенням */
+  z-index: 1;
+  /* Це додасть затемнення при збільшенні крапки */
+  transition: background-color 0.3s ease-in-out;
+  animation-delay: 0s, 0.5s, 1s, 1.5s, 2s;
+}
+
+/* Анімація для крапки */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.2); /* Початковий та кінцевий стани - масштаб 1 */
+  }
+  50% {
+    transform: scale(1.5); /* Збільшити масштаб до 1.5 на середині анімації */
+    background-color: #f1e757; /* Змінити колір крапки на темніший */
+  }
 }
