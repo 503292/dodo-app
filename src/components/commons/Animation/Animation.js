@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+// import Particles from 'react-particles-js';
 
 // TODO in-progress
 // import { fruits, parseAnimateItems } from './helper';
@@ -178,13 +178,13 @@ const animation = {
 
 const Animation = () => (
   <>
-    <Particles
+    {/* <Particles
       style={{
         position: 'absolute',
         zIndex: '-1',
       }}
       params={animation.prop}
-    />
+    /> */}
   </>
 );
 
