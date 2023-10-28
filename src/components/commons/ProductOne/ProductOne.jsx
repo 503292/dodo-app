@@ -44,7 +44,7 @@ const ProductOne = ({ product }) => (
           <img
             key={index}
             src={image}
-            alt={`${product.name} Image ${index + 1}`}
+            alt={`${product.name} ${index + 1}`}
             className={css.productImage}
           />
         ))}
