@@ -18,7 +18,9 @@ export const products = [
     price: 1,
   },
 ];
-
+// TODO in progress add items
+// "sold": "10000000",
+// "stars" "5",
 // certificates: ['ISO 9001', 'Eco-friendly'],
 // "technicalSpecifications": {
 //   "power": "100W",
