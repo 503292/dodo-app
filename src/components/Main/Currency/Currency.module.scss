@@ -180,7 +180,7 @@
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
 }
 .country {
-  padding: 0 0 0 3px;
+  margin: 0;
   color: darkgray;
   text-align: start;
 }
@@ -188,15 +188,16 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-top: 2px;
 }
 .val {
   color: darkgray;
+  margin: 0;
 }
 .price {
   font-size: 12px;
   font-weight: 600;
   color: grey;
+  margin: 0;
 }
 .price span {
   font-size: 10px;
