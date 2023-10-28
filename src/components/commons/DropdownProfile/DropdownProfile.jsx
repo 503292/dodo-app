@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { ReactComponent as Info } from '../../../assets/image/nav/`info.svg';
+import { ReactComponent as Info } from '../../../assets/image/nav/info.svg';
 import { ReactComponent as Settings } from '../../../assets/image/nav/setting.svg';
 import { ReactComponent as Profile } from '../../../assets/image/nav/profile.svg';
 import { ReactComponent as Notes } from '../../../assets/image/nav/notes.svg';
