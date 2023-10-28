@@ -39,7 +39,7 @@ const NavbarTop = () => {
         </NavLink>
       </li> */}
       <li className={css.routeHeader}>
-        <NavLink exact activeStyle={ativeStyle} to="/todo">
+        <NavLink exact activeStyle={ativeStyle} to="/">
           <Logo />
         </NavLink>
       </li>

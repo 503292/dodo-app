@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// import MenuPage from '../../../pages/MenuPage';
+import MenuPage from '../../../pages/MenuPage';
 import TasksPage from '../../../pages/TasksPage';
 import WeatherPage from '../../../pages/WeatherPage';
 import CurrencyPage from '../../../pages/CurrencyPage';
@@ -14,7 +14,7 @@ import SettingPage from '../../../pages/SettingPage';
 const RoutesSite = () => (
   <>
     <Switch>
-      {/* <Route path="/" exact component={MenuPage} /> */}
+      <Route path="/" exact component={MenuPage} />
       <Route path="/todo" exact component={TasksPage} />
       <Route path="/info" exact component={InfoSitePage} />
       <Route path="/weather" component={WeatherPage} />

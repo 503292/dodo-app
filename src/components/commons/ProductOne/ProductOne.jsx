@@ -2,119 +2,81 @@ import React from 'react';
 
 import css from './ProductOne.module.scss';
 
-import { ReactComponent as Brand } from '../../../assets/image/alatyr.svg';
-const ProductOne = () => {
-  // const [imgUrl, setImgUrl] = useState('');
+// import { ReactComponent as Brand } from '../../../assets/image/alatyr.svg';
+const ProductOne = ({ product }) => (
+  <div className={css.product}>
+    <div className={css.aboutProduct}>
+      <h2 className={css.productName}>{product.name}</h2>
+      <p className={css.productDescription}>{product.description}</p>
+      <br />
+      <p className={css.productCount}>Кількість: {product.count}</p>
+      <p className={css.productColor}>Колір: {product.color}</p>
+      <p className={css.productEngraving}>
+        Гравіровка: {product.engraving ? 'Так' : 'Ні'}
+      </p>
+      <p className={css.productMaterial}>
+        Матеріали: {product.material.join(', ')}
+      </p>
+      <p className={css.productSize}>Діаметр: {product.size} мм</p>
+      <p className={css.productWeight}>Вага: {product.weight} г</p>
+      <p className={css.productProductType}>
+        Тип товару: {product.productType}
+      </p>
+      <p className={css.productCountryOfOrigin}>
+        Країна виробництва: {product.countryOfOrigin}
+      </p>
+      <p className={css.productDeliveryTime}>
+        Термін доставки: {product.deliveryTime}
+      </p>
+      {/* <p className={css.productCertificates}>
+        Сертифікати: {product.certificates.join(', ')}
+      </p> */}
+      <p className={css.productCustomization}>
+        Індивідуалізація: {product.customization ? 'Так' : 'Ні'}
+      </p>
+      <br />
+      <p className={css.productPrice}>Ціна: {product.price}$/pcs</p>
+    </div>
 
-  return (
-    <li className={css.productOne}>
-      <h3 className={css.title}>Алатир</h3>
-      <div className={css.wrapSubtitle}>
-        <div className={css.wrapBrand}>
-          {/* <img src="../../.." alt="FotoProduct" /> */}
-          <Brand />
-        </div>
-
-        {/* QR code */}
-
-        <fieldset className={`${css.fieldset}`}>
-          <legend className={css.legend}>
-            <strong>Alatyr Corporation.</strong>{' '}
-          </legend>
-          {/* <User/> Co */}
-          {/*  */}
-          <p>Contacts</p>
-          <p>Location </p> {/* TODO with country flag */}
-          <p>icon with check {/* TODO green */}</p>
-          <p>Create</p>
-          <p>Phone</p>
-          {/* <p>Вага: 300гр.</p>
-          <p>Висота: 20см.</p>
-          <p>Ширина: 20см.</p> */}
-        </fieldset>
+    {product.images && (
+      <div className={css.productImages}>
+        {product.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`${product.name} Image ${index + 1}`}
+            className={css.productImage}
+          />
+        ))}
       </div>
-      {/*  */}
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}>Опис:</legend>
-        <p>
-          <strong>Алатир - символ Коляди. </strong> Сотворена народними
-          умільцями, восьмикутна зірка ставала справжнім витвором мистецтва й
-          радістю для людей. У різдвяному вертепі нести її доручали "звіздарю" -
-          саме він тримав колядницьку сонцесяйну Зірку-Алатир, обходячи оселі та{' '}
-          <strong>провіщаючи господарям злагоду і добробут.</strong>
-        </p>
-        <p>
-          <strong>Алатир в слов'янській міфології</strong> - провісник
-          Божеського добра, око Роду. Саме тому колядницькі ватаги
-          <strong></strong>використовували восьмикутну{' '}
-          <strong>
-            зірку в якості свого найголовнішого оберега і атрибута Різдва,
-          </strong>{' '}
-          наряджаючись у святкові маски і шкури тотемних тварин, прославляючи
-          новонародженого Божича-Коляду.
-        </p>
-        <p>
-          <strong>В Україні</strong> традиція виготовлення різдвяних звізд
-          особливо поширена. Колись, кожен регіон мав свою специфіку
-          виготовлення зірок.{' '}
-          <strong>Зазвичай, їх робили із дерев'яних дошок та</strong> решета (
-          <strong>обечайки</strong>), півтора-два метри в діаметрі. Потім
-          обклеювали кольоровими папером і тканинами, прикрашали фольгою,
-          стрічками й китицями.{' '}
-        </p>
-        {/* <p>Опис</p> */}
-        <p>
-          <i>Особливості:</i> <strong>У шумерів</strong> восьмипроменева зірка
-          була символом богині Інанни (Іштар в аккадській міфології), служила
-          ієрогліфом понять "бог, небо, зірка"; в Аккаді і Вавилоні ця ідеограма
-          висловлювала поняття <strong>"бог, сонце, зірка, рік"</strong>. У
-          середньовічній символіці Західної Європи існувало поєднання прямого і
-          косого хрестів, утворюючи восьмикутну зірку. У Стародавній Індії
-          восьмипроменева зірка була символом єднання чоловічого і жіночого
-          начал, творячого життя. Також в Стародавній Індії існувало шанування
-          восьми напрямків горизонту; вони зв'язувалися з вісьмома богами, яких
-          називали "вартові світу". У скандинавській традиції світ мав вісім
-          напрямків.
-        </p>
-        {/*  */}
-        <p>
-          {/* Теги:  */}
-          Стандартна зірка мала вісім ріжків, однак в певних областях
-          дотримувались і більшої кількості, арґументуючи це: "чим більше - тим
-          краще". Сама зірка кріпилася на високій жердині непорушно, а промені
-          крутилися довкола осі за допомогою блока та протягненого від нього
-          шнурка. На одному боці зірки зображали людське обличчя або Сонце, на
-          другому – колядницькі сцени. Усередину іноді вставляли свічку,
-          утворюючи щось на зразок "чарівного ліхтаря". На виготовлення такої
-          звізди йшло від тижня часу, тому їх виробляли заздалегідь.
-        </p>
-        {/*  */}
-        <p>
-          {/* Наявність: */}
-          Безліч архаїчних культур і старожитностей зберігають пам'ять про цей
-          язичницький символ. Восьмикутні знаки зображені на давньоруських
-          медальйонах княжої влади. Чимало восьмикутник зірок можна побачити на
-          стелях та стінах розкішних палаців української знаті минулого, –
-          Вишневецьких, Ґрохольських тощо. Святилище Перуна в Києві було оточене
-          вісьмома кострищами, розташованими за напрямками чотирьох основних
-          сторін горизонту і чотирьох проміжних. Восьмипроменевим був і
-          культовий індоєвропейський символ дощу - "громовик".
-        </p>
-        ...
-        {/*  */}
-        {/* <p>Ціна</p> */}
-      </fieldset>
-      {/* <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Локація </legend>
-        <p>Доставка локація від (аддрес)</p>
-      </fieldset> */}
-      {/*  */}
-      {/* <fieldset className={css.fieldset}>
-        <legend className={css.legend}> Автор </legend>
-        <p>Дата і підпис</p>
-      </fieldset> */}
-    </li>
-  );
-};
+    )}
+  </div>
+);
 
 export default ProductOne;
+
+// <h3 className={css.title}>Алатир</h3>
+// <div className={css.wrapSubtitle}>
+//   <div className={css.wrapBrand}>
+//     {/* <img src="../../.." alt="FotoProduct" /> */}
+//     <Brand />
+//   </div>
+
+//   {/* QR code */}
+
+//   <fieldset className={`${css.fieldset}`}>
+//     <legend className={css.legend}>
+//       <strong>Alatyr Corporation.</strong>{' '}
+//     </legend>
+//     {/* <User/> Co */}
+//     {/*  */}
+//     <p>Contacts</p>
+//     <p>Location </p> {/* TODO with country flag */}
+//     <p>icon with check {/* TODO green */}</p>
+//     <p>Create</p>
+//     <p>Phone</p>
+//     {/* <p>Вага: 300гр.</p>
+//       <p>Висота: 20см.</p>
+//       <p>Ширина: 20см.</p> */}
+//   </fieldset>
+// </div>
