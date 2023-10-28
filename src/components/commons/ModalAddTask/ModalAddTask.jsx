@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import AddTaskForm from '../AddTaskForm/AddTaskForm';
 
 import { modalAddTasksClose } from '../../../redux/global/globalActions';
-import css from './ModalAddTask.module.css';
+import css from './ModalAddTask.module.scss';
 
 const ModalAddTask = ({ editTask, handleResetEditTask }) => {
   const dispatch = useDispatch();

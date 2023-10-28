@@ -15,6 +15,10 @@
   margin: 0;
   box-shadow: 0 0 4px 0px grey;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .aboutProduct {

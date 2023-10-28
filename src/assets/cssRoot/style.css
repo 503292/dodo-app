@@ -1,6 +1,7 @@
 @import './normalize.css';
 @import '../fonts/fonts.css';
-@import './mixins.scss';
+/* TODO scss not connect here */
+/* @import './mixins.scss'; */
 
 :root {
   --blue: #007bff;
