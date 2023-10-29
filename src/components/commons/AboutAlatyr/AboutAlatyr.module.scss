@@ -1,0 +1,24 @@
+.fieldset {
+  border: none;
+  border-radius: 13px;
+  background-color: #fff;
+  font-style: italic;
+  margin: 0;
+  box-shadow: 0 0 4px 0px grey;
+  background: var(--tr_light);
+
+  //   .legend {
+  //     padding: 2px 5px;
+  //     margin: 0;
+  //     background: var(--tr_light);
+  //     border: 2px solid lightgray;
+  //     border-radius: 15px;
+  //   }
+
+  & > p > span {
+    font-weight: bold;
+  }
+}
+.fieldset:not(:last-child) {
+  margin: 0 0 5px;
+}
