@@ -35,7 +35,7 @@ const ProductOne = ({ product }) => (
         Індивідуалізація: {product.customization ? 'Так' : 'Ні'}
       </p>
       <br />
-      <p className={css.productPrice}>Ціна: {product.price}$/pcs</p>
+      {/* <p className={css.productPrice}>Ціна: {product.price}$/pcs</p> */}
     </div>
 
     {product.images && (
