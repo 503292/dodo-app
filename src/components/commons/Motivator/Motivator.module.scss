@@ -1,14 +1,8 @@
 .container {
   background-color: rgba(255, 255, 255, 0.9);
   margin-bottom: 9px;
-  border-radius: 0 30px;
+  border-radius: 1.5rem;
   position: relative;
-  // TODO
-  // background: linear-gradient(
-  //   180deg,
-  //   rgba(3, 128, 252, 0.498337) 0%,
-  //   #fffd00 100%
-  // );
   background: linear-gradient(
     180deg,
     rgba(3, 128, 252, 0.5) 0%,
@@ -17,13 +11,7 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
   min-width: 100%;
 }
-.alatyr {
-  position: absolute;
-  height: 25px;
-  fill: salmon;
-  top: 8px;
-  left: 8px;
-}
+
 .btnRefresh {
   position: absolute;
   top: -10px;
@@ -74,8 +62,7 @@
   font-size: 1.5rem;
   color: grey;
   margin: 0;
-  padding: 8px 30px 10px 20px;
-  text-indent: 19px;
+  padding: 6px 30px 6px 15px;
 }
 .author {
   margin: 0;
