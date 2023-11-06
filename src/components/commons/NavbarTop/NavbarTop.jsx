@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from '../../Header/Logo/Logo';
+// import Logo from '../../Header/Logo/Logo';
 import WeatherNav from '../../Header/WeatherNav/WeatherNav';
 import CurrencyNav from '../../Header/CurrencyNav/CurrencyNav';
 import InfoSite from '../../Header/Info/Info';
 import DropdownProfile from '../DropdownProfile/DropdownProfile';
 
 // import planetUrl from '../../../assets/image/inProgress/planet.png';
-// import { ReactComponent as Sun } from '../../../assets/image/inProgress/sun.svg';
+import { ReactComponent as Sun } from '../../../assets/image/nav/sun.svg';
 // import { ReactComponent as Compass } from '../../../assets/image/inProgress/compass2.svg';
 
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';
@@ -40,7 +40,7 @@ const NavbarTop = () => {
       </li> */}
       <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/">
-          <Logo />
+          <Sun />
         </NavLink>
       </li>
       <li className={css.routeHeader}>
