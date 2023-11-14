@@ -47,7 +47,6 @@ const Info = () => (
       {/* 4 */}
       <BoxWithBorder title="Для швидкого доступу з головного екрану телефона:">
         <div className={css.inWall}>
-          <p>Для швидкого доступу з головного екрану телефона:</p>
           <p>
             - У верхній частині браузера натисніть -&gt;
             <ThreeDots className={css.threeDots} />
