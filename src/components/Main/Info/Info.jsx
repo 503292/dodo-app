@@ -14,7 +14,7 @@ const Info = () => (
   <div className={css.container}>
     <div className={css.wrapDescription}>
       {/* 1 */}
-      <BoxWithBorder title="Планер (іконка алатир):">
+      {/* <BoxWithBorder title="Планер (іконка алатир):">
         <ul className={css.wrapList}>
           <li>Зверху вкладки знаходяться цитати.</li>
           <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
@@ -26,16 +26,16 @@ const Info = () => (
           <li>При створенні можна вибрати пріоритетність завдання і час.</li>
           <li>Завдання можна перетягувати по вертикалі для зручності.</li>
         </ul>
-      </BoxWithBorder>
+      </BoxWithBorder> */}
       {/* 2 */}
-      <BoxWithBorder title="Прогноз погоди (іконка погоди і температура в даний час):">
+      {/* <BoxWithBorder title="Прогноз погоди (іконка погоди і температура в даний час):">
         <ul className={css.wrapList}>
           <li>Показує погоду на 7 наступних днів.</li>
           <li>Також є пошук по населеному пункту.</li>
         </ul>
-      </BoxWithBorder>
+      </BoxWithBorder> */}
       {/* 3 */}
-      <BoxWithBorder title="Слово автора">
+      {/* <BoxWithBorder title="Слово автора">
         <p className={css.authorWords}>
           " Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
           зберегти, його можна тільки акумулювати в блага. Він є скінченною
@@ -43,7 +43,7 @@ const Info = () => (
           ефективного контролю тобі потрібно планувати і виконувати завдання. У
           цьому тобі допоможе моя програма. "
         </p>
-      </BoxWithBorder>
+      </BoxWithBorder> */}
       {/* 4 */}
       <BoxWithBorder title="Для швидкого доступу з головного екрану телефона:">
         <div className={css.inWall}>
@@ -89,7 +89,7 @@ const Info = () => (
         <WhatSappUrl />
         <span className={`${css.bgBlock} ${css.green}`} />
       </a>
-      <a
+      {/* <a
         className={css.messenger}
         href="viber://chat?number=%2B380938800911"
         target="_blank"
@@ -97,9 +97,9 @@ const Info = () => (
       >
         <Viber />
         <span className={`${css.bgBlock} ${css.purple}`} />
-      </a>
+      </a> */}
 
-      <a
+      {/* <a
         className={css.messenger}
         href="https://telegram.me/alatyr_ua"
         target="_blank"
@@ -107,7 +107,7 @@ const Info = () => (
       >
         <Telegram />
         <span className={`${css.bgBlock} ${css.blue}`} />
-      </a>
+      </a> */}
     </div>
   </div>
 );

@@ -35,19 +35,15 @@ const WeatherNav = () => {
   };
 
   const getGlobalWeather = () => {
-    fetchWorldWeather(setNewLocation())
-      .then(data => {
-        const dataWeather = parseWeatherData(data);
-        localStorage.setItem('localWeather', JSON.stringify(dataWeather));
-        localStorage.setItem('location', dataWeather.timezone);
+    fetchWorldWeather(setNewLocation()).then(data => {
+      const dataWeather = parseWeatherData(data);
+      localStorage.setItem('localWeather', JSON.stringify(dataWeather));
+      localStorage.setItem('location', dataWeather.timezone);
 
-        setWeather(dataWeather);
-        setLocation(dataWeather.timezone);
-        dispatch(updateLocation(dataWeather.timezone));
-      })
-      .catch(() => {
-        toast('Якщо ви не бачите погоду. Зверніться у техпідтримку');
-      });
+      setWeather(dataWeather);
+      setLocation(dataWeather.timezone);
+      dispatch(updateLocation(dataWeather.timezone));
+    });
   };
 
   useEffect(() => {
