@@ -5,8 +5,8 @@ import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder2';
 
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
-import { ReactComponent as Viber } from '../../../assets/image/messengers/viber.svg';
-import { ReactComponent as Telegram } from '../../../assets/image/messengers/telegram.svg';
+// import { ReactComponent as Viber } from '../../../assets/image/messengers/viber.svg';
+// import { ReactComponent as Telegram } from '../../../assets/image/messengers/telegram.svg';
 
 import css from './Info.module.scss';
 

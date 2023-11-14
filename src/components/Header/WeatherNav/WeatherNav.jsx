@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import parseWeatherData from './ParseWorlWeather';
@@ -77,8 +76,6 @@ const WeatherNav = () => {
           <p className={css.timezone}>{location}</p>
         </div>
       )}
-
-      <ToastContainer autoClose={4500} position="bottom-center" />
     </>
   );
 };
