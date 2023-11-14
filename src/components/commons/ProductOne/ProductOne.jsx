@@ -18,7 +18,7 @@ const ProductOne = ({ product }) => (
         Матеріали: {product.material.join(', ')}
       </p>
       <p className={css.productSize}>Діаметр: {product.size} мм</p>
-      <p className={css.productWeight}>Вага: {product.weight} г</p>
+      {/* <p className={css.productWeight}>Вага: {product.weight} г</p>  */}
       <p className={css.productProductType}>
         Тип товару: {product.productType}
       </p>
