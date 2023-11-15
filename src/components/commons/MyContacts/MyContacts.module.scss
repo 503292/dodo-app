@@ -1,0 +1,90 @@
+.myContacts {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 2 div */
+.wrapCreater {
+  font-size: 14px;
+
+  & p {
+    margin: 0;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+
+    .link {
+      font-family: Caveat, sans-serif;
+      font-weight: 700;
+      color: green;
+      text-decoration: none;
+      padding-bottom: 15px;
+      cursor: pointer;
+    }
+    .link:hover,
+    .link:focus {
+      color: rgb(243, 165, 165);
+    }
+
+    .link {
+      font-family: Caveat, sans-serif;
+      font-weight: 700;
+      color: green;
+      text-decoration: none;
+    }
+    .link:hover,
+    .link:focus {
+      color: rgb(243, 165, 165);
+    }
+  }
+}
+
+// messangers
+.messangers {
+  display: flex;
+
+  .messenger {
+    height: 54px;
+    width: 54px;
+    position: relative;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+      margin-right: 6px;
+    }
+
+    & > svg {
+      height: 50px;
+      width: 50px;
+      margin-top: 2px;
+      margin-left: 2px;
+      padding: 5px;
+    }
+
+    .bgBlock {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 54px;
+      width: 54px;
+
+      border-radius: 9px;
+      z-index: -1;
+    }
+    .green {
+      background: linear-gradient(
+        180deg,
+        rgba(142, 224, 150, 1) 0%,
+        rgba(38, 179, 60, 1) 100%
+      );
+    }
+    // TODO maybe delete
+    // .purple {
+    //   background: linear-gradient(180deg, #c08ee0 0%, #9526b3 100%);
+    // }
+    // .blue {
+    //   background: linear-gradient(180deg, #8ec3e0 0%, #268cb3 100%);
+    // }
+  }
+}
