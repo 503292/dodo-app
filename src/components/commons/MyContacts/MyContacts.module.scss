@@ -1,18 +1,25 @@
+.myContacts {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* 2 div */
 .wrapCreater {
   font-size: 14px;
-  display: flex;
-  justify-content: space-between;
 
   & p {
     margin: 0;
     padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
 
     .link {
       font-family: Caveat, sans-serif;
       font-weight: 700;
       color: green;
       text-decoration: none;
+      padding-bottom: 15px;
+      cursor: pointer;
     }
     .link:hover,
     .link:focus {
@@ -40,6 +47,7 @@
     height: 54px;
     width: 54px;
     position: relative;
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-bottom: 6px;

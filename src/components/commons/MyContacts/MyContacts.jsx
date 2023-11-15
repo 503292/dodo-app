@@ -1,26 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import css from './MyContacts.module.scss';
+import CurrentYear from '../CurrentYear/CurrentYear';
 
 import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
+import css from './MyContacts.module.scss';
 
 const MyContacts = () => {
   return (
-    <>
+    <div className={css.myContacts}>
       <div className={css.wrapCreater}>
         <p>
-          <span>© 2020</span>
-          <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
+          {/* <a className={css.link} href="https://www.linkedin.com/in/kalyshmax/">
             МaVKa
-          </a>
-        </p>
-        <p>
+          </a> */}
           <a
             className={css.link}
             href="mailto:kalysh.max@gmail.com?subject=Питання з YaK!"
           >
             kalysh.max@gmail.com
           </a>
+          <span>
+            © 2020 - <CurrentYear />
+          </span>
         </p>
       </div>
       <div className={css.messangers}>
@@ -34,7 +35,7 @@ const MyContacts = () => {
           <span className={`${css.bgBlock} ${css.green}`} />
         </a>
       </div>
-    </>
+    </div>
   );
 };
 
