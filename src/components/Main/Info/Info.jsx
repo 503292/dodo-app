@@ -5,46 +5,12 @@ import BoxWithBorder from '../../commons/BoxWithBorder/BoxWithBorder2';
 
 import { ReactComponent as ThreeDots } from '../../../assets/image/three-dots-vertical.svg';
 import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
-// import { ReactComponent as Viber } from '../../../assets/image/messengers/viber.svg';
-// import { ReactComponent as Telegram } from '../../../assets/image/messengers/telegram.svg';
 
 import css from './Info.module.scss';
 
 const Info = () => (
   <div className={css.container}>
     <div className={css.wrapDescription}>
-      {/* 1 */}
-      {/* <BoxWithBorder title="Планер (іконка алатир):">
-        <ul className={css.wrapList}>
-          <li>Зверху вкладки знаходяться цитати.</li>
-          <li>У правому нижньому куті кнопка “+” для створення завдань.</li>
-          <li>Біля кнопки “+” годинник.</li>
-          <li>
-            У лівому нижньому куті - таймер зворотного відліку до нового року.
-          </li>
-          <li>Завдання можна створювати, редагувати, викреслювати.</li>
-          <li>При створенні можна вибрати пріоритетність завдання і час.</li>
-          <li>Завдання можна перетягувати по вертикалі для зручності.</li>
-        </ul>
-      </BoxWithBorder> */}
-      {/* 2 */}
-      {/* <BoxWithBorder title="Прогноз погоди (іконка погоди і температура в даний час):">
-        <ul className={css.wrapList}>
-          <li>Показує погоду на 7 наступних днів.</li>
-          <li>Також є пошук по населеному пункту.</li>
-        </ul>
-      </BoxWithBorder> */}
-      {/* 3 */}
-      {/* <BoxWithBorder title="Слово автора">
-        <p className={css.authorWords}>
-          " Ти вільний на стільки, на скільки контролюєш свій час! Час не можна
-          зберегти, його можна тільки акумулювати в блага. Він є скінченною
-          величиною, тому його потрібно використовувати ефективно. Для
-          ефективного контролю тобі потрібно планувати і виконувати завдання. У
-          цьому тобі допоможе моя програма. "
-        </p>
-      </BoxWithBorder> */}
-      {/* 4 */}
       <BoxWithBorder title="Для швидкого доступу з головного екрану телефона:">
         <div className={css.inWall}>
           <p>
@@ -88,25 +54,6 @@ const Info = () => (
         <WhatSappUrl />
         <span className={`${css.bgBlock} ${css.green}`} />
       </a>
-      {/* <a
-        className={css.messenger}
-        href="viber://chat?number=%2B380938800911"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Viber />
-        <span className={`${css.bgBlock} ${css.purple}`} />
-      </a> */}
-
-      {/* <a
-        className={css.messenger}
-        href="https://telegram.me/alatyr_ua"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Telegram />
-        <span className={`${css.bgBlock} ${css.blue}`} />
-      </a> */}
     </div>
   </div>
 );
