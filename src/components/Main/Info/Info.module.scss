@@ -1,9 +1,12 @@
 .container {
   position: relative;
   color: grey;
-  height: 100%;
   overflow: auto;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .container::-webkit-scrollbar-track {

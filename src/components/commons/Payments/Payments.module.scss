@@ -1,0 +1,22 @@
+.wrapBinance {
+  display: flex;
+  justify-content: space-evenly;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .currency {
+    min-width: 200px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+      min-width: 280px;
+    }
+
+    & > p {
+      text-align: center;
+    }
+  }
+}
