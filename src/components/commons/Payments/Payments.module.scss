@@ -1,0 +1,12 @@
+.wrapBinance {
+  display: flex;
+  justify-content: space-evenly;
+  .currency {
+    height: 200px;
+    width: 200px;
+
+    & > p {
+      text-align: center;
+    }
+  }
+}

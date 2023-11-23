@@ -4,6 +4,9 @@
   height: 100%;
   overflow: auto;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .container::-webkit-scrollbar-track {
