@@ -1,4 +1,4 @@
-.wrapBinance {
+.binance {
   display: flex;
   justify-content: space-evenly;
 
@@ -8,15 +8,14 @@
   }
 
   .currency {
-    min-width: 200px;
+    max-width: 200px;
+
+    & > img {
+      width: -webkit-fill-available;
+    }
 
     @media (max-width: 768px) {
       margin-bottom: 10px;
-      min-width: 280px;
-    }
-
-    & > p {
-      text-align: center;
     }
   }
 }
