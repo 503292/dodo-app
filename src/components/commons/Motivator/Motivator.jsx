@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import motivations from './motivations';
 
 import { ReactComponent as Refresh } from '../../../assets/image/refresh.svg';
-import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
-
-import copyText from '../../../utils/copyText';
+import BtnCopy from '../../commons/BtnCopy/BtnCopy';
 
 import css from './Motivator.module.scss';
 
@@ -24,15 +22,6 @@ const Motivator = () => {
     loadNewMotivation(e);
   }, []);
 
-  const handleCopy = e => {
-    e.stopPropagation();
-    copyText(
-      `${motivations[motivationNumber].motivation} ${motivations[
-        motivationNumber
-      ].author ?? '🙈 🙉 🙊'}`,
-    );
-  };
-
   let oneMotive = '';
   let oneAuthor = '';
 
@@ -50,18 +39,12 @@ const Motivator = () => {
           onClick={e => {
             loadNewMotivation(e);
           }}
+          title="reload"
         >
           <Refresh className={css.refresh} />
         </button>
-        <button
-          type="button"
-          className={css.btnCopy}
-          onClick={e => {
-            handleCopy(e);
-          }}
-        >
-          <Copy className={css.copy} />
-        </button>
+
+        <BtnCopy text={`${oneMotive} ${oneAuthor ? oneAuthor : '🙈 🙉 🙊'}`} />
 
         <p onClick={e => e.stopPropagation()} className={css.text}>
           {oneMotive}

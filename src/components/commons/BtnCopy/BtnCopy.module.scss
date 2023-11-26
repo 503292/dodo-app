@@ -1,0 +1,20 @@
+.btnCopy {
+  position: absolute;
+  bottom: -10px;
+  right: -6px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-shadow: inset 0 0 3px grey;
+  width: 2rem;
+  height: 2rem;
+  background: var(--tr_light);
+
+  .copy {
+    color: grey;
+    width: 18px;
+    height: 18px;
+  }
+}
