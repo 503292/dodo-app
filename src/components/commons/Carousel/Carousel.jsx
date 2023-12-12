@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
+import BtnArrow from '../BtnArrow/BtnArrow';
+
 import css from './Carousel.module.scss';
 
 const Carousel = ({ children }) => {
@@ -46,20 +48,14 @@ const Carousel = ({ children }) => {
         })}
       </div>
       <div className={css.indicators}>
-        <button
-          onClick={() => {
-            updateIndex(activeIndex - 1);
-          }}
-        >
-          Prev
-        </button>
-        <button
-          onClick={() => {
-            updateIndex(activeIndex + 1);
-          }}
-        >
-          Next
-        </button>
+        <BtnArrow
+          name="Left"
+          handleClick={() => updateIndex(activeIndex - 1)}
+        />
+        <BtnArrow
+          name="Right"
+          handleClick={() => updateIndex(activeIndex - 1)}
+        />
       </div>
     </div>
   );
