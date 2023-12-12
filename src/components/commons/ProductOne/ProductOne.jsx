@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel, { CarouselItem } from '../Carousel/Carousel';
 
 import css from './ProductOne.module.scss';
 
@@ -37,8 +38,20 @@ const ProductOne = ({ product }) => (
       <br />
       {/* <p className={css.productPrice}>Ціна: {product.price}$/pcs</p> */}
     </div>
-
-    {product.images && (
+    {/* // TODO connect here Carousel */}
+    <Carousel>
+      {product?.images.map((image, index) => (
+        <CarouselItem key={index}>
+          <img
+            key={index}
+            src={image}
+            alt={`${product.name} ${index + 1}`}
+            className={css.productImage}
+          />
+        </CarouselItem>
+      ))}
+    </Carousel>
+    {/* {product?.images && (
       <div className={css.productImages}>
         {product.images.map((image, index) => (
           <img
@@ -49,7 +62,7 @@ const ProductOne = ({ product }) => (
           />
         ))}
       </div>
-    )}
+    )} */}
   </div>
 );
 
