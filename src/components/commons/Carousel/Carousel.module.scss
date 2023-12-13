@@ -1,0 +1,42 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+
+  .inner {
+    white-space: nowrap;
+    transition: transform 0.6s;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    &:active {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+  }
+  & > span {
+    position: absolute;
+    top: 40%;
+  }
+  .left {
+    left: 25px;
+    & > button {
+      padding-right: 6px;
+    }
+  }
+  .right {
+    right: 25px;
+    & > button {
+      padding-left: 6px;
+    }
+  }
+}
+
+.carouselItem {
+  display: inline-flex;
+  align-items: center;
+  background-color: green;
+  color: #fff;
+}

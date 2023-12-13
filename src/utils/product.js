@@ -14,7 +14,7 @@ export const products = [
     countryOfOrigin: 'Ukraine',
     deliveryTime: '2-4 business weeks',
     customization: true,
-    images: [pallet1],
+    images: [pallet1, pallet1, pallet1],
   },
 ];
 // TODO in progress add items
