@@ -7,10 +7,12 @@
   border-radius: 50%;
   box-shadow: inset 0px 0px 2px 0.1px rgba(0, 0, 0, 0.75);
   position: relative;
-  opacity: 0.5;
+  opacity: 0.3;
 
-  &:hover {
-    opacity: 1;
+  &:hover,
+  &:focus,
+  :active {
+    opacity: 0.6;
   }
 
   & > svg {

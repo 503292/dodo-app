@@ -47,16 +47,18 @@ const Carousel = ({ children }) => {
           return React.cloneElement(child, { width: '100%' });
         })}
       </div>
-      <div className={css.indicators}>
+      <span className={css.left}>
         <BtnArrow
           name="Left"
           handleClick={() => updateIndex(activeIndex - 1)}
         />
+      </span>
+      <span className={css.right}>
         <BtnArrow
           name="Right"
           handleClick={() => updateIndex(activeIndex - 1)}
         />
-      </div>
+      </span>
     </div>
   );
 };
