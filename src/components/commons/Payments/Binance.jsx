@@ -13,12 +13,15 @@ const PAY_ID = '764342691';
 const Binance = () => {
   return (
     <div className={css.binance}>
-      {Object.keys(currency).map((c, idx) => (
-        <div className={css.currency} key={idx}>
-          <img src={currency[c]} alt={c} />
-          <BtnCopy text={PAY_ID} />
-        </div>
-      ))}
+      <h2>Donate, підтримка проекту, podaruj, Binance</h2>
+      <div>
+        {Object.keys(currency).map((c, idx) => (
+          <div className={css.currency} key={idx}>
+            <img src={currency[c]} alt={c} />
+            <BtnCopy text={PAY_ID} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

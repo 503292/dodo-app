@@ -1,7 +1,16 @@
 .binance {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   min-height: 200px;
+
+  & > h2 {
+    text-align: center;
+  }
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   @media (max-width: 768px) {
     align-items: center;
@@ -23,6 +32,28 @@
 
     @media (max-width: 768px) {
       margin-bottom: 10px;
+    }
+  }
+}
+
+.payPal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & > img {
+    width: 50vw;
+  }
+
+  & > span {
+    display: flex;
+    align-items: center;
+
+    & > button {
+      position: relative;
+      bottom: 0;
     }
   }
 }
