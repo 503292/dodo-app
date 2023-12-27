@@ -13,7 +13,7 @@ const PAY_ID = '764342691';
 const Binance = () => {
   return (
     <div className={css.binance}>
-      <h2>Donate, підтримка проекту, podaruj, Binance</h2>
+      <h2>Donate, підтримка проекту, podaruj</h2>
       <div>
         {Object.keys(currency).map((c, idx) => (
           <div className={css.currency} key={idx}>
