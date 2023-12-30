@@ -1,7 +1,7 @@
 import React from 'react';
 
 import productUrl from '../../../assets/image/products/epoxyM1.jpg';
-import { ReactComponent as Heart } from '../../../assets/image/heart.svg';
+// import { ReactComponent as Heart } from '../../../assets/image/heart.svg';
 
 import css from './ProductCard.module.scss';
 
