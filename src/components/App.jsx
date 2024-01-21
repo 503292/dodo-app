@@ -10,6 +10,7 @@ import Main from './Main/Main';
 import Loader from './commons/Loader/Loader';
 
 import css from './App.module.css';
+import '../assets/cssRoot/-mixins.scss';
 
 const App2 = () => {
   // TODO

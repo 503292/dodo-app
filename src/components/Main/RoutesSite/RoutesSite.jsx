@@ -10,6 +10,7 @@ import InfoSitePage from '../../../pages/InfoSitePage';
 import CountryPage from '../../../pages/CountryPage';
 import SettingPage from '../../../pages/SettingPage';
 // import ProfilePage from '../../../pages/ProfilePage';
+import RandomProductList from '../../../pages/RandomProductList';
 
 const RoutesSite = () => (
   <>
@@ -23,6 +24,7 @@ const RoutesSite = () => (
       <Route path="/settings" component={SettingPage} />
       {/* TODO in progress */}
       {/* <Route path="/profile" component={ProfilePage} /> */}
+      <Route path="/random" component={RandomProductList} />
 
       <Route component={ErrorPage} />
     </Switch>
