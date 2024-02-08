@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -27,7 +26,6 @@ const errorMessage = 'Введіть будь ласка, текст';
 const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   const dispatch = useDispatch();
   const allTasks = useSelector(s => s.tasks);
-  //  TODO global one task
   const [endTime, setEndTime] = useState(new Date());
   const [text, setText] = useState('');
   const [priority, setPriority] = useState(Priority.NORMAL);
