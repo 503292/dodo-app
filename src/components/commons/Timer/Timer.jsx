@@ -58,18 +58,11 @@ const Timer = () => {
     <div className={css.container}>
       <div className={css.wrapTimer}>
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.blue}`}>
-            {seconds}
+          <button type="button" className={`${css.btn} ${css.grey}`}>
+            {days}
           </button>
-          <span className={css.descr}>Секунд</span>
+          <span className={css.descr}>Днів</span>
         </div>
-        <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.yellow}`}>
-            {minutes}
-          </button>
-          <span className={css.descr}>Хвилин</span>
-        </div>
-
         <div className={css.wrapValue}>
           <button type="button" className={`${css.btn} ${css.red}`}>
             {hours}
@@ -77,10 +70,16 @@ const Timer = () => {
           <span className={css.descr}>Годин</span>
         </div>
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.grey}`}>
-            {days}
+          <button type="button" className={`${css.btn} ${css.yellow}`}>
+            {minutes}
           </button>
-          <span className={css.descr}>Дня</span>
+          <span className={css.descr}>Хвилин</span>
+        </div>
+        <div className={css.wrapValue}>
+          <button type="button" className={`${css.btn} ${css.blue}`}>
+            {seconds}
+          </button>
+          <span className={css.descr}>Секунд</span>
         </div>
       </div>
 
