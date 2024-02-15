@@ -14,7 +14,7 @@ const AnimationToogle = () => {
   };
   return (
     <div title={isAnimation ? 'is ON' : 'is OFF'} className={css.animation}>
-      <Toogle isChecked={isAnimation} setAnimationCheched={handleOpen} />
+      <Toogle isChecked={isAnimation} handleCheck={handleOpen} />
       {isAnimation ? (
         <span>Анімація включена</span>
       ) : (
