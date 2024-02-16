@@ -6,8 +6,8 @@ import { sendMessage } from '../utils/requestNotificationPermission.js';
 const RandomProductList = () => {
   const handlerMessage = () => {
     const random = (Math.random() * 100).toFixed(0);
-    console.log(random, 'random');
-    sendMessage(random);
+    console.log(random, 'random num');
+    sendMessage(`random -> ${random}`);
   };
 
   return (
