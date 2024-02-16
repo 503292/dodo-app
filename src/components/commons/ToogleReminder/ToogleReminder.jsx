@@ -1,5 +1,4 @@
-import React from // , { useState }
-'react';
+import React from 'react'; // , { useState }
 
 // import Toogle from '../Toogle/Toogle';
 // import { requestNotificationPermission } from '../../../utils/requestNotificationPermission';
