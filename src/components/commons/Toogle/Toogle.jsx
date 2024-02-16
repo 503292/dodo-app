@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './Toogle.module.css';
 
-const Toogle = ({ isChecked, setAnimationCheched }) => {
+const Toogle = ({ isChecked, handleCheck }) => {
   return (
     <>
       <input
         checked={isChecked}
-        onChange={setAnimationCheched}
+        onChange={handleCheck}
         type="checkbox"
         className={css.switch}
       />
@@ -17,7 +17,7 @@ const Toogle = ({ isChecked, setAnimationCheched }) => {
 
 Toogle.propTypes = {
   isChecked: PropTypes.bool.isRequired,
-  setAnimationCheched: PropTypes.func.isRequired,
+  handleCheck: PropTypes.func.isRequired,
 };
 
 export default Toogle;
