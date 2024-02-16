@@ -56,16 +56,36 @@ function showNotificationDeniedMessage() {
 //   }
 // });
 
+export function sendMessage(text) {
+  // Notification.requestPermission().then(perm => {
+  if (Notification.permission === 'granted') {
+    // console.log('ddd');
+    // Повідомлення дозволено, ви можете відображати повідомлення.
+    new Notification(text);
+  }
+  // });
+  // const timeout = setTimeout(() => {
+  //   const random = toString(Math.floor(Math.random() * 10));
+  //   console.log(typeof random, 'rrrr');
+  //   new Notification(`ddd ${random}`);
+  //   console.log(Notification.permission, 'bbb');
+  //   console.log(text, 'bbb222');
+  // }, 200);
+
+  // return () => {
+  //   clearTimeout(timeout);
+  // };
+}
 // TODO connect Notification in Task create
 // useEffect(() => {
-//   const timeout = setTimeout(() => {
-//     new Notification(' fff');
-//     console.log('bbb');
-//   }, 3000);
+// const timeout = setTimeout(() => {
+//   new Notification(' fff');
+//   console.log('bbb');
+// }, 3000);
 
-//   return () => {
-//     clearTimeout(timeout);
-//   };
+// return () => {
+//   clearTimeout(timeout);
+// };
 // }, []);
 
 // Для використання нагадувань вам потрібно надати дозвіл для сповіщень
