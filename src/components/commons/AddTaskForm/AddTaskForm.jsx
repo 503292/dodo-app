@@ -75,12 +75,14 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
     if (oneTask) {
       oneTask = { ...oneTask, text, priority, endTime };
 
+      // update redux
       dispatch(updateTaskToRedux(oneTask));
 
       // update task to localStorage
-      const filterArr = localTasksArr.filter(el => el.id !== id);
-      filterArr.unshift(oneTask);
-      localStorage.setItem('localTasks', JSON.stringify(filterArr));
+      const updateTasks = localTasksArr.map(task =>
+        task.id === id ? { ...oneTask } : task,
+      );
+      localStorage.setItem('localTasks', JSON.stringify(updateTasks));
     } else {
       const data = {
         endTime,
@@ -94,12 +96,12 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
 
       // add task to localStorage
       if (localTasksArr) {
-        localTasksArr.push(data);
-        localStorage.setItem('localTasks', JSON.stringify(localTasksArr));
+        localStorage.setItem(
+          'localTasks',
+          JSON.stringify([data, ...localTasksArr]),
+        );
       } else {
-        const arr = [];
-        arr.push(data);
-        localStorage.setItem('localTasks', JSON.stringify(arr));
+        localStorage.setItem('localTasks', JSON.stringify([data]));
       }
     }
 
@@ -108,7 +110,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
 
   return (
     <div className={css.wrapAllForm}>
-      <form onSubmit={handleSubmit} className={css.addForm} type="submit">
+      <form onSubmit={handleSubmit} className={css.addForm}>
         <div className={css.topAddForm}>
           <h2 className={css.title}>Нове завдання</h2>
           <button
