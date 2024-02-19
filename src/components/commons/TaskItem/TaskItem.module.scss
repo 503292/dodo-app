@@ -18,6 +18,9 @@
   margin: 0 auto;
   display: flex;
   background: var(--tr_light);
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
@@ -29,14 +32,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   font-style: italic;
   cursor: grab;
+  overflow: hidden;
 }
 .wrapText p {
   margin: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .text {
+  width: 100%;
   line-height: 1.4;
   font-weight: 400;
 }
