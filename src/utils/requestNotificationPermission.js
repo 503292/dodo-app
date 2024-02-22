@@ -1,27 +1,40 @@
-export async function requestNotificationPermission() {
-  if (!('Notification' in window)) {
-    alert('This browser does not support desktop notification');
-  }
+import icon from '../assets/image/inProgress/sun.png';
 
+let count = 1;
+
+export async function requestNotificationPermission() {
   let res = false;
 
-  if (Notification.permission === 'granted') {
+  if (!('Notification' in window)) {
+    alert('This browser does not support desktop notification');
+    return res;
+  }
+
+  if (window.Notification.permission === 'granted') {
     // Повідомлення вже дозволено, ви можете відображати повідомлення.
-    new Notification('Повідомлення дозволено!');
-  } else if (Notification.permission === 'denied') {
+    ++count;
+    console.log(count);
+    const b = new window.Notification('Повідомлення дозволено! 1', {
+      vibrate: [200, 100, 200],
+      icon: icon,
+      body: `count ${count}`,
+    });
+    res = true;
+  } else if (window.Notification.permission === 'denied') {
     // Повідомлення відхилено, показати сповіщення або вікно з поясненням.
     showNotificationDeniedMessage();
+    res = false;
   } else {
     // Запитати дозвіл, тут можливо вивести кнопку або інтерфейс для юзера.
-    res = await Notification.requestPermission().then(perm => {
+    res = await window.Notification.requestPermission().then(perm => {
       if (perm === 'granted') {
         // Повідомлення дозволено, ви можете відображати повідомлення.
-        new Notification('Повідомлення дозволено!');
-        return true;
+        new window.Notification('Повідомлення дозволено! 2');
+        res = true;
       } else if (perm === 'denied' || perm === 'default') {
         // Повідомлення відхилено, показати сповіщення або вікно з поясненням.
         showNotificationDeniedMessage();
-        return false;
+        res = false;
       }
     });
   }
@@ -58,10 +71,10 @@ function showNotificationDeniedMessage() {
 
 export function sendMessage(text) {
   // Notification.requestPermission().then(perm => {
-  if (Notification.permission === 'granted') {
+  if (window.Notification.permission === 'granted') {
     // console.log('ddd');
     // Повідомлення дозволено, ви можете відображати повідомлення.
-    new Notification(text);
+    new window.Notification(text);
   }
   // });
   // const timeout = setTimeout(() => {
