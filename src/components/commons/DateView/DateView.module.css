@@ -1,4 +1,8 @@
 .date {
   font-size: 12px;
   text-align: end;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  gap: 1px;
 }
