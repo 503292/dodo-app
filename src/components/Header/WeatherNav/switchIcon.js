@@ -17,7 +17,7 @@ import { ReactComponent as CloudMoonRain } from '../../../assets/image/weather/c
 import { ReactComponent as Thermometer } from '../../../assets/image/weather/thermometer.svg';
 
 export default function switchIcon(descrEn, isDay) {
-  switch (descrEn) {
+  switch (descrEn.trim()) {
     case 'moderate or heavy rain in area with thunder':
     case 'patchy light rain in area with thunder':
     case 'thundery outbreaks in nearby':

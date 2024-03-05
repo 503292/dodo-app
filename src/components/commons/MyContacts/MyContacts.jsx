@@ -2,7 +2,8 @@ import React from 'react';
 
 import CurrentYear from '../CurrentYear/CurrentYear';
 
-import { ReactComponent as WhatSappUrl } from '../../../assets/image/messengers/whatsapp.svg';
+import { ReactComponent as WhatsApp } from '../../../assets/image/messengers/whatsapp.svg';
+import { ReactComponent as Skype } from '../../../assets/image/messengers/skype.svg';
 import css from './MyContacts.module.scss';
 
 const MyContacts = () => {
@@ -26,13 +27,22 @@ const MyContacts = () => {
       </div>
       <div className={css.messangers}>
         <a
+          title="WhatsApp"
           className={css.messenger}
           href="https://wa.me/+380938800911"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <WhatSappUrl />
-          <span className={`${css.bgBlock} ${css.green}`} />
+          <WhatsApp />
+        </a>
+        <a
+          title="Skype"
+          className={css.messenger}
+          href={`skype:kalysh_max?chat`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Skype />
         </a>
       </div>
     </div>
