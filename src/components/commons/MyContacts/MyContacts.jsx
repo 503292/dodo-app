@@ -27,6 +27,7 @@ const MyContacts = () => {
       </div>
       <div className={css.messangers}>
         <a
+          title="WhatsApp"
           className={css.messenger}
           href="https://wa.me/+380938800911"
           target="_blank"
@@ -35,6 +36,7 @@ const MyContacts = () => {
           <WhatsApp />
         </a>
         <a
+          title="Skype"
           className={css.messenger}
           href={`skype:kalysh_max?chat`}
           target="_blank"
