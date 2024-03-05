@@ -1,15 +1,15 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// import Logo from '../../Header/Logo/Logo';
-import WeatherNav from '../../Header/WeatherNav/WeatherNav';
-import CurrencyNav from '../../Header/CurrencyNav/CurrencyNav';
-import InfoSite from '../../Header/Info/Info';
-import DropdownProfile from '../DropdownProfile/DropdownProfile';
+// import Logo from '../-Logo/Logo';
+import WeatherNav from '../WeatherNav/WeatherNav';
+import CurrencyNav from '../CurrencyNav/CurrencyNav';
+import InfoSite from '../Info/Info';
+import DropdownProfile from '../../commons/DropdownProfile/DropdownProfile';
 
 // import planetUrl from '../../../assets/image/inProgress/planet.png';
-import { ReactComponent as Sun } from '../../../assets/image/nav/sun.svg';
 // import { ReactComponent as Compass } from '../../../assets/image/inProgress/compass2.svg';
+import { ReactComponent as Sun } from '../../../assets/image/nav/sun.svg';
 
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';
 
@@ -68,23 +68,3 @@ const NavbarTop = () => {
 };
 
 export default NavbarTop;
-
-// TODO refact route
-// const route = [
-//   {
-//     url: '/',
-//     icon: <InfoSite />,
-//   },
-//   {
-//     url: '/weather',
-//     icon: <WeatherNav />,
-//   },
-//   {
-//     url: '/currency',
-//     icon: <CurrencyNav />,
-//   },
-//   {
-//     url: '/info',
-//     icon: <Logo />,
-//   },
-// ];
