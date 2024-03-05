@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavbarTop from '../commons/NavbarTop/NavbarTop';
+import NavbarTop from './NavbarTop/NavbarTop';
 import isDay from '../../utils/isDay';
 
 import css from './Header.module.scss';

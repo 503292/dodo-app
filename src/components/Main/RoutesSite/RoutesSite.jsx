@@ -12,23 +12,25 @@ import SettingPage from '../../../pages/SettingPage';
 // import ProfilePage from '../../../pages/ProfilePage';
 import RandomProductList from '../../../pages/RandomProductList';
 
-const RoutesSite = () => (
-  <>
-    <Switch>
-      <Route path="/" exact component={MenuPage} />
-      <Route path="/todo" exact component={TasksPage} />
-      <Route path="/info" exact component={InfoSitePage} />
-      <Route path="/weather" component={WeatherPage} />
-      <Route path="/currency" component={CurrencyPage} />
-      <Route path="/country" component={CountryPage} />
-      <Route path="/settings" component={SettingPage} />
-      {/* TODO in progress */}
-      {/* <Route path="/profile" component={ProfilePage} /> */}
-      <Route path="/random" component={RandomProductList} />
+const RoutesSite = () => {
+  return (
+    <>
+      <Switch>
+        <Route path="/" exact component={TasksPage} />
+        <Route path="/menu" exact component={MenuPage} />
+        <Route path="/info" exact component={InfoSitePage} />
+        <Route path="/weather" component={WeatherPage} />
+        <Route path="/currency" component={CurrencyPage} />
+        <Route path="/country" component={CountryPage} />
+        <Route path="/settings" component={SettingPage} />
+        {/* TODO in progress */}
+        {/* <Route path="/profile" component={ProfilePage} /> */}
+        <Route path="/random" component={RandomProductList} />
 
-      <Route component={ErrorPage} />
-    </Switch>
-  </>
-);
+        <Route component={ErrorPage} />
+      </Switch>
+    </>
+  );
+};
 
 export default RoutesSite;

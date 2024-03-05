@@ -35,7 +35,7 @@ const DropdownProfile = ({ isActive, refProfile }) => {
               </NavLink>
             </li>
             <li className={css.page}>
-              <NavLink exact activeStyle={ativeStyle} to="/todo">
+              <NavLink exact activeStyle={ativeStyle} to="/menu">
                 <Notes />
               </NavLink>
             </li>
