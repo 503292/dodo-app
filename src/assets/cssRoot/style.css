@@ -75,7 +75,8 @@ html {
   box-sizing: border-box;
   width: 100vw;
   height: 100%;
-  background: var(--G13);
+  /* background: var(--G13); */
+  background-color: rgba(251, 251, 160, 0.8);
 }
 *,
 *::before,
