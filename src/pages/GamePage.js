@@ -1,7 +1,13 @@
 import React from 'react';
 
+import MathGame from '../components/commons/MathGame/MathGame';
+
 const GamePage = () => {
-  return <>GAME</>;
+  return (
+    <>
+      <MathGame />
+    </>
+  );
 };
 
 export default GamePage;
