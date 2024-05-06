@@ -13,8 +13,8 @@ const MathGame = () => {
   const [inputValue, setInputValue] = useState('');
 
   const mathTask = useMemo(() => {
-    const firstNum = randomIntFromInterval(1, 100);
-    const secondNum = randomIntFromInterval(1, 100);
+    const firstNum = randomIntFromInterval(1, 5);
+    const secondNum = randomIntFromInterval(1, 5);
     setAnswer(firstNum + secondNum);
     return `${firstNum} + ${secondNum}`;
   }, [count]);
@@ -22,17 +22,22 @@ const MathGame = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
+    validateAnswer();
+  }
+
+  const validateAnswer = () => {
     if (answer === +inputValue) {
       setCount(prev => (prev += 1));
       setInputValue('');
     } else {
+      // TODO add toast (refact global)
       console.log('try one more');
     }
-  }
+  };
 
   return (
     <form className={css.wrapGame} onSubmit={handleSubmit}>
-      <p>Math Game</p>
+      <h2>Math Game</h2>
       <p className={css.mathTask}>{mathTask}</p>
       <input
         type="number"
@@ -41,11 +46,13 @@ const MathGame = () => {
         value={inputValue}
         onChange={e => setInputValue(+e.target.value)}
       />
-      <button type="submit">Відповісти</button> <br />
-      <button type="button" onClick={() => setInputValue('')}>
-        Скинути
-      </button>
-      <div> Counter = {count}</div>
+      <div className={css.wrapBtns}>
+        <button type="button" onClick={() => setInputValue('')}>
+          Скинути
+        </button>
+        <button type="submit">Відповісти</button>
+      </div>
+      <div className={css.counter}> Counter = {count}</div>
     </form>
   );
 };

@@ -1,6 +1,61 @@
 .wrapGame {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: var(--tr_dark);
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+
+  h2 {
+    margin: 0;
+  }
   .mathTask {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: tomato;
+  }
+
+  input[type='number'] {
+    width: 100%;
+    padding: 10px;
+    font-size: 36px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .wrapBtns {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: var(--blue_btn);
+
+      color: #fff;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .counter {
+    font-size: 16px;
+    margin-top: 20px;
   }
 }
