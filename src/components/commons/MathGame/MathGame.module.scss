@@ -52,7 +52,8 @@
       font-size: 3rem;
       font-weight: 700;
       color: grey;
-      border: 1px solid darkgrey;
+      border: none;
+      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 
       &:nth-child(1) {
         background: var(--grey_btn);
@@ -81,8 +82,7 @@
       height: 100px;
       border-radius: 15px;
       width: calc(50% - 5px);
-      // border: 3px dotted darkgrey;
-      width: calc(50% - 5px);
+      color: var(--G5);
     }
 
     span {
@@ -94,16 +94,17 @@
     }
 
     button {
-      font-weight: 700;
       padding: 10px 20px;
       border: 1px solid darkgrey;
-      cursor: pointer;
-      background-color: var(--yellow_btn);
+      background: var(--yellow_btn);
       transition: background-color 0.3s ease;
-      color: gray;
 
-      &:hover {
+      &:hover:not([disabled]) {
         opacity: 0.7;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
       }
 
       &:not(:first-of-type) {

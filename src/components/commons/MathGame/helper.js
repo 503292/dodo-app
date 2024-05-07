@@ -1,3 +1,5 @@
+import { toastMessage } from '../Toast/Toast';
+
 export function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -23,6 +25,23 @@ export const getRandomAnswerArr = (min, max, answer = 5) => {
       }
       return acc;
     }, []);
-  console.log(answerArr);
+
   return answerArr;
+};
+
+export const generateMathTask = (min, max, setAnswer) => {
+  const firstNum = randomIntFromInterval(min, max);
+  const secondNum = randomIntFromInterval(min, max);
+  setAnswer(firstNum + secondNum);
+  return `${firstNum} + ${secondNum}`;
+};
+
+export const checkAnswer = (answer, inputValue, setCount, setInputValue) => {
+  if (answer === +inputValue) {
+    setCount(prev => (prev += 1));
+    setInputValue('');
+  } else {
+    toastMessage('Спробуй ще раз).');
+    setCount(prev => (prev -= 1));
+  }
 };

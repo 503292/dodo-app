@@ -1,6 +1,10 @@
-import React, { useState, useMemo, useEffect, Fragment } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Divider from '../Divider/Divider';
-import { getRandomAnswerArr, randomIntFromInterval } from './helper';
+import MathTask from './MathTask';
+import Setting from './Setting';
+import Answers from './Answers';
+import Footer from './Footer';
+import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 
 import css from './MathGame.module.scss';
 
@@ -10,77 +14,35 @@ const MAX = 10;
 const MathGame = () => {
   const [count, setCount] = useState(0);
   const [answer, setAnswer] = useState(null);
-  const [inputValue, setInputValue] = useState('');
-  const [answersArr, setAnswersArr] = useState([1, 2, 3, 4]);
+  const [userAnswer, setUserAnswer] = useState('');
+  const [answersArr, setAnswersArr] = useState(null);
 
   const mathTask = useMemo(() => {
-    const firstNum = randomIntFromInterval(MIN, MAX);
-    const secondNum = randomIntFromInterval(MIN, MAX);
-    setAnswer(firstNum + secondNum);
-    return `${firstNum} + ${secondNum}`;
+    return generateMathTask(MIN, MAX, setAnswer);
+    // eslint-disable-next-line
   }, [count]);
 
   useEffect(() => {
-    if (answer) {
-      setAnswersArr(getRandomAnswerArr(MIN, MAX, answer));
-    }
-  }, [answer]);
+    setAnswersArr(getRandomAnswerArr(MIN, MAX, answer));
+    // eslint-disable-next-line
+  }, [count]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    validateAnswer();
+    checkAnswer(answer, userAnswer, setCount, setUserAnswer);
   }
-
-  const validateAnswer = () => {
-    if (answer === +inputValue) {
-      setCount(prev => (prev += 1));
-      setInputValue('');
-    } else {
-      // TODO add toast (refact global)
-      console.log('try one more');
-    }
-  };
 
   return (
     <form className={css.wrapGame} onSubmit={handleSubmit}>
+      <Setting />
       <h2>Math Game</h2>
-      <div className={css.mathTask}>
-        <p>
-          {mathTask} <br /> =
-        </p>
-        <input
-          type="number"
-          inputMode="numeric"
-          pattern="\d*"
-          placeholder="?"
-          value={inputValue}
-          onChange={e => setInputValue(+e.target.value)}
-        />
-      </div>
+      <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
       <Divider />
-      <AnswerBlock answersArr={answersArr} handleClick={setInputValue} />
-
+      <Answers answers={answersArr} handleClick={setUserAnswer} />
       <Divider />
-      <div className={css.footer}>
-        <span>Лічильник: {count}</span>
-        <button type="submit" className={`animateBtn`}>
-          Відповісти
-        </button>
-      </div>
+      <Footer count={count} userAnswer={userAnswer} />
     </form>
   );
 };
 
 export default MathGame;
-
-const AnswerBlock = ({ answersArr, handleClick = () => {} }) => {
-  return (
-    <div className={css.wrapAnswers}>
-      {answersArr?.map((answer, idx) => (
-        <button key={idx} type="button" onClick={() => handleClick(answer)}>
-          {answer}
-        </button>
-      ))}
-    </div>
-  );
-};
