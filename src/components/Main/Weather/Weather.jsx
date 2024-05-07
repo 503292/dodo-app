@@ -72,7 +72,7 @@ const Weather = () => {
       })
       // eslint-disable-next-line no-unused-vars
       .catch(() => {
-        toast('Такого населеного пункту немає (. Попробуйте латиницею.');
+        toast('Населений пункт не знайдено.');
         dispatch(loaderOff());
       });
   };
@@ -87,7 +87,7 @@ const Weather = () => {
     const lowerCaseSearch = search.toLowerCase().trim();
 
     if (lowerCaseSearch === '') {
-      toast('Ви не вказали назву населеного пункту! (.');
+      toast('Вкажіть населеного пункту!');
       return;
     }
 

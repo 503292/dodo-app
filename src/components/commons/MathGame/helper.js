@@ -41,7 +41,8 @@ export const checkAnswer = (answer, inputValue, setCount, setInputValue) => {
     setCount(prev => (prev += 1));
     setInputValue('');
   } else {
-    toastMessage('Спробуй ще раз).');
+    toastMessage(`${inputValue} ≠ ).`);
     // setCount(prev => (prev -= 1));
+    setInputValue('');
   }
 };
