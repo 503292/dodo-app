@@ -1,11 +1,11 @@
-import React, { useState, useMemo, Fragment } from 'react';
+import React, { useState, useMemo, useEffect, Fragment } from 'react';
 import Divider from '../Divider/Divider';
+import { getRandomAnswerArr, randomIntFromInterval } from './helper';
+
 import css from './MathGame.module.scss';
 
-function randomIntFromInterval(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+const MIN = 0;
+const MAX = 10;
 
 const MathGame = () => {
   const [count, setCount] = useState(0);
@@ -14,15 +14,20 @@ const MathGame = () => {
   const [answersArr, setAnswersArr] = useState([1, 2, 3, 4]);
 
   const mathTask = useMemo(() => {
-    const firstNum = randomIntFromInterval(0, 2);
-    const secondNum = randomIntFromInterval(1, 2);
+    const firstNum = randomIntFromInterval(MIN, MAX);
+    const secondNum = randomIntFromInterval(MIN, MAX);
     setAnswer(firstNum + secondNum);
     return `${firstNum} + ${secondNum}`;
   }, [count]);
 
+  useEffect(() => {
+    if (answer) {
+      setAnswersArr(getRandomAnswerArr(MIN, MAX, answer));
+    }
+  }, [answer]);
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(answer, '===', inputValue);
     validateAnswer();
   }
 
@@ -53,14 +58,8 @@ const MathGame = () => {
         />
       </div>
       <Divider />
+      <AnswerBlock answersArr={answersArr} handleClick={setInputValue} />
 
-      <div className={css.wrapAnswers}>
-        {answersArr.map((el, idx) => (
-          <Fragment key={idx}>
-            <AnswerBlock text={el} handleClick={setInputValue} />
-          </Fragment>
-        ))}
-      </div>
       <Divider />
       <div className={css.footer}>
         <span>Лічильник: {count}</span>
@@ -74,20 +73,14 @@ const MathGame = () => {
 
 export default MathGame;
 
-const AnswerBlock = ({ text, handleClick = () => {} }) => {
-  // TODO generator random answer with include TRUE answer
+const AnswerBlock = ({ answersArr, handleClick = () => {} }) => {
   return (
-    <button type="button" onClick={() => handleClick(text)}>
-      {text} - // - TODO
-    </button>
+    <div className={css.wrapAnswers}>
+      {answersArr?.map((answer, idx) => (
+        <button key={idx} type="button" onClick={() => handleClick(answer)}>
+          {answer}
+        </button>
+      ))}
+    </div>
   );
 };
-
-{
-  /* <div className={css.wrapBtns}>
-        <button type="button" onClick={() => setInputValue('')}>
-          Скинути
-        </button>
-        <button type="submit">Відповісти</button>
-      </div> */
-}

@@ -12,31 +12,31 @@
   }
   .mathTask {
     font-size: 3rem;
-    font-weight: 700;
     text-align: center;
-    color: tomato;
 
-    & > p {
-      margin-bottom: 10px;
+    p,
+    input {
+      color: tomato;
+      text-align: center;
+      font-weight: 700;
     }
-  }
 
-  input[type='number'] {
-    height: 100px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-    outline: none;
-    background-color: var(--tr_light);
-    width: calc(50% - 5px);
-    -moz-appearance: textfield;
-    cursor: text;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    input[type='number'] {
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      box-sizing: border-box;
+      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+      outline: none;
+      background-color: var(--tr_light);
+      width: calc(50% - 5px);
+      -moz-appearance: textfield;
+      cursor: text;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
 
   .wrapAnswers {
