@@ -42,6 +42,6 @@ export const checkAnswer = (answer, inputValue, setCount, setInputValue) => {
     setInputValue('');
   } else {
     toastMessage('Спробуй ще раз).');
-    setCount(prev => (prev -= 1));
+    // setCount(prev => (prev -= 1));
   }
 };

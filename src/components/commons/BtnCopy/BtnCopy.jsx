@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
 import copyText from '../../../utils/copyText';
@@ -10,7 +10,7 @@ const BtnCopy = ({ text }) => {
   const handleCopy = e => {
     e.stopPropagation();
     copyText(text);
-    toast('copied');
+    toast('Скопійовано');
   };
 
   return (
@@ -23,7 +23,6 @@ const BtnCopy = ({ text }) => {
       >
         <Copy className={css.copy} />
       </button>
-      <ToastContainer autoClose={1500} position="top-right" />
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import { useSelector } from 'react-redux';
+
 import HeaderNav from './Header/Header';
 import Main from './Main/Main';
 import Loader from './commons/Loader/Loader';
-import { ContainerToast } from './commons/Toast/Toast';
-
-import { useSelector } from 'react-redux';
 
 // TODO fix
 // import Animation from './commons/Animation/Animation';
@@ -41,7 +41,7 @@ const App = () => {
       <main className={`${css.main} scrollbarThumb`}>
         <Main />
       </main>
-      <ContainerToast />
+      <ToastContainer />
     </div>
   );
 };

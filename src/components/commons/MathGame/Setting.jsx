@@ -7,9 +7,10 @@ const OPERATORS = ['+', '-', '*', '/'];
 // √²  x² => '%', 'x²', '√² '
 // TODO view different view for task " -- " & " | "
 
-const Setting = ({ MIN = 0, MAX = 10 }) => {
+const Setting = () => {
   return (
     <div>
+      <p>Налаштування гри:</p>
       <div>
         <span>Рівень - </span>
         {MAX_ARR.map((el, idx) => (
