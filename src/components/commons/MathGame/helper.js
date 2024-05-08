@@ -1,25 +1,41 @@
 import { toastMessage } from '../Toast/Toast';
 
-export function randomIntFromInterval(min, max) {
+function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export const getRandomAnswerArr = (min, max, answer = 5) => {
-  // max plus answer
-  const maxPlus = 2 * max;
-  // generate index for true answer
-  const randomIndexTrueAnswer = randomIntFromInterval(0, 3);
+// TODO in progress '%', 'x²', '√² ' , '/'
+function getMaxByOperator(max, operator) {
+  switch (operator) {
+    case '+':
+      return max * 2;
+    case '-':
+      return max;
+    case '*':
+      return max * max;
+  }
+}
+
+export const getRandomAnswerArr = (
+  min = 0,
+  max = 10,
+  answer,
+  operator = '+',
+) => {
+  const maxAnswer = getMaxByOperator(max, operator);
+  // generate random index for true answer
+  const index = randomIntFromInterval(0, 3);
   //  generate answer array
   const answerArr = Array(4)
     .fill(0)
     .reduce((acc, _, idx) => {
-      if (idx === randomIndexTrueAnswer) {
+      if (idx === index) {
         acc.push(answer);
       } else {
         let randomNum;
         do {
-          randomNum = randomIntFromInterval(min, maxPlus);
+          randomNum = randomIntFromInterval(min, maxAnswer);
         } while (randomNum === answer || acc.includes(randomNum));
         acc.push(randomNum);
       }
@@ -29,20 +45,46 @@ export const getRandomAnswerArr = (min, max, answer = 5) => {
   return answerArr;
 };
 
-export const generateMathTask = (min, max, setAnswer) => {
+function answerTask(num1, num2, operator) {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+
+    case '*':
+      return num1 * num2;
+    // TODO in progress '%', 'x²', '√² ' , '/'
+    // case "/":
+    //   return num1 / num2;
+
+    default:
+      return 0;
+  }
+}
+
+export const generateMathTask = (min, max, setAnswer, operator = '+') => {
   const firstNum = randomIntFromInterval(min, max);
   const secondNum = randomIntFromInterval(min, max);
-  setAnswer(firstNum + secondNum);
-  return `${firstNum} + ${secondNum}`;
+  const res = answerTask(firstNum, secondNum, operator);
+  setAnswer(res);
+  return `${firstNum} ${operator} ${secondNum}`;
 };
 
-export const checkAnswer = (answer, inputValue, setCount, setInputValue) => {
-  if (answer === +inputValue) {
+export const checkAnswer = (
+  answer,
+  userAnswer,
+  setCount,
+  setUserAnswer,
+  mathTask,
+) => {
+  if (answer === +userAnswer) {
     setCount(prev => (prev += 1));
-    setInputValue('');
+    setUserAnswer('');
   } else {
-    toastMessage(`${inputValue} ≠ ).`);
+    toastMessage(`${mathTask} ≠ ${userAnswer}`);
+    // TODO ??? +- for this 🤔 🤨 🧐
     // setCount(prev => (prev -= 1));
-    setInputValue('');
+    setUserAnswer('');
   }
 };

@@ -1,26 +1,65 @@
 import React from 'react';
+import { toastMessage } from '../Toast/Toast';
 
-// TODO in progress
-const MAX_ARR = [10, 100, 1000];
-const OPERATORS = ['+', '-', '*', '/'];
+import { MIN, MAX, OPERATORS } from './constant';
 
-// √²  x² => '%', 'x²', '√² '
+import css from './MathGame.module.scss';
+
 // TODO view different view for task " -- " & " | "
+const Setting = ({
+  selectOperator,
+  setSelectOperator,
+  min,
+  setMin,
+  max,
+  setMax,
+}) => {
+  const validMin = val => {
+    if (max === val) return toastMessage(`MIN ≠ MAX`);
+    setMin(val);
+  };
 
-const Setting = () => {
+  const validMax = val => {
+    if (min === val) return toastMessage(`MIN ≠ MAX`);
+    setMax(val);
+  };
+
   return (
-    <div>
-      <p>Налаштування гри:</p>
+    <div className={css.setting}>
+      <p>Налаштування:</p>
       <div>
-        <span>Рівень - </span>
-        {MAX_ARR.map((el, idx) => (
-          <MyButton key={idx} text={el} />
+        <span>MIN</span>
+        {MIN.map((el, idx) => (
+          <MyButton
+            onClick={() => validMin(el)}
+            active={el === min}
+            key={idx}
+            text={el}
+          />
         ))}
       </div>
+
       <div>
-        <span>Оператор - </span>
+        <span>MAX</span>
+        {MAX.map((el, idx) => (
+          <MyButton
+            onClick={() => validMax(el)}
+            active={el === max}
+            key={idx}
+            text={el}
+          />
+        ))}
+      </div>
+
+      <div>
+        <span>Оператор</span>
         {OPERATORS.map((el, idx) => (
-          <MyButton key={idx} text={el} />
+          <MyButton
+            onClick={() => setSelectOperator(el)}
+            active={el === selectOperator}
+            key={idx}
+            text={el}
+          />
         ))}
       </div>
     </div>
@@ -29,10 +68,16 @@ const Setting = () => {
 
 export default Setting;
 
-const MyButton = ({ text = '', onClick = () => {} }) => {
+const MyButton = ({ text = '', onClick = () => {}, active }) => {
   return (
-    <button type="button" onClick={() => onClick()}>
-      {text}
-    </button>
+    <>
+      <button
+        style={active ? { background: '#ffeb3b' } : {}}
+        type="button"
+        onClick={() => onClick()}
+      >
+        {text}
+      </button>
+    </>
   );
 };

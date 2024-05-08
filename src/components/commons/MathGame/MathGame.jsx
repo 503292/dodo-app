@@ -8,34 +8,41 @@ import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 
 import css from './MathGame.module.scss';
 
-const MIN = 0;
-const MAX = 10;
-
 const MathGame = () => {
   const [count, setCount] = useState(0);
   const [answer, setAnswer] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [answersArr, setAnswersArr] = useState(null);
+  const [selectOperator, setSelectOperator] = useState('+');
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(10);
 
   const mathTask = useMemo(() => {
-    return generateMathTask(MIN, MAX, setAnswer);
+    return generateMathTask(min, max, setAnswer, selectOperator);
     // eslint-disable-next-line
-  }, [count]);
+  }, [count, selectOperator, min, max]);
 
   useEffect(() => {
-    setAnswersArr(getRandomAnswerArr(MIN, MAX, answer));
+    setAnswersArr(getRandomAnswerArr(min, max, answer, selectOperator));
     // eslint-disable-next-line
-  }, [count]);
+  }, [count, selectOperator, min, max]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    checkAnswer(answer, userAnswer, setCount, setUserAnswer);
+    checkAnswer(answer, userAnswer, setCount, setUserAnswer, mathTask);
   }
 
   return (
     <form className={css.wrapGame} onSubmit={handleSubmit}>
-      <Setting />
       <h2>Math Game</h2>
+      <Setting
+        selectOperator={selectOperator}
+        setSelectOperator={setSelectOperator}
+        min={min}
+        setMin={setMin}
+        max={max}
+        setMax={setMax}
+      />
       <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
       <Divider />
       <Answers answers={answersArr} handleClick={setUserAnswer} />
