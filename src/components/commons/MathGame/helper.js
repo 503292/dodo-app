@@ -5,16 +5,41 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// TODO in progress '%', 'x²', '√² ' , '/'
-function getMaxByOperator(max, operator) {
+// TODO in progress '%', '√²'
+function getMaxMinByOperator(operator = '+', range = [0, 10]) {
+  let min_ = range[0];
+  let max_ = range[1];
+  const validMax = getMaxIgnoreMinus(min_, max_);
+
   switch (operator) {
     case '+':
-      return max * 2;
+      max_ = validMax * 2;
+      break;
     case '-':
-      return max;
+      max_ = validMax * 2;
+      min_ = -(validMax * 2);
+      break;
     case '*':
-      return max * max;
+    case 'x²':
+      max_ = validMax * validMax;
+      min_ = -validMax * validMax;
+      break;
+    case 'x/2':
+      max_ = validMax / 2;
+      min_ = -validMax / 2;
+      break;
+    default:
+      max_ = validMax * validMax;
+      min_ = -validMax * validMax;
   }
+
+  return [min_, max_];
+}
+function getMaxIgnoreMinus(min, max) {
+  if (min < 0 && Math.abs(min) >= max) {
+    return Math.abs(min);
+  }
+  return max;
 }
 
 export const getRandomAnswerArr = (
@@ -23,25 +48,26 @@ export const getRandomAnswerArr = (
   answer,
   operator = '+',
 ) => {
-  const maxAnswer = getMaxByOperator(max, operator);
+  // generate min_ & max_ for answer range
+  const [min_, max_] = getMaxMinByOperator(operator, [min, max]);
   // generate random index for true answer
   const index = randomIntFromInterval(0, 3);
-  //  generate answer array
+  //  generate answers array
   const answerArr = Array(4)
     .fill(0)
     .reduce((acc, _, idx) => {
+      // logic for push true answer
       if (idx === index) {
         acc.push(answer);
       } else {
         let randomNum;
         do {
-          randomNum = randomIntFromInterval(min, maxAnswer);
+          randomNum = randomIntFromInterval(min_, max_);
         } while (randomNum === answer || acc.includes(randomNum));
         acc.push(randomNum);
       }
       return acc;
     }, []);
-
   return answerArr;
 };
 
@@ -51,12 +77,13 @@ function answerTask(num1, num2, operator) {
       return num1 + num2;
     case '-':
       return num1 - num2;
-
     case '*':
       return num1 * num2;
-    // TODO in progress '%', 'x²', '√² ' , '/'
-    // case "/":
-    //   return num1 / num2;
+    case 'x²':
+      return num1 * num1;
+    // TODO in progress '%', '√² ' , 'x/2'
+    case 'x/2':
+      return num1 / 2;
 
     default:
       return 0;
@@ -65,6 +92,14 @@ function answerTask(num1, num2, operator) {
 
 export const generateMathTask = (min, max, setAnswer, operator = '+') => {
   const firstNum = randomIntFromInterval(min, max);
+  if (operator === 'x²') {
+    setAnswer(firstNum * firstNum);
+    return `${firstNum}²`;
+  }
+  if (operator === 'x/2') {
+    setAnswer(firstNum / 2);
+    return `${firstNum} / 2`;
+  }
   const secondNum = randomIntFromInterval(min, max);
   const res = answerTask(firstNum, secondNum, operator);
   setAnswer(res);

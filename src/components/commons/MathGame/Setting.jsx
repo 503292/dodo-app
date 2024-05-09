@@ -14,14 +14,9 @@ const Setting = ({
   max,
   setMax,
 }) => {
-  const validMin = val => {
-    if (max === val) return toastMessage(`MIN ≠ MAX`);
-    setMin(val);
-  };
-
-  const validMax = val => {
-    if (min === val) return toastMessage(`MIN ≠ MAX`);
-    setMax(val);
+  const validate = (val, setVal, limit) => {
+    if (limit === val) return toastMessage(`MIN ≠ MAX`);
+    setVal(val);
   };
 
   return (
@@ -31,7 +26,7 @@ const Setting = ({
         <span>MIN</span>
         {MIN.map((el, idx) => (
           <MyButton
-            onClick={() => validMin(el)}
+            onClick={() => validate(el, setMin, max)}
             active={el === min}
             key={idx}
             text={el}
@@ -43,7 +38,7 @@ const Setting = ({
         <span>MAX</span>
         {MAX.map((el, idx) => (
           <MyButton
-            onClick={() => validMax(el)}
+            onClick={() => validate(el, setMax, min)}
             active={el === max}
             key={idx}
             text={el}

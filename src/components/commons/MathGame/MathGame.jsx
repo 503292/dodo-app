@@ -8,14 +8,18 @@ import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 
 import css from './MathGame.module.scss';
 
+const MIN = 0;
+const MAX = 4;
+const OPERATOR = '+';
+
 const MathGame = () => {
   const [count, setCount] = useState(0);
   const [answer, setAnswer] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [answersArr, setAnswersArr] = useState(null);
-  const [selectOperator, setSelectOperator] = useState('+');
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10);
+  const [selectOperator, setSelectOperator] = useState(OPERATOR);
+  const [min, setMin] = useState(MIN);
+  const [max, setMax] = useState(MAX);
 
   const mathTask = useMemo(() => {
     return generateMathTask(min, max, setAnswer, selectOperator);
