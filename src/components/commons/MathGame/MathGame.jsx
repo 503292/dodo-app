@@ -9,7 +9,7 @@ import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 import css from './MathGame.module.scss';
 
 const MIN = 0;
-const MAX = 4;
+const MAX = 10;
 const OPERATOR = '+';
 
 const MathGame = () => {
