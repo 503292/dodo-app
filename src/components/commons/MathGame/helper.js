@@ -5,6 +5,10 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function isOdd(num) {
+  return num % 2 !== 0;
+}
+
 // TODO in progress '%', '√²'
 function getMaxMinByOperator(operator = '+', range = [0, 10]) {
   let min_ = range[0];
@@ -52,7 +56,7 @@ export const getRandomAnswerArr = (
   const [min_, max_] = getMaxMinByOperator(operator, [min, max]);
   // generate random index for true answer
   const index = randomIntFromInterval(0, 3);
-  //  generate answers array
+  //  fill answers array
   const answerArr = Array(4)
     .fill(0)
     .reduce((acc, _, idx) => {
@@ -63,6 +67,10 @@ export const getRandomAnswerArr = (
         let randomNum;
         do {
           randomNum = randomIntFromInterval(min_, max_);
+          if (operator === 'x/2' && !Number.isInteger(answer)) {
+            // add .5 to randomNum if !isInteger
+            randomNum += 0.5;
+          }
         } while (randomNum === answer || acc.includes(randomNum));
         acc.push(randomNum);
       }
@@ -81,10 +89,9 @@ function answerTask(num1, num2, operator) {
       return num1 * num2;
     case 'x²':
       return num1 * num1;
-    // TODO in progress '%', '√² ' , 'x/2'
     case 'x/2':
       return num1 / 2;
-
+    // TODO in progress '%', '√²'
     default:
       return 0;
   }
@@ -100,6 +107,11 @@ export const generateMathTask = (min, max, setAnswer, operator = '+') => {
     setAnswer(firstNum / 2);
     return `${firstNum} / 2`;
   }
+  // TODO in progress
+  // if (operator === '%') {
+  //   setAnswer(firstNum % firstNum);
+  //   return `${firstNum} ${operator} ${secondNum}`;
+  // }
   const secondNum = randomIntFromInterval(min, max);
   const res = answerTask(firstNum, secondNum, operator);
   setAnswer(res);
@@ -118,7 +130,7 @@ export const checkAnswer = (
     setUserAnswer('');
   } else {
     toastMessage(`${mathTask} ≠ ${userAnswer}`);
-    // TODO ??? +- for this 🤔 🤨 🧐
+    // TODO ??? minus for counter -> 🤔 🤨 🧐 for this ⬇⬇⬇
     // setCount(prev => (prev -= 1));
     setUserAnswer('');
   }
