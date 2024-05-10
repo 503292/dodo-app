@@ -5,10 +5,6 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function isOdd(num) {
-  return num % 2 !== 0;
-}
-
 // TODO in progress '%', '√²'
 function getMaxMinByOperator(operator = '+', range = [0, 10]) {
   let min_ = range[0];
