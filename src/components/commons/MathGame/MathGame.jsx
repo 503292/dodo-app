@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Divider from '../Divider/Divider';
 import MathTask from './MathTask';
+import SettingBtn from './SettingBtn';
 import Setting from './Setting';
 import Answers from './Answers';
 import Footer from './Footer';
@@ -20,6 +21,7 @@ const MathGame = () => {
   const [selectOperator, setSelectOperator] = useState(OPERATOR);
   const [min, setMin] = useState(MIN);
   const [max, setMax] = useState(MAX);
+  // const [isOpen, setIsOpen] = useState(true);
 
   const mathTask = useMemo(() => {
     return generateMathTask(min, max, setAnswer, selectOperator);
@@ -38,15 +40,20 @@ const MathGame = () => {
 
   return (
     <form className={css.wrapGame} onSubmit={handleSubmit}>
-      <h2>Math Game</h2>
-      <Setting
-        selectOperator={selectOperator}
-        setSelectOperator={setSelectOperator}
-        min={min}
-        setMin={setMin}
-        max={max}
-        setMax={setMax}
-      />
+      {/* <SettingBtn isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} /> */}
+      {/* {isOpen ? ( */}
+      <>
+        <Setting
+          selectOperator={selectOperator}
+          setSelectOperator={setSelectOperator}
+          min={min}
+          setMin={setMin}
+          max={max}
+          setMax={setMax}
+        />
+      </>
+      {/* ) : null} */}
+
       <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
       <Divider />
       <Answers answers={answersArr} handleClick={setUserAnswer} />

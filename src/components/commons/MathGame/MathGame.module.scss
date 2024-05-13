@@ -1,45 +1,64 @@
 .wrapGame {
   font-family: Arial, sans-serif;
-  padding: 20px 10px;
+  padding: 10px;
   background-color: var(--tr_dark);
   border-radius: 8px;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
+  margin: 5px;
+  position: relative;
 
   h2,
   p {
     margin: 0;
   }
 
-  .setting {
-    display: grid;
-    gap: 10px;
+  .circleBtn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
     color: grey;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+    background: transparent;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
 
-    & > div {
+    & > svg {
+      padding-top: 4px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+  .wrapSetting {
+    & > button {
+      position: absolute;
+      right: 10px;
+    }
+
+    .setting {
       display: flex;
-      align-items: center;
-    }
-
-    span {
-      width: 100px;
-    }
-
-    button {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: none;
-      font-size: 1rem;
-      font-weight: 700;
+      gap: 10px;
       color: grey;
-      border: none;
-      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
-      background: transparent;
-      transition: background-color 0.3s ease;
+      padding-top: 50px;
 
-      &:not(:last-of-type) {
-        margin-right: 10px;
+      legend {
+        padding: 0 6px;
+        line-height: 1.5;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0 0.5rem;
+        border-radius: 15px;
+        border: 1px solid var(--G6);
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }
