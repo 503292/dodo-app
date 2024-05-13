@@ -20,7 +20,7 @@ const TodoFooter = ({ modalAddTasksOpen }) => {
         </div>
         <button
           type="button"
-          className={css.addButton}
+          className={`${css.addButton} animateBtn`}
           onClick={modalAddTasksOpen}
         >
           <Plus className={css.plus} />

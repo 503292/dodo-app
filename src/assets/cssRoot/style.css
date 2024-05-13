@@ -75,7 +75,8 @@ html {
   box-sizing: border-box;
   width: 100vw;
   height: 100%;
-  background: var(--G13);
+  /* background: var(--G13); */
+  background-color: rgba(251, 251, 160, 0.8);
 }
 *,
 *::before,
@@ -152,4 +153,34 @@ button {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   not supported by any browser */
+}
+
+/* animation btn */
+
+.animateBtn {
+  -webkit-animation: zcwmini2 4s 0s ease-out infinite;
+  -moz-animation: zcwmini2 4s 0s ease-out infinite;
+  animation: zcwmini2 4s 0s ease-out infinite;
+}
+
+@keyframes zcwmini2 {
+  0% {
+    box-shadow: 0 0 1px 2px #c1eb27, 0 0 1px 2px #2eeb27, 0 0 1px 2px #278ceb;
+  }
+  50% {
+    box-shadow: 0 0 1px 1px #c1eb27;
+  }
+  100% {
+    box-shadow: 0 0 1px 2px #c1eb27, 0 0 1px 2px #2eeb27, 0 0 1px 2px #278ceb;
+  }
+}
+
+/* Toast */
+[class*='Toastify__toast--default'] {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: tomato;
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import 'react-toastify/dist/ReactToastify.css';
 
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';

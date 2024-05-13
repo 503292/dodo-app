@@ -1,14 +1,11 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// import Logo from '../-Logo/Logo';
 import WeatherNav from '../WeatherNav/WeatherNav';
 import CurrencyNav from '../CurrencyNav/CurrencyNav';
 import InfoSite from '../Info/Info';
 import DropdownProfile from '../../commons/DropdownProfile/DropdownProfile';
 
-// import planetUrl from '../../../assets/image/inProgress/planet.png';
-// import { ReactComponent as Compass } from '../../../assets/image/inProgress/compass2.svg';
 import { ReactComponent as Sun } from '../../../assets/image/nav/sun.svg';
 
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';

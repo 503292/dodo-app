@@ -1,0 +1,168 @@
+.wrapGame {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  background-color: var(--tr_dark);
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  position: relative;
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  .circleBtn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: grey;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+    background: transparent;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+
+    & > svg {
+      padding-top: 4px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+  .wrapSetting {
+    & > button {
+      position: absolute;
+      right: 10px;
+    }
+
+    .setting {
+      display: flex;
+      gap: 10px;
+      color: grey;
+      padding-top: 50px;
+
+      legend {
+        padding: 0 6px;
+        line-height: 1.5;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0 0.5rem;
+        border-radius: 15px;
+        border: 1px solid var(--G6);
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .mathTask {
+    font-size: 3rem;
+    text-align: center;
+
+    p,
+    input {
+      color: tomato;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    input[type='number'] {
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      box-sizing: border-box;
+      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+      outline: none;
+      background-color: var(--tr_light);
+      width: calc(50% - 5px);
+      -moz-appearance: textfield;
+      cursor: text;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  .wrapAnswers {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    > button {
+      height: 100px;
+      width: 100%;
+      border-radius: 15px;
+      font-size: 3rem;
+      font-weight: 700;
+      color: grey;
+      border: none;
+      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+      &:nth-child(1) {
+        background: var(--grey_btn);
+        color: var(--jowte);
+      }
+      &:nth-child(2) {
+        background: var(--tr_blue);
+      }
+      &:nth-child(3) {
+        background: var(--tr_red);
+      }
+      &:nth-child(4) {
+        background: var(--tr_yellow);
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    margin-top: 10px;
+
+    span,
+    button {
+      height: 100px;
+      border-radius: 15px;
+      width: calc(50% - 5px);
+      color: grey;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border: 5px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 1px solid darkgrey;
+      background: var(--yellow_btn);
+      transition: background-color 0.3s ease;
+
+      &:hover:not([disabled]) {
+        opacity: 0.7;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 10px;
+      }
+    }
+  }
+}

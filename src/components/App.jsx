@@ -1,18 +1,17 @@
 import React from 'react';
-
+import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
 
 import HeaderNav from './Header/Header';
 import Main from './Main/Main';
+import Loader from './commons/Loader/Loader';
 
 // TODO fix
 // import Animation from './commons/Animation/Animation';
-import Loader from './commons/Loader/Loader';
 
 import css from './App.module.css';
-import '../assets/cssRoot/-mixins.scss';
 
-const App2 = () => {
+const App = () => {
   // TODO
   // const isChecked = useSelector(state => state.global.isAnimationCheck);
   const isLoading = useSelector(state => state.global.isLoading);
@@ -42,8 +41,9 @@ const App2 = () => {
       <main className={`${css.main} scrollbarThumb`}>
         <Main />
       </main>
+      <ToastContainer />
     </div>
   );
 };
 
-export default App2;
+export default App;

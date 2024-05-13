@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import WeatherSearch from '../../commons/WeatherSearch/WeatherSearch';
 import WeatherDescription from '../../commons/WeatherDescription/WeatherDescription';
@@ -11,7 +11,6 @@ import { fetchWorldWeather } from '../../../services/api';
 import { loaderOn, loaderOff } from '../../../redux/global/globalActions';
 import { updateLocation } from '../../../redux/location/locationActions';
 
-import 'react-toastify/dist/ReactToastify.css';
 import css from './Weather.module.css';
 
 // helpers
@@ -73,7 +72,7 @@ const Weather = () => {
       })
       // eslint-disable-next-line no-unused-vars
       .catch(() => {
-        toast('Такого населеного пункту немає (. Попробуйте латиницею.');
+        toast('Населений пункт не знайдено.');
         dispatch(loaderOff());
       });
   };
@@ -88,7 +87,7 @@ const Weather = () => {
     const lowerCaseSearch = search.toLowerCase().trim();
 
     if (lowerCaseSearch === '') {
-      toast('Ви не вказали назву населеного пункту! (.');
+      toast('Вкажіть населеного пункту!');
       return;
     }
 
@@ -120,7 +119,6 @@ const Weather = () => {
       )}
 
       <WeatherFolk indexDay={indexDay} />
-      <ToastContainer autoClose={4500} position="bottom-center" />
     </div>
   );
 };

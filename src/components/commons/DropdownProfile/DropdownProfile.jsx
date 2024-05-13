@@ -6,6 +6,7 @@ import { ReactComponent as Info } from '../../../assets/image/nav/info.svg';
 import { ReactComponent as Settings } from '../../../assets/image/nav/setting.svg';
 import { ReactComponent as Profile } from '../../../assets/image/nav/profile.svg';
 import { ReactComponent as Notes } from '../../../assets/image/nav/notes.svg';
+import { ReactComponent as Game } from '../../../assets/image/nav/game.svg';
 
 import css from './DropdownProfile.module.scss';
 
@@ -37,6 +38,11 @@ const DropdownProfile = ({ isActive, refProfile }) => {
             <li className={css.page}>
               <NavLink exact activeStyle={ativeStyle} to="/menu">
                 <Notes />
+              </NavLink>
+            </li>
+            <li className={css.page}>
+              <NavLink exact activeStyle={ativeStyle} to="/game">
+                <Game />
               </NavLink>
             </li>
           </ul>
