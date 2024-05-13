@@ -18,7 +18,7 @@ const Setting = ({
   max,
   setMax,
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const validate = (val, setVal, limit) => {
     if (limit === val) return toastMessage(`MIN ≠ MAX`);
     setVal(val);
