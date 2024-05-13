@@ -31,6 +31,13 @@ const MathGame = () => {
     // eslint-disable-next-line
   }, [count, selectOperator, min, max]);
 
+  useEffect(() => {
+    if (userAnswer !== '') {
+      // eslint-disable-next-line
+    }
+    setUserAnswer('');
+  }, [selectOperator, min, max]);
+
   function handleSubmit(e) {
     e.preventDefault();
     checkAnswer(answer, userAnswer, setCount, setUserAnswer, mathTask);
