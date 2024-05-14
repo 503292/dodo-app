@@ -6,8 +6,6 @@ import Motivator from '../../commons/Motivator/Motivator';
 // import VideoPlayer from '../../commons/VideoPlayer/VideoPlayer';
 
 import { ReactComponent as MapUa } from '../../../assets/image/logo/mapUa.svg';
-// import ukraineMapUrl from '../../../assets/image/UA/map_ukraine.jpg';
-// import patelnyaMapUrl from '../../../assets/image/UA/map_patelnya.jpg';
 
 import css from './Country.module.scss';
 
@@ -36,16 +34,6 @@ const Country = () => {
           </ReactCardFlip>
         </BoxWithBorder>
 
-        {/* <BoxWithBorder title="UA, Україна, Львів-Червоноград 80103">
-          <div className={css.wrapMap}>
-            <img src={ukraineMapUrl} alt="map" />
-          </div>
-        </BoxWithBorder>
-        <BoxWithBorder title="Карта України (Пательня).">
-          <div className={css.wrapMap}>
-            <img src={patelnyaMapUrl} alt="map" />
-          </div>
-        </BoxWithBorder> */}
         <p className={css.location}>UA, Україна, Червоноград 80103</p>
       </div>
 
