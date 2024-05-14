@@ -56,7 +56,7 @@ const MathGame = () => {
   }, [min, max, operator]);
 
   function handleSubmit(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     checkAnswer(answer, userAnswer, setCount, setUserAnswer, mathTask);
   }
 
@@ -73,7 +73,11 @@ const MathGame = () => {
         />
         <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
         <Divider />
-        <Answers answers={answersArr} handleClick={setUserAnswer} />
+        <Answers
+          answers={answersArr}
+          handleClick={setUserAnswer}
+          checkAnswer={handleSubmit}
+        />
         <Divider />
         <Footer count={count} userAnswer={userAnswer} />
       </form>
