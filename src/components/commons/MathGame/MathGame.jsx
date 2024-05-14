@@ -5,31 +5,55 @@ import Setting from './Setting';
 import Answers from './Answers';
 import Footer from './Footer';
 import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
+import { useLocalStorage } from './useLocalStorage';
 
 import css from './MathGame.module.scss';
 
 const MIN = 0;
 const MAX = 10;
 const OPERATOR = '+';
+const COUNT = 0;
 
 const MathGame = () => {
-  const [count, setCount] = useState(0);
+  const { getSettings, updateSettings } = useLocalStorage();
   const [answer, setAnswer] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [answersArr, setAnswersArr] = useState(null);
-  const [selectOperator, setSelectOperator] = useState(OPERATOR);
+  const [operator, setOperator] = useState(OPERATOR);
   const [min, setMin] = useState(MIN);
   const [max, setMax] = useState(MAX);
-
-  const mathTask = useMemo(() => {
-    return generateMathTask(min, max, setAnswer, selectOperator);
-    // eslint-disable-next-line
-  }, [count, selectOperator, min, max]);
+  const [count, setCount] = useState(COUNT);
 
   useEffect(() => {
-    setAnswersArr(getRandomAnswerArr(min, max, answer, selectOperator));
+    // get and set settings from LocalStorage
+    const settings = getSettings();
+    setOperator(settings.operator);
+    setMin(settings.min);
+    setMax(settings.max);
+    setCount(settings.count);
     // eslint-disable-next-line
-  }, [count, selectOperator, min, max]);
+  }, []);
+
+  const mathTask = useMemo(() => {
+    return generateMathTask(min, max, operator, setAnswer);
+    // eslint-disable-next-line
+  }, [min, max, operator, count]);
+
+  useEffect(() => {
+    // get and set AnswersArr
+    setAnswersArr(getRandomAnswerArr(min, max, operator, answer));
+    // update settings in LocalStorage
+    updateSettings(min, max, operator, count);
+    // eslint-disable-next-line
+  }, [min, max, operator, count]);
+
+  useEffect(() => {
+    if (userAnswer !== '') {
+      setUserAnswer('');
+    }
+    updateSettings(min, max, operator, count);
+    // eslint-disable-next-line
+  }, [min, max, operator]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,21 +61,23 @@ const MathGame = () => {
   }
 
   return (
-    <form className={css.wrapGame} onSubmit={handleSubmit}>
-      <Setting
-        selectOperator={selectOperator}
-        setSelectOperator={setSelectOperator}
-        min={min}
-        setMin={setMin}
-        max={max}
-        setMax={setMax}
-      />
-      <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
-      <Divider />
-      <Answers answers={answersArr} handleClick={setUserAnswer} />
-      <Divider />
-      <Footer count={count} userAnswer={userAnswer} />
-    </form>
+    <div className={css.container}>
+      <form className={css.wrapGame} onSubmit={handleSubmit}>
+        <Setting
+          operator={operator}
+          setOperator={setOperator}
+          min={min}
+          setMin={setMin}
+          max={max}
+          setMax={setMax}
+        />
+        <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
+        <Divider />
+        <Answers answers={answersArr} handleClick={setUserAnswer} />
+        <Divider />
+        <Footer count={count} userAnswer={userAnswer} />
+      </form>
+    </div>
   );
 };
 

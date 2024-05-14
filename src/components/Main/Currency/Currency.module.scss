@@ -1,9 +1,7 @@
 .currencyContainer {
-  padding: 6px 3px 0 3px;
-  height: calc(100% - 60px);
+  padding: 10px 5px 0;
   height: inherit;
   color: gray;
-  overflow-y: auto;
   overflow: auto;
 }
 .currencyContainer::-webkit-scrollbar-track {

@@ -1,10 +1,13 @@
+.container {
+  padding: 10px 5px;
+}
+
 .wrapGame {
   font-family: Arial, sans-serif;
   padding: 10px;
   background-color: var(--tr_dark);
   border-radius: 8px;
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-  margin: 5px;
   position: relative;
 
   h2,
@@ -42,6 +45,7 @@
 
     .setting {
       display: flex;
+      justify-content: space-between;
       gap: 10px;
       color: grey;
       padding-top: 50px;
@@ -66,29 +70,37 @@
   .mathTask {
     font-size: 3rem;
     text-align: center;
+    color: tomato;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     p,
-    input {
-      color: tomato;
-      text-align: center;
+    div {
       font-weight: 700;
     }
 
-    input[type='number'] {
-      height: 80px;
-      border: 1px solid #ccc;
-      border-radius: 15px;
-      box-sizing: border-box;
-      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-      outline: none;
-      background-color: var(--tr_light);
-      width: calc(50% - 5px);
-      -moz-appearance: textfield;
-      cursor: text;
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      & > p,
+      & > span {
+        height: 80px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+        background-color: var(--tr_light);
+        width: calc(50% - 5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & > span {
+        color: grey;
+      }
     }
   }
 
