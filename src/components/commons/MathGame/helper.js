@@ -45,8 +45,8 @@ function getMaxIgnoreMinus(min, max) {
 export const getRandomAnswerArr = (
   min = 0,
   max = 10,
-  answer,
   operator = '+',
+  answer,
 ) => {
   // generate min_ & max_ for answer range
   const [min_, max_] = getMaxMinByOperator(operator, [min, max]);
@@ -93,7 +93,7 @@ function answerTask(num1, num2, operator) {
   }
 }
 
-export const generateMathTask = (min, max, setAnswer, operator = '+') => {
+export const generateMathTask = (min, max, operator = '+', setAnswer) => {
   const firstNum = randomIntFromInterval(min, max);
   if (operator === 'x²') {
     setAnswer(firstNum * firstNum);

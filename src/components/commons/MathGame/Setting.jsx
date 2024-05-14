@@ -10,14 +10,7 @@ import { MIN, MAX, OPERATORS } from './constant';
 import css from './MathGame.module.scss';
 
 // TODO view different view for task " -- " & " | "
-const Setting = ({
-  selectOperator,
-  setSelectOperator,
-  min,
-  setMin,
-  max,
-  setMax,
-}) => {
+const Setting = ({ operator, setOperator, min, setMin, max, setMax }) => {
   const [isOpen, setIsOpen] = useState(false);
   const validate = (val, setVal, limit) => {
     if (limit === val) return toastMessage(`MIN ≠ MAX`);
@@ -56,8 +49,8 @@ const Setting = ({
             <BoxWithBorder title="Оператор">
               {OPERATORS.map((el, idx) => (
                 <CircleButton
-                  onClick={() => setSelectOperator(el)}
-                  active={el === selectOperator}
+                  onClick={() => setOperator(el)}
+                  active={el === operator}
                   key={idx}
                   text={el}
                 />
