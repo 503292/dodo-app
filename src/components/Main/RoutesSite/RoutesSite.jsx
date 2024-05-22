@@ -10,6 +10,7 @@ import InfoSitePage from '../../../pages/InfoSitePage';
 import CountryPage from '../../../pages/CountryPage';
 import SettingPage from '../../../pages/SettingPage';
 import GamePage from '../../../pages/GamePage';
+import LanguageGame from '../../../pages/LanguageGame';
 // import ProfilePage from '../../../pages/ProfilePage';
 import RandomProductList from '../../../pages/RandomProductList';
 
@@ -25,6 +26,7 @@ const RoutesSite = () => {
         <Route path="/country" component={CountryPage} />
         <Route path="/settings" component={SettingPage} />
         <Route path="/game" component={GamePage} />
+        <Route path="/language_game" component={LanguageGame} />
         {/* TODO in progress */}
         {/* <Route path="/profile" component={ProfilePage} /> */}
         <Route path="/random" component={RandomProductList} />

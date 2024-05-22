@@ -1,0 +1,120 @@
+.langGame {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  padding: 10px 5px;
+  margin: 0;
+
+  & > li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 30px;
+    grid-gap: 10px;
+
+    & > button:last-of-type {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+      // TODO fix
+      background: hsla(0, 0%, 50.2%, 0.5);
+      color: #ff9;
+    }
+  }
+}
+
+// COUNTER
+.counters {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 10px;
+  color: grey;
+}
+.yes,
+.no {
+  font-weight: 900;
+  margin: 0;
+
+  span {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dotted rgba(0, 0, 0, 0.3);
+  }
+}
+
+.yes span {
+  color: #28a745;
+}
+.no span {
+  color: tomato;
+}
+// Setting
+
+.wrapSetting {
+  position: relative;
+  padding-top: 10px;
+
+  & > button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 10px;
+
+    & > svg {
+    }
+  }
+
+  .setting {
+    padding: 10px 5px 0;
+    margin-top: 45px;
+
+    button {
+      font-weight: 900;
+      font-size: 14px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 5px;
+      margin-bottom: 20px;
+
+      & span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      svg {
+        height: 30px;
+        fill: grey;
+      }
+    }
+
+    .wrapCounters {
+      display: flex;
+      gap: 10px;
+
+      button {
+        p {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+      }
+    }
+
+    & > button {
+      margin: 0;
+    }
+  }
+}

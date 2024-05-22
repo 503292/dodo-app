@@ -45,6 +45,11 @@ const DropdownProfile = ({ isActive, refProfile }) => {
                 <Game />
               </NavLink>
             </li>
+            <li className={css.page}>
+              <NavLink exact activeStyle={ativeStyle} to="/language_game">
+                EN
+              </NavLink>
+            </li>
           </ul>
         </nav>
       ) : null}

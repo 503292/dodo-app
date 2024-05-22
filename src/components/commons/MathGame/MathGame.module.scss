@@ -19,7 +19,6 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    border: none;
     font-size: 1rem;
     font-weight: 700;
     color: grey;
@@ -28,10 +27,6 @@
     background: transparent;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
-
-    & > svg {
-      padding-top: 4px;
-    }
 
     &:not(:last-of-type) {
       margin-right: 10px;
