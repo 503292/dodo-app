@@ -1,4 +1,4 @@
-const SETTINGS_KEY = "lang_game";
+const SETTINGS_KEY = 'lang_game';
 
 let counterTRUE = 0;
 let counterFALSE = 0;
@@ -15,9 +15,9 @@ export const useLocalStorage = () => {
     }
   };
 
-  const updateSettings = (settings) => {
+  const updateSettings = settings => {
     const s = getSettings();
-    const newSettings = typeof settings === "function" ? settings(s) : settings;
+    const newSettings = typeof settings === 'function' ? settings(s) : settings;
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(newSettings));
   };
 

@@ -5,22 +5,22 @@ import Counters from './Counters';
 import Settitng from './Settitng';
 import { getNewWordsArr, randomizeArray } from './helper';
 import { useLocalStorage } from './useLocalStorage';
-// import { words_lib } from '../constants/words_lib';
+import { words_lib } from '../constants/words_lib';
 import css from './LangGame.module.scss';
 
 const EMPTY_ARR = [null, null];
-const STEP_INCREMENT = 2;
+const STEP_INCREMENT = 5;
 
-const words_lib = [
-  ['1', '1'],
-  ['2', '2'],
-  ['3', '3'],
-  // ['4', '4'],
-  // ['5', '5'],
-  // ['6', '6'],
-  // ['7', '7'],
-  // ['8', '8'],
-];
+// const words_lib = [
+//   ['1', '1'],
+//   ['2', '2'],
+//   ['3', '3'],
+//   ['4', '4'],
+//   ['5', '5'],
+//   ['6', '6'],
+//   ['7', '7'],
+//   ['8', '8'],
+// ];
 
 // TODO fix for update startIndex when game End
 
@@ -35,20 +35,24 @@ const LangGame = () => {
   const [disabledButtons, setDisabledButtons] = useState([]);
   const [activeIndexes, setActiveIndexes] = useState(EMPTY_ARR);
   const [isWrongAnswer, setIsWrongAnswer] = useState(EMPTY_ARR);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  // eslint-disable-next-line
+  const [_, forceUpdate] = useState();
+  const [firstRender, setFirstRender] = useState(true);
 
   useEffect(() => {
     generateData();
-    setIsFirstLoad(false);
+    updateLocalStartIndex();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     if (disabledButtons.length === 0) return;
-    if (disabledButtons.length === words.length) {
-      const newIndex = startIndex + STEP_INCREMENT;
-      updateLocalStartIndex();
-      generateData(newIndex);
-      setDisabledButtons([]);
+    if (disabledButtons.length === STEP_INCREMENT) {
+      setTimeout(() => {
+        generateData();
+        updateLocalStartIndex();
+        setDisabledButtons([]);
+      }, 700);
     }
     // eslint-disable-next-line
   }, [disabledButtons.length]);
@@ -77,30 +81,23 @@ const LangGame = () => {
     // eslint-disable-next-line
   }, [isWrongAnswer]);
 
-  function isEndGame() {
-    if (isFirstLoad) return false;
-    if (words_lib.length <= startIndex + STEP_INCREMENT) {
-      updateSettings(prev => ({
-        ...prev,
-        startIndex: 0,
-      }));
-      return true;
+  function validEndGame() {
+    if (words_lib.length <= startIndex) {
+      updateSettings(prev => {
+        const newSettings = {
+          ...prev,
+          startIndex: 0,
+        };
+        startIndex = 0;
+        return newSettings;
+      });
     }
-    return false;
   }
 
-  function generateData(index) {
-    if (isEndGame()) {
-      index = 0;
-    }
-
-    console.log(index, startIndex);
+  function generateData() {
+    validEndGame();
     // left btn
-    const newWords = getNewWordsArr(
-      words_lib,
-      index || index === 0 ? index : startIndex,
-      STEP_INCREMENT,
-    );
+    const newWords = getNewWordsArr(words_lib, startIndex, STEP_INCREMENT);
     setWords(newWords);
     // right btn
     const randomData = randomizeArray(newWords);
@@ -134,6 +131,7 @@ const LangGame = () => {
   };
 
   function updateLocalStartIndex() {
+    if (firstRender) return setFirstRender(false);
     updateSettings(prev => ({
       ...prev,
       startIndex: startIndex + STEP_INCREMENT,
@@ -142,7 +140,7 @@ const LangGame = () => {
 
   const loadNewWords = () => {
     generateData();
-    // updateLocalStartIndex();
+    updateLocalStartIndex();
     setDisabledButtons([]);
   };
 
@@ -152,6 +150,8 @@ const LangGame = () => {
       ...prev,
       counterTRUE,
     }));
+    // gimp stick
+    forceUpdate(new Date());
   }
 
   function resetCounterFALSE() {
@@ -160,6 +160,8 @@ const LangGame = () => {
       ...prev,
       counterFALSE,
     }));
+    // gimp stick
+    forceUpdate(new Date());
   }
 
   return (

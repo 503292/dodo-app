@@ -19,7 +19,6 @@ export const LangGame = () => {
   const [disabledButtons, setDisabledButtons] = useState([]);
   const [activeIndexes, setActiveIndexes] = useState(EMPTY_ARR);
   const [isWrongAnswer, setIsWrongAnswer] = useState(EMPTY_ARR);
-  const [, forceUpdate] = useState();
 
   useEffect(() => {
     generateData();

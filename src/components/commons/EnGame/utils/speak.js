@@ -1,7 +1,7 @@
 const synth = window.speechSynthesis;
 let voices;
 
-speechSynthesis.addEventListener("voiceschanged", () => {
+speechSynthesis.addEventListener('voiceschanged', () => {
   voices = speechSynthesis.getVoices();
 });
 function getRandINDEX() {
@@ -14,18 +14,18 @@ export const speakEN = (text, setIsSpeak) => {
   const utterThis = new SpeechSynthesisUtterance(text);
   utterThis.voice = voiceEn;
 
-  utterThis.onend = function () {
+  utterThis.onend = function() {
     setIsSpeak(false);
   };
   synth.speak(utterThis);
 };
-export const speakUA = (text) => {
-  const voicesUA = filterByLang(voices, "uk-UA")[0];
+export const speakUA = text => {
+  const voicesUA = filterByLang(voices, 'uk-UA')[0];
   const utterThis = new SpeechSynthesisUtterance(text);
   utterThis.voice = voicesUA;
   synth.speak(utterThis);
 };
 
 function filterByLang(array, langValue) {
-  return array?.filter((item) => item.lang === langValue);
+  return array?.filter(item => item.lang === langValue);
 }
