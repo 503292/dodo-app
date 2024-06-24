@@ -40,6 +40,7 @@ const LangGame = () => {
   useEffect(() => {
     generateData();
     setIsFirstLoad(false);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -145,6 +146,10 @@ const LangGame = () => {
     // updateLocalStartIndex();
     setDisabledButtons([]);
   };
+
+  useEffect(() => {
+    console.log(counterTRUE, 'counterTRUE');
+  }, [counterTRUE]);
 
   function resetCounterTrue() {
     counterTRUE = 0;

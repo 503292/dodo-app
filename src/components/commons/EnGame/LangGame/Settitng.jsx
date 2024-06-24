@@ -22,17 +22,14 @@ const Settitng = ({
         <>
           <div className={css.setting}>
             <div className={css.wrapCounters}>
-              <MyButton
-                disabled={counterTRUE === 0}
-                onClick={() => resetCounterTrue()}
-              >
+              <MyButton disabled={counterTRUE === 0} onClick={resetCounterTrue}>
                 <span>Обнулити</span>
                 <CounterTRUE counterTRUE={counterTRUE} />
               </MyButton>
 
               <MyButton
                 disabled={counterFALSE === 0}
-                onClick={() => resetCounterFALSE()}
+                onClick={resetCounterFALSE}
               >
                 <span>Обнулити</span>
                 <CounterFALSE counterFALSE={counterFALSE} />
