@@ -5,24 +5,11 @@ import Counters from './Counters';
 import Settitng from './Settitng';
 import { getNewWordsArr, randomizeArray } from './helper';
 import { useLocalStorage } from './useLocalStorage';
-// import { words_lib } from '../constants/words_lib';
+import { words_lib } from '../constants/words_lib';
 import css from './LangGame.module.scss';
 
 const EMPTY_ARR = [null, null];
-const STEP_INCREMENT = 2;
-
-const words_lib = [
-  ['1', '1'],
-  ['2', '2'],
-  ['3', '3'],
-  // ['4', '4'],
-  // ['5', '5'],
-  // ['6', '6'],
-  // ['7', '7'],
-  // ['8', '8'],
-];
-
-// TODO fix for update startIndex when game End
+const STEP_INCREMENT = 5;
 
 // LangGame
 const LangGame = () => {
@@ -35,21 +22,25 @@ const LangGame = () => {
   const [disabledButtons, setDisabledButtons] = useState([]);
   const [activeIndexes, setActiveIndexes] = useState(EMPTY_ARR);
   const [isWrongAnswer, setIsWrongAnswer] = useState(EMPTY_ARR);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [, forceUpdate] = useState();
 
   useEffect(() => {
     generateData();
-    setIsFirstLoad(false);
     // eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    if (startIndex === 0) return;
+    if (isEndGame()) {
+      startIndex = 0;
+    }
+    generateData();
+    // eslint-disable-next-line
+  }, [startIndex]);
 
   useEffect(() => {
     if (disabledButtons.length === 0) return;
     if (disabledButtons.length === words.length) {
-      const newIndex = startIndex + STEP_INCREMENT;
-      updateLocalStartIndex();
-      generateData(newIndex);
-      setDisabledButtons([]);
+      loadNewWords();
     }
     // eslint-disable-next-line
   }, [disabledButtons.length]);
@@ -79,8 +70,7 @@ const LangGame = () => {
   }, [isWrongAnswer]);
 
   function isEndGame() {
-    if (isFirstLoad) return false;
-    if (words_lib.length <= startIndex + STEP_INCREMENT) {
+    if (words_lib.length <= startIndex) {
       updateSettings(prev => ({
         ...prev,
         startIndex: 0,
@@ -90,18 +80,9 @@ const LangGame = () => {
     return false;
   }
 
-  function generateData(index) {
-    if (isEndGame()) {
-      index = 0;
-    }
-
-    console.log(index, startIndex);
+  function generateData() {
     // left btn
-    const newWords = getNewWordsArr(
-      words_lib,
-      index || index === 0 ? index : startIndex,
-      STEP_INCREMENT,
-    );
+    const newWords = getNewWordsArr(words_lib, startIndex, STEP_INCREMENT);
     setWords(newWords);
     // right btn
     const randomData = randomizeArray(newWords);
@@ -139,17 +120,13 @@ const LangGame = () => {
       ...prev,
       startIndex: startIndex + STEP_INCREMENT,
     }));
+    // startIndex = startIndex + STEP_INCREMENT;
   }
 
   const loadNewWords = () => {
-    generateData();
-    // updateLocalStartIndex();
+    updateLocalStartIndex();
     setDisabledButtons([]);
   };
-
-  useEffect(() => {
-    console.log(counterTRUE, 'counterTRUE');
-  }, [counterTRUE]);
 
   function resetCounterTrue() {
     counterTRUE = 0;
@@ -157,6 +134,9 @@ const LangGame = () => {
       ...prev,
       counterTRUE,
     }));
+
+    // gimp stick
+    forceUpdate(new Date());
   }
 
   function resetCounterFALSE() {
@@ -165,6 +145,8 @@ const LangGame = () => {
       ...prev,
       counterFALSE,
     }));
+    // gimp stick
+    forceUpdate(new Date());
   }
 
   return (

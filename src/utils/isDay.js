@@ -1,6 +1,8 @@
 const isDay = () => {
   const weather = JSON.parse(localStorage.getItem('localWeather'));
-  const { sunRise, sunSet } = weather.days[0];
+  if (!weather?.days?.[0]) return false;
+  const { sunRise, sunSet } = weather?.days?.[0];
+
   const startTime = +sunRise.split(':').join('');
   const endTime = +sunSet.split(':').join('');
 
