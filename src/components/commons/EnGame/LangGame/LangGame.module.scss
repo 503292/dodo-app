@@ -7,10 +7,11 @@
 
   & > li {
     display: grid;
-    grid-template-columns: 1fr 1fr 30px;
+    grid-template-columns: 30px 1fr 1fr 30px;
     grid-gap: 10px;
 
-    & > button:last-of-type {
+    & > button:last-of-type,
+    & > button:first-of-type {
       width: 30px;
       height: 30px;
       display: flex;
@@ -18,7 +19,6 @@
       justify-content: center;
       border-radius: 50%;
       box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
-      // TODO fix
       background: hsla(0, 0%, 50.2%, 0.5);
       color: #ff9;
     }

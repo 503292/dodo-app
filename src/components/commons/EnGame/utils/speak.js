@@ -9,20 +9,23 @@ function getRandINDEX() {
   return INDEXES[Math.floor(Math.random() * INDEXES.length)];
 }
 
-export const speakEN = (text, setIsSpeak) => {
+export const speakEN = (text, setIsSpeakEN) => {
   const voiceEn = voices[getRandINDEX()];
   const utterThis = new SpeechSynthesisUtterance(text);
   utterThis.voice = voiceEn;
 
   utterThis.onend = function() {
-    setIsSpeak(false);
+    setIsSpeakEN(false);
   };
   synth.speak(utterThis);
 };
-export const speakUA = text => {
+export const speakUA = (text, setIsSpeakUA) => {
   const voicesUA = filterByLang(voices, 'uk-UA')[0];
   const utterThis = new SpeechSynthesisUtterance(text);
   utterThis.voice = voicesUA;
+  utterThis.onend = function() {
+    setIsSpeakUA(false);
+  };
   synth.speak(utterThis);
 };
 

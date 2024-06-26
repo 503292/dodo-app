@@ -76,7 +76,7 @@ const CurrencyNav = () => {
   const gryvnyaToCurrency = currency.find(el => el.ccy === currencyMark);
   return (
     <>
-      {gryvnyaToCurrency ? (
+      {!!gryvnyaToCurrency ? (
         <div title="Курси валют до гривні" className={css.wrapCurrency}>
           <div className={css.currencyMark}>
             {switchCurrency(gryvnyaToCurrency.ccy)}
@@ -98,13 +98,7 @@ const CurrencyNav = () => {
             <Gryvnya />
           </div>
         </div>
-      ) : (
-        <span className={css.wrapCurrency}>
-          <div className={css.wrapGryvnya}>
-            <Gryvnya />
-          </div>
-        </span>
-      )}
+      ) : null}
     </>
   );
 };

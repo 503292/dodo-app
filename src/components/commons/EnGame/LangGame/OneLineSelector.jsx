@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ReactComponent as SoundIcon } from '../images/sound.svg';
 import { ReactComponent as Square } from '../images/square.svg';
 import MyButton from '../MyButton/MyButton';
-import { speakEN } from '../utils/speak';
+import { speakEN, speakUA } from '../utils/speak';
 
 const OneLineSelector = ({
   data,
@@ -14,7 +14,8 @@ const OneLineSelector = ({
   activeIndexes,
   isWrongAnswer,
 }) => {
-  const [isSpeak, setIsSpeak] = useState(false);
+  const [isSpeakUA, setIsSpeakUA] = useState(false);
+  const [isSpeakEN, setIsSpeakEN] = useState(false);
 
   const isLeftDisabled = disabledButtons.includes(data[0]);
   const isRightDisabled = disabledButtons.includes(randomData[0]);
@@ -27,6 +28,15 @@ const OneLineSelector = ({
 
   return (
     <li>
+      <MyButton
+        disabled={isSpeakUA}
+        onClick={() => {
+          setIsSpeakUA(true);
+          speakUA(data[1], setIsSpeakUA);
+        }}
+      >
+        {isSpeakUA ? <Square /> : <SoundIcon />}
+      </MyButton>
       {/* EN */}
       <MyButton
         disabled={isLeftDisabled}
@@ -48,13 +58,13 @@ const OneLineSelector = ({
       </MyButton>
 
       <MyButton
-        disabled={isSpeak}
+        disabled={isSpeakEN}
         onClick={() => {
-          setIsSpeak(true);
-          speakEN(randomData[0], setIsSpeak);
+          setIsSpeakEN(true);
+          speakEN(randomData[0], setIsSpeakEN);
         }}
       >
-        {isSpeak ? <Square /> : <SoundIcon />}
+        {isSpeakEN ? <Square /> : <SoundIcon />}
       </MyButton>
     </li>
   );

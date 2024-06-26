@@ -33,12 +33,16 @@
         align-items: center;
         justify-content: center;
         padding: 0;
+        font-family: Courier New;
+        font-weight: 600;
+        font-size: 28px;
+        color: #448b44;
 
         svg {
           height: 30px;
           width: 30px;
-          color: rgb(68, 139, 68);
-          fill: rgb(68, 139, 68);
+          color: #448b44;
+          fill: #448b44;
           margin-left: -1px;
         }
       }
