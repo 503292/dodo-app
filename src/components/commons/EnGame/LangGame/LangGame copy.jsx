@@ -1,28 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import OneLineSelector from './OneLineSelector';
 import Counters from './Counters';
 
 import Settitng from './Settitng';
 import { getNewWordsArr, randomizeArray } from './helper';
 import { useLocalStorage } from './useLocalStorage';
-// import { words_lib } from '../constants/words_lib.1';
+import { words_lib } from '../constants/words_lib.1';
 import css from './LangGame.module.scss';
 
 const EMPTY_ARR = [null, null];
 const STEP_INCREMENT = 5;
-
-const words_lib = [
-  ['solutioneee', "вирішення, розв'язування"],
-  ['solution, solution, solution', 'вирішення'],
-];
 
 // LangGame
 const LangGame = () => {
   const { getSettings, updateSettings } = useLocalStorage();
 
   let { counterTRUE, counterFALSE, startIndex } = getSettings();
-
-  const startIndexRef = useRef(startIndex);
 
   const [words, setWords] = useState([]);
   const [wordsRandom, setWordsRandom] = useState([]);
@@ -35,15 +28,14 @@ const LangGame = () => {
     generateData();
     // eslint-disable-next-line
   }, []);
-
   useEffect(() => {
-    if (startIndexRef.current === 0) return;
+    if (startIndex === 0) return;
     if (isEndGame()) {
-      startIndexRef.current = 0;
+      startIndex = 0;
     }
     generateData();
     // eslint-disable-next-line
-  }, [startIndexRef.current]);
+  }, [startIndex]);
 
   useEffect(() => {
     if (disabledButtons.length === 0) return;
@@ -78,7 +70,7 @@ const LangGame = () => {
   }, [isWrongAnswer]);
 
   function isEndGame() {
-    if (words_lib.length <= startIndexRef.current) {
+    if (words_lib.length <= startIndex) {
       updateSettings(prev => ({
         ...prev,
         startIndex: 0,
@@ -90,11 +82,7 @@ const LangGame = () => {
 
   function generateData() {
     // left btn
-    const newWords = getNewWordsArr(
-      words_lib,
-      startIndexRef.current,
-      STEP_INCREMENT,
-    );
+    const newWords = getNewWordsArr(words_lib, startIndex, STEP_INCREMENT);
     setWords(newWords);
     // right btn
     const randomData = randomizeArray(newWords);
@@ -130,9 +118,9 @@ const LangGame = () => {
   function updateLocalStartIndex() {
     updateSettings(prev => ({
       ...prev,
-      startIndex: startIndexRef.current + STEP_INCREMENT,
+      startIndex: startIndex + STEP_INCREMENT,
     }));
-    // startIndexRef.current = startIndexRef.current + STEP_INCREMENT;
+    // startIndex = startIndex + STEP_INCREMENT;
   }
 
   const loadNewWords = () => {
@@ -166,7 +154,7 @@ const LangGame = () => {
       <Settitng
         counterTRUE={counterTRUE}
         counterFALSE={counterFALSE}
-        startIndex={startIndexRef.current}
+        startIndex={startIndex}
         resetCounterTrue={resetCounterTrue}
         resetCounterFALSE={resetCounterFALSE}
         loadNewWords={loadNewWords}
