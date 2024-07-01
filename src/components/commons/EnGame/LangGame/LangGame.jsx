@@ -5,16 +5,11 @@ import Counters from './Counters';
 import Settitng from './Settitng';
 import { getNewWordsArr, randomizeArray } from './helper';
 import { useLocalStorage } from './useLocalStorage';
-// import { words_lib } from '../constants/words_lib.1';
+import { words_lib } from '../constants/words_lib';
 import css from './LangGame.module.scss';
 
 const EMPTY_ARR = [null, null];
 const STEP_INCREMENT = 5;
-
-const words_lib = [
-  ['solutioneee', "вирішення, розв'язування"],
-  ['solution, solution, solution', 'вирішення'],
-];
 
 // LangGame
 const LangGame = () => {
