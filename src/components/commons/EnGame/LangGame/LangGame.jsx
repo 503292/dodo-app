@@ -127,7 +127,7 @@ const LangGame = () => {
       ...prev,
       startIndex: startIndexRef.current + STEP_INCREMENT,
     }));
-    // startIndexRef.current = startIndexRef.current + STEP_INCREMENT;
+    startIndexRef.current = startIndexRef.current + STEP_INCREMENT;
   }
 
   const loadNewWords = () => {
