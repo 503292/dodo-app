@@ -82,7 +82,6 @@ export const words_lib = [
   ['resident', 'резидент'],
   ['colon', 'товста кишка'],
   ['year', 'рік'],
-  ['beck', 'бек'],
   ['captain', 'капітан'],
   ['marble', 'мармур'],
   ['lesson', 'урок'],
