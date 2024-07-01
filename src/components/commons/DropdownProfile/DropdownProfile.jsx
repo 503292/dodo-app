@@ -41,12 +41,12 @@ const DropdownProfile = ({ isActive, refProfile }) => {
               </NavLink>
             </li>
             <li className={css.page}>
-              <NavLink exact activeStyle={ativeStyle} to="/game">
+              <NavLink exact activeStyle={ativeStyle} to="/math_game">
                 <Game />
               </NavLink>
             </li>
             <li className={css.page}>
-              <NavLink exact activeStyle={ativeStyle} to="/language_game">
+              <NavLink exact activeStyle={ativeStyle} to="/lang_game">
                 EN
               </NavLink>
             </li>
