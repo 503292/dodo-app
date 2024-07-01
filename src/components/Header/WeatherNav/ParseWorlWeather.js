@@ -76,7 +76,9 @@ function cutSunTime(data) {
 }
 
 export default function parseWeatherData(data) {
-  const weatherData = data.data.weather;
+  const weatherData = data?.data?.weather;
+  if (!weatherData) return null;
+
   const weather = {};
   const timeStep = [
     '200',

@@ -35,6 +35,7 @@ const WeatherNav = () => {
   const getGlobalWeather = () => {
     fetchWorldWeather(setNewLocation()).then(data => {
       const dataWeather = parseWeatherData(data);
+      if (!dataWeather) return;
       localStorage.setItem('localWeather', JSON.stringify(dataWeather));
       localStorage.setItem('location', dataWeather.timezone);
 

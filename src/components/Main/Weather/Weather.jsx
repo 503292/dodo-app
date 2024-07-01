@@ -58,6 +58,7 @@ const Weather = () => {
     fetchWorldWeather(lowerCaseSearch)
       .then(data => {
         const parseData = parseWeatherData(data);
+        if (!parseData) return;
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
         updateLocation(parseData.timezone);
