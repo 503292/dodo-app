@@ -8,7 +8,7 @@ speechSynthesis.onvoiceschanged = () => {
 export const speakEN = (text, setIsSpeakEN) => {
   const voiceEn = voices[getRandINDEX()];
   const msg = new SpeechSynthesisUtterance();
-  msg.voice = voiceEn;
+  // msg.voice = voiceEn;
   msg.lang = 'en-US';
   msg.text = text;
 
@@ -20,7 +20,7 @@ export const speakEN = (text, setIsSpeakEN) => {
 export const speakUA = (text, setIsSpeakUA) => {
   const voicesUA = filterByLang(voices, 'uk-UA')[0];
   const msg = new SpeechSynthesisUtterance();
-  msg.voice = voicesUA;
+  // msg.voice = voicesUA;
   msg.text = text;
   msg.lang = 'uk-UA';
   msg.onend = function() {
@@ -34,6 +34,6 @@ function getRandINDEX() {
   return INDEXES[Math.floor(Math.random() * INDEXES.length)];
 }
 
-function filterByLang(array, langValue) {
-  return array?.filter(item => item.lang === langValue);
+function filterByLang(voices, lang = 'uk-UA') {
+  return voices?.filter(item => item.lang === lang);
 }
