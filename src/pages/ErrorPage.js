@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import kilidorUrl from '../assets/image/inProgress/kolidor.png';
 
@@ -18,14 +19,23 @@ const messageCss = {
   color: 'tomato',
 };
 
-const ErrorPage = () => (
-  <>
-    <div style={wrapImgCss}>
-      <img src={kilidorUrl} alt="Україна понад усе)." style={imgCss} />
-    </div>
+const ErrorPage = () => {
+  const history = useHistory();
 
-    <h2 style={messageCss}>Сторінки наразі не є "404"</h2>
-  </>
-);
+  useEffect(() => {
+    history.push('/empty');
+    // eslint-disable-next-line
+  }, []);
+
+  return (
+    <>
+      <div style={wrapImgCss}>
+        <img src={kilidorUrl} alt="Україна понад усе)." style={imgCss} />
+      </div>
+
+      <h2 style={messageCss}>Сторінки наразі не є "404"</h2>
+    </>
+  );
+};
 
 export default ErrorPage;

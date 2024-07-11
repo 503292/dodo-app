@@ -2622,8 +2622,8 @@ const motivations = [
     author: 'В. Сухомлинський',
   },
   {
-    motivation: 'Я в шокове ...',
-    author: 'Ольга Ізоніна',
+    motivation: 'Чесність в дрібницях - зовсім не дрібниця.',
+    author: 'Датське прислів`я',
   },
   {
     motivation:
@@ -3209,6 +3209,14 @@ const motivations = [
     motivation: 'Береженого і Бог береже, а козака шабля стереже.',
     author: "Українське прислів'я",
   },
+  {
+    motivation: 'Бог ховається в дрібницях.',
+    author: 'Людвиг Міс ван дер Рое',
+  },
+  // {
+  //   motivation: '',
+  //   author: '',
+  // },
   // {
   //   motivation: '',
   //   author: '',

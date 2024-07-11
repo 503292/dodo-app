@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import MenuPage from '../../../pages/MenuPage';
-import TasksPage from '../../../pages/TasksPage';
-import WeatherPage from '../../../pages/WeatherPage';
-import CurrencyPage from '../../../pages/CurrencyPage';
-import ErrorPage from '../../../pages/ErrorPage';
-import InfoSitePage from '../../../pages/InfoSitePage';
-import CountryPage from '../../../pages/CountryPage';
-import SettingPage from '../../../pages/SettingPage';
-import MathGamePage from '../../../pages/MathGamePage';
-import LangGamePage from '../../../pages/LangGamePage';
-// import ProfilePage from '../../../pages/ProfilePage';
-import RandomProductList from '../../../pages/RandomProductList';
+const MenuPage = lazy(() => import('../../../pages/MenuPage'));
+const TasksPage = lazy(() => import('../../../pages/TasksPage'));
+const WeatherPage = lazy(() => import('../../../pages/WeatherPage'));
+const CurrencyPage = lazy(() => import('../../../pages/CurrencyPage'));
+const ErrorPage = lazy(() => import('../../../pages/ErrorPage'));
+const InfoSitePage = lazy(() => import('../../../pages/InfoSitePage'));
+const CountryPage = lazy(() => import('../../../pages/CountryPage'));
+const SettingPage = lazy(() => import('../../../pages/SettingPage'));
+const MathGamePage = lazy(() => import('../../../pages/MathGamePage'));
+const LangGamePage = lazy(() => import('../../../pages/LangGamePage'));
+const RandomProductList = lazy(() =>
+  import('../../../pages/RandomProductList'),
+);
+
+// const ProfilePage = lazy(() => import('../../../pages/ProfilePage'));
 
 const RoutesSite = () => {
   return (
-    <>
+    <Suspense fallback={null}>
       <Switch>
         <Route path="/" exact component={TasksPage} />
         <Route path="/menu" exact component={MenuPage} />
@@ -33,7 +36,7 @@ const RoutesSite = () => {
 
         <Route component={ErrorPage} />
       </Switch>
-    </>
+    </Suspense>
   );
 };
 
