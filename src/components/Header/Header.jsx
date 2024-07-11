@@ -24,8 +24,8 @@ const Header = () => {
   }, []);
 
   const headerStyle = {
-    backgroundColor: isDaytime ? '#ffeb3b' : 'rgba(54, 73, 117, 0.9)',
-    color: isDaytime ? 'black' : 'white',
+    backgroundColor: !isDaytime ? '#ffeb3b' : 'rgba(54, 73, 117, 0.9)',
+    color: !isDaytime ? 'black' : 'white',
     position: 'relative',
   };
 
@@ -35,7 +35,6 @@ const Header = () => {
     position: 'absolute',
     width: '5px',
     height: '5px',
-    backgroundColor: 'white',
     borderRadius: '50%',
   };
 
@@ -72,7 +71,8 @@ const Header = () => {
     <header style={headerStyle} className={`${css.wrapHeader}`}>
       <NavbarTop />
       {/* Зірки для нічного часу */}
-      {!isDaytime && <>{stars}</>}
+      {/* {!isDaytime && <>{stars}</>} */}
+      {isDaytime && <>{stars}</>}
     </header>
   );
 };
