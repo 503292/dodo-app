@@ -1,28 +1,22 @@
-// TODO clean styles
 .disabled {
   pointer-events: none;
   opacity: 0.6;
-  // TODO
   background: hsla(0, 0%, 50.2%, 0.5);
   color: #ff9;
 }
 .active {
   color: grey;
-  // background: var(--tr_blue);
   background: #14b8ff4d;
 }
 
 .error {
-  // background: tomato;
   background: #f3a987;
   color: grey;
   pointer-events: none;
 }
 
-button {
+.btn {
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
-  // background: transparent;
-  // TODO
   background: var(--tr_yellow);
   color: grey;
   font-size: 14px;
