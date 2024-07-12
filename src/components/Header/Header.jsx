@@ -24,7 +24,7 @@ const Header = () => {
   }, []);
 
   const headerStyle = {
-    backgroundColor: !isDaytime ? '#ffeb3b' : 'rgba(54, 73, 117, 0.9)',
+    backgroundColor: isDaytime ? '#ffeb3b' : 'rgba(54, 73, 117, 0.9)',
     color: !isDaytime ? 'black' : 'white',
     position: 'relative',
   };

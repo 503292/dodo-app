@@ -12,6 +12,10 @@ const Loader = ({ isLoading }) => {
   );
 };
 
+Loader.defaultProps = {
+  isLoading: true,
+};
+
 Loader.propTypes = {
   isLoading: PropTypes.bool.isRequired,
 };

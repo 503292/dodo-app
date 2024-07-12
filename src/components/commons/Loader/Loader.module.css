@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
+  left: 0;
   min-width: 400px;
   background-color: rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -9,7 +10,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%); */
 }
