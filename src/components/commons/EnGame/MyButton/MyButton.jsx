@@ -3,7 +3,7 @@ import React from 'react';
 import css from './MyButton.module.scss';
 
 const MyButton = ({ active, disabled, error, children, ...props }) => {
-  const buttonClasses = [css.button];
+  const buttonClasses = [css.btn];
 
   if (active) {
     buttonClasses.push(css.active);
@@ -17,7 +17,7 @@ const MyButton = ({ active, disabled, error, children, ...props }) => {
     buttonClasses.push(css.error);
   }
   return (
-    <button className={`${buttonClasses.join(' ')} ${css.btn}`} {...props}>
+    <button className={buttonClasses.join(' ')} {...props}>
       {children}
     </button>
   );
