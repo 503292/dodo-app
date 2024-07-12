@@ -17,7 +17,7 @@ const MyButton = ({ active, disabled, error, children, ...props }) => {
     buttonClasses.push(css.error);
   }
   return (
-    <button className={buttonClasses.join(' ')} {...props}>
+    <button className={`${buttonClasses.join(' ')} ${css.btn}`} {...props}>
       {children}
     </button>
   );
