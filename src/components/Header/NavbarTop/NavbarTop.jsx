@@ -54,8 +54,6 @@ const NavbarTop = () => {
       <li
         className={`${css.routeHeader} ${css.dropdown}`}
         onClick={handleClick}
-        onKeyPress={handleClick}
-        aria-hidden
       >
         <InfoSite />
         <DropdownProfile refProfile={refProfile} isActive={isActive} />

@@ -22,6 +22,7 @@ const TodoFooter = ({ modalAddTasksOpen }) => {
           type="button"
           className={`${css.addButton} animateBtn`}
           onClick={modalAddTasksOpen}
+          aria-label="Add new task"
         >
           <Plus className={css.plus} />
         </button>
