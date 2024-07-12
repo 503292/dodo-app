@@ -25,6 +25,7 @@
     }
     & > button:nth-child(2),
     & > button:nth-child(3) {
+      min-height: 42px;
       height: 100%;
       font-size: 14px;
     }
@@ -80,6 +81,8 @@
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
     background: transparent;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
   }
 
   .setting {

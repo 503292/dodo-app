@@ -61,26 +61,24 @@ const MathGame = () => {
   }
 
   return (
-    <div className={css.container}>
-      <form className={css.wrapGame} onSubmit={handleSubmit}>
-        <Setting
-          operator={operator}
-          setOperator={setOperator}
-          min={min}
-          setMin={setMin}
-          max={max}
-          setMax={setMax}
-        />
-        <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
-        <Divider />
-        <Answers
-          answers={answersArr}
-          handleClick={setUserAnswer}
-          checkAnswer={handleSubmit}
-        />
-        <Divider />
-        <Footer count={count} userAnswer={userAnswer} />
-      </form>
+    <div className={css.wrapGame} onSubmit={handleSubmit}>
+      <Setting
+        operator={operator}
+        setOperator={setOperator}
+        min={min}
+        setMin={setMin}
+        max={max}
+        setMax={setMax}
+      />
+      <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
+      <Divider />
+      <Answers
+        answers={answersArr}
+        handleClick={setUserAnswer}
+        checkAnswer={handleSubmit}
+      />
+      <Divider />
+      <Footer count={count} userAnswer={userAnswer} />
     </div>
   );
 };
