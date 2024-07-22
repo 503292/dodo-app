@@ -61,7 +61,7 @@ const MathGame = () => {
   }
 
   return (
-    <div className={css.wrapGame} onSubmit={handleSubmit}>
+    <form className={css.wrapGame} onSubmit={handleSubmit}>
       <Setting
         operator={operator}
         setOperator={setOperator}
@@ -79,7 +79,7 @@ const MathGame = () => {
       />
       <Divider />
       <Footer count={count} userAnswer={userAnswer} />
-    </div>
+    </form>
   );
 };
 
