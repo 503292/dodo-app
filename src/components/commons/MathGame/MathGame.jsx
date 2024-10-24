@@ -9,20 +9,15 @@ import { useLocalStorage } from './useLocalStorage';
 
 import css from './MathGame.module.scss';
 
-const MIN = 0;
-const MAX = 10;
-const OPERATOR = '+';
-const COUNT = 0;
-
 const MathGame = () => {
   const { getSettings, updateSettings } = useLocalStorage();
   const [answer, setAnswer] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [answersArr, setAnswersArr] = useState(null);
-  const [operator, setOperator] = useState(OPERATOR);
-  const [min, setMin] = useState(MIN);
-  const [max, setMax] = useState(MAX);
-  const [count, setCount] = useState(COUNT);
+  const [operator, setOperator] = useState();
+  const [min, setMin] = useState();
+  const [max, setMax] = useState();
+  const [count, setCount] = useState();
 
   useEffect(() => {
     // get and set settings from LocalStorage
@@ -35,6 +30,13 @@ const MathGame = () => {
   }, []);
 
   const mathTask = useMemo(() => {
+    console.log(min, max, operator);
+    if (
+      typeof min === 'undefined' &&
+      typeof max === 'undefined' &&
+      typeof operator === 'undefined'
+    )
+      return;
     return generateMathTask(min, max, operator, setAnswer);
     // eslint-disable-next-line
   }, [min, max, operator, count]);
