@@ -1,0 +1,35 @@
+.wrap {
+  padding: 6px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.wrapImg {
+  height: 58%;
+  border: 0.5px solid grey;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+
+  width: 100%; /* Блок займатиме всю доступну ширину */
+  max-width: 960px; /* Максимальна ширина блока */
+  margin: 0 auto; /* Центрування блока */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .img {
+    width: 100%; /* Зображення займатиме всю ширину блока */
+    max-width: 942px; /* Максимальна ширина зображення */
+    height: auto; /* Автоматичне масштабування висоти для збереження пропорцій */
+    object-fit: cover; /* Зображення заповнюватиме блок гармонійно */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анімація при наведенні */
+  }
+
+  .img:hover {
+    transform: scale(1.05); /* Легке збільшення зображення при наведенні */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Тінь при наведенні */
+  }
+}
