@@ -13,6 +13,7 @@ const SettingPage = lazy(() => import('../../../pages/SettingPage'));
 const MenuPage = lazy(() => import('../../../pages/MenuPage'));
 const MathGamePage = lazy(() => import('../../../pages/MathGamePage'));
 const LangGamePage = lazy(() => import('../../../pages/LangGamePage'));
+const MathInfoPage = lazy(() => import('../../../pages/MathInfoPage'));
 
 const RandomProductList = lazy(() =>
   import('../../../pages/RandomProductList'),
@@ -35,6 +36,7 @@ const RoutesSite = () => {
         {/* <Route path="/profile" component={ProfilePage} /> */}
         <Route path="/menu" exact component={MenuPage} />
         <Route path="/math_game" component={MathGamePage} />
+        <Route path="/mif_info" component={MathInfoPage} />
         <Route path="/lang_game" component={LangGamePage} />
 
         <Route path="/random" component={RandomProductList} />
