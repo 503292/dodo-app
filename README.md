@@ -14,3 +14,8 @@ OR
 - npm run build
 - git add .
 - git ci "build name"
+
+// global
+
+- node v14.21.3
+- npm 6.14.18
