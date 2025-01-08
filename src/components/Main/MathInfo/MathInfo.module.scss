@@ -4,11 +4,37 @@
   gap: 10px;
   flex-direction: column;
   overflow: auto;
+
+  h3 {
+    color: grey;
+    margin: 0;
+  }
+
+  .link {
+    font-family: Caveat, sans-serif;
+    font-weight: 700;
+    color: green;
+    text-decoration: none;
+    padding-bottom: 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .link:hover,
+  .link:focus {
+    color: rgb(243, 165, 165);
+  }
 }
 
-.description {
+.title {
   color: tomato;
   font-weight: 700;
+}
+.about {
+  color: grey;
+  font-weight: 400;
+  font-size: 12px;
+  white-space: pre-line;
+  margin: 0;
 }
 
 .wrapImg {

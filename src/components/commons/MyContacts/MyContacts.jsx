@@ -16,7 +16,7 @@ const MyContacts = () => {
           </a> */}
           <a
             className={css.link}
-            href="mailto:kalysh.max@gmail.com?subject=Питання з YaK!"
+            href="mailto:kalysh.max@gmail.com?subject=ask from alatyr!"
           >
             kalysh.max@gmail.com
           </a>
