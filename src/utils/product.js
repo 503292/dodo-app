@@ -15,10 +15,11 @@ export const products = [
     deliveryTime: '2-4 business weeks',
     customization: true,
     images: [pallet1, pallet1, pallet1],
+    price: 10,
   },
 ];
 // TODO in progress add items
-// price: 1000000,
+//
 // "sold": "10000000",
 // "stars" "5",
 // certificates: ['ISO 9001', 'Eco-friendly'],
