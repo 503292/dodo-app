@@ -66,12 +66,12 @@ const MathInfo = () => {
 
 export default MathInfo;
 
-const InfoImage = ({ src = '#', title = '4em', about = '' }) => {
+const InfoImage = ({ src = '#', title = '', about = '' }) => {
   return (
     <>
       <div className={css.title}>{title}</div>
       <div className={css.wrapImg}>
-        <img className={css.img} src={src} alt={src} />
+        <img className={css.img} src={src} alt={title} />
       </div>
       <pre className={css.about}>{about}</pre>
     </>

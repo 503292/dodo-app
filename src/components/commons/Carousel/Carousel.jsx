@@ -56,7 +56,7 @@ const Carousel = ({ children }) => {
       <span className={css.right}>
         <BtnArrow
           name="Right"
-          handleClick={() => updateIndex(activeIndex - 1)}
+          handleClick={() => updateIndex(activeIndex + 1)}
         />
       </span>
     </div>
