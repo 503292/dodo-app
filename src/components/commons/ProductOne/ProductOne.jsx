@@ -36,19 +36,19 @@ const ProductCharacteristics = ({ product }) => {
   return (
     <div className={css.wrapCharateristic}>
       <p className={css.productMaterial}>
-        Матеріали: {product.material.join(', ')}
-      </p>
-      <p className={css.productCountryOfOrigin}>
-        Країна виробництва: {product.countryOfOrigin}
+        <strong>Матеріал: </strong>
+        {product.material.join(', ')}
       </p>
       <p className={css.productDeliveryTime}>
-        Термін доставки: {product.deliveryTime}
+        <strong>Виготовлення-доставка: </strong>
+        {product.deliveryTime}
       </p>
-      <p className={css.productColor}>Колір: {product.color}</p>
-
-      <p className={css.productSize}>Діаметр: {product.size} мм</p>
-      {/* <p className={css.productWeight}>Вага: {product.weight} г</p>  */}
-      <p className={css.productPrice}>Ціна: {product.price} $/pcs</p>
+      <p className={css.productCountryOfOrigin}>
+        <strong>Країна виробництва: </strong>
+        {product.countryOfOrigin}
+      </p>
+      {/* <p className={css.productSize}>Діаметр: {product.size} мм</p> */}
+      {/* <p className={css.productPrice}>Ціна: {product.price} $</p> */}
     </div>
   );
 };
