@@ -4,6 +4,7 @@ import CurrentYear from '../CurrentYear/CurrentYear';
 
 import { ReactComponent as WhatsApp } from '../../../assets/image/messengers/whatsapp.svg';
 import { ReactComponent as Skype } from '../../../assets/image/messengers/skype.svg';
+import { ReactComponent as Viber } from '../../../assets/image/messengers/viber.svg';
 import css from './MyContacts.module.scss';
 
 const MyContacts = () => {
@@ -43,6 +44,16 @@ const MyContacts = () => {
           rel="noreferrer noopener"
         >
           <Skype />
+        </a>
+        <a
+          className={css.messenger}
+          href="viber://chat?number=%2B380938800911"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <span className={css.viber}>
+            <Viber />
+          </span>
         </a>
       </div>
     </div>
