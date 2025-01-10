@@ -35,7 +35,10 @@
   .messenger {
     height: 54px;
     width: 54px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
 
     &:not(:last-child) {
@@ -46,9 +49,23 @@
     & > svg {
       height: 50px;
       width: 50px;
-      margin-top: 2px;
-      margin-left: 2px;
       padding: 5px;
+    }
+
+    .viber {
+      width: 34px;
+      height: 34px;
+      background: #6248c3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 17px;
+
+      & > svg {
+        height: 33px;
+        width: 33px;
+        padding: 4px;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import { toastMessage } from '../Toast/Toast';
 
 import { ReactComponent as Copy } from '../../../assets/image/copy.svg';
 import copyText from '../../../utils/copyText';
@@ -10,7 +10,7 @@ const BtnCopy = ({ text }) => {
   const handleCopy = e => {
     e.stopPropagation();
     copyText(text);
-    toast('Скопійовано');
+    toastMessage('Скопійовано');
   };
 
   return (
