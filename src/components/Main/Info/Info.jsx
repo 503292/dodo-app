@@ -8,8 +8,8 @@ import css from './Info.module.scss';
 
 const Info = () => (
   <div className={css.container}>
-    <MyContacts />
     <Payments />
+    <MyContacts />
   </div>
 );
 
