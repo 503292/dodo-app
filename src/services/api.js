@@ -31,7 +31,9 @@ const baseWorldWeather =
 const apiKey = 'd459e9dac15247b7b03122358251001'; // Trial ending on 08 Feb, 2025
 const settings2 =
   '&format=json&num_of_days=7&extra=localObsTime,isDayTime&fx=yes&cc=yes&mca=no&tp=1&showlocaltime=yes&lang=uk';
+let contWApiCall = 0;
 export const fetchWorldWeather = query => {
+  console.log('count loads ===', ++contWApiCall);
   return (
     fetch(`${PROXY}${baseWorldWeather}?key=${apiKey}&q=${query}${settings2}`) // on master add-unshift "${proxy}" in url string
       .then(response => response.json())

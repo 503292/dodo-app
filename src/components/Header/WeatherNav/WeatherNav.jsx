@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import dayjs from 'dayjs';
 
 import parseWeatherData from './ParseWorlWeather';
 import { fetchWorldWeather } from '../../../services/api';
@@ -10,7 +11,7 @@ import switchIcon from './switchIcon';
 import css from './WeatherNav.module.css';
 
 const getWeather = () => {
-  const localWeather = JSON.parse(localStorage.getItem('currencyWheather'));
+  const localWeather = JSON.parse(localStorage.getItem('localWeather'));
   if (localWeather) {
     return localWeather;
   }
@@ -46,6 +47,7 @@ const WeatherNav = () => {
   };
 
   useEffect(() => {
+    if (isLocalEqualToday(weather.createDateTime)) return;
     getGlobalWeather();
     // eslint-disable-next-line
   }, []);
@@ -59,7 +61,7 @@ const WeatherNav = () => {
 
   return (
     <>
-      {weather && (
+      {weather ? (
         <div
           title="Прогноз погоди (іконка погоди і температура в даний час):"
           className={css.wrapWeather}
@@ -75,9 +77,16 @@ const WeatherNav = () => {
           </div>
           <p className={css.timezone}>{location}</p>
         </div>
-      )}
+      ) : null}
     </>
   );
 };
 
 export default WeatherNav;
+
+function isLocalEqualToday(local) {
+  if (!local) return false;
+  const today = dayjs();
+  const localDate = dayjs(local);
+  return today.isSame(localDate, 'day');
+}

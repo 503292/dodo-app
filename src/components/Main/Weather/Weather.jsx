@@ -15,18 +15,19 @@ import css from './Weather.module.css';
 
 // helpers
 const getLocalWeather = () =>
-  JSON.parse(localStorage.getItem('localWeather')) ?? '';
+  JSON.parse(localStorage.getItem('localWeather')) ?? null;
 const getLocation = () => localStorage.getItem('location') ?? '';
 const getLastSearch = () =>
   JSON.parse(localStorage.getItem('lastSearch')) ?? [];
 
 const Weather = () => {
   const dispatch = useDispatch();
-  const [weather, setWeather] = useState(getLocalWeather());
-  const [location, setLocation] = useState(getLocation());
+  const [weather, setWeather] = useState(null);
+  const [location, setLocation] = useState('');
   const [search, setSearch] = useState('');
   const [lastSearch, setLastSearch] = useState(getLastSearch());
   const [indexDay, setIndexDay] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleIndexDay = idx => {
     setIndexDay(idx);
@@ -61,28 +62,40 @@ const Weather = () => {
         if (!parseData) return;
         localStorage.setItem('localWeather', JSON.stringify(parseData));
         localStorage.setItem('location', parseData.timezone);
-        updateLocation(parseData.timezone);
-
         updateLastSearch(parseData.timezone);
 
         setWeather(parseData);
-        setLocation(lowerCaseSearch);
+        setLocation(parseData.timezone);
 
-        dispatch(updateLocation(lowerCaseSearch));
-        dispatch(loaderOff());
+        dispatch(updateLocation(parseData.timezone));
       })
-      // eslint-disable-next-line no-unused-vars
       .catch(() => {
         toast('Населений пункт не знайдено.');
+      })
+      .finally(() => {
         dispatch(loaderOff());
+        setIsLoading(false);
       });
   };
 
-  useEffect(() => {}, [search]);
+  useEffect(() => {
+    const localWeather = getLocalWeather();
+    const storedLocation = getLocation();
+
+    if (localWeather) {
+      setWeather(localWeather);
+      setLocation(storedLocation);
+      setIsLoading(false);
+    } else {
+      fetchWeather('Chervonograd');
+    }
+    // eslint-disable-next-line
+  }, []);
 
   const handleChange = ({ target }) => {
     setSearch(target.value);
   };
+
   const handleSubmit = e => {
     e.preventDefault();
     const lowerCaseSearch = search.toLowerCase().trim();
@@ -97,10 +110,12 @@ const Weather = () => {
     // reset search
     setSearch('');
   };
+
   const clickLastSearch = e => {
     e.preventDefault();
     fetchWeather(e.target.value);
   };
+
   return (
     <div className={`${css.weather} scrollbarThumb`}>
       <WeatherSearch
@@ -111,13 +126,15 @@ const Weather = () => {
         lastSearch={lastSearch}
         clickLastSearch={clickLastSearch}
       />
-      {weather && (
+      {isLoading ? (
+        <p>loading...</p>
+      ) : weather ? (
         <WeatherDescription
           weather={weather}
           indexDay={indexDay}
           handleIndexDay={handleIndexDay}
         />
-      )}
+      ) : null}
 
       <WeatherFolk indexDay={indexDay} />
     </div>

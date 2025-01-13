@@ -91,6 +91,10 @@ export default function parseWeatherData(data) {
     '2300',
   ];
 
+  // date of creation of the request
+  const createDateTime = data.data.current_condition[0].localObsDateTime;
+  weather.createDateTime = createDateTime;
+
   // request
   const request = data.data.request[0].query;
 
