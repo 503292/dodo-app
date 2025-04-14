@@ -44,12 +44,10 @@ const ModalAddTask = ({ editTask, handleResetEditTask }) => {
           onClick={handleBackdropClick}
           onKeyUp={handleKeyPress}
         >
-          <div className={css.modal}>
-            <AddTaskForm
-              editTask={editTask}
-              handleResetEditTask={handleResetEditTask}
-            />
-          </div>
+          <AddTaskForm
+            editTask={editTask}
+            handleResetEditTask={handleResetEditTask}
+          />
         </div>
       )}
     </>

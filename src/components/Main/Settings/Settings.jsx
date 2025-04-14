@@ -1,7 +1,6 @@
 import React from 'react';
-// TODO Not use now / in progress when fix animation
-// import AnimationToogle from '../../commons/-AnimationToogle/AnimationToogle';
 import QuickAccessGuide from '../../commons/QuickAccessGuide/QuickAccessGuide';
+import Calculator from '../../commons/Calculator';
 
 import css from './Settings.module.scss';
 
@@ -9,6 +8,7 @@ const Settings = () => {
   return (
     <div className={css.settings}>
       <QuickAccessGuide />
+      <Calculator />
     </div>
   );
 };
