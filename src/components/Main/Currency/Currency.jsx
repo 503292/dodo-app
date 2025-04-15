@@ -28,13 +28,13 @@ const Currency = () => {
     setCurrencyMark(cMark);
     dispatch(updateCurrency(cMark));
   };
-  console.log(currency, 'currency');
+
   return (
     <div>
       {currency && contries && metals && (
         <div className={`${css.currencyContainer} scrollbarThumb`}>
           <div className={css.wrapTop}>
-            {currency.lenghth > 0 ? (
+            {currency.length > 0 ? (
               <div className={css.wrapPB}>
                 <div className={css.cash}>
                   <div className={css.headCurrency}>
