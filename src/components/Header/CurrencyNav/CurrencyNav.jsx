@@ -85,20 +85,19 @@ const CurrencyNav = () => {
           <div>
             <p className={css.gryvnyaBuy}>
               <ArrowR className={css.arrowR} />
-              {/* <span>▶</span> */}
               {gryvnyaToCurrency.buy}
             </p>
             <p className={css.gryvnyaSale}>
               <ArrowL className={css.arrowL} />
-              {/* <span>◀</span> */}
               {gryvnyaToCurrency.sale}
             </p>
           </div>
-          <div className={css.wrapGryvnya}>
-            <Gryvnya />
-          </div>
+
+          <Gryvnya />
         </div>
-      ) : null}
+      ) : (
+        <Gryvnya />
+      )}
     </>
   );
 };

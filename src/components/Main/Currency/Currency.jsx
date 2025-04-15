@@ -28,45 +28,53 @@ const Currency = () => {
     setCurrencyMark(cMark);
     dispatch(updateCurrency(cMark));
   };
+  console.log(currency, 'currency');
   return (
     <div>
       {currency && contries && metals && (
         <div className={`${css.currencyContainer} scrollbarThumb`}>
           <div className={css.wrapTop}>
-            <div className={css.wrapPB}>
-              <div className={css.cash}>
-                <div className={css.headCurrency}>
-                  <p>Валюта</p>
-                  <p>Продати</p>
-                  <p>Купити</p>
-                </div>
-                <div className={css.bodyCurrency}>
-                  {currency.map(el => (
-                    <label className={css.lable} htmlFor={el.ccy} key={el.ccy}>
-                      <input
-                        className={`${css.checkInput} ${el.ccy}`}
-                        name="checkMarkCurrency"
-                        type="radio"
-                        id={`${el.ccy}`}
-                        onChange={e => checkMarkCurrency(e)}
-                        checked={el.ccy === currencyMark ? 'checked' : false}
-                      />
-                      <div className={css.checkRow}>
-                        <p>{el.ccy}</p>
-                        <p>
-                          {el.buy}
-                          <span> грн</span>
-                        </p>
-                        <p>
-                          {el.sale}
-                          <span> грн</span>
-                        </p>
-                      </div>
-                    </label>
-                  ))}
+            {currency.lenghth > 0 ? (
+              <div className={css.wrapPB}>
+                <div className={css.cash}>
+                  <div className={css.headCurrency}>
+                    <p>Валюта</p>
+                    <p>Продати</p>
+                    <p>Купити</p>
+                  </div>
+                  <div className={css.bodyCurrency}>
+                    {currency.map(el => (
+                      <label
+                        className={css.lable}
+                        htmlFor={el.ccy}
+                        key={el.ccy}
+                      >
+                        <input
+                          className={`${css.checkInput} ${el.ccy}`}
+                          name="checkMarkCurrency"
+                          type="radio"
+                          id={`${el.ccy}`}
+                          onChange={e => checkMarkCurrency(e)}
+                          checked={el.ccy === currencyMark ? 'checked' : false}
+                        />
+                        <div className={css.checkRow}>
+                          <p>{el.ccy}</p>
+                          <p>
+                            {el.buy}
+                            <span> грн</span>
+                          </p>
+                          <p>
+                            {el.sale}
+                            <span> грн</span>
+                          </p>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : null}
+
             <Calculator />
           </div>
 

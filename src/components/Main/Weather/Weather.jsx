@@ -101,7 +101,7 @@ const Weather = () => {
     const lowerCaseSearch = search.toLowerCase().trim();
 
     if (lowerCaseSearch === '') {
-      toast('Вкажіть населеного пункту!');
+      toast('Оберіть населений пункт!');
       return;
     }
 
