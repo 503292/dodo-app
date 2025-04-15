@@ -26,7 +26,7 @@ const Currency = () => {
     dispatch(updateCurrency(cMark));
   };
   return (
-    <>
+    <div>
       {currency && contries && metals && (
         <div className={`${css.currencyContainer} scrollbarThumb`}>
           <div className={css.wrapPB}>
@@ -47,24 +47,15 @@ const Currency = () => {
                       onChange={e => checkMarkCurrency(e)}
                       checked={el.ccy === currencyMark ? 'checked' : false}
                     />
-
                     <div className={css.checkRow}>
                       <p>{el.ccy}</p>
                       <p>
                         {el.buy}
-                        {el.ccy === 'BTC' ? (
-                          <span> дол</span>
-                        ) : (
-                          <span> грн</span>
-                        )}
+                        <span> грн</span>
                       </p>
                       <p>
                         {el.sale}
-                        {el.ccy === 'BTC' ? (
-                          <span> дол</span>
-                        ) : (
-                          <span> грн</span>
-                        )}
+                        <span> грн</span>
                       </p>
                     </div>
                   </label>
@@ -106,7 +97,7 @@ const Currency = () => {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

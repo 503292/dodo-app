@@ -1,6 +1,5 @@
 .calculator {
   width: 300px;
-  margin: 20px auto;
   border: 1px solid grey;
   border-radius: 9px;
   overflow: hidden;
@@ -15,9 +14,13 @@
 }
 
 .display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 60px;
   background-color: grey;
   color: #fff;
-  padding: 20px;
+  padding-right: 20px;
   font-size: 24px;
   text-align: right;
   min-height: 40px;
@@ -41,6 +44,7 @@
   color: #fff;
 }
 .clear {
+  height: 60px;
   background-color: grey;
   color: #fff;
   flex: 3;
