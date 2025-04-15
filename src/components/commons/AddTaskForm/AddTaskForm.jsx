@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import uk from 'date-fns/locale/uk';
+import 'react-datepicker/dist/react-datepicker.css';
 import shortid from 'shortid';
+
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
+import BtnCrissCross from '../BtnCrissCross/BtnCrissCross';
 
 import { Priority, getColor } from '../../../utils/Priority';
 import {
@@ -13,11 +16,9 @@ import {
 } from '../../../redux/tasks/tasksActions';
 import { modalAddTasksClose } from '../../../redux/global/globalActions';
 
-import { ReactComponent as СrissСross } from '../../../assets/image/criss_cross.svg';
 import { ReactComponent as Clock } from '../../../assets/image/clock.svg';
 import { ReactComponent as Level } from '../../../assets/image/level.svg';
 
-import 'react-datepicker/dist/react-datepicker.css';
 import css from './AddTaskForm.module.scss';
 
 const options = Object.values(Priority);
@@ -112,17 +113,14 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
     <div className={css.wrapAllForm}>
       <form onSubmit={handleSubmit} className={css.addForm}>
         <div className={css.topAddForm}>
-          <h2 className={css.title}>Нове завдання</h2>
-          <button
-            type="button"
-            className={`${css.backBtn} ${css[`${getColor(priority)}`]}`}
+          <p className={css.title}>Нове завдання</p>
+          <BtnCrissCross
             onClick={() => {
               dispatch(modalAddTasksClose());
               handleResetEditTask();
             }}
-          >
-            <СrissСross className={css.close} />
-          </button>
+            className={css[`${getColor(priority)}`]}
+          />
         </div>
 
         <div className={css.wrapTextarea}>
