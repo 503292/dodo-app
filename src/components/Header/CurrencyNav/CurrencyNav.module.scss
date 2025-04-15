@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
 
-  //
   .currencyMark {
     display: flex;
     align-items: center;
@@ -16,27 +15,11 @@
     }
   }
 
-  //
   .wrapGryvnya {
     display: flex;
     align-items: center;
-
-    & > svg {
-      width: 25px;
-      height: 30px;
-    }
   }
 
-  //
-  .wrapUSD {
-    display: flex;
-    align-items: center;
-
-    & > svg {
-      width: 20px;
-      height: 24px;
-    }
-  }
   .gryvnyaSale,
   .gryvnyaBuy {
     margin: 0;
