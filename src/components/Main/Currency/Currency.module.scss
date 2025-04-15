@@ -22,10 +22,16 @@
   background-color: #b8b8b9;
   border-radius: 50px;
 }
+.wrapTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
 .wrapPB {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  margin-bottom: 6px;
+  flex: 1;
 }
 
 .headCurrency {

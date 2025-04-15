@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
+import Calculator from '../../commons/Calculator';
+
 import { updateCurrency } from '../../../redux/currency/currencyActions';
 
 import css from './Currency.module.scss';
@@ -29,39 +32,42 @@ const Currency = () => {
     <div>
       {currency && contries && metals && (
         <div className={`${css.currencyContainer} scrollbarThumb`}>
-          <div className={css.wrapPB}>
-            <div className={css.cash}>
-              <div className={css.headCurrency}>
-                <p>Валюта</p>
-                <p>Продати</p>
-                <p>Купити</p>
-              </div>
-              <div className={css.bodyCurrency}>
-                {currency.map(el => (
-                  <label className={css.lable} htmlFor={el.ccy} key={el.ccy}>
-                    <input
-                      className={`${css.checkInput} ${el.ccy}`}
-                      name="checkMarkCurrency"
-                      type="radio"
-                      id={`${el.ccy}`}
-                      onChange={e => checkMarkCurrency(e)}
-                      checked={el.ccy === currencyMark ? 'checked' : false}
-                    />
-                    <div className={css.checkRow}>
-                      <p>{el.ccy}</p>
-                      <p>
-                        {el.buy}
-                        <span> грн</span>
-                      </p>
-                      <p>
-                        {el.sale}
-                        <span> грн</span>
-                      </p>
-                    </div>
-                  </label>
-                ))}
+          <div className={css.wrapTop}>
+            <div className={css.wrapPB}>
+              <div className={css.cash}>
+                <div className={css.headCurrency}>
+                  <p>Валюта</p>
+                  <p>Продати</p>
+                  <p>Купити</p>
+                </div>
+                <div className={css.bodyCurrency}>
+                  {currency.map(el => (
+                    <label className={css.lable} htmlFor={el.ccy} key={el.ccy}>
+                      <input
+                        className={`${css.checkInput} ${el.ccy}`}
+                        name="checkMarkCurrency"
+                        type="radio"
+                        id={`${el.ccy}`}
+                        onChange={e => checkMarkCurrency(e)}
+                        checked={el.ccy === currencyMark ? 'checked' : false}
+                      />
+                      <div className={css.checkRow}>
+                        <p>{el.ccy}</p>
+                        <p>
+                          {el.buy}
+                          <span> грн</span>
+                        </p>
+                        <p>
+                          {el.sale}
+                          <span> грн</span>
+                        </p>
+                      </div>
+                    </label>
+                  ))}
+                </div>
               </div>
             </div>
+            <Calculator />
           </div>
 
           {contries && metals && (
