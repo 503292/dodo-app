@@ -16,7 +16,6 @@ import {
 } from '../../../redux/tasks/tasksActions';
 import { modalAddTasksClose } from '../../../redux/global/globalActions';
 
-import { ReactComponent as СrissСross } from '../../../assets/image/criss_cross.svg';
 import { ReactComponent as Clock } from '../../../assets/image/clock.svg';
 import { ReactComponent as Level } from '../../../assets/image/level.svg';
 
