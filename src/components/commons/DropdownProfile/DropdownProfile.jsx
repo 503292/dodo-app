@@ -21,37 +21,37 @@ const DropdownProfile = ({ isActive, refProfile }) => {
       {isActive ? (
         <nav ref={refProfile} className={css.wrapDropdownSettings}>
           <ul className={css.listPages}>
-            <li className={css.page}>
+            <li>
               <NavLink exact activeStyle={ativeStyle} to="/lang_game">
                 EN
               </NavLink>
             </li>
 
-            <li className={css.page}>
+            <li>
               <NavLink exact activeStyle={ativeStyle} to="/math_game">
                 <Game />
               </NavLink>
             </li>
 
-            <li className={css.page}>
+            <li>
               <NavLink exact activeStyle={ativeStyle} to="/menu">
                 <Notes />
               </NavLink>
             </li>
 
-            <li className={css.page}>
+            <li>
               <NavLink exact activeStyle={ativeStyle} to="/info">
                 <Donate />
               </NavLink>
             </li>
 
-            <li className={css.page}>
+            <li>
               <NavLink exact activeStyle={ativeStyle} to="/settings">
                 <Settings />
               </NavLink>
             </li>
 
-            {/* <li className={css.page}>
+            {/* <li>
               <NavLink exact activeStyle={ativeStyle} to="/profile">
                 <Profile />
               </NavLink>
