@@ -6,7 +6,7 @@ import CurrencyNav from '../CurrencyNav/CurrencyNav';
 import InfoSite from '../Info/Info';
 import DropdownProfile from '../../commons/DropdownProfile/DropdownProfile';
 
-import { ReactComponent as Sun } from '../../../assets/image/nav/sun.svg';
+import { ReactComponent as Alatyr } from '../../../assets/image/nav/alatyr.svg';
 
 import { useDetectOutsideClick } from '../../../utils/hooks/useDetectOutsideClick';
 
@@ -24,11 +24,6 @@ const NavbarTop = () => {
 
   return (
     <ul className={css.wrapList}>
-      {/* <li className={css.routeHeader}>
-        <NavLink exact activeStyle={ativeStyle} to="/">
-          <Menu />
-        </NavLink>
-      </li> */}
       {/* TODO in progress this page */}
       {/* <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/planet">
@@ -37,7 +32,7 @@ const NavbarTop = () => {
       </li> */}
       <li className={css.routeHeader}>
         <NavLink exact activeStyle={ativeStyle} to="/">
-          <Sun />
+          <Alatyr />
         </NavLink>
       </li>
       <li className={css.routeHeader}>
