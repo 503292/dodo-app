@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import WeatherNav from '../WeatherNav/WeatherNav';
 import CurrencyNav from '../CurrencyNav/CurrencyNav';
-import InfoSite from '../Info/Info';
+import UaMap from '../UaMap/UaMap';
 import DropdownProfile from '../../commons/DropdownProfile/DropdownProfile';
 
 import { ReactComponent as Alatyr } from '../../../assets/image/nav/alatyr.svg';
@@ -50,7 +50,7 @@ const NavbarTop = () => {
         className={`${css.routeHeader} ${css.dropdown}`}
         onClick={handleClick}
       >
-        <InfoSite />
+        <UaMap />
         <DropdownProfile refProfile={refProfile} isActive={isActive} />
       </li>
     </ul>
