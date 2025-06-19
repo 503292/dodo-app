@@ -30,7 +30,6 @@ const MathGame = () => {
   }, []);
 
   const mathTask = useMemo(() => {
-    console.log(min, max, operator);
     if (
       typeof min === 'undefined' &&
       typeof max === 'undefined' &&

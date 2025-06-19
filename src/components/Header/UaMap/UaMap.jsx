@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as LogoMap } from '../../../assets/image/logo/mapUa.svg';
 
-import css from './Info.module.scss';
+import css from './UaMap.module.scss';
 
-const Info = () => {
+const UaMap = () => {
   const history = useHistory();
   const { pathname } = history.location;
   const routeName = pathname.substring(1);
@@ -26,4 +26,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default UaMap;

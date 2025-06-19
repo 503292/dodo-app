@@ -17,10 +17,6 @@
   .dropdown {
     position: relative;
 
-    &:hover svg {
-      fill: lightgray;
-    }
-
     svg {
       fill: var(--G6);
     }

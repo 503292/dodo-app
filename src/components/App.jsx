@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 
 import HeaderNav from './Header/Header';
 import Main from './Main/Main';
+import ChatTawkTo from './commons/ChatTawkTo';
 
 // TODO fix is broken
 // import Animation from './commons/Animation/Animation';
@@ -25,6 +26,7 @@ const App = () => {
         <Main />
       </main>
       <ToastContainer />
+      <ChatTawkTo />
     </div>
   );
 };
