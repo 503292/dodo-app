@@ -46,6 +46,7 @@ const ChatTawkTo = () => {
     if (initializedRef.current && window.Tawk_API) {
       updateChatVisibility(pathname);
     }
+    // eslint-disable-next-line
   }, [location]);
 
   return null;
