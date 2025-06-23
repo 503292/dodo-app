@@ -1,0 +1,79 @@
+.cityMarker {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    &:not(.selected) {
+      .circle {
+        stroke-width: 3;
+        stroke: #888;
+        fill: #a0a0a0;
+      }
+    }
+
+    .hitArea {
+      fill: rgba(0, 255, 0, 0.1);
+      stroke: limegreen;
+      stroke-width: 1;
+    }
+  }
+}
+
+.circle {
+  fill: darkgrey;
+  stroke: white;
+  stroke-width: 2;
+  transition: fill 0.2s ease-in-out, stroke-width 0.2s ease-in-out,
+    stroke 0.2s ease-in-out;
+}
+
+.nameText {
+  fill: var(--G3);
+  opacity: 1;
+  font-weight: bold;
+  pointer-events: none;
+  transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.hitArea {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 0;
+  pointer-events: all;
+}
+
+.selected {
+  .circle {
+    fill: tomato;
+    stroke: white;
+    stroke-width: 6;
+  }
+
+  .nameText {
+    fill: tomato;
+    opacity: 1;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .hitArea {
+    fill: rgba(0, 0, 255, 0.05);
+  }
+}
+
+// Додатковий стиль для активного стану (при натисканні)
+.cityMarker:active {
+  .circle {
+    fill: tomato;
+    stroke: red;
+  }
+  .nameText {
+    fill: tomato;
+  }
+  .hitArea {
+    fill: rgba(255, 99, 71, 0.2);
+  }
+}

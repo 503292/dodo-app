@@ -4,6 +4,30 @@ import PropTypes from 'prop-types';
 import css from './VideoPlayer.module.scss';
 // TODO must be create VideoBtn
 
+// TODO helper with key videos
+// const videoUrl = 'https://www.youtube.com/embed/ZATdVxeksjU';
+
+//  {/* <div className={css.wrapVideo}>
+//     <VideoPlayer url={videoUrl} />
+//   </div> */}
+
+// .wrapVideo {
+//   width: calc(100% + 10px);
+//   height: 100%;
+//   position: relative;
+//   overflow: hidden;
+//   background: #000;
+//   min-height: 220px;
+//   margin-left: -5px;
+
+//   & > iframe {
+//     height: 100%;
+//     width: 100%;
+//     border: none;
+//     position: absolute;
+//   }
+// }
+
 const VideoPlayer = ({ url }) => {
   return (
     <iframe
