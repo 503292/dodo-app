@@ -102,7 +102,7 @@ const CityRigion = ({ city }) => {
           Площа: ~ <strong>{city.area_km2.toLocaleString('uk-UA')}</strong> км²
         </p>
         <p>
-          День міста: ~ <strong>{city.city_day}</strong>
+          День міста: <strong>{city.city_day}</strong>
         </p>
       </div>
 
