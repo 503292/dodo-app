@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import css from './CityMarker.module.scss';
 
 const CityMarker = ({ name, x, y, isSelected, onSelect }) => {
-  const visibleCircleRadius = 7;
-  const hitAreaRadius = 20;
-  const fontSize = 18;
+  const visibleCircleRadius = 9;
+  const hitAreaRadius = 32;
 
   const handleClick = () => {
     onSelect(name);
@@ -21,14 +20,15 @@ const CityMarker = ({ name, x, y, isSelected, onSelect }) => {
 
       <circle cx={x} cy={y} r={visibleCircleRadius} className={css.circle} />
 
-      <text
-        x={x - 7}
-        y={y - visibleCircleRadius - 9}
-        className={`${css.nameText} ${isSelected ? css.selected : ''}`}
-        fontSize={fontSize}
-      >
-        {name}
-      </text>
+      {isSelected ? (
+        <text
+          x={x - 42}
+          y={y - visibleCircleRadius - 30}
+          className={`${css.nameText} ${isSelected ? css.selected : ''}`}
+        >
+          {name}
+        </text>
+      ) : null}
     </g>
   );
 };

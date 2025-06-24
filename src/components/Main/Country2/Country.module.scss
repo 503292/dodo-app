@@ -11,6 +11,7 @@
   .wrapFielset {
     margin-bottom: 5px;
     background: transparent;
+    position: relative;
 
     & > fieldset {
       background: transparent;
@@ -92,4 +93,124 @@
 .wrapCountry::-webkit-scrollbar-thumb {
   background-color: #b8b8b9;
   border-radius: 50px;
+}
+
+// TODO in progress restyle
+
+.emblem {
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  width: 100px; // Фіксована ширина (налаштуйте за потребою)
+  height: 80px; // Фіксована висота (налаштуйте за потребою)
+  object-fit: contain; // Важливо: масштабує зображенн
+  margin-top: 10px; // Відступ зверху
+
+  filter: drop-shadow(0 0 2px black);
+}
+
+.cityTitle {
+  padding-left: 10px;
+}
+
+.cityRegionInfoContainer {
+  font-family: 'Lato', Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f0f4f8; // Легкий загальний фон
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  display: flex; // Використовуємо flexbox для розташування секцій
+  flex-direction: column; // За замовчуванням стовпцем на мобільних
+  gap: 20px; // Проміжок між секціями
+
+  @media (min-width: 768px) {
+    flex-direction: row; // Горизонтальне розташування на більших екранах
+    justify-content: space-around; // Розподілити простір між секціями
+    align-items: flex-start; // Вирівнювання елементів по верху
+  }
+
+  h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid; // Додаємо межу, колір буде задано в секції
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .cityInfoSection,
+  .regionInfoSection {
+    flex: 1; // Займає рівний простір у flex-контейнері
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  }
+
+  .cityInfoSection {
+    background-color: #e6f7ff; // Блакитний фон для міста
+    border: 1px solid #cceeff; // М'яка межа
+
+    h3 {
+      color: #0056b3; // Темніший синій для заголовка міста
+      border-color: #007bff; // Колір межі заголовка
+    }
+
+    strong {
+      color: #007bff; // Синій для значень міста
+    }
+  }
+
+  .regionInfoSection {
+    background-color: #f7ffe6; // Світло-зелений фон для регіону
+    border: 1px solid #e0ffe0; // М'яка межа
+
+    h3 {
+      color: #1e7e34; // Темніший зелений для заголовка регіону
+      border-color: #28a745; // Колір межі заголовка
+    }
+
+    strong {
+      color: #28a745; // Зелений для значень регіону
+    }
+  }
+
+  // Адаптивні стилі для менших екранів
+  @media (max-width: 768px) {
+    padding: 15px;
+    gap: 15px;
+
+    h3 {
+      font-size: 1.2em;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    gap: 10px;
+
+    h3 {
+      font-size: 1.1em;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
 }

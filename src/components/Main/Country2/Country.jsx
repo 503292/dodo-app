@@ -13,7 +13,10 @@ import css from './Country.module.scss';
 
 const Country = () => {
   const [isFlipped, setIsFlipped] = useState(false);
+
   const [selectedCityName, setSelectedCityName] = useState('Львів');
+
+  const selectedCity = cities.find(city => city.name === selectedCityName);
 
   const handleClick = e => {
     // Якщо клік був на маркері, ми не перегортаємо картку
@@ -28,9 +31,10 @@ const Country = () => {
   };
 
   const handleCitySelect = cityName => {
+    console.log(cityName);
     setSelectedCityName(cityName);
     // Додатково можна перегортати картку при виборі міста, якщо це потрібно
-    // setIsFlipped(true);
+    // setIsFlipped(true); // Можна розкоментувати, якщо потрібно
   };
 
   const svgViewBox = '0 0 1280.000000 1280.000000';
@@ -62,14 +66,65 @@ const Country = () => {
             </div>
             <div className={`${css.backCard} ${css.blueYellow}`}>
               <Motivator />
-              {/* Тут можна відображати інформацію про selectedCityName */}
-              {/* {selectedCityName && <h2>Вибране місто: {selectedCityName}</h2>} */}
             </div>
           </ReactCardFlip>
         </BoxWithBorder>
+        <Emblem url={selectedCity.emblem} title={selectedCity.name} />
       </div>
+
+      {selectedCity && (
+        <>
+          <h2 className={css.cityTitle}> {selectedCity.name}</h2>
+          <CityRigion city={selectedCity} />
+        </>
+      )}
     </div>
   );
 };
 
 export default Country;
+
+const Emblem = ({ url = '/', title = '/' }) => {
+  return url ? <img className={css.emblem} src={url} title={title} /> : null;
+};
+
+const CityRigion = ({ city }) => {
+  return (
+    <div className={css.cityRegionInfoContainer}>
+      {/* Секція для інформації про місто */}
+      <div className={css.cityInfoSection}>
+        <h3>Інформація про місто</h3>
+        <p>
+          Жителі міста: ~{' '}
+          <strong>{city.population.toLocaleString('uk-UA')}</strong> люд.
+        </p>
+        <p>
+          Площа: ~ <strong>{city.area_km2.toLocaleString('uk-UA')}</strong> км²
+        </p>
+        <p>
+          День міста: ~ <strong>{city.city_day}</strong>
+        </p>
+      </div>
+
+      {/* Секція для інформації про регіон */}
+      <div className={css.regionInfoSection}>
+        <h3>Інформація про регіон</h3>
+        <p>
+          Жителі регіону: ~{' '}
+          <strong>{city.region_population.toLocaleString('uk-UA')}</strong> люд.
+        </p>
+        <p>
+          Площа регіону: ~{' '}
+          <strong>{city.region_area_km2.toLocaleString('uk-UA')}</strong> км²
+        </p>
+        <p>
+          Поклади корисних копалин: ~{' '}
+          <strong>
+            {city.mineral_resources_estimated_value.toLocaleString('uk-UA')}
+          </strong>{' '}
+          млн. $
+        </p>
+      </div>
+    </div>
+  );
+};
