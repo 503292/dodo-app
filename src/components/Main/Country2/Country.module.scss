@@ -115,15 +115,16 @@
 
 .cityRegionInfoContainer {
   font-family: 'Lato', Arial, sans-serif;
-  color: #333;
   padding: 20px;
-  background-color: #f0f4f8; // Легкий загальний фон
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
   display: flex; // Використовуємо flexbox для розташування секцій
   flex-direction: column; // За замовчуванням стовпцем на мобільних
   gap: 20px; // Проміжок між секціями
+
+  border-radius: 13px;
+  font-style: italic;
+  margin: 0;
+  box-shadow: 0 0 4px 0px grey;
+  background: var(--tr_light);
 
   @media (min-width: 768px) {
     flex-direction: row; // Горизонтальне розташування на більших екранах
@@ -157,14 +158,14 @@
   .regionInfoSection {
     flex: 1; // Займає рівний простір у flex-контейнері
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 13px;
+    font-style: italic;
+    margin: 0;
+    box-shadow: 0 0 4px 0px grey;
+    background: var(--tr_light);
   }
 
   .cityInfoSection {
-    background-color: #e6f7ff; // Блакитний фон для міста
-    border: 1px solid #cceeff; // М'яка межа
-
     h3 {
       color: #0056b3; // Темніший синій для заголовка міста
       border-color: #007bff; // Колір межі заголовка
@@ -176,9 +177,6 @@
   }
 
   .regionInfoSection {
-    background-color: #f7ffe6; // Світло-зелений фон для регіону
-    border: 1px solid #e0ffe0; // М'яка межа
-
     h3 {
       color: #1e7e34; // Темніший зелений для заголовка регіону
       border-color: #28a745; // Колір межі заголовка

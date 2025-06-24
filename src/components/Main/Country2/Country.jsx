@@ -93,10 +93,9 @@ const CityRigion = ({ city }) => {
     <div className={css.cityRegionInfoContainer}>
       {/* Секція для інформації про місто */}
       <div className={css.cityInfoSection}>
-        <h3>Інформація про місто</h3>
+        <h3>Інформація про м. {city.name}</h3>
         <p>
-          Жителі міста: ~{' '}
-          <strong>{city.population.toLocaleString('uk-UA')}</strong> люд.
+          Жителів: ~ <strong>{city.population.toLocaleString('uk-UA')}</strong>
         </p>
         <p>
           Площа: ~ <strong>{city.area_km2.toLocaleString('uk-UA')}</strong> км²
@@ -110,8 +109,8 @@ const CityRigion = ({ city }) => {
       <div className={css.regionInfoSection}>
         <h3>Інформація про регіон</h3>
         <p>
-          Жителі регіону: ~{' '}
-          <strong>{city.region_population.toLocaleString('uk-UA')}</strong> люд.
+          Жителів регіону: ~{' '}
+          <strong>{city.region_population.toLocaleString('uk-UA')}</strong>
         </p>
         <p>
           Площа регіону: ~{' '}
