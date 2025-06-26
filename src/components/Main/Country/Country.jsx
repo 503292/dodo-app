@@ -69,7 +69,7 @@ const Country = () => {
             </div>
           </ReactCardFlip>
         </BoxWithBorder>
-        <Emblem url={selectedCity.emblem} title={selectedCity.name} />
+        <Emblem url={selectedCity.emblem} alt={selectedCity.name} />
       </div>
 
       {selectedCity && (
@@ -84,8 +84,8 @@ const Country = () => {
 
 export default Country;
 
-const Emblem = ({ url = '/', title = '/' }) => {
-  return url ? <img className={css.emblem} src={url} title={title} /> : null;
+const Emblem = ({ url = '/', alt = '/' }) => {
+  return url ? <img className={css.emblem} src={url} alt={alt} /> : null;
 };
 
 const CityRigion = ({ city }) => {
