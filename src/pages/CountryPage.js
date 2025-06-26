@@ -1,5 +1,5 @@
 import React from 'react';
-import Country from '../components/Main/Country2/Country';
+import Country from '../components/Main/Country/Country';
 
 const CountryPage = () => (
   <>
