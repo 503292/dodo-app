@@ -5,7 +5,7 @@ const ChatTawkTo = () => {
   const location = useLocation();
   const initializedRef = useRef(false);
 
-  const isChatPage = pathname => pathname === '/country';
+  const isChatPage = pathname => pathname === '/info';
 
   const updateChatVisibility = pathname => {
     if (window.Tawk_API) {
