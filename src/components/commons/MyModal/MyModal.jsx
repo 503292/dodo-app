@@ -36,7 +36,7 @@ const MyModal = ({ isOpen, onClose, children }) => {
       aria-modal="true"
     >
       <BtnCrissCross onClick={() => onClose()} className={css.btn} />
-      <div className={css.modal_content}>{children}</div>
+      {children}
     </div>
   );
 };
