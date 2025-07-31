@@ -1,22 +1,19 @@
 export const Priority = Object.freeze({
-  LOW: 'завдання',
-  NORMAL: 'відпочинок',
-  HIGH: 'сьогодні',
-  LONG: 'довготермінові цілі',
+  LOW: 'ідея',
+  NORMAL: 'план',
+  HIGH: 'виконання',
+  LONG: 'ціль',
 });
 
 export const getColor = el => {
   switch (el) {
-    case 'завдання':
+    case 'план':
       return 'normalPriority';
-    case 'сьогодні':
+    case 'виконання':
       return 'highPriority';
-    case 'довготермінові цілі':
+    case 'ціль':
       return 'longPriority';
     default:
       return 'lowPriority';
   }
 };
-
-// TODO obj priority
-// const priority = {};
