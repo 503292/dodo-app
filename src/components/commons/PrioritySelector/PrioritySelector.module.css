@@ -12,6 +12,19 @@ select option[value='сьогодні'] {
 select option[value='довготермінові цілі'] {
   background: var(--chorne);
 }
+
+.select {
+  border-radius: 7px;
+  padding: 2px 2px 2px 5px;
+  outline: none;
+  color: grey;
+  border: 1px solid lightgrey;
+  height: 36px;
+}
+.oneOption {
+  border-radius: 7px;
+}
+
 /* <<< Priority */
 .lowPriority {
   background-color: var(--jowte);
@@ -23,18 +36,7 @@ select option[value='довготермінові цілі'] {
   background-color: var(--tr_red);
 }
 .longPriority {
-  background-color: var(--G10);
+  background-color: darkgrey;
+  color: var(--jowte);
 }
 /* >>> Priority */
-
-.select {
-  border-radius: 7px;
-  padding: 2px;
-  outline: none;
-  color: grey;
-  border: 1px solid lightgrey;
-}
-.oneOption {
-  border-radius: 7px;
-  color: grey;
-}

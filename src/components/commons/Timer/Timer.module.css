@@ -55,7 +55,7 @@
 
 /* colors */
 .grey {
-  background: var(--grey_btn);
+  background: darkgrey;
   color: var(--jowte);
 }
 .red {

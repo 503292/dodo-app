@@ -12,8 +12,9 @@ const SettingPage = lazy(() => import('../../../pages/SettingPage'));
 // const ProfilePage = lazy(() => import('../../../pages/ProfilePage'));
 const MenuPage = lazy(() => import('../../../pages/MenuPage'));
 const MathGamePage = lazy(() => import('../../../pages/MathGamePage'));
-const LangGamePage = lazy(() => import('../../../pages/LangGamePage'));
 const MathInfoPage = lazy(() => import('../../../pages/MathInfoPage'));
+const LangGamePage = lazy(() => import('../../../pages/LangGamePage'));
+// const AIPage = lazy(() => import('../../../pages/AIPage'));
 
 const RandomProductList = lazy(() =>
   import('../../../pages/RandomProductList'),
@@ -29,19 +30,20 @@ const RoutesSite = () => {
         <Route path="/weather" component={WeatherPage} />
         <Route path="/currency" component={CurrencyPage} />
         <Route path="/country" component={CountryPage} />
-
+        {/* Dropdown Nav routes */}
         <Route path="/info" exact component={InfoSitePage} />
         <Route path="/settings" component={SettingPage} />
-        {/* TODO in progress */}
-        {/* <Route path="/profile" component={ProfilePage} /> */}
         <Route path="/menu" exact component={MenuPage} />
         <Route path="/math_game" component={MathGamePage} />
         <Route path="/mif_info" component={MathInfoPage} />
         <Route path="/lang_game" component={LangGamePage} />
+        {/* <Route path="/ai" component={AIPage} /> */}
 
         <Route path="/random" component={RandomProductList} />
 
         <Route component={ErrorPage} />
+        {/* TODO in progress */}
+        {/* <Route path="/profile" component={ProfilePage} /> */}
       </Switch>
     </Suspense>
   );

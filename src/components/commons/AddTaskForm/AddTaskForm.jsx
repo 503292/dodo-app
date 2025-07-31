@@ -6,8 +6,8 @@ import uk from 'date-fns/locale/uk';
 import 'react-datepicker/dist/react-datepicker.css';
 import shortid from 'shortid';
 
+import TopAddForm from './TopAddForm';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
-import BtnCrissCross from '../BtnCrissCross/BtnCrissCross';
 
 import { Priority, getColor } from '../../../utils/Priority';
 import {
@@ -29,7 +29,7 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   const allTasks = useSelector(s => s.tasks);
   const [endTime, setEndTime] = useState(new Date());
   const [text, setText] = useState('');
-  const [priority, setPriority] = useState(Priority.NORMAL);
+  const [priority, setPriority] = useState(Priority.LOW);
   const [id, setId] = useState('');
   const [completed, setCompleted] = useState(false);
 
@@ -110,18 +110,15 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   };
 
   return (
-    <div className={css.wrapAllForm}>
+    <div className={css.wrapForm}>
       <form onSubmit={handleSubmit} className={css.addForm}>
-        <div className={css.topAddForm}>
-          <p className={css.title}>Нове завдання</p>
-          <BtnCrissCross
-            onClick={() => {
-              dispatch(modalAddTasksClose());
-              handleResetEditTask();
-            }}
-            className={css[`${getColor(priority)}`]}
-          />
-        </div>
+        <TopAddForm
+          priority={priority}
+          onClick={() => {
+            dispatch(modalAddTasksClose());
+            handleResetEditTask();
+          }}
+        />
 
         <div className={css.wrapTextarea}>
           <textarea

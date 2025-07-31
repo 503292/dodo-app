@@ -31,7 +31,6 @@ const Country = () => {
   };
 
   const handleCitySelect = cityName => {
-    console.log(cityName);
     setSelectedCityName(cityName);
     // Додатково можна перегортати картку при виборі міста, якщо це потрібно
     // setIsFlipped(true); // Можна розкоментувати, якщо потрібно

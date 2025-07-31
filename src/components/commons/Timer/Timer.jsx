@@ -70,13 +70,13 @@ const Timer = () => {
           <span className={css.descr}>Годин</span>
         </div>
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.yellow}`}>
+          <button type="button" className={`${css.btn} ${css.blue}`}>
             {minutes}
           </button>
           <span className={css.descr}>Хвилин</span>
         </div>
         <div className={css.wrapValue}>
-          <button type="button" className={`${css.btn} ${css.blue}`}>
+          <button type="button" className={`${css.btn} ${css.yellow}`}>
             {seconds}
           </button>
           <span className={css.descr}>Секунд</span>
