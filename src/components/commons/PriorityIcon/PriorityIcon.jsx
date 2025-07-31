@@ -1,30 +1,16 @@
 import React from 'react';
-import css from './AddTaskForm.module.scss';
+import css from './PriorityIcon.module.scss';
 
-import BtnCrissCross from '../BtnCrissCross/BtnCrissCross';
 import { ReactComponent as Idea } from '../../../assets/image/tasks/idea.svg';
 import { ReactComponent as Plan } from '../../../assets/image/tasks/plan.svg';
 import { ReactComponent as Implementation } from '../../../assets/image/tasks/implementation.svg';
 import { ReactComponent as Goal } from '../../../assets/image/tasks/goal.svg';
 
-import { getColor } from '../../../utils/Priority';
-
-const TopAddForm = ({ priority, onClick }) => {
-  return (
-    <div className={css.topAddForm}>
-      <div className={css.wrapTitle}>
-        {getIcon(priority)}
-        <p className={css.title}>{priority}</p>
-      </div>
-      <BtnCrissCross
-        onClick={() => onClick()}
-        className={css[`${getColor(priority)}`]}
-      />
-    </div>
-  );
+const PriorityIcon = ({ priority }) => {
+  return <> {getIcon(priority)}</>;
 };
 
-export default TopAddForm;
+export default PriorityIcon;
 
 const getIcon = el => {
   switch (el) {

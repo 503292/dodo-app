@@ -1,8 +1,8 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-
 import PropTypes from 'prop-types';
 
+import PriorityIcon from '../PriorityIcon/PriorityIcon';
 import { ReactComponent as Delete } from '../../../assets/image/criss_cross.svg';
 import { ReactComponent as Pen } from '../../../assets/image/pen.svg';
 import { getColor } from '../../../utils/Priority';
@@ -19,6 +19,10 @@ const TaskItem = ({
 }) => {
   const { text } = task;
   const splitText = text.split(/\r?\n/);
+  console.log(task, '');
+
+  // todo connect PriorityIcon
+  // fix bug with load another priority
 
   const formatEndTime = endTime => {
     let hour = new Date(endTime).getHours();
@@ -45,6 +49,9 @@ const TaskItem = ({
             className={css.dragContainer}
           >
             <div className={`${css.task} ${css[`${getColor(task.priority)}`]}`}>
+              {/*  */}
+              <div>O</div>
+
               {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
               <label className={css.wrapText}>
                 <input
@@ -67,7 +74,8 @@ const TaskItem = ({
                 </div>
               </label>
 
-              <div className={css.actions}>
+              {/*  */}
+              <div className={css.right}>
                 {!task.completed ? (
                   <button
                     type="button"

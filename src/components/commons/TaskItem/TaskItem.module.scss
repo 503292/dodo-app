@@ -13,14 +13,11 @@
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
-  padding: 2px 2px 2px 15px;
+  padding: 2px 2px 2px 28px;
   border-top: 3px solid transparent;
   margin: 0 auto;
   display: flex;
   background: var(--tr_light);
-  // white-space: nowrap;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
 }
 .task:hover {
   background-color: rgb(228, 250, 252);
@@ -81,16 +78,14 @@
   text-decoration: line-through;
   color: rgb(190, 189, 189);
 }
-.actions {
+.right {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   width: 62px;
 }
 
 .wrapIcon {
-  align-items: center;
   width: 2rem;
   height: 2rem;
   padding-top: 5px;
