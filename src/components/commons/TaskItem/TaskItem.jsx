@@ -9,6 +9,11 @@ import { getColor } from '../../../utils/Priority';
 
 import css from './TaskItem.module.scss';
 
+const iconsStyles = {
+  height: '1.75rem',
+  width: '1.75rem',
+};
+
 const TaskItem = ({
   task,
   index,
@@ -50,7 +55,8 @@ const TaskItem = ({
           >
             <div className={`${css.task} ${css[`${getColor(task.priority)}`]}`}>
               {/*  */}
-              <div>O</div>
+
+              <PriorityIcon priority={task.priority} styles={iconsStyles} />
 
               {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
               <label className={css.wrapText}>

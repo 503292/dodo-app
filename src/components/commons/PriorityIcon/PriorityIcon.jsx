@@ -6,22 +6,22 @@ import { ReactComponent as Plan } from '../../../assets/image/tasks/plan.svg';
 import { ReactComponent as Implementation } from '../../../assets/image/tasks/implementation.svg';
 import { ReactComponent as Goal } from '../../../assets/image/tasks/goal.svg';
 
-const PriorityIcon = ({ priority }) => {
-  return <> {getIcon(priority)}</>;
+const PriorityIcon = ({ priority, styles = {} }) => {
+  return <> {getIcon(priority, styles)}</>;
 };
 
 export default PriorityIcon;
 
-const getIcon = el => {
+const getIcon = (el, styles) => {
   switch (el) {
     case 'план':
-      return <Plan className={css[getColorSVG(el)]} />;
+      return <Plan style={styles} className={css[getColorSVG(el)]} />;
     case 'виконання':
-      return <Implementation className={css[getColorSVG(el)]} />;
+      return <Implementation style={styles} className={css[getColorSVG(el)]} />;
     case 'ціль':
-      return <Goal className={css[getColorSVG(el)]} />;
+      return <Goal style={styles} className={css[getColorSVG(el)]} />;
     default:
-      return <Idea className={css[getColorSVG(el)]} />;
+      return <Idea style={styles} className={css[getColorSVG(el)]} />;
   }
 };
 
