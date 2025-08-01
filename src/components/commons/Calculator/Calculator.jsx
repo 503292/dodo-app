@@ -79,12 +79,10 @@ const Calculator = () => {
         <div className={css.row}>
           <Button value="." onClick={inputDecimal} />
           <Button value="0" onClick={inputDigit} />
-          {/* <Button value="=" onClick={performOperation} className={css.equals} /> */}
           <Button value="C" onClick={clearDisplay} className={css.clear} />
           <Button value="-" onClick={handleOperator} className={css.operator} />
         </div>
         <div className={css.row}>
-          {/* <Button value="Clear" onClick={clearDisplay} className={css.clear} /> */}
           <Button value="=" onClick={performOperation} className={css.equals} />
         </div>
       </div>
