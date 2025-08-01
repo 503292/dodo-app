@@ -6,8 +6,9 @@ import uk from 'date-fns/locale/uk';
 import 'react-datepicker/dist/react-datepicker.css';
 import shortid from 'shortid';
 
-import TopAddForm from './TopAddForm';
 import PrioritySelector from '../PrioritySelector/PrioritySelector';
+import BtnCrissCross from '../BtnCrissCross/BtnCrissCross';
+import PriorityIcon from '../PriorityIcon/PriorityIcon';
 
 import { Priority, getColor } from '../../../utils/Priority';
 import {
@@ -112,13 +113,19 @@ const AddTaskForm = ({ editTask, handleResetEditTask }) => {
   return (
     <div className={css.wrapForm}>
       <form onSubmit={handleSubmit} className={css.addForm}>
-        <TopAddForm
-          priority={priority}
-          onClick={() => {
-            dispatch(modalAddTasksClose());
-            handleResetEditTask();
-          }}
-        />
+        <div className={css.topAddForm}>
+          <div className={css.wrapTitle}>
+            <PriorityIcon priority={priority} />
+            <p className={css.title}>{priority}</p>
+          </div>
+          <BtnCrissCross
+            onClick={() => {
+              dispatch(modalAddTasksClose());
+              handleResetEditTask();
+            }}
+            className={css[`${getColor(priority)}`]}
+          />
+        </div>
 
         <div className={css.wrapTextarea}>
           <textarea
