@@ -19,7 +19,7 @@
   background-color: grey;
   color: #fff;
   padding: 0 20px;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 .buttons {
@@ -35,7 +35,7 @@
 
 .button {
   flex: 1;
-  font-size: 2rem;
+  font-size: 3rem;
   border: 0.5px solid #e8e8e8;
   cursor: pointer;
   background-color: #fff;
@@ -48,15 +48,17 @@
 .operator {
   background-color: #fdbb49;
   color: #fff;
+  font-size: 4rem;
 }
 
 .equals {
-  background-color: #85da7b;
+  background-color: grey;
   color: #fff;
+  font-size: 4rem;
 }
 
 .clear {
-  background-color: grey;
+  background-color: #85da7b;
   color: #fff;
   border: none;
   flex: 1;
