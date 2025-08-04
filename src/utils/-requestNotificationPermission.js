@@ -13,7 +13,6 @@ export async function requestNotificationPermission() {
   if (window.Notification.permission === 'granted') {
     // Повідомлення вже дозволено, ви можете відображати повідомлення.
     ++count;
-    console.log(count);
     new window.Notification('Повідомлення дозволено! 1', {
       vibrate: [200, 100, 200],
       icon: icon,
