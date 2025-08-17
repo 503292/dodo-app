@@ -93,6 +93,7 @@ const Currency = () => {
                 </div>
               ))}
 
+              {console.log(contries, 'contries')}
               {contries.map(el => (
                 <div key={el.name} className={css.oneCountry}>
                   <div className={css.wrapFlag}>
