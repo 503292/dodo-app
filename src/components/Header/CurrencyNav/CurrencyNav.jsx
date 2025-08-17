@@ -48,7 +48,6 @@ const CurrencyNav = () => {
 
     fetchCurrencyNBU()
       .then(data => {
-        console.log(data, 'data');
         const contries = parseCountries(data);
         const metals = parseMetals(data);
 
