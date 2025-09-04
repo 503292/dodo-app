@@ -50,7 +50,7 @@ Profile tab - this is the user's profile card:
 const MathInfo = () => {
   return (
     <div className={css.wrap}>
-      <h3>4e Math</h3>
+      <h3>CuckooBaa</h3>
       <InfoImage src={start} title={title.start} about={about.start} />
       <InfoImage src={game} title={title.game} about={about.game} />
       <InfoImage src={profile} title={title.profile} about={about.profile} />
