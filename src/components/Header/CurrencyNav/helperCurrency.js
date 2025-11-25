@@ -13,13 +13,13 @@ export const countries = [
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Azerbaijan.svg/30px-Flag_of_Azerbaijan.svg.png',
   },
-  {
-    name: 'BYN',
-    country: 'Білорусь',
-    currency: 'рубль',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Belarus.svg/30px-Flag_of_Belarus.svg.png',
-  },
+  // {
+  //   name: 'BYN',
+  //   country: 'Білорусь',
+  //   currency: 'рубль',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Belarus.svg/30px-Flag_of_Belarus.svg.png',
+  // },
   {
     name: 'BGN',
     country: 'Болгарія',
@@ -27,13 +27,13 @@ export const countries = [
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Bulgaria.svg/30px-Flag_of_Bulgaria.svg.png',
   },
-  {
-    name: 'BRL',
-    country: 'Бразилія',
-    currency: 'реал',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/29px-Flag_of_Brazil.svg.png',
-  },
+  // {
+  //   name: 'BRL',
+  //   country: 'Бразилія',
+  //   currency: 'реал',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/29px-Flag_of_Brazil.svg.png',
+  // },
   {
     name: 'GBP',
     country: 'В.Британія',
@@ -47,6 +47,13 @@ export const countries = [
     currency: 'ларі',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/30px-Flag_of_Georgia.svg.png',
+  },
+  {
+    name: 'DKK',
+    country: 'Данія',
+    currency: 'крона',
+    url:
+      'https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg',
   },
   {
     name: 'EGP',
@@ -132,13 +139,13 @@ export const countries = [
   //   url:
   //     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Turkmenistan.svg/30px-Flag_of_Turkmenistan.svg.png',
   // },
-  // {
-  //   name: 'HUF',
-  //   country: 'Угорщина',
-  //   currency: 'форинт',
-  //   url:
-  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/30px-Flag_of_Hungary.svg.png',
-  // },
+  {
+    name: 'HUF',
+    country: 'Угорщина',
+    currency: 'форинт',
+    url:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/30px-Flag_of_Hungary.svg.png',
+  },
   // {
   //   name: 'UZS',
   //   country: 'Узбекистан',

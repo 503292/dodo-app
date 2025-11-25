@@ -24,10 +24,6 @@ const TaskItem = ({
 }) => {
   const { text } = task;
   const splitText = text.split(/\r?\n/);
-  console.log(task, '');
-
-  // todo connect PriorityIcon
-  // fix bug with load another priority
 
   const formatEndTime = endTime => {
     let hour = new Date(endTime).getHours();

@@ -100,10 +100,10 @@ const Currency = () => {
                     <p className={css.country}>{el.country}</p>
                   </div>
                   <div className={css.wrapRate}>
-                    <p className={css.val}>{el.currency}</p>
                     <p className={css.price}>
                       {el.rate} <span>грн</span>
                     </p>
+                    <p className={css.val}>{el.currency}</p>
                   </div>
                 </div>
               ))}
