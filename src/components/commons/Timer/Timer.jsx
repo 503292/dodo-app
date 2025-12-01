@@ -11,11 +11,6 @@ const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [newYear, setNewYear] = useState(new Date().getFullYear() + 1);
 
-  function pad(value, decr) {
-    return String(value).padStart(decr, '0');
-  }
-  // helper
-
   useEffect(() => {
     const intervalID = setInterval(() => {
       const newYearTmp = new Date().getFullYear() + 1;
@@ -42,10 +37,10 @@ const Timer = () => {
 
       const secondsTmp = Math.floor((endTimeToNewYear % (1000 * 60)) / 1000);
 
-      setDays(pad(daysTmp, 3));
-      setHours(pad(hoursTmp, 2));
-      setMinutes(pad(minutesTmp, 2));
-      setSeconds(pad(secondsTmp, 2));
+      setDays(daysTmp);
+      setHours(hoursTmp);
+      setMinutes(minutesTmp);
+      setSeconds(secondsTmp);
       setNewYear(newYearTmp);
     }, 1000);
 
