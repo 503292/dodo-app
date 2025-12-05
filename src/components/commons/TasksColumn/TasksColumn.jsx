@@ -4,6 +4,7 @@ import { Droppable } from 'react-beautiful-dnd';
 
 import Task from '../TaskItem/TaskItem';
 import Motivator from '../Motivator/Motivator';
+import BeCreator from '../BeCreator/BeCreator';
 
 import css from './TasksColumn.module.scss';
 
@@ -19,14 +20,8 @@ const TasksColumn = ({
     <div className={css.wrapColumn}>
       <Motivator />
 
-      {tasksDraw.length <= 0 && (
-        <div>
-          <p className={css.start}>
-            Подумай що ти можеш зробити приємного для себе і близьких.
-            <br /> Все що можна уявити реально).
-          </p>
-        </div>
-      )}
+      {tasksDraw.length <= 0 && <BeCreator />}
+
       <Droppable droppableId={column.id}>
         {provided => {
           return (
