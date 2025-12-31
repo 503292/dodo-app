@@ -33,6 +33,11 @@
       align-items: center;
     }
 
+    .wrapLamp svg {
+      // TODO style for lamp | add logic - Blink lamp
+      // color: grey;
+    }
+
     & > div > button {
       display: flex;
       align-items: center;
@@ -143,7 +148,7 @@
     button {
       height: 80px;
       border-radius: 15px;
-      width: calc(50% - 5px);
+      width: 100%;
       color: grey;
     }
 
