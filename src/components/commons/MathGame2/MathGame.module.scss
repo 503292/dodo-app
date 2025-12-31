@@ -25,50 +25,19 @@
     }
   }
   .wrapSetting {
-    padding: 0 10px;
-    margin-bottom: 20px;
-
-    .settingHead {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .wrapLamp {
+    & > button {
+      position: absolute;
+      right: 5px;
       display: flex;
       align-items: center;
-      gap: 8px;
-
-      button {
-        margin: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(3, 128, 252, 0.5) 0%,
-          rgba(255, 253, 0, 0.3) 100%
-        );
-      }
-
-      h3 {
-        color: grey;
-        margin: 0;
-      }
-
-      // TODO style for lamp | add logic - Blink lamp
-      // svg{}
-      // color: grey;
-    }
-
-    & > div > button {
-      display: flex;
-      align-items: center;
-      margin: 0;
     }
 
     .setting {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       gap: 10px;
       color: grey;
+      padding-top: 50px;
 
       legend {
         padding: 0 6px;
@@ -82,7 +51,6 @@
         border: 1px solid var(--G6);
         box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
         display: flex;
-        justify-content: flex-end;
         flex-wrap: wrap;
       }
     }
@@ -169,7 +137,7 @@
     button {
       height: 80px;
       border-radius: 15px;
-      width: 100%;
+      width: calc(50% - 5px);
       color: grey;
     }
 

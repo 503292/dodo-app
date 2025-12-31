@@ -4,22 +4,13 @@ import CircleButton from './CircleButton';
 import SettingBtn from './SettingBtn';
 import BoxWithBorder from '../BoxWithBorder/BoxWithBorder';
 import Divider from '../Divider/Divider';
-import Counter from './Counter';
 
 import { MIN, MAX, OPERATORS } from './constant';
 
 import css from './MathGame.module.scss';
 
 // TODO view different view for task " -- " & " | "
-const Setting = ({
-  operator,
-  setOperator,
-  min,
-  setMin,
-  max,
-  setMax,
-  count,
-}) => {
+const Setting = ({ operator, setOperator, min, setMin, max, setMax }) => {
   const [isOpen, setIsOpen] = useState(false);
   const validate = (val, setVal, limit) => {
     if (limit === val) return toastMessage(`MIN ≠ MAX`);
@@ -28,10 +19,7 @@ const Setting = ({
 
   return (
     <div className={css.wrapSetting}>
-      <div className={css.settingHead}>
-        <Counter count={count} />
-        <SettingBtn isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
-      </div>
+      <SettingBtn isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
 
       {isOpen ? (
         <>

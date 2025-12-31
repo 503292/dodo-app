@@ -19,12 +19,12 @@ function getMaxMinByOperator(operator = '+', range = [0, 10]) {
       max_ = validMax * 2;
       min_ = -(validMax * 2);
       break;
-    case '×':
+    case '*':
     case 'x²':
       max_ = validMax * validMax;
       min_ = -validMax * validMax;
       break;
-    case 'x÷2':
+    case 'x/2':
       max_ = validMax / 2;
       min_ = -validMax / 2;
       break;
@@ -63,7 +63,7 @@ export const getRandomAnswerArr = (
         let randomNum;
         do {
           randomNum = randomIntFromInterval(min_, max_);
-          if (operator === 'x÷2' && !Number.isInteger(answer)) {
+          if (operator === 'x/2' && !Number.isInteger(answer)) {
             // add .5 to randomNum if !isInteger
             randomNum += 0.5;
           }
@@ -81,11 +81,11 @@ function answerTask(num1, num2, operator) {
       return num1 + num2;
     case '-':
       return num1 - num2;
-    case '×':
+    case '*':
       return num1 * num2;
     case 'x²':
       return num1 * num1;
-    case 'x÷2':
+    case 'x/2':
       return num1 / 2;
     // TODO in progress '%', '√²'
     default:
@@ -99,9 +99,9 @@ export const generateMathTask = (min, max, operator = '+', setAnswer) => {
     setAnswer(firstNum * firstNum);
     return `${firstNum}²`;
   }
-  if (operator === 'x÷2') {
+  if (operator === 'x/2') {
     setAnswer(firstNum / 2);
-    return `${firstNum} ÷ 2`;
+    return `${firstNum} / 2`;
   }
   // TODO in progress
   // if (operator === '%') {
