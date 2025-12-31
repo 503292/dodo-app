@@ -19,7 +19,7 @@ function getMaxMinByOperator(operator = '+', range = [0, 10]) {
       max_ = validMax * 2;
       min_ = -(validMax * 2);
       break;
-    case '*':
+    case '×':
     case 'x²':
       max_ = validMax * validMax;
       min_ = -validMax * validMax;
@@ -81,7 +81,7 @@ function answerTask(num1, num2, operator) {
       return num1 + num2;
     case '-':
       return num1 - num2;
-    case '*':
+    case '×':
       return num1 * num2;
     case 'x²':
       return num1 * num1;

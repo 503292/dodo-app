@@ -4,6 +4,7 @@ import MathTask from './MathTask';
 import Setting from './Setting';
 import Answers from './Answers';
 import Footer from './Footer';
+
 import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 import { useLocalStorage } from './useLocalStorage';
 
@@ -70,7 +71,9 @@ const MathGame = () => {
         setMin={setMin}
         max={max}
         setMax={setMax}
+        count={count}
       />
+
       <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
       <Divider />
       <Answers

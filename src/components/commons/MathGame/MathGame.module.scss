@@ -27,20 +27,22 @@
   .wrapSetting {
     padding: 0 10px;
 
-    & > button {
-      position: absolute;
-      right: 5px;
+    .settingHead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & > div > button {
       display: flex;
       align-items: center;
     }
 
     .setting {
       display: flex;
-      // justify-content: space-between;
       flex-direction: column;
       gap: 10px;
       color: grey;
-      padding-top: 50px;
 
       legend {
         padding: 0 6px;
