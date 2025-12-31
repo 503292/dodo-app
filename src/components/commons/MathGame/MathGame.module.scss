@@ -26,6 +26,7 @@
   }
   .wrapSetting {
     padding: 0 10px;
+    margin-bottom: 20px;
 
     .settingHead {
       display: flex;
@@ -33,14 +34,34 @@
       align-items: center;
     }
 
-    .wrapLamp svg {
+    .wrapLamp {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      button {
+        margin: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(3, 128, 252, 0.5) 0%,
+          rgba(255, 253, 0, 0.3) 100%
+        );
+      }
+
+      h3 {
+        color: grey;
+        margin: 0;
+      }
+
       // TODO style for lamp | add logic - Blink lamp
+      // svg{}
       // color: grey;
     }
 
     & > div > button {
       display: flex;
       align-items: center;
+      margin: 0;
     }
 
     .setting {

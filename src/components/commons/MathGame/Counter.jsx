@@ -10,7 +10,8 @@ const Counter = ({ count }) => {
       <CircleButton>
         <Lamp />
       </CircleButton>
-      : {count}
+
+      <h3> : {count}</h3>
     </div>
   );
 };

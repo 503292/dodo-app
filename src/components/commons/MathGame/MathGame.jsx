@@ -82,7 +82,7 @@ const MathGame = () => {
         checkAnswer={handleSubmit}
       />
       <Divider />
-      <Footer count={count} userAnswer={userAnswer} />
+      <Footer userAnswer={userAnswer} />
     </form>
   );
 };
