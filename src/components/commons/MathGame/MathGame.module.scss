@@ -25,6 +25,8 @@
     }
   }
   .wrapSetting {
+    padding: 0 10px;
+
     & > button {
       position: absolute;
       right: 5px;
@@ -35,6 +37,7 @@
     .setting {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
       gap: 10px;
       color: grey;
       padding-top: 50px;
