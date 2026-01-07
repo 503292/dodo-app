@@ -95,6 +95,7 @@ function answerTask(num1, num2, operator) {
 
 export const generateMathTask = (min, max, operator = '+', setAnswer) => {
   const firstNum = randomIntFromInterval(min, max);
+
   if (operator === 'x²') {
     setAnswer(firstNum * firstNum);
     return `${firstNum}²`;

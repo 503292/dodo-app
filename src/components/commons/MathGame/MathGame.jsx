@@ -3,7 +3,6 @@ import Divider from '../Divider/Divider';
 import MathTask from './MathTask';
 import Setting from './Setting';
 import Answers from './Answers';
-import Footer from './Footer';
 
 import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 import { useLocalStorage } from './useLocalStorage';
@@ -22,6 +21,9 @@ const MathGame = () => {
   const [count, setCount] = useState();
 
   const [isOpen, setIsOpen] = useState(false);
+  // TODO in progrres
+  const [isRandom, setIsRandom] = useState(false);
+  // const [isSound, setIsSound] = useState(false);
 
   useEffect(() => {
     // get and set settings from LocalStorage
@@ -52,21 +54,15 @@ const MathGame = () => {
     // eslint-disable-next-line
   }, [min, max, operator, count]);
 
-  useEffect(() => {
-    if (userAnswer !== '') {
-      setUserAnswer('');
-    }
-    updateSettings(min, max, operator, count);
-    // eslint-disable-next-line
-  }, [min, max, operator]);
-
-  function handleSubmit(e) {
-    if (e) e.preventDefault();
-    checkAnswer(answer, userAnswer, setCount, setUserAnswer, mathTask);
-  }
+  const checkUserAnswer = a => {
+    setUserAnswer(a);
+    setTimeout(() => {
+      checkAnswer(answer, a, setCount, setUserAnswer, mathTask);
+    }, 700);
+  };
 
   return (
-    <form className={css.wrapGame} onSubmit={handleSubmit}>
+    <form className={css.wrapGame}>
       <Setting
         operator={operator}
         setOperator={setOperator}
@@ -83,13 +79,7 @@ const MathGame = () => {
         <>
           <MathTask task={mathTask} value={userAnswer} />
           <Divider />
-          <Answers
-            answers={answersArr}
-            handleClick={setUserAnswer}
-            checkAnswer={handleSubmit}
-          />
-          <Divider />
-          <Footer userAnswer={userAnswer} />
+          <Answers answers={answersArr} handleClick={checkUserAnswer} />
         </>
       )}
     </form>
