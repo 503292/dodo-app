@@ -20,13 +20,13 @@ export const countries = [
   //   url:
   //     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Belarus.svg/30px-Flag_of_Belarus.svg.png',
   // },
-  {
-    name: 'BGN',
-    country: 'Болгарія',
-    currency: 'лев',
-    url:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Bulgaria.svg/30px-Flag_of_Bulgaria.svg.png',
-  },
+  // {
+  //   name: 'BGN',
+  //   country: 'Болгарія',
+  //   currency: 'лев',
+  //   url:
+  //     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Bulgaria.svg/30px-Flag_of_Bulgaria.svg.png',
+  // },
   // {
   //   name: 'BRL',
   //   country: 'Бразилія',
@@ -173,6 +173,13 @@ export const countries = [
     currency: 'єна',
     url:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/30px-Flag_of_Japan.svg.png',
+  },
+  {
+    name: 'INR',
+    country: 'Індія',
+    currency: 'Рупія',
+    url:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/330px-Flag_of_India.svg.png',
   },
 ];
 

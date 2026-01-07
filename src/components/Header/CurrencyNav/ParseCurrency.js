@@ -24,6 +24,7 @@ export function parseCurrency(data) {
 }
 
 export function parseCountries(data) {
+  console.log(data, 'data');
   countries.map(el => {
     data.find(d => {
       if (d.cc === el.name) {
