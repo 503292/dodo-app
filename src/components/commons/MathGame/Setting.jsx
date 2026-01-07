@@ -3,8 +3,11 @@ import { toastMessage } from '../Toast/Toast';
 import CircleButton from './CircleButton';
 import SettingBtn from './SettingBtn';
 import BoxWithBorder from '../BoxWithBorder/BoxWithBorder';
-import Divider from '../Divider/Divider';
 import Counter from './Counter';
+
+import { ReactComponent as VolON } from '../../../assets/image/volume_on.svg';
+import { ReactComponent as VolOFF } from '../../../assets/image/volume_off.svg';
+import { ReactComponent as Random } from '../../../assets/image/random.svg';
 
 import { MIN, MAX, OPERATORS } from './constant';
 
@@ -19,8 +22,11 @@ const Setting = ({
   max,
   setMax,
   count,
+  isOpen,
+  setIsOpen,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isRandom, setIsRandom] = useState(false);
+  const [isSound, setIsSound] = useState(false);
   const validate = (val, setVal, limit) => {
     if (limit === val) return toastMessage(`MIN ≠ MAX`);
     setVal(val);
@@ -36,6 +42,20 @@ const Setting = ({
       {isOpen ? (
         <>
           <div className={css.setting}>
+            <BoxWithBorder title="!">
+              <CircleButton
+                onClick={() => setIsRandom(prev => !prev)}
+                active={isRandom}
+              >
+                <Random />
+              </CircleButton>
+              <CircleButton
+                onClick={() => setIsSound(prev => !prev)}
+                active={isSound}
+              >
+                {isSound ? <VolON /> : <VolOFF />}
+              </CircleButton>
+            </BoxWithBorder>
             <BoxWithBorder title="MIN">
               {MIN.map((el, idx) => (
                 <CircleButton
@@ -69,7 +89,6 @@ const Setting = ({
               ))}
             </BoxWithBorder>
           </div>
-          <Divider />
         </>
       ) : null}
     </div>

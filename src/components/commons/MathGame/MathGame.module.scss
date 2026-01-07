@@ -84,6 +84,17 @@
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
+
+        & > button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & > svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
       }
     }
   }

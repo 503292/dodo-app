@@ -15,10 +15,13 @@ const MathGame = () => {
   const [answer, setAnswer] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [answersArr, setAnswersArr] = useState(null);
+
   const [operator, setOperator] = useState();
   const [min, setMin] = useState();
   const [max, setMax] = useState();
   const [count, setCount] = useState();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // get and set settings from LocalStorage
@@ -72,17 +75,23 @@ const MathGame = () => {
         max={max}
         setMax={setMax}
         count={count}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
       />
 
-      <MathTask task={mathTask} value={userAnswer} setValue={setUserAnswer} />
-      <Divider />
-      <Answers
-        answers={answersArr}
-        handleClick={setUserAnswer}
-        checkAnswer={handleSubmit}
-      />
-      <Divider />
-      <Footer userAnswer={userAnswer} />
+      {isOpen ? null : (
+        <>
+          <MathTask task={mathTask} value={userAnswer} />
+          <Divider />
+          <Answers
+            answers={answersArr}
+            handleClick={setUserAnswer}
+            checkAnswer={handleSubmit}
+          />
+          <Divider />
+          <Footer userAnswer={userAnswer} />
+        </>
+      )}
     </form>
   );
 };
