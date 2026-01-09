@@ -5,7 +5,11 @@ import Setting from './Setting';
 import Answers from './Answers';
 
 import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
-import { useLocalStorage } from './useLocalStorage';
+import {
+  useLocalStorage,
+  getCountLocal,
+  setCountLocal,
+} from './useLocalStorage';
 
 import css from './MathGame.module.scss';
 
@@ -22,16 +26,18 @@ const MathGame = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   // TODO in progrres
-  const [isRandom, setIsRandom] = useState(false);
+  // const [isRandom, setIsRandom] = useState(false);
   // const [isSound, setIsSound] = useState(false);
 
   useEffect(() => {
     // get and set settings from LocalStorage
     const settings = getSettings();
+
     setOperator(settings.operator);
     setMin(settings.min);
     setMax(settings.max);
-    setCount(settings.count);
+
+    setCount(getCountLocal());
     // eslint-disable-next-line
   }, []);
 
@@ -50,15 +56,15 @@ const MathGame = () => {
     // get and set AnswersArr
     setAnswersArr(getRandomAnswerArr(min, max, operator, answer));
     // update settings in LocalStorage
-    updateSettings(min, max, operator, count);
+    updateSettings(min, max, operator);
+
+    setCountLocal(count);
     // eslint-disable-next-line
   }, [min, max, operator, count]);
 
   const checkUserAnswer = a => {
     setUserAnswer(a);
-    setTimeout(() => {
-      checkAnswer(answer, a, setCount, setUserAnswer, mathTask);
-    }, 700);
+    checkAnswer(answer, a, setCount, setUserAnswer);
   };
 
   return (
@@ -77,7 +83,7 @@ const MathGame = () => {
 
       {isOpen ? null : (
         <>
-          <MathTask task={mathTask} value={userAnswer} />
+          <MathTask mathTask={mathTask} userAnswer={userAnswer} />
           <Divider />
           <Answers answers={answersArr} handleClick={checkUserAnswer} />
         </>

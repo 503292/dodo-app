@@ -1,14 +1,22 @@
 import React from 'react';
+import { useBlink } from './useBlink';
 import css from './MathGame.module.scss';
 
-const MathTask = ({ task, value }) => {
+const MathTask = ({ mathTask, userAnswer }) => {
+  const color = useBlink('tomato');
+
   return (
     <div className={css.mathTask}>
       <p>
-        {task} <br /> =
+        {mathTask} <br /> =
       </p>
-
-      <div>{value === '' ? <span>?</span> : <p>{value}</p>}</div>
+      <div>
+        {userAnswer === '' ? (
+          <span>?</span>
+        ) : (
+          <p style={{ color }}>{userAnswer}</p>
+        )}
+      </div>
     </div>
   );
 };

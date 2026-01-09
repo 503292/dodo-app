@@ -1,4 +1,7 @@
-import { toastMessage } from '../Toast/Toast';
+import cuckooSound from '../../../assets/sounds/cuckoo.mp3';
+import sheepSound from '../../../assets/sounds/sheep.mp3';
+const audioCuckoo = new Audio(cuckooSound);
+const audioSheep = new Audio(sheepSound);
 
 function randomIntFromInterval(min, max) {
   // min and max included
@@ -115,20 +118,26 @@ export const generateMathTask = (min, max, operator = '+', setAnswer) => {
   return `${firstNum} ${operator} ${secondNum}`;
 };
 
-export const checkAnswer = (
-  answer,
-  userAnswer,
-  setCount,
-  setUserAnswer,
-  mathTask,
-) => {
+// TODO connect sounds
+export const checkAnswer = (answer, userAnswer, setCount, setUserAnswer) => {
   if (answer === +userAnswer) {
     setCount(prev => (prev += 1));
-    setUserAnswer('');
+    setTimeout(() => {
+      audioCuckoo.currentTime = 0;
+      audioCuckoo.play();
+
+      setUserAnswer('');
+    }, 300);
   } else {
-    toastMessage(`${mathTask} ≠ ${userAnswer}`);
     // TODO ??? minus for counter -> 🤔 🤨 🧐 for this ⬇⬇⬇
     // setCount(prev => (prev -= 1));
-    setUserAnswer('');
+    audioSheep.currentTime = 0;
+    audioSheep.play();
+
+    setTimeout(() => {
+      setUserAnswer('');
+    }, 300);
   }
 };
+
+let currentAudio = null;
