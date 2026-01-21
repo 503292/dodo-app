@@ -4,88 +4,108 @@ import MathTask from './MathTask';
 import Setting from './Setting';
 import Answers from './Answers';
 
-import { generateMathTask, checkAnswer, getRandomAnswerArr } from './helper';
 import {
-  useLocalStorage,
-  getCountLocal,
-  setCountLocal,
-} from './useLocalStorage';
+  generateMathTask,
+  checkAnswer,
+  getRandomAnswerArr,
+  randomIntFromInterval,
+} from './helper';
+
+import { useLocalStorage } from './useLocalStorage';
+import { debounce } from './debounce';
+import { OPERATORS } from './constant';
 
 import css from './MathGame.module.scss';
 
 const MathGame = () => {
-  const { getSettings, updateSettings } = useLocalStorage();
-  const [answer, setAnswer] = useState(null);
+  const { getSettings, setSettings: saveSettings } = useLocalStorage();
+
+  const [settings, setSettings] = useState(getSettings);
   const [userAnswer, setUserAnswer] = useState('');
-  const [answersArr, setAnswersArr] = useState(null);
-
-  const [operator, setOperator] = useState();
-  const [min, setMin] = useState();
-  const [max, setMax] = useState();
-  const [count, setCount] = useState();
-
+  const [answerStatus, setAnswerStatus] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  // TODO in progrres
-  // const [isRandom, setIsRandom] = useState(false);
-  // const [isSound, setIsSound] = useState(false);
+  const [taskId, setTaskId] = useState(0);
+  const [isChecking, setIsChecking] = useState(false); // 🔑 block answers btns
 
+  /* -------------------- persist settings -------------------- */
   useEffect(() => {
-    // get and set settings from LocalStorage
-    const settings = getSettings();
+    saveSettings(settings);
+  }, [settings, saveSettings]);
 
-    setOperator(settings.operator);
-    setMin(settings.min);
-    setMax(settings.max);
-
-    setCount(getCountLocal());
+  /* -------------------- task generation -------------------- */
+  const task = useMemo(
+    () => generateMathTask(settings.min, settings.max, settings.operator),
     // eslint-disable-next-line
-  }, []);
+    [settings.min, settings.max, settings.operator, taskId],
+  );
 
-  const mathTask = useMemo(() => {
-    if (
-      typeof min === 'undefined' &&
-      typeof max === 'undefined' &&
-      typeof operator === 'undefined'
-    )
-      return;
-    return generateMathTask(min, max, operator, setAnswer);
-    // eslint-disable-next-line
-  }, [min, max, operator, count]);
+  const answers = useMemo(
+    () =>
+      getRandomAnswerArr(
+        settings.min,
+        settings.max,
+        settings.operator,
+        task.answer,
+      ),
+    [settings.min, settings.max, settings.operator, task.answer],
+  );
 
-  useEffect(() => {
-    // get and set AnswersArr
-    setAnswersArr(getRandomAnswerArr(min, max, operator, answer));
-    // update settings in LocalStorage
-    updateSettings(min, max, operator);
+  /* -------------------- next task logic -------------------- */
+  const generateNextTask = () => {
+    setSettings(s => {
+      if (!s.isRandomOperator) return s;
 
-    setCountLocal(count);
-    // eslint-disable-next-line
-  }, [min, max, operator, count]);
+      return {
+        ...s,
+        operator: OPERATORS[randomIntFromInterval(0, 4)], // 🔥 set new random operator
+      };
+    });
 
-  const checkUserAnswer = a => {
-    setUserAnswer(a);
-    checkAnswer(answer, a, setCount, setUserAnswer);
+    setTaskId(id => id + 1);
   };
 
+  const checkUserAnswer = debounce(value => {
+    if (isChecking) return; // block next click
+    setIsChecking(true);
+
+    setUserAnswer(value);
+
+    const isCorrect = checkAnswer(task.answer, value, settings.isSound);
+    setAnswerStatus(isCorrect ? 'correct' : 'wrong');
+
+    setTimeout(() => {
+      if (isCorrect) {
+        setSettings(s => ({ ...s, count: s.count + 1 }));
+        generateNextTask();
+      }
+
+      setUserAnswer('');
+      setAnswerStatus(null);
+      setIsChecking(false); // unblock
+    }, 300);
+  }, 400);
+
+  /* -------------------- render -------------------- */
   return (
     <form className={css.wrapGame}>
       <Setting
-        operator={operator}
-        setOperator={setOperator}
-        min={min}
-        setMin={setMin}
-        max={max}
-        setMax={setMax}
-        count={count}
+        settings={settings}
+        setSettings={setSettings}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        mathTask={task}
+        answerStatus={answerStatus}
       />
 
-      {isOpen ? null : (
+      {!isOpen && (
         <>
-          <MathTask mathTask={mathTask} userAnswer={userAnswer} />
+          <MathTask
+            mathTask={task}
+            userAnswer={userAnswer}
+            answerStatus={answerStatus}
+          />
           <Divider />
-          <Answers answers={answersArr} handleClick={checkUserAnswer} />
+          <Answers answers={answers} handleClick={checkUserAnswer} />
         </>
       )}
     </form>

@@ -70,6 +70,15 @@
       gap: 10px;
       color: grey;
 
+      .help {
+        flex: 1 1 0%;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #87c33b;
+        align-self: center;
+        padding-bottom: 8px;
+      }
+
       legend {
         padding: 0 6px;
         line-height: 1.5;
@@ -102,7 +111,7 @@
   .mathTask {
     font-size: 3rem;
     text-align: center;
-    color: tomato;
+    color: salmon;
     display: flex;
     flex-direction: column;
     justify-content: center;

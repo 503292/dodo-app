@@ -1,53 +1,37 @@
-import { countEventEmitter } from '../../../utils/eventEmitter';
+const STORAGE_KEY = 'math_game';
 
-const SETTINGS_KEY = 'math_game_settings';
-
-const MIN = 0;
-const MAX = 10;
-const OPERATOR = '+';
-const COUNT = 0;
-// TODO in progress
-// const IS_SOUND = true;
-// const IS_RANDOM = true;
+const DEFAULT_STATE = {
+  min: 0,
+  max: 10,
+  operator: '+',
+  count: 0,
+  isRandomOperator: false,
+  isSound: true,
+};
 
 export const useLocalStorage = () => {
   const getSettings = () => {
-    const settingsJSON = localStorage.getItem(SETTINGS_KEY);
-    if (settingsJSON) {
-      return JSON.parse(settingsJSON);
-    } else {
-      // Return default settings if no settings are found in localStorage
-      return { min: MIN, max: MAX, operator: OPERATOR };
+    try {
+      const json = localStorage.getItem(STORAGE_KEY);
+      return json ? { ...DEFAULT_STATE, ...JSON.parse(json) } : DEFAULT_STATE;
+    } catch (e) {
+      console.log('getSettings error', e);
+      return DEFAULT_STATE;
     }
   };
 
-  const updateSettings = (min, max, operator, count) => {
-    const settings = { min, max, operator };
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  const setSettings = newState => {
+    if (!newState) return;
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
+    } catch (e) {
+      console.log('setSettings error', e);
+    }
   };
 
   return {
     getSettings,
-    updateSettings,
+    setSettings,
   };
-};
-
-export const getCountLocal = () => {
-  try {
-    const jsonValue = localStorage.getItem('countMath');
-    return jsonValue != null ? JSON.parse(jsonValue) : COUNT;
-  } catch (e) {
-    console.log(e, 'err get count');
-  }
-};
-
-export const setCountLocal = value => {
-  if (value === undefined) return;
-
-  try {
-    localStorage.setItem('countMath', JSON.stringify(value));
-    countEventEmitter.emit('countChanged', value);
-  } catch (e) {
-    console.log(e, 'err set count');
-  }
 };

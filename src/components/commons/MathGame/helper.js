@@ -1,9 +1,13 @@
-import cuckooSound from '../../../assets/sounds/cuckoo.mp3';
-import sheepSound from '../../../assets/sounds/sheep.mp3';
-const audioCuckoo = new Audio(cuckooSound);
-const audioSheep = new Audio(sheepSound);
+import SoundManager from './SoundManager';
+export const checkAnswer = (correct, user, isSound) => {
+  const isCorrect = correct === +user;
 
-function randomIntFromInterval(min, max) {
+  if (isSound) SoundManager.play(isCorrect ? 'success' : 'error');
+
+  return isCorrect;
+};
+
+export function randomIntFromInterval(min, max) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -96,48 +100,27 @@ function answerTask(num1, num2, operator) {
   }
 }
 
-export const generateMathTask = (min, max, operator = '+', setAnswer) => {
+export const generateMathTask = (min = 0, max = 10, operator = '+') => {
   const firstNum = randomIntFromInterval(min, max);
 
   if (operator === 'x²') {
-    setAnswer(firstNum * firstNum);
-    return `${firstNum}²`;
+    return {
+      question: `${firstNum}²`,
+      answer: firstNum * firstNum,
+    };
   }
+
   if (operator === 'x÷2') {
-    setAnswer(firstNum / 2);
-    return `${firstNum} ÷ 2`;
+    return {
+      question: `${firstNum} ÷ 2`,
+      answer: firstNum / 2,
+    };
   }
-  // TODO in progress
-  // if (operator === '%') {
-  //   setAnswer(firstNum % firstNum);
-  //   return `${firstNum} ${operator} ${secondNum}`;
-  // }
+
   const secondNum = randomIntFromInterval(min, max);
-  const res = answerTask(firstNum, secondNum, operator);
-  setAnswer(res);
-  return `${firstNum} ${operator} ${secondNum}`;
+
+  return {
+    question: `${firstNum} ${operator} ${secondNum}`,
+    answer: answerTask(firstNum, secondNum, operator),
+  };
 };
-
-// TODO connect sounds
-export const checkAnswer = (answer, userAnswer, setCount, setUserAnswer) => {
-  if (answer === +userAnswer) {
-    setCount(prev => (prev += 1));
-    setTimeout(() => {
-      audioCuckoo.currentTime = 0;
-      audioCuckoo.play();
-
-      setUserAnswer('');
-    }, 300);
-  } else {
-    // TODO ??? minus for counter -> 🤔 🤨 🧐 for this ⬇⬇⬇
-    // setCount(prev => (prev -= 1));
-    audioSheep.currentTime = 0;
-    audioSheep.play();
-
-    setTimeout(() => {
-      setUserAnswer('');
-    }, 300);
-  }
-};
-
-let currentAudio = null;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { toastMessage } from '../Toast/Toast';
 import CircleButton from './CircleButton';
 import SettingBtn from './SettingBtn';
@@ -13,84 +13,91 @@ import { MIN, MAX, OPERATORS } from './constant';
 
 import css from './MathGame.module.scss';
 
-// TODO view different view for task " -- " & " | "
 const Setting = ({
-  operator,
-  setOperator,
-  min,
-  setMin,
-  max,
-  setMax,
-  count,
+  settings,
+  setSettings,
   isOpen,
   setIsOpen,
+  mathTask,
+  answerStatus,
 }) => {
-  const [isRandom, setIsRandom] = useState(false);
-  const [isSound, setIsSound] = useState(false);
-  const validate = (val, setVal, limit) => {
-    if (limit === val) return toastMessage(`MIN ≠ MAX`);
-    setVal(val);
+  const { min, max, operator, count, isSound, isRandomOperator } = settings;
+
+  const setValidatedValue = (value, limit, key) => {
+    if (value === limit) {
+      toastMessage('MIN ≠ MAX');
+      return;
+    }
+    setSettings(s => ({ ...s, [key]: value }));
   };
 
   return (
     <div className={css.wrapSetting}>
       <div className={css.settingHead}>
-        <Counter count={count} />
-        <SettingBtn isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
+        <Counter count={count} answerStatus={answerStatus} />
+        <SettingBtn isOpen={isOpen} setIsOpen={() => setIsOpen(v => !v)} />
       </div>
 
-      {isOpen ? (
-        <>
-          <div className={css.setting}>
-            <BoxWithBorder title="!">
+      {isOpen && (
+        <div className={css.setting}>
+          <BoxWithBorder title="MIN">
+            {MIN.map(el => (
               <CircleButton
-                onClick={() => setIsRandom(prev => !prev)}
-                active={isRandom}
-              >
-                <Random />
-              </CircleButton>
+                key={el}
+                text={el}
+                active={el === min}
+                onClick={() => setValidatedValue(el, max, 'min')}
+              />
+            ))}
+          </BoxWithBorder>
+
+          <BoxWithBorder title="MAX">
+            {MAX.map(el => (
               <CircleButton
-                onClick={() => setIsSound(prev => !prev)}
-                active={isSound}
-              >
-                {isSound ? <VolON /> : <VolOFF />}
-              </CircleButton>
-            </BoxWithBorder>
-            <BoxWithBorder title="MIN">
-              {MIN.map((el, idx) => (
-                <CircleButton
-                  onClick={() => validate(el, setMin, max)}
-                  active={el === min}
-                  key={idx}
-                  text={el}
-                />
-              ))}
-            </BoxWithBorder>
+                key={el}
+                text={el}
+                active={el === max}
+                onClick={() => setValidatedValue(el, min, 'max')}
+              />
+            ))}
+          </BoxWithBorder>
 
-            <BoxWithBorder title="MAX">
-              {MAX.map((el, idx) => (
-                <CircleButton
-                  onClick={() => validate(el, setMax, min)}
-                  active={el === max}
-                  key={idx}
-                  text={el}
-                />
-              ))}
-            </BoxWithBorder>
+          <BoxWithBorder title="Оператор">
+            {OPERATORS.map(el => (
+              <CircleButton
+                key={el}
+                text={el}
+                active={el === operator}
+                onClick={() => setSettings(s => ({ ...s, operator: el }))}
+              />
+            ))}
+          </BoxWithBorder>
 
-            <BoxWithBorder title="Оператор">
-              {OPERATORS.map((el, idx) => (
-                <CircleButton
-                  onClick={() => setOperator(el)}
-                  active={el === operator}
-                  key={idx}
-                  text={el}
-                />
-              ))}
-            </BoxWithBorder>
-          </div>
-        </>
-      ) : null}
+          <BoxWithBorder title="Опції">
+            <div className={css.help}>
+              {mathTask.question} = {mathTask.answer}
+            </div>
+            <CircleButton
+              active={isRandomOperator}
+              onClick={() =>
+                setSettings(s => ({
+                  ...s,
+                  isRandomOperator: !s.isRandomOperator,
+                }))
+              }
+            >
+              <Random />
+            </CircleButton>
+
+            <CircleButton
+              active={isSound}
+              onClick={() => setSettings(s => ({ ...s, isSound: !s.isSound }))}
+            >
+              {isSound ? <VolON /> : <VolOFF />}
+            </CircleButton>
+          </BoxWithBorder>
+        </div>
+      )}
     </div>
   );
 };
